@@ -1,0 +1,27 @@
+.curso-detalle {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .curso-detalle h2 {
+    font-size: 2rem;
+    color: #3182ce; /* Azul */
+    margin-bottom: 1rem;
+  }
+  
+  .curso-detalle p {
+    color: #4a5568; /* Gris oscuro */
+    margin-bottom: 1rem;
+  }
+  
+  .curso-detalle .contenido {
+    color: #4a5568; /* Gris oscuro */
+  }
+  
+  .error {
+    color: #e53e3e; /* Rojo */
+    text-align: center;
+    padding: 2rem;
+  }

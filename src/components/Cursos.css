@@ -1,0 +1,33 @@
+.cursos-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .curso-item {
+    background-color: #edf2f7; /* Gris claro */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .curso-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .curso-link {
+    color: #3182ce; /* Azul */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .curso-link:hover {
+    text-decoration: underline;
+  }
+  
+  .curso-descripcion {
+    color: #4a5568; /* Gris oscuro */
+    margin-top: 0.5rem;
+  }
