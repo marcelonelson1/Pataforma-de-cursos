@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import 'animate.css';
 
 function Home() {
   return (

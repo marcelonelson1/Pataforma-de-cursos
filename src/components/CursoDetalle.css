@@ -1,27 +1,29 @@
 .curso-detalle {
     padding: 2rem;
-    background-color: white;
+    background-color: #1a1a1a; /* Fondo oscuro */
     border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 255, 204, 0.1); /* Sombra neón */
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
   }
   
   .curso-detalle h2 {
     font-size: 2rem;
-    color: #3182ce; /* Azul */
+    color: #00ffcc; /* Texto neón */
     margin-bottom: 1rem;
+    text-transform: uppercase; /* Texto en mayúsculas */
   }
   
   .curso-detalle p {
-    color: #4a5568; /* Gris oscuro */
+    color: #cccccc; /* Texto gris claro */
     margin-bottom: 1rem;
   }
   
   .curso-detalle .contenido {
-    color: #4a5568; /* Gris oscuro */
+    color: #cccccc; /* Texto gris claro */
   }
   
   .error {
-    color: #e53e3e; /* Rojo */
+    color: #ff00ff; /* Texto magenta neón */
     text-align: center;
     padding: 2rem;
-  }
+  } 

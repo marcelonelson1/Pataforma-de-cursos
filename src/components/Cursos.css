@@ -4,30 +4,31 @@
   }
   
   .curso-item {
-    background-color: #edf2f7; /* Gris claro */
+    background-color: #262626; /* Fondo gris oscuro */
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 255, 204, 0.1); /* Sombra neón */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .curso-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 255, 204, 0.2); /* Sombra neón más intensa */
   }
   
   .curso-link {
-    color: #3182ce; /* Azul */
+    color: #00ffcc; /* Texto neón */
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
   }
   
   .curso-link:hover {
-    text-decoration: underline;
+    color: #ff00ff; /* Cambia a magenta neón al hacer hover */
   }
   
   .curso-descripcion {
-    color: #4a5568; /* Gris oscuro */
+    color: #cccccc; /* Texto gris claro */
     margin-top: 0.5rem;
   }

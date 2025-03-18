@@ -1,8 +1,9 @@
 .footer {
-    background-color: #3182ce; /* Azul */
-    color: white;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #00ffcc; /* Texto neón */
     text-align: center;
     padding: 1rem;
     margin-top: auto;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+    box-shadow: 0 -4px 6px rgba(0, 255, 204, 0.1); /* Sombra neón */
   }
