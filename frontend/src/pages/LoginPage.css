@@ -1,0 +1,101 @@
+.login-page {
+    padding: 2rem;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 255, 204, 0.1); /* Sombra neón */
+    max-width: 500px;
+    margin: 2rem auto;
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  }
+  
+  .login-page h2 {
+    font-size: 2rem;
+    color: #00ffcc; /* Texto neón */
+    margin-bottom: 1.5rem;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    text-align: center;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    color: #00ffcc; /* Texto neón */
+    font-size: 1rem;
+  }
+  
+  .form-input {
+    padding: 0.75rem;
+    border: 1px solid #00ffcc; /* Borde neón */
+    border-radius: 0.25rem;
+    background-color: #262626; /* Fondo input */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #ff00ff; /* Borde magenta neón al enfocar */
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.5); /* Brillo neón */
+  }
+  
+  .submit-btn {
+    padding: 0.75rem;
+    background-color: #00ffcc; /* Fondo neón */
+    color: #1a1a1a; /* Texto oscuro */
+    border: none;
+    border-radius: 0.25rem;
+    font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #ff00ff; /* Cambio a magenta neón */
+    transform: translateY(-2px);
+  }
+  
+  .submit-btn:disabled {
+    background-color: #4d4d4d;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .error-message {
+    color: #ff00ff; /* Texto magenta neón */
+    background-color: rgba(255, 0, 255, 0.1);
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border-left: 4px solid #ff00ff;
+    margin-bottom: 1rem;
+  }
+  
+  .register-link {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #cccccc; /* Texto gris claro */
+  }
+  
+  .register-link a {
+    color: #00ffcc; /* Enlace neón */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .register-link a:hover {
+    color: #ff00ff; /* Cambio a magenta neón */
+  }
