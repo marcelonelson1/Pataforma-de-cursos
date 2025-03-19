@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import CursosPage from './pages/CursosPage';
 import SobreMiPage from './pages/SobreMiPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 import CursoDetalle from './components/CursoDetalle';
 import 'animate.css'; // Importar Animate.css
 import './App.css';
@@ -19,6 +21,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cursos" element={<CursosPage />} />
             <Route path="/sobre-mi" element={<SobreMiPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/registro" element={<RegisterPage />} />
             <Route path="/curso/:id" element={<CursoDetalle />} />
           </Routes>
         </main>

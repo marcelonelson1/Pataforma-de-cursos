@@ -1,0 +1,147 @@
+.header {
+  background-color: #1a1a1a; /* Fondo oscuro */
+  color: #00ffcc; /* Texto neón */
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+  box-shadow: 0 4px 6px rgba(0, 255, 204, 0.1); /* Sombra neón */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.logo {
+  margin-right: 1rem;
+}
+
+.logo a {
+  color: #00ffcc; /* Texto neón */
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.nav a, .nav button {
+  color: #00ffcc; /* Texto neón */
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.nav a:hover, .nav button:hover {
+  color: #ff00ff; /* Cambia a magenta neón al hacer hover */
+}
+
+/* Estilo común para todos los elementos de navegación */
+.nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+/* Estilo específico para los enlaces de autenticación */
+.auth-link {
+  background-color: rgba(0, 255, 204, 0.1); /* Fondo semi-transparente */
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #00ffcc;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  color: #00ffcc;
+}
+
+.auth-link:hover {
+  background-color: rgba(255, 0, 255, 0.1); /* Fondo magenta semi-transparente */
+  border-color: #ff00ff;
+  color: #ff00ff;
+}
+
+/* Botón de menú móvil (oculto por defecto) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #00ffcc;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #ff00ff;
+}
+
+/* Reglas de media query para responsive */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0.75rem;
+  }
+  
+  .logo a {
+    font-size: 1.25rem;
+  }
+}
+
+/* Para pantallas muy pequeñas (móviles) */
+@media screen and (max-width: 640px) {
+  .header {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .logo {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nav a, .nav button {
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  .auth-link, .nav-link {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Para pantallas extremadamente pequeñas */
+@media screen and (max-width: 480px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .nav.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
