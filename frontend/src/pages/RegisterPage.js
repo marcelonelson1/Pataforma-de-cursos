@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RegisterPage.css';
 
@@ -10,8 +10,20 @@ function RegisterPage() {
     confirmPassword: ''
   });
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  // Efecto para redirigir después de mostrar el mensaje de éxito
+  useEffect(() => {
+    let redirectTimer;
+    if (success) {
+      redirectTimer = setTimeout(() => {
+        navigate('/login');
+      }, 1000); // Redirige después de 400ms (0.4 segundos)
+    }
+    return () => clearTimeout(redirectTimer);
+  }, [success, navigate]);
 
   const handleChange = (e) => {
     setFormData({
@@ -24,6 +36,7 @@ function RegisterPage() {
     e.preventDefault();
     setLoading(true);
     setError('');
+    setSuccess('');
     
     // Verificar que las contraseñas coincidan
     if (formData.password !== formData.confirmPassword) {
@@ -48,11 +61,14 @@ function RegisterPage() {
       const data = await response.json();
       
       if (!response.ok) {
-        throw new Error(data.message || 'Error al registrarse');
+        // Aquí es donde capturamos el error si el email ya existe
+        throw new Error(data.error || 'Error al registrarse');
       }
       
-      // Redirigir al usuario a la página de inicio de sesión
-      navigate('/login');
+      // Mostrar mensaje de éxito
+      setSuccess('Registro exitoso');
+      
+      // La redirección ocurrirá automáticamente después de 0.4 segundos gracias al useEffect
     } catch (err) {
       setError(err.message);
     } finally {
@@ -66,6 +82,7 @@ function RegisterPage() {
       
       <form className="register-form" onSubmit={handleSubmit}>
         {error && <div className="error-message">{error}</div>}
+        {success && <div className="success-message">{success}</div>}
         
         <div className="form-group">
           <label htmlFor="nombre">Nombre</label>
@@ -77,6 +94,7 @@ function RegisterPage() {
             onChange={handleChange}
             required
             className="form-input"
+            placeholder=" " /* Placeholder vacío necesario para CSS :not(:placeholder-shown) */
           />
         </div>
         
@@ -90,6 +108,7 @@ function RegisterPage() {
             onChange={handleChange}
             required
             className="form-input"
+            placeholder=" " /* Placeholder vacío necesario para CSS :not(:placeholder-shown) */
           />
         </div>
         
@@ -104,6 +123,7 @@ function RegisterPage() {
             required
             className="form-input"
             minLength="6"
+            placeholder=" " /* Placeholder vacío necesario para CSS :not(:placeholder-shown) */
           />
         </div>
         
@@ -118,6 +138,7 @@ function RegisterPage() {
             required
             className="form-input"
             minLength="6"
+            placeholder=" " /* Placeholder vacío necesario para CSS :not(:placeholder-shown) */
           />
         </div>
         

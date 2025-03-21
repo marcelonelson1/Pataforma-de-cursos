@@ -1,21 +1,21 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBackward, faForward, faPlay, faPause,
   faCheckCircle, faChevronLeft, faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
-import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons'; // Corregido
+import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons';
 import './CursoDetalle.css';
 
-function VideoPlayer({ videos }) {
+function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markAsCompleted }) {
   const videoRef = useRef(null);
   const progressRef = useRef(null);
-  const [currentVideo, setCurrentVideo] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [completedVideos, setCompletedVideos] = useState({});
+  // Nuevo estado para almacenar las duraciones de los videos
+  const [videoDurations, setVideoDurations] = useState({});
 
   // Manejar eventos del video
   useEffect(() => {
@@ -34,7 +34,14 @@ function VideoPlayer({ videos }) {
       };
 
       const handleDurationChange = () => {
-        setDuration(videoElement.duration || 0);
+        const videoDuration = videoElement.duration || 0;
+        setDuration(videoDuration);
+        
+        // Guardar la duración de este video específico
+        setVideoDurations(prev => ({
+          ...prev,
+          [videos[currentVideo].id]: videoDuration
+        }));
       };
 
       const handlePlay = () => {
@@ -47,13 +54,10 @@ function VideoPlayer({ videos }) {
 
       const handleEnded = () => {
         setIsPlaying(false);
-        setCompletedVideos(prev => ({
-          ...prev,
-          [videos[currentVideo].id]: true
-        }));
+        markAsCompleted(videos[currentVideo].id);
 
         if (currentVideo < videos.length - 1) {
-          setCurrentVideo(currentVideo + 1);
+          changeVideo(currentVideo + 1);
         }
       };
 
@@ -71,14 +75,7 @@ function VideoPlayer({ videos }) {
         videoElement.removeEventListener('ended', handleEnded);
       };
     }
-  }, [currentVideo, videos]);
-
-  // Cambiar de video
-  const changeVideo = (index) => {
-    if (index >= 0 && index < videos.length) {
-      setCurrentVideo(index);
-    }
-  };
+  }, [currentVideo, videos, markAsCompleted, changeVideo]);
 
   // Funciones de control de reproducción
   const togglePlay = () => {
@@ -128,13 +125,40 @@ function VideoPlayer({ videos }) {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
-  // Marcar video como completado manualmente
-  const markAsCompleted = (videoId) => {
-    setCompletedVideos(prev => ({
-      ...prev,
-      [videoId]: !prev[videoId]
-    }));
-  };
+  // Cargar video oculto para obtener su duración - Convertido a useCallback
+  const loadVideoDuration = useCallback((videoUrl, videoId) => {
+    // Si ya tenemos la duración, no hacemos nada
+    if (videoDurations[videoId]) return;
+
+    const tempVideo = document.createElement('video');
+    tempVideo.preload = 'metadata';
+    
+    tempVideo.onloadedmetadata = function() {
+      setVideoDurations(prev => ({
+        ...prev,
+        [videoId]: tempVideo.duration
+      }));
+    };
+    
+    tempVideo.src = videoUrl;
+  }, [videoDurations]);
+
+  // Cargar las duraciones de todos los videos
+  useEffect(() => {
+    // Solo cargamos las duraciones para videos que aún no las tienen
+    videos.forEach(video => {
+      if (!videoDurations[video.id]) {
+        loadVideoDuration(video.url, video.id);
+      }
+    });
+  }, [videos, videoDurations, loadVideoDuration]); // Añadido loadVideoDuration como dependencia
+
+  // Cargar nuevo video cuando cambia currentVideo
+  useEffect(() => {
+    if (videoRef.current) {
+      setIsPlaying(false); // Pausar al cambiar de video
+    }
+  }, [currentVideo]);
 
   return (
     <div className="video-section">
@@ -209,6 +233,23 @@ function VideoPlayer({ videos }) {
             Video siguiente <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
+      </div>
+
+      {/* Lista de videos/lecciones con duración calculada */}
+      <div className="lessons-list">
+        <h3>Contenido del curso</h3>
+        {videos.map((video, index) => (
+          <div
+            key={video.id}
+            className={`lesson-item ${index === currentVideo ? 'active' : ''} ${completedVideos[video.id] ? 'completed' : ''}`}
+            onClick={() => changeVideo(index)}
+          >
+            <span className="lesson-title">{video.titulo}</span>
+            <span className="lesson-duration">
+              {videoDurations[video.id] ? formatTime(videoDurations[video.id]) : video.duracion}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import './LoginPage.css';
 
 function LoginPage() {
@@ -10,6 +11,7 @@ function LoginPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     setFormData({
@@ -39,11 +41,11 @@ function LoginPage() {
         throw new Error(data.message || 'Error al iniciar sesión');
       }
       
-      // Guardar token en localStorage
-      localStorage.setItem('token', data.token);
+      // Usar la función login del contexto
+      login(data.token);
       
       // Redirigir al usuario a la página principal
-      navigate('/');
+      navigate('/', { replace: true });
     } catch (err) {
       setError(err.message);
     } finally {
@@ -68,6 +70,7 @@ function LoginPage() {
             onChange={handleChange}
             required
             className="form-input"
+            placeholder=" " /* Placeholder vacío necesario para CSS :not(:placeholder-shown) */
           />
         </div>
         
@@ -81,6 +84,7 @@ function LoginPage() {
             onChange={handleChange}
             required
             className="form-input"
+            placeholder=" " /* Placeholder vacío necesario para CSS :not(:placeholder-shown) */
           />
         </div>
         
