@@ -9,6 +9,8 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding-left: 2rem;  /* Ajustado para alinear con el Home */
+  padding-right: 2rem;  /* Ajustado para alinear con el Home */
 }
 
 .logo {
@@ -82,7 +84,7 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    padding: 0.75rem;
+    padding: 0.75rem 2rem;  /* Manteniendo el padding horizontal */
   }
 
   .logo a {
@@ -95,6 +97,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 0.75rem;
+    padding: 0.75rem 2rem;  /* Manteniendo el padding horizontal */
   }
 
   .logo {
@@ -118,6 +121,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .header {
+    padding: 0.75rem 2rem;  /* Manteniendo el padding horizontal */
+  }
+  
   .menu-toggle {
     display: block;
   }

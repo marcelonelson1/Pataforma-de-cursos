@@ -64,9 +64,12 @@ func main() {
 	// Inicializar router
 	router := gin.Default()
 
-	// Configurar CORS
+	// Opción 1: Configuración más permisiva para desarrollo
+	router.Use(cors.Default()) // Permite todos los orígenes
+
+	// Opción 2: Configuración más específica
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:3000"},
+		AllowOrigins:     []string{"*"}, // Permite todos los orígenes
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},

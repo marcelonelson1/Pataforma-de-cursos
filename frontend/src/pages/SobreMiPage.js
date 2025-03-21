@@ -17,21 +17,14 @@ function SobreMiPage() {
           className="sobre-mi-image animate__animated animate__pulse animate__infinite animate__slow"
         />
         <p>
-          Hola, soy [Tu Nombre], el creador de esta plataforma. Soy un apasionado
+          Hola, soy Marcelo Nelson, el creador de esta plataforma. Soy un apasionado
           de la tecnología y la educación en entornos digitales, dedicado a compartir
           conocimientos de manera innovadora y accesible.
         </p>
         <p>
-          Con más de [X] años de experiencia en desarrollo web y educación online,
-          he creado esta plataforma con un enfoque único que combina técnicas de 
-          aprendizaje efectivas con una experiencia visual inmersiva.
+         
         </p>
-        <p>
-          Mi objetivo es transformar la manera en que aprendemos tecnología, 
-          haciendo que el proceso sea tan emocionante como gratificante. Cada curso
-          ha sido diseñado meticulosamente para ofrecerte no solo conocimientos,
-          sino una experiencia de aprendizaje completa.
-        </p>
+        
         
         <div className="sobre-mi-skills">
           <h3>Tecnologías y Habilidades</h3>
