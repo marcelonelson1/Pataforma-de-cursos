@@ -1,35 +1,73 @@
 .sobre-mi-page {
-    padding: 2rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .sobre-mi-page h2 {
-    font-size: 2rem;
-    color: #3182ce; /* Azul */
-    margin-bottom: 1rem;
-  }
-  
-  .sobre-mi-content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  
-  .sobre-mi-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto 1rem;
-    display: block;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .sobre-mi-content p {
-    font-size: 1.1rem;
-    color: #4a5568; /* Gris oscuro */
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
+  padding: 2rem;
+  background-color: #1a1a1a; /* Fondo oscuro */
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 255, 204, 0.1); /* Sombra neón */
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+}
+
+.sobre-mi-page h2 {
+  font-size: 2rem;
+  color: #00ffcc; /* Texto neón */
+  margin-bottom: 1.5rem;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  text-align: center;
+}
+
+.sobre-mi-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.sobre-mi-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: block;
+  border: 2px solid #00ffcc; /* Borde neón */
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3); /* Resplandor neón */
+}
+
+.sobre-mi-content p {
+  font-size: 1.1rem;
+  color: #cccccc; /* Texto gris claro */
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.sobre-mi-skills {
+  margin-top: 2rem;
+}
+
+.sobre-mi-skills h3 {
+  color: #00ffcc; /* Texto neón */
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.skill-badge {
+  background-color: #262626;
+  color: #00ffcc;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #00ffcc;
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  background-color: rgba(0, 255, 204, 0.1);
+  color: #ff00ff;
+  border-color: #ff00ff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 0, 255, 0.2);
+}
