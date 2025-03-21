@@ -8,34 +8,30 @@ function Header() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Verificar si hay un token en localStorage
     const token = localStorage.getItem('token');
     setIsLoggedIn(!!token);
-    
-    // Cerrar menú al cambiar de tamaño de ventana
+
     const handleResize = () => {
       if (window.innerWidth > 480 && menuOpen) {
         setMenuOpen(false);
       }
     };
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [menuOpen]);
 
   const handleLogout = () => {
-    // Eliminar token de localStorage
     localStorage.removeItem('token');
     setIsLoggedIn(false);
     setMenuOpen(false);
-    navigate('/');
+    navigate('/', { replace: true });
   };
-  
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  
-  // Función para cerrar el menú al hacer clic en un enlace
+
   const closeMenu = () => {
     if (menuOpen) setMenuOpen(false);
   };
@@ -45,11 +41,11 @@ function Header() {
       <div className="logo">
         <Link to="/" onClick={closeMenu}>Mi Plataforma de Cursos</Link>
       </div>
-      
+
       <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menú">
         {menuOpen ? '✕' : '☰'}
       </button>
-      
+
       <nav className={`nav ${menuOpen ? 'active' : ''}`}>
         <Link to="/cursos" className="nav-link" onClick={closeMenu}>Cursos</Link>
         <Link to="/sobre-mi" className="nav-link" onClick={closeMenu}>Sobre Mí</Link>

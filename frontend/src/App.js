@@ -8,7 +8,7 @@ import SobreMiPage from './pages/SobreMiPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import CursoDetalle from './components/CursoDetalle';
-import 'animate.css'; // Importar Animate.css
+import 'animate.css';
 import './App.css';
 
 function App() {
