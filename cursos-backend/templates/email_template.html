@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperación de Contraseña</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h1 style="font-size: 24px; color: #00cc99; margin-bottom: 10px; text-transform: uppercase;">Recuperación de Contraseña</h1>
+        </div>
+        <div style="line-height: 1.5; font-size: 16px;">
+            <p style="margin-bottom: 20px;">Hola {{.Name}},</p>
+            <p style="margin-bottom: 20px;">
+                Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en nuestra plataforma.
+                Si no realizaste esta solicitud, puedes ignorar este correo electrónico.
+            </p>
+            <p style="margin-bottom: 20px;">
+                Para continuar con el proceso de recuperación de contraseña, haz clic en el siguiente botón:
+            </p>
+            <p style="margin-bottom: 20px;">
+                <a href="{{.ResetLink}}" style="display: inline-block; padding: 12px 24px; background-color: #00cc99; color: #ffffff; text-decoration: none; border-radius: 4px; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+                    Restablecer Contraseña
+                </a>
+            </p>
+            <p style="margin-bottom: 20px;">
+                Este enlace es válido por <strong>1 hora</strong>. Si no restableces tu contraseña en ese tiempo,
+                deberás solicitar un nuevo enlace.
+            </p>
+
+            <div style="background-color: #f9f9f9; padding: 16px; border-radius: 4px; border-left: 4px solid #ff66cc; margin-bottom: 20px;">
+                <h2 style="color: #ff66cc; font-size: 20px; margin-bottom: 10px;">Consejos de Seguridad</h2>
+                <p style="margin-bottom: 10px;">
+                    Para mantener tu cuenta segura, te recomendamos seguir estas prácticas:
+                </p>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li style="margin-bottom: 8px;">Usa una contraseña única y segura que no hayas utilizado en otros servicios.</li>
+                    <li style="margin-bottom: 8px;">Evita compartir tu contraseña con otras personas.</li>
+                    <li style="margin-bottom: 8px;">Habilita la autenticación de dos factores si está disponible.</li>
+                    <li style="margin-bottom: 8px;">Cambia tu contraseña regularmente.</li>
+                </ul>
+            </div>
+
+            <p style="margin-bottom: 20px;">
+                Si tienes alguna pregunta o necesitas ayuda, no dudes en contactar a nuestro equipo de soporte
+                en <a href="mailto:soporte@cursos.com" style="color: #00cc99; text-decoration: none;">soporte@cursos.com</a>.
+            </p>
+        </div>
+        <div style="margin-top: 20px; text-align: center; font-size: 14px; color: #666666;">
+            <p>Saludos,</p>
+            <p>El equipo de Cursos</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,95 +1,133 @@
 .login-page {
   padding: 2rem;
-  background-color: #1a1a1a; /* Fondo oscuro */
+  background-color: #1a1a1a;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 255, 204, 0.1); /* Sombra neón */
-  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 255, 204, 0.1);
+  max-width: 400px;
   margin: 2rem auto;
-  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  font-family: 'Poppins', sans-serif;
 }
 
 .login-page h2 {
   font-size: 2rem;
-  color: #00ffcc; /* Texto neón */
+  color: #00ffcc;
   margin-bottom: 1.5rem;
-  text-transform: uppercase; /* Texto en mayúsculas */
+  text-transform: uppercase;
   text-align: center;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.3rem;
+  padding: 0;
+  width: 100%;
+}
+
+.form-description {
+  color: #ff00ff; /* Color violeta */
+  text-align: center;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: 0 1rem;
+  background-color: rgba(255, 0, 255, 0.05); /* Fondo violeta translúcido */
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.form-description:hover {
+  background-color: rgba(255, 0, 255, 0.1); /* Efecto hover violeta */
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  width: 100%;
+  position: relative;
 }
 
 .form-group label {
-  color: #00ffcc; /* Texto neón */
+  color: #00ffcc;
   font-size: 1rem;
+  display: block;
+  margin-bottom: 0.3rem;
 }
 
 .form-input {
-  padding: 0.75rem;
-  border: 1px solid #00ffcc; /* Borde neón verde por defecto */
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #00ffcc;
   border-radius: 0.25rem;
-  background-color: #262626; /* Fondo input */
+  background-color: #262626;
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .form-input:focus {
   outline: none;
-  border-color: #ff00ff; /* Borde magenta neón al enfocar */
-  box-shadow: 0 0 8px rgba(255, 0, 255, 0.5); /* Brillo neón */
+  border-color: #ff00ff;
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
 }
 
 .form-input:hover {
   border-color: #33ffdd;
 }
 
-/* Mantenemos el estilo de enfoque para campos inválidos */
-.form-input:focus:invalid {
-  border-color: #ff00ff; /* Mantener el borde magenta al enfocar, aunque sea inválido */
+.password-input-container {
+  position: relative;
+  width: 100%;
 }
 
-/* Esta regla aplica el borde rojo SOLO cuando:
-   1. El campo es inválido
-   2. Y no está enfocado actualmente
-   3. Y ha sido interactuado (no está en estado pristine)
-   4. Y ha perdido el foco después de la interacción */
-.form-input:not(:focus):not(:placeholder-shown):invalid {
-  border-color: #ff0055; /* Rojo solo después de interacción inválida */
-  box-shadow: 0 0 5px rgba(255, 0, 85, 0.3); /* Sutil brillo rojo */
+.password-toggle-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #00ffcc;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
 }
 
-/* Añadimos un placeholder invisible para detectar la interacción del usuario */
-.form-input::placeholder {
-  color: transparent;
+.password-toggle-btn:hover {
+  color: #ff00ff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.password-toggle-btn:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+.password-toggle-btn svg {
+  vertical-align: middle;
 }
 
 .submit-btn {
+  width: 100%;
   padding: 0.75rem;
-  background-color: #00ffcc; /* Fondo neón */
-  color: #1a1a1a; /* Texto oscuro */
+  background-color: #00ffcc;
+  color: #1a1a1a;
   border: none;
   border-radius: 0.25rem;
-  font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+  font-family: 'Orbitron', sans-serif;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-top: 1rem;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .submit-btn:hover {
-  background-color: #ff00ff; /* Cambio a magenta neón */
+  background-color: #ff00ff;
   transform: translateY(-2px);
 }
 
@@ -100,7 +138,7 @@
 }
 
 .error-message {
-  color: #ff00ff; /* Texto magenta neón */
+  color: #ff00ff;
   background-color: rgba(255, 0, 255, 0.1);
   padding: 0.75rem;
   border-radius: 0.25rem;
@@ -111,34 +149,38 @@
 .register-link {
   margin-top: 1.5rem;
   text-align: center;
-  color: #cccccc; /* Texto gris claro */
+  color: #cccccc;
 }
 
 .register-link a {
-  color: #00ffcc; /* Enlace neón */
+  color: #00ffcc;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .register-link a:hover {
-  color: #ff00ff; /* Cambio a magenta neón */
-}
-
-/* Añadir estilo para el foco en los enlaces */
-.register-link a:focus {
-  outline: none;
-  text-decoration: underline;
   color: #ff00ff;
 }
 
-/* Animaciones */
+.forgot-password {
+  text-align: right;
+  margin: -0.5rem 0 0.8rem;
+}
+
+.forgot-password a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.forgot-password a:hover {
+  color: #ff00ff;
+  text-decoration: underline;
+}
+
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .animate__animated {

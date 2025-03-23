@@ -1,0 +1,36 @@
+2025/03/23 00:00:15 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/23 00:00:15 Conexión a la base de datos establecida exitosamente
+2025/03/23 00:00:16 Servidor iniciado en el puerto 5000
+2025/03/23 00:00:34 Error al enviar correo: la contraseña de email no está configurada
+2025/03/23 00:01:48 Email no encontrado o error de DB: record not found
+2025/03/23 01:04:46 Error al enviar correo: la contraseña de email no está configurada
+2025/03/23 01:29:23 Error al enviar correo: la contraseña de email no está configurada
+2025/03/23 01:39:45 Error al enviar correo: la contraseña de email no está configurada
+2025/03/23 01:44:50 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/23 01:44:50 Conexión a la base de datos establecida exitosamente
+2025/03/23 01:44:50 Servidor iniciado en el puerto 5000
+2025/03/23 03:13:39 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/23 03:13:39 Conexión a la base de datos establecida exitosamente
+2025/03/23 03:13:39 Servidor iniciado en el puerto 5000
+2025/03/23 03:13:51 Error al renderizar la plantilla de correo: open templates/EmailTemplate.js: no such file or directory
+2025/03/23 03:13:51 Error al enviar correo: open templates/EmailTemplate.js: no such file or directory
+2025/03/23 03:13:51 ERROR CRÍTICO: Fallo al enviar email en producción: open templates/EmailTemplate.js: no such file or directory
+2025/03/23 03:14:32 Error al renderizar la plantilla de correo: open templates/EmailTemplate.js: no such file or directory
+2025/03/23 03:14:32 Error al enviar correo: open templates/EmailTemplate.js: no such file or directory
+2025/03/23 03:14:32 ERROR CRÍTICO: Fallo al enviar email en producción: open templates/EmailTemplate.js: no such file or directory
+2025/03/23 03:15:05 Error al renderizar la plantilla de correo: open templates/EmailTemplate.js: no such file or directory
+2025/03/23 03:15:05 Error al enviar correo: open templates/EmailTemplate.js: no such file or directory
+2025/03/23 03:15:05 ERROR CRÍTICO: Fallo al enviar email en producción: open templates/EmailTemplate.js: no such file or directory
+2025/03/23 03:20:07 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/23 03:20:07 Conexión a la base de datos establecida exitosamente
+2025/03/23 03:20:08 Servidor iniciado en el puerto 5000
+2025/03/23 03:24:02 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/23 03:24:02 Conexión a la base de datos establecida exitosamente
+2025/03/23 03:24:02 Servidor iniciado en el puerto 5000
+2025/03/23 03:31:47 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/23 03:31:47 Conexión a la base de datos establecida exitosamente
+2025/03/23 03:31:47 Servidor iniciado en el puerto 5000
+2025/03/23 03:33:19 Token inválido: token inválido o expirado
+2025/03/23 03:33:19 Token inválido: token inválido o expirado
+2025/03/23 03:35:04 Token inválido: token inválido o expirado
+2025/03/23 03:35:04 Token inválido: token inválido o expirado
