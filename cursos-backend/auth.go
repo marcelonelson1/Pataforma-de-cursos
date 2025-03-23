@@ -14,9 +14,9 @@ import (
 
 // Estructuras para solicitudes y respuestas
 type RegisterRequest struct {
-	Nombre    string `json:"nombre" binding:"required"`
-	Email     string `json:"email" binding:"required,email"`
-	Password  string `json:"password" binding:"required,min=6"`
+	Nombre   string `json:"nombre" binding:"required"`
+	Email    string `json:"email" binding:"required,email"`
+	Password string `json:"password" binding:"required,min=6"`
 }
 
 type LoginRequest struct {
@@ -35,7 +35,7 @@ type Claims struct {
 	jwt.RegisteredClaims
 }
 
-// Secret para JWT - en producción usar variable de entorno
+// Secret para JWT
 var jwtSecret = []byte(getEnv("JWT_SECRET", "mi_clave_secreta_muy_segura"))
 
 // Controlador para registro de usuarios
@@ -116,48 +116,9 @@ func login(c *gin.Context) {
 	})
 }
 
-// Middleware de autenticación
-func authMiddleware() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		authHeader := c.GetHeader("Authorization")
-		if authHeader == "" {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "Autorización requerida"})
-			return
-		}
-
-		// Extraer token del header
-		tokenString := strings.Replace(authHeader, "Bearer ", "", 1)
-
-		// Validar token
-		claims := &Claims{}
-		token, err := jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (interface{}, error) {
-			return jwtSecret, nil
-		})
-
-		if err != nil || !token.Valid {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "Token inválido"})
-			return
-		}
-
-		// Verificar si el usuario existe
-		var user Usuario
-		if result := db.First(&user, claims.UserID); result.Error != nil {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "Usuario no encontrado"})
-			return
-		}
-
-		// Guardar ID del usuario en el contexto
-		c.Set("userID", claims.UserID)
-		c.Next()
-	}
-}
-
 // Función para generar token JWT
 func generateToken(userID uint) (string, error) {
-	// Definir tiempo de expiración (24 horas)
 	expirationTime := time.Now().Add(24 * time.Hour)
-
-	// Crear claims
 	claims := &Claims{
 		UserID: userID,
 		RegisteredClaims: jwt.RegisteredClaims{
@@ -166,9 +127,54 @@ func generateToken(userID uint) (string, error) {
 		},
 	}
 
-	// Crear token con claims
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-
-	// Firmar token y retornarlo
 	return token.SignedString(jwtSecret)
+}
+
+// Middleware de autenticación
+func authMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		// Obtener el token del encabezado de autorización
+		authHeader := c.GetHeader("Authorization")
+		if authHeader == "" {
+			c.JSON(http.StatusUnauthorized, gin.H{"error": "Token de autorización requerido"})
+			c.Abort()
+			return
+		}
+
+		// Verificar que el token tenga el formato correcto
+		tokenParts := strings.Split(authHeader, " ")
+		if len(tokenParts) != 2 || tokenParts[0] != "Bearer" {
+			c.JSON(http.StatusUnauthorized, gin.H{"error": "Formato de token inválido"})
+			c.Abort()
+			return
+		}
+
+		tokenString := tokenParts[1]
+
+		// Validar el token
+		claims := &Claims{}
+		token, err := jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (interface{}, error) {
+			return jwtSecret, nil
+		})
+
+		if err != nil || !token.Valid {
+			c.JSON(http.StatusUnauthorized, gin.H{"error": "Token inválido o expirado"})
+			c.Abort()
+			return
+		}
+
+		// Verificar si el usuario existe en la base de datos
+		var user Usuario
+		if result := db.First(&user, claims.UserID); result.Error != nil {
+			c.JSON(http.StatusUnauthorized, gin.H{"error": "Usuario no encontrado"})
+			c.Abort()
+			return
+		}
+
+		// Añadir el usuario al contexto para que los controladores puedan acceder a él
+		c.Set("user", user)
+
+		c.Next()
+	}
 }

@@ -7,6 +7,8 @@ import CursosPage from './pages/CursosPage';
 import SobreMiPage from './pages/SobreMiPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import ResetPasswordPage from './pages/ResetPasswordPage';
 import CursoDetalle from './components/CursoDetalle';
 import { AuthProvider } from './context/AuthContext';
 import 'animate.css';
@@ -25,6 +27,8 @@ function App() {
               <Route path="/sobre-mi" element={<SobreMiPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/registro" element={<RegisterPage />} />
+              <Route path="/recuperar-contrasena" element={<ForgotPasswordPage />} />
+              <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
               <Route path="/curso/:id" element={<CursoDetalle />} />
             </Routes>
           </main>
