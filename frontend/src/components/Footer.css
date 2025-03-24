@@ -1,9 +1,63 @@
 .footer {
-    background-color: #1a1a1a; /* Fondo oscuro */
-    color: #00ffcc; /* Texto neón */
-    text-align: center;
-    padding: 1rem;
-    margin-top: auto;
-    font-family: 'Orbitron', sans-serif; /* Fuente futurista */
-    box-shadow: 0 -4px 6px rgba(0, 255, 204, 0.1); /* Sombra neón */
+  background-color: #000000; /* Cambiado a negro como en Home.css */
+  color: #ffffff; /* Texto blanco como en Home y CursosPage */
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif; /* Fuente consistente con Home.css */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Añadiendo algo de estilo similar a Home.css */
+.footer-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+/* Elemento de fondo similar a Home.css */
+.footer-bg-accent {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  filter: blur(20px);
+  z-index: 1;
+}
+
+/* Media queries para responsive */
+@media screen and (max-width: 768px) {
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 1rem;
   }
+}

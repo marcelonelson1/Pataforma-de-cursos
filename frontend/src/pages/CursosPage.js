@@ -4,7 +4,7 @@ import './CursosPage.css';
 
 function CursosPage() {
   return (
-    <div className="cursos-page animate__animated animate__fadeIn">
+    <div className="cursos-page">
       <h2>Nuestros Cursos</h2>
       <Cursos />
     </div>

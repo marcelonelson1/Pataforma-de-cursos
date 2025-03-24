@@ -1,34 +1,206 @@
+.cursos-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 2rem 1.5rem;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif; /* Fuente consistente */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
 .cursos-list {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.curso-item {
+  background-color: rgba(255, 255, 255, 0.05); /* Fondo semi-transparente */
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.curso-item:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.curso-image-container {
+  width: 100%;
+  height: 180px;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.curso-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.curso-item:hover .curso-image {
+  transform: scale(1.05);
+}
+
+.curso-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.curso-link {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.curso-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.curso-descripcion {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.curso-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.curso-meta {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.curso-meta-item {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.curso-meta-icon {
+  margin-right: 0.5rem;
+  opacity: 0.7;
+}
+
+.curso-cta {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.curso-cta:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1024px) {
+  .cursos-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cursos-container {
+    padding: 1rem 0; /* Reduce padding horizontal para evitar desbordamiento */
+    width: 95%; /* Ligeramente más pequeño para evitar desbordamiento */
+  }
+  
+  .cursos-list {
+    gap: 1rem; /* Reduce el espacio entre elementos */
   }
   
   .curso-item {
-    background-color: #262626; /* Fondo gris oscuro */
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 255, 204, 0.1); /* Sombra neón */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.25rem; /* Reduce el padding interno */
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .cursos-container {
+    width: 90%; /* Reduce más el ancho para pantallas pequeñas */
   }
   
-  .curso-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 255, 204, 0.2); /* Sombra neón más intensa */
+  .cursos-list {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .curso-item {
+    padding: 1.25rem;
+    width: 90%; /* Reduce el ancho del elemento */
+    margin: 0 auto; /* Centra el elemento */
+    max-width: 350px; /* Limita el ancho máximo */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cursos-container {
+    padding: 0.5rem 0; /* Reduce más el padding */
+    width: 88%; /* Reduce más el ancho */
+  }
+  
+  .curso-image-container {
+    height: 150px;
   }
   
   .curso-link {
-    color: #00ffcc; /* Texto neón */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-size: 1.25rem;
   }
   
-  .curso-link:hover {
-    color: #ff00ff; /* Cambia a magenta neón al hacer hover */
+  .curso-item {
+    width: 85%; /* Reduce aún más el ancho */
+    padding: 1rem; /* Reduce más el padding interno */
   }
   
-  .curso-descripcion {
-    color: #cccccc; /* Texto gris claro */
-    margin-top: 0.5rem;
+  .curso-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
+  
+  .curso-cta {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,14 +1,43 @@
 .cursos-page {
-    padding: 2rem;
-    background-color: #1a1a1a; /* Fondo oscuro */
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 255, 204, 0.1); /* Sombra neón */
-    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  padding: 2rem;
+  background-color: #1a1a1a; /* Fondo oscuro */
+  border-radius: 0.5rem;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif; /* Fuente consistente */
+  width: 100%; /* Usa todo el ancho disponible */
+  margin: 0 auto; /* Centra el contenedor */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+  overflow: hidden; /* Evita que los elementos internos sobresalgan */
+}
+
+.cursos-page h2 {
+  font-size: 2rem;
+  color: #ffffff; /* Texto blanco */
+  margin-bottom: 1rem;
+  text-align: center; /* Centra el título */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+/* Añade esta media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .cursos-page {
+    padding: 1.5rem 1rem; /* Reduce el padding en móviles */
   }
   
   .cursos-page h2 {
-    font-size: 2rem;
-    color: #00ffcc; /* Texto neón */
-    margin-bottom: 1rem;
-    text-transform: uppercase; /* Texto en mayúsculas */
+    font-size: 1.75rem; /* Reduce ligeramente el tamaño del título */
   }
+}
+
+@media screen and (max-width: 480px) {
+  .cursos-page {
+    padding: 1rem 0.5rem; /* Reduce aún más el padding */
+  }
+  
+  .cursos-page h2 {
+    font-size: 1.5rem;
+  }
+}
