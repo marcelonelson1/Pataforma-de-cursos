@@ -1,17 +1,21 @@
 .sobre-mi-page {
   padding: 2rem;
-  background-color: #1a1a1a; /* Fondo oscuro */
+  background-color: #1a1a1a; /* Fondo oscuro consistente con Home.css */
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 255, 204, 0.1); /* Sombra neón */
-  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra más suave */
+  font-family: 'Inter', 'Helvetica Neue', sans-serif; /* Fuente consistente */
 }
 
 .sobre-mi-page h2 {
   font-size: 2rem;
-  color: #00ffcc; /* Texto neón */
+  color: #ffffff; /* Texto blanco */
   margin-bottom: 1.5rem;
   text-transform: uppercase; /* Texto en mayúsculas */
   text-align: center;
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%); /* Degradado consistente */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
 }
 
 .sobre-mi-content {
@@ -26,13 +30,13 @@
   border-radius: 50%;
   margin: 0 auto 1.5rem;
   display: block;
-  border: 2px solid #00ffcc; /* Borde neón */
-  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3); /* Resplandor neón */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Borde más suave */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Resplandor más suave */
 }
 
 .sobre-mi-content p {
   font-size: 1.1rem;
-  color: #cccccc; /* Texto gris claro */
+  color: rgba(255, 255, 255, 0.7); /* Texto gris claro consistente */
   line-height: 1.7;
   margin-bottom: 1.2rem;
 }
@@ -42,7 +46,7 @@
 }
 
 .sobre-mi-skills h3 {
-  color: #00ffcc; /* Texto neón */
+  color: #ffffff; /* Texto blanco */
   margin-bottom: 0.8rem;
   font-size: 1.3rem;
 }
@@ -55,19 +59,19 @@
 }
 
 .skill-badge {
-  background-color: #262626;
-  color: #00ffcc;
+  background-color: rgba(255, 255, 255, 0.05); /* Fondo más suave */
+  color: rgba(255, 255, 255, 0.7); /* Texto gris claro */
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
-  border: 1px solid #00ffcc;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde más suave */
   transition: all 0.3s ease;
 }
 
 .skill-badge:hover {
-  background-color: rgba(0, 255, 204, 0.1);
-  color: #ff00ff;
-  border-color: #ff00ff;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo más claro al pasar el ratón */
+  color: #ffffff; /* Texto blanco al pasar el ratón */
+  border-color: rgba(255, 255, 255, 0.5); /* Borde más claro al pasar el ratón */
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 0, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); /* Sombra más suave al pasar el ratón */
 }

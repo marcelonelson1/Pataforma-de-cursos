@@ -1,19 +1,23 @@
 .login-page {
   padding: 2rem;
-  background-color: #1a1a1a;
+  background-color: #000000; /* Fondo negro como en Home.css y CursosPage.css */
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 255, 204, 0.1);
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra con tono blanco */
   max-width: 400px;
   margin: 2rem auto;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif; /* Fuente consistente */
 }
 
 .login-page h2 {
   font-size: 2rem;
-  color: #00ffcc;
+  color: #ffffff; /* Texto blanco */
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   text-align: center;
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
 }
 
 .login-form {
@@ -25,19 +29,19 @@
 }
 
 .form-description {
-  color: #ff00ff; /* Color violeta */
+  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
   text-align: center;
   margin: 1rem 0 1.5rem;
   font-size: 0.95rem;
   line-height: 1.5;
   padding: 0 1rem;
-  background-color: rgba(255, 0, 255, 0.05); /* Fondo violeta translúcido */
+  background-color: rgba(255, 255, 255, 0.05); /* Fondo blanco translúcido */
   border-radius: 0.25rem;
   transition: all 0.3s ease;
 }
 
 .form-description:hover {
-  background-color: rgba(255, 0, 255, 0.1); /* Efecto hover violeta */
+  background-color: rgba(255, 255, 255, 0.1); /* Efecto hover con más transparencia */
 }
 
 .form-group {
@@ -46,7 +50,7 @@
 }
 
 .form-group label {
-  color: #00ffcc;
+  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
   font-size: 1rem;
   display: block;
   margin-bottom: 0.3rem;
@@ -55,23 +59,23 @@
 .form-input {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid #00ffcc;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde blanco con transparencia */
   border-radius: 0.25rem;
-  background-color: #262626;
+  background-color: #1a1a1a; /* Fondo gris oscuro como en CursosPage.css */
   color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
 .form-input:focus {
   outline: none;
-  border-color: #ff00ff;
-  box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.7); /* Borde blanco con más transparencia en focus */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 .form-input:hover {
-  border-color: #33ffdd;
+  border-color: rgba(255, 255, 255, 0.5); /* Borde blanco con transparencia en hover */
 }
 
 .password-input-container {
@@ -86,7 +90,7 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #00ffcc;
+  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
   cursor: pointer;
   padding: 0;
   display: flex;
@@ -98,7 +102,7 @@
 }
 
 .password-toggle-btn:hover {
-  color: #ff00ff;
+  color: rgba(255, 255, 255, 0.9); /* Texto blanco con menos transparencia en hover */
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -113,11 +117,11 @@
 .submit-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: #00ffcc;
-  color: #1a1a1a;
-  border: none;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco translúcido */
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde blanco con transparencia */
   border-radius: 0.25rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -127,39 +131,39 @@
 }
 
 .submit-btn:hover {
-  background-color: #ff00ff;
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco con más transparencia en hover */
   transform: translateY(-2px);
 }
 
 .submit-btn:disabled {
-  background-color: #4d4d4d;
+  background-color: rgba(255, 255, 255, 0.05); /* Fondo blanco con menos transparencia */
   cursor: not-allowed;
   transform: none;
 }
 
 .error-message {
-  color: #ff00ff;
-  background-color: rgba(255, 0, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
+  background-color: rgba(255, 255, 255, 0.05); /* Fondo blanco translúcido */
   padding: 0.75rem;
   border-radius: 0.25rem;
-  border-left: 4px solid #ff00ff;
+  border-left: 4px solid rgba(255, 255, 255, 0.7); /* Borde izquierdo blanco con transparencia */
   margin-bottom: 1rem;
 }
 
 .register-link {
   margin-top: 1.5rem;
   text-align: center;
-  color: #cccccc;
+  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
 }
 
 .register-link a {
-  color: #00ffcc;
+  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .register-link a:hover {
-  color: #ff00ff;
+  color: rgba(255, 255, 255, 0.9); /* Texto blanco con menos transparencia en hover */
 }
 
 .forgot-password {
@@ -168,13 +172,13 @@
 }
 
 .forgot-password a {
-  color: #00ffcc;
+  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
   text-decoration: none;
   font-size: 0.85rem;
 }
 
 .forgot-password a:hover {
-  color: #ff00ff;
+  color: rgba(255, 255, 255, 0.9); /* Texto blanco con menos transparencia en hover */
   text-decoration: underline;
 }
 

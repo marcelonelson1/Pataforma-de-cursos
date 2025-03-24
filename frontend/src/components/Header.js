@@ -6,6 +6,7 @@ import './Header.css';
 function Header() {
   const { isLoggedIn, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,8 +16,22 @@ function Header() {
       }
     };
 
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [menuOpen]);
 
   const handleLogout = () => {
@@ -34,18 +49,20 @@ function Header() {
   };
 
   return (
-    <header className="header animate__animated animate__fadeInDown">
+    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="logo">
-        <Link to="/" onClick={closeMenu}>Mi Plataforma de Cursos</Link>
+        <Link to="/" onClick={closeMenu}>RM Renders</Link>
       </div>
-
-      <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menú">
-        {menuOpen ? '✕' : '☰'}
-      </button>
-
-      <nav className={`nav ${menuOpen ? 'active' : ''}`}>
-        <Link to="/cursos" className="nav-link" onClick={closeMenu}>Cursos</Link>
-        <Link to="/sobre-mi" className="nav-link" onClick={closeMenu}>Sobre Mí</Link>
+      
+      {/* Desktop Navigation */}
+      <div className="main-nav">
+        <div className="nav-links">
+          <Link to="/cursos" className="nav-link" onClick={closeMenu}>Cursos</Link>
+          <Link to="/sobre-mi" className="nav-link" onClick={closeMenu}>Sobre Mí</Link>
+        </div>
+      </div>
+      
+      <div className="auth-nav">
         {isLoggedIn ? (
           <button onClick={handleLogout} className="auth-link">Cerrar Sesión</button>
         ) : (
@@ -54,7 +71,29 @@ function Header() {
             <Link to="/registro" className="auth-link" onClick={closeMenu}>Registrarse</Link>
           </>
         )}
-      </nav>
+      </div>
+      
+      {/* Mobile Menu Toggle */}
+      <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menú">
+        {menuOpen ? '✕' : '☰'}
+      </button>
+      
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
+        <Link to="/cursos" className="nav-link" onClick={closeMenu}>Cursos</Link>
+        <Link to="/sobre-mi" className="nav-link" onClick={closeMenu}>Sobre Mí</Link>
+        
+        <div className="mobile-menu-auth">
+          {isLoggedIn ? (
+            <button onClick={handleLogout} className="auth-link">Cerrar Sesión</button>
+          ) : (
+            <>
+              <Link to="/login" className="auth-link" onClick={closeMenu}>Iniciar Sesión</Link>
+              <Link to="/registro" className="auth-link" onClick={closeMenu}>Registrarse</Link>
+            </>
+          )}
+        </div>
+      </div>
     </header>
   );
 }
