@@ -57,3 +57,28 @@
 2025/03/23 19:13:19 Intentando conectar a la base de datos (intento 1/5)...
 2025/03/23 19:13:19 Conexión a la base de datos establecida exitosamente
 2025/03/23 19:13:19 Servidor iniciado en el puerto 5000
+2025/03/25 10:46:41 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/25 10:46:41 Conexión a la base de datos establecida exitosamente
+2025/03/25 10:46:41 Servidor iniciado en el puerto 5000
+2025/03/26 13:21:41 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/26 13:21:41 Conexión a la base de datos establecida exitosamente
+2025/03/26 13:21:41 Servidor iniciado en el puerto 5000
+2025/03/26 15:34:13 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/26 15:34:13 Conexión a la base de datos establecida exitosamente
+2025/03/26 15:34:13 Servidor iniciado en el puerto 5000
+2025/03/26 16:37:01 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/26 16:37:01 Conexión a la base de datos establecida exitosamente
+2025/03/26 16:37:01 Servidor iniciado en el puerto 5000
+2025/03/26 16:37:25 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/26 16:37:25 Conexión a la base de datos establecida exitosamente
+2025/03/26 16:37:25 Servidor iniciado en el puerto 5000
+2025/03/26 16:38:40 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/26 16:38:40 Conexión a la base de datos establecida exitosamente
+2025/03/26 16:38:40 Servidor iniciado en el puerto 5000
+2025/03/26 17:58:58 Servidor iniciado en el puerto 5000
+2025/03/26 20:48:59 Servidor iniciado en el puerto 5000
+2025/03/26 20:50:30 Servidor iniciado en el puerto 5000
+2025/03/27 00:09:47 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/27 00:09:47 Conexión a la base de datos establecida exitosamente
+2025/03/27 00:09:47 Servidor iniciado en el puerto 5000
+2025/03/27 00:09:47 listen tcp :5000: bind: address already in use

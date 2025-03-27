@@ -1,6 +1,8 @@
+// Header.js (se mantiene igual)
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import logo from '../img/header/logohead.png';
 import './Header.css';
 
 function Header() {
@@ -51,7 +53,13 @@ function Header() {
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="logo">
-        <Link to="/" onClick={closeMenu}>RM Renders</Link>
+        <Link to="/" onClick={closeMenu}>
+          <img 
+            src={logo} 
+            alt="Logo" 
+            className="logo-image" 
+          />
+        </Link>
       </div>
       
       {/* Desktop Navigation */}

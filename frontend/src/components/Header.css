@@ -21,18 +21,33 @@
 
 .logo {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: fit-content;
 }
 
 .logo a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
+  display: block;
+  width: 180px;
+  height: 50px;
+  position: relative;
+}
+
+.logo-image {
+  max-height: 140px;
+  max-width: 180px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.logo-image:hover {
+  transform: translateY(-50%) scale(1.05);
 }
 
 .main-nav {
@@ -139,13 +154,19 @@
     padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
   }
+
+  .logo a {
+    width: 160px;
+    height: 45px;
+  }
+
+  .logo-image {
+    max-height: 45px;
+    max-width: 160px;
+  }
 }
 
 @media screen and (max-width: 640px) {
-  .logo a {
-    font-size: 1rem;
-  }
-  
   .nav-link {
     font-size: 0.85rem;
   }
@@ -169,22 +190,30 @@
     flex: 1;
   }
   
+  .logo a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-image {
+    max-height: 40px;
+    max-width: 40px;
+  }
+  
   .menu-toggle {
-    display: block;
-    font-size: 1.2rem;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
     margin-left: 0.5rem;
+    padding: 0;
   }
   
   .menu-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .main-nav, .auth-nav {
@@ -203,7 +232,7 @@
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     flex-direction: column;
-    align-items: center; /* Cambio: alineamos el contenedor entero al centro */
+    align-items: center;
     z-index: 99;
     padding: 0;
     overflow: hidden;
@@ -229,18 +258,18 @@
   .mobile-menu .nav-link {
     width: 100%;
     padding: 1rem 1.5rem;
-    text-align: center; /* Cambio: alineamos el texto al centro */
+    text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
-    justify-content: center; /* Cambio: justificamos el contenido al centro */
+    justify-content: center;
     transition: all 0.2s ease;
     font-size: 1rem;
   }
   
   .mobile-menu .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.05);
-    padding-left: 1.5rem; /* Cambio: eliminamos el desplazamiento en hover para mantener centrado */
+    padding-left: 1.5rem;
   }
   
   .mobile-menu .nav-link::after {
@@ -255,7 +284,7 @@
     padding: 1.25rem 1.5rem;
     background-color: rgba(255, 255, 255, 0.02);
     align-items: center;
-    justify-content: center; /* Cambio: aseguramos que el contenido esté centrado */
+    justify-content: center;
   }
   
   .mobile-menu .auth-link {
@@ -266,11 +295,11 @@
     border-radius: 6px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    display: flex; /* Cambio: cambiamos a flex */
-    justify-content: center; /* Cambio: centramos horizontalmente */
-    align-items: center; /* Cambio: centramos verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     white-space: nowrap;
-    margin: 0; /* Cambio: eliminamos posibles márgenes que afecten al centrado */
+    margin: 0;
   }
   
   .mobile-menu .auth-link:hover {
@@ -286,14 +315,19 @@
   }
   
   .logo a {
-    font-size: 0.9rem;
-    max-width: 200px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-image {
+    max-height: 36px;
+    max-width: 36px;
   }
   
   .menu-toggle {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
   }
   
   .mobile-menu .nav-link {
@@ -308,7 +342,7 @@
   
   .mobile-menu .auth-link {
     width: 100%;
-    max-width: 240px; /* Reducimos aún más para pantallas pequeñas */
+    max-width: 240px;
     padding: 0.75rem;
     font-size: 0.95rem;
   }
