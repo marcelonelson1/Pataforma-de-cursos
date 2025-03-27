@@ -11,6 +11,7 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import CursoDetalle from './components/CursoDetalle';
 import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 import 'animate.css';
 import './App.css';
 
@@ -29,7 +30,14 @@ function App() {
               <Route path="/registro" element={<RegisterPage />} />
               <Route path="/recuperar-contrasena" element={<ForgotPasswordPage />} />
               <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
-              <Route path="/curso/:id" element={<CursoDetalle />} />
+              <Route 
+                path="/curso/:id" 
+                element={
+                  <ProtectedRoute>
+                    <CursoDetalle />
+                  </ProtectedRoute>
+                } 
+              />
             </Routes>
           </main>
           <Footer />

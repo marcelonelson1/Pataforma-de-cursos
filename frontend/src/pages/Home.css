@@ -1,217 +1,262 @@
+/* Estilos base */
 .home {
   background-color: #000000;
   color: #ffffff;
-  padding: 3rem 1.5rem;
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  min-height: calc(100vh - 100px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  border-radius: 0.5rem; /* Solo añadí esta línea para los bordes redondeados */
+}
+
+/* Slider de imágenes - Enfoque en parte inferior */
+.image-slider {
+  width: 100%;
+  height: 65vh;
+  min-height: 550px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.8s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.slider-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transform: scale(1.03);
+  will-change: transform, opacity;
+}
+
+.slider-image.active {
+  opacity: 0.95;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.slider-image.next {
+  opacity: 0;
+  transform: scale(1.03);
+  z-index: 0;
+}
+
+/* Efectos de scroll */
+.scroll-down .image-slider {
+  transform: translateY(15%);
+  opacity: 0.4;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 100%);
+  z-index: 1;
+  transition: all 0.8s ease;
+}
+
+.scroll-down .image-overlay {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Animaciones al scroll */
+[data-scroll] {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-scroll="fadeInUp"] {
+  transform: translateY(50px);
+}
+
+[data-scroll="fadeInLeft"] {
+  transform: translateX(-50px);
+}
+
+[data-scroll="fadeInRight"] {
+  transform: translateX(50px);
+}
+
+[data-scroll].visible {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* Contenido principal */
+.hero-content {
+  padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
   position: relative;
-  overflow: hidden;
+  z-index: 2;
+  background-color: #000;
+  animation: fadeIn 1s ease-in-out 0.3s both;
 }
 
 .hero-container {
   max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
-  z-index: 2;
+  text-align: center;
 }
 
+/* Título y subtítulo estáticos */
 .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
-  letter-spacing: -1px;
   margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1.1;
+  color: transparent;
+  line-height: 1.2;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: fadeIn 0.8s ease-in-out 0.5s both;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 700px;
-  margin: 0 auto 2.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto 3rem;
   line-height: 1.6;
+  max-width: 700px;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: fadeIn 0.8s ease-in-out 0.7s both;
 }
 
+/* Elementos con animación */
 .hero-cta-container {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  animation: fadeIn 0.8s ease-in-out 0.9s both;
 }
 
 .hero-cta {
   background-color: #ffffff;
   color: #000000;
-  padding: 0.875rem 1.75rem;
-  border-radius: 4px;
+  padding: 1rem 2rem;
+  border-radius: 6px;
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  transition: all 0.2s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.hero-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .hero-cta.secondary {
   background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   color: #ffffff;
 }
 
-.hero-cta.secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
+.hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
   max-width: 1200px;
   width: 100%;
+  animation: fadeIn 0.8s ease-in-out 1.1s both;
 }
 
 .feature-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
   padding: 2rem;
-  transition: all 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   text-align: center;
+  transition: all 0.3s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .feature-icon {
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 1.5rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.15);
+  font-size: 1.5rem;
 }
 
 .feature-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #ffffff;
 }
 
 .feature-description {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
   line-height: 1.6;
-  font-size: 0.95rem;
 }
 
-.bg-gradient {
-  position: absolute;
-  top: -50%;
-  left: -20%;
-  width: 120%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
-  z-index: 1;
+/* Animaciones consistentes con otros componentes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.bg-accent {
-  position: absolute;
-  top: -300px;
-  right: -300px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.03);
-  filter: blur(80px);
-  z-index: 0;
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
 
-/* Clases personalizadas para animate.css */
-.animate__delay-05s {
-  animation-delay: 0.5s;
+.animate__fadeIn {
+  animation-name: fadeIn;
 }
 
-.animate__delay-15s {
-  animation-delay: 1.5s;
-}
-
-/* Responsive styles */
-@media screen and (max-width: 768px) {
+/* Responsive */
+@media (max-width: 768px) {
+  .image-slider {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .hero-content {
+    padding: 2.5rem 1.5rem;
+  }
+  
   .hero-title {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
   }
   
   .hero-subtitle {
     font-size: 1.1rem;
-    padding: 0 1rem;
-  }
-  
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .hero-title {
-    font-size: 2.25rem;
   }
   
   .hero-cta-container {
     flex-direction: column;
-    width: 100%;
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .hero-cta {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .home {
-    padding: 2rem 1rem;
-  }
-  
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
+    gap: 1rem;
   }
   
   .features-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .feature-card {
-    padding: 1.5rem;
   }
 }
