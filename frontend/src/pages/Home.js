@@ -1,9 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
+import './portfolio';
 
 // Importa tus imágenes locales
 import img1 from '../img/home/render7.jpeg';
 import img2 from '../img/home/render8.jpeg';
+
+// Nuevas imágenes para la sección de portafolio
+import portfolio1 from '../img/home/render1.jpeg';
+import portfolio2 from '../img/home/render2.jpeg';
+import portfolio3 from '../img/home/render3.jpeg';
 
 function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -121,6 +127,97 @@ function Home() {
               <div className="feature-icon">📱</div>
               <h3 className="feature-title">Acceso Móvil</h3>
               <p className="feature-description">Aprende desde cualquier dispositivo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Sección de Portafolio mejor centrada */}
+      <div className="portfolio-section">
+        <div className="portfolio-container">
+          <h2 
+            className="portfolio-title"
+            data-scroll="fadeInUp"
+          >
+            Nuestro Portafolio
+          </h2>
+          <p 
+            className="portfolio-subtitle"
+            data-scroll="fadeInUp"
+          >
+            Explora algunos de nuestros mejores renders y proyectos destacados
+          </p>
+
+          <div 
+            className="portfolio-grid"
+            data-scroll="fadeInUp"
+          >
+            {[portfolio1, portfolio2, portfolio3].map((img, index) => (
+              <div key={index} className="portfolio-item">
+                <img 
+                  src={img} 
+                  alt={`Proyecto ${index + 1}`} 
+                  className="portfolio-image" 
+                />
+                <div className="portfolio-overlay">
+                  <h4>Proyecto {index + 1}</h4>
+                  <p>Render de alta calidad</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div 
+            className="portfolio-cta"
+            data-scroll="fadeInUp"
+          >
+            <a href="/portfolio" className="hero-cta">Ver Portafolio Completo</a>
+          </div>
+        </div>
+      </div>
+
+      {/* Sección de Testimonios */}
+      <div className="testimonials-section">
+        <div className="testimonials-container">
+          <h2 
+            className="testimonials-title"
+            data-scroll="fadeInUp"
+          >
+            Lo Que Dicen Nuestros Clientes
+          </h2>
+
+          <div 
+            className="testimonials-grid"
+            data-scroll="fadeInUp"
+          >
+            <div className="testimonial-card">
+              <p className="testimonial-text">
+                "RM Renders transformó completamente mi presentación de proyecto. La calidad de los renders es impresionante."
+              </p>
+              <div className="testimonial-author">
+                <span className="author-name">Carlos Mendoza</span>
+                <span className="author-role">Arquitecto</span>
+              </div>
+            </div>
+
+            <div className="testimonial-card">
+              <p className="testimonial-text">
+                "Increíble servicio y atención al detalle. Superaron mis expectativas en cada render."
+              </p>
+              <div className="testimonial-author">
+                <span className="author-name">María Fernández</span>
+                <span className="author-role">Diseñadora de Interiores</span>
+              </div>
+            </div>
+
+            <div className="testimonial-card">
+              <p className="testimonial-text">
+                "Los renders de RM me ayudaron a cerrar importantes contratos. Altamente recomendados."
+              </p>
+              <div className="testimonial-author">
+                <span className="author-name">Juan López</span>
+                <span className="author-role">Constructor</span>
+              </div>
             </div>
           </div>
         </div>

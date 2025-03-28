@@ -1,0 +1,207 @@
+/* Portfolio Page Styling */
+.portfolio-page {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  
+  /* Hero Section */
+  .portfolio-hero {
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .portfolio-hero-content {
+    max-width: 800px;
+  }
+  
+  .portfolio-hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  .portfolio-hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+  
+  /* Portfolio Filters */
+  .portfolio-filters {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+  
+  .filter-container {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .filter-btn {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .filter-btn.active, 
+  .filter-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Portfolio Gallery */
+  .portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .portfolio-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-gallery-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .portfolio-gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    color: white;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .portfolio-gallery-item:hover .portfolio-gallery-image {
+    transform: scale(1.05);
+  }
+  
+  .portfolio-gallery-item:hover .portfolio-gallery-overlay {
+    opacity: 1;
+  }
+  
+  .portfolio-gallery-overlay h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .portfolio-gallery-overlay p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+  }
+  
+  /* CTA Section */
+  .portfolio-cta-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  .portfolio-cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  .portfolio-cta-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .portfolio-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  /* Scroll Animations */
+  [data-scroll] {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  [data-scroll="fadeInUp"] {
+    transform: translateY(50px);
+  }
+  
+  [data-scroll].visible {
+    opacity: 1;
+    transform: translate(0);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .portfolio-gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .portfolio-hero-title {
+      font-size: 2.8rem;
+    }
+  
+    .portfolio-hero-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .portfolio-gallery {
+      grid-template-columns: 1fr;
+    }
+  
+    .filter-container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .portfolio-cta-buttons {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .portfolio-hero-title {
+      font-size: 2.5rem;
+    }
+  }

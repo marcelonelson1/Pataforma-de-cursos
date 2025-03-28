@@ -213,6 +213,169 @@
   line-height: 1.6;
 }
 
+/* Sección de Portafolio mejor centrada */
+.portfolio-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.portfolio-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.portfolio-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  color: white;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-image {
+  transform: scale(1.05);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-overlay p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.portfolio-cta {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Sección de Testimonios */
+.testimonials-section {
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.testimonials-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.testimonial-card {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.author-role {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 /* Animaciones consistentes con otros componentes */
 @keyframes fadeIn {
   from {
@@ -258,5 +421,15 @@
   
   .features-grid {
     grid-template-columns: 1fr;
+  }
+
+  .portfolio-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-title,
+  .testimonials-title {
+    font-size: 2rem;
   }
 }

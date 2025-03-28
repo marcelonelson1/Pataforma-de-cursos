@@ -82,3 +82,119 @@
 2025/03/27 00:09:47 Conexión a la base de datos establecida exitosamente
 2025/03/27 00:09:47 Servidor iniciado en el puerto 5000
 2025/03/27 00:09:47 listen tcp :5000: bind: address already in use
+2025/03/27 14:37:06 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/27 14:37:06 Conexión a la base de datos establecida exitosamente
+2025/03/27 14:37:06 Servidor iniciado en el puerto 5000
+2025/03/27 15:06:39 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/27 15:06:39 Conexión a la base de datos establecida exitosamente
+2025/03/27 15:06:39 Error en la migración: Error 1005 (HY000): Can't create table `cursos_db`.`payments` (errno: 150 "Foreign key constraint is incorrectly formed")
+2025/03/27 15:10:07 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/27 15:10:07 Conexión a la base de datos establecida exitosamente
+2025/03/27 15:10:07 Error en la migración: Error 1832 (HY000): Cannot change column 'user_id': used in a foreign key constraint 'payments_ibfk_1'
+2025/03/27 15:28:46 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/27 15:28:46 Conexión a la base de datos establecida exitosamente
+2025/03/27 15:28:46 Servidor iniciado en el puerto 5000
+2025/03/27 15:30:16 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/27 15:30:16 Conexión a la base de datos establecida exitosamente
+2025/03/27 15:30:16 Servidor iniciado en el puerto 5000
+2025/03/27 15:30:24 Email no encontrado o error de DB: record not found
+2025/03/27 15:34:43 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/27 15:34:43 Conexión a la base de datos establecida exitosamente
+2025/03/27 15:34:43 Servidor iniciado en el puerto 5000
+2025/03/27 15:35:20 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/27 15:35:20 Conexión a la base de datos establecida exitosamente
+2025/03/27 15:35:20 Servidor iniciado en el puerto 5000
+2025/03/27 15:51:00 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/27 15:51:00 Conexión a la base de datos establecida exitosamente
+2025/03/27 15:51:00 Servidor iniciado en el puerto 5000
+2025/03/27 16:15:57 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/27 16:15:57 Conexión a la base de datos establecida exitosamente
+2025/03/27 16:15:57 Servidor iniciado en el puerto 5000
+2025/03/28 12:13:49 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 12:13:49 Conexión a la base de datos establecida exitosamente
+2025/03/28 12:13:51 Configuración SMTP verificada correctamente
+2025/03/28 12:13:51 Servidor iniciado en el puerto 5000
+2025/03/28 12:14:11 Error al enviar correo de contacto: error al enviar correo: gomail: could not send email 1: gomail: invalid address "": mail: no address
+2025/03/28 12:15:21 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 12:15:21 Conexión a la base de datos establecida exitosamente
+2025/03/28 12:15:22 Configuración SMTP verificada correctamente
+2025/03/28 12:15:22 Servidor iniciado en el puerto 5000
+2025/03/28 12:15:30 Error al enviar correo de contacto: error al enviar correo: gomail: could not send email 1: gomail: invalid address "": mail: no address
+2025/03/28 12:17:10 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 12:17:10 Conexión a la base de datos establecida exitosamente
+2025/03/28 12:17:12 Configuración SMTP verificada correctamente
+2025/03/28 12:17:12 Servidor iniciado en el puerto 5000
+2025/03/28 12:17:17 Error al enviar correo de contacto: error al enviar correo: gomail: could not send email 1: gomail: invalid address "": mail: no address
+2025/03/28 13:30:26 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 13:30:27 Conexión a la base de datos establecida exitosamente
+2025/03/28 13:30:27 Servidor iniciado en el puerto 5000
+2025/03/28 13:36:57 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 13:36:57 Conexión a la base de datos establecida exitosamente
+2025/03/28 13:36:57 Servidor iniciado en el puerto 5000
+2025/03/28 13:40:13 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 13:40:13 Conexión a la base de datos establecida exitosamente
+2025/03/28 13:40:13 Servidor iniciado en el puerto 5000
+2025/03/28 13:44:11 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 13:44:11 Conexión a la base de datos establecida exitosamente
+2025/03/28 13:44:25 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 13:44:25 Conexión a la base de datos establecida exitosamente
+2025/03/28 13:53:31 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 13:53:31 Conexión a la base de datos establecida exitosamente
+2025/03/28 13:53:31 Servidor iniciado en el puerto 5000
+2025/03/28 13:53:36 Iniciando procesamiento de formulario de contacto...
+2025/03/28 13:53:36 Datos recibidos: {Name:marcelo nelson Email:marcelinho.nelson@gmail.com Phone:1212122 Message:hola}
+2025/03/28 13:53:38 Error al enviar correo: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2291eeca20esm20782445ad.51 - gsmtp
+2025/03/28 13:57:10 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 13:57:10 Conexión a la base de datos establecida exitosamente
+2025/03/28 13:57:10 Servidor iniciado en el puerto 5000
+2025/03/28 13:57:14 Iniciando procesamiento de formulario de contacto...
+2025/03/28 13:57:14 Datos recibidos: {Name:marcelo nelson Email:marcelinho.nelson@gmail.com Phone:1212122 Message:hola}
+2025/03/28 13:57:16 Error al enviar correo: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2291f1f5738sm20474445ad.242 - gsmtp
+2025/03/28 13:58:40 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 13:58:40 Conexión a la base de datos establecida exitosamente
+2025/03/28 13:58:40 Servidor iniciado en el puerto 5000
+2025/03/28 13:58:45 Iniciando procesamiento de formulario de contacto...
+2025/03/28 13:58:45 Datos recibidos: {Name:marcelo nelson Email:marcelinho.nelson@gmail.com Phone:1212122 Message:hola}
+2025/03/28 13:58:47 Error al enviar correo: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-3039f1d4b6asm4451928a91.38 - gsmtp
+2025/03/28 14:03:30 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 14:03:30 Conexión a la base de datos establecida exitosamente
+2025/03/28 14:03:30 Servidor iniciado en el puerto 5000
+2025/03/28 14:03:37 Iniciando procesamiento de formulario de contacto...
+2025/03/28 14:03:37 Datos recibidos: {Name:marcelo nelson Email:marcelinho.nelson@gmail.com Phone:1212122 Message:hola}
+2025/03/28 14:03:39 Error al enviar correo: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-73970e51a4asm2034651b3a.81 - gsmtp
+2025/03/28 14:03:52 Error SMTP: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-af93b69d9a4sm1892442a12.27 - gsmtp
+2025/03/28 14:03:52 Error al enviar correo: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-af93b69d9a4sm1892442a12.27 - gsmtp
+2025/03/28 14:03:52 ERROR CRÍTICO: Fallo al enviar email en producción: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-af93b69d9a4sm1892442a12.27 - gsmtp
+2025/03/28 14:05:10 Intentando conectar a la base de datos (intento 1/5)...
+2025/03/28 14:05:10 Conexión a la base de datos establecida exitosamente
+2025/03/28 14:05:10 Servidor iniciado en el puerto 5000
+2025/03/28 14:06:18 Iniciando procesamiento de formulario de contacto...
+2025/03/28 14:06:18 Datos recibidos: {Name:wdwdwd Email:marcelinho.nelson@gmail.com Phone: Message:holaaaa}
+2025/03/28 14:06:20 Error al enviar correo: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-73970e1d922sm2038909b3a.37 - gsmtp
+2025/03/28 15:09:38 Conectando a la base de datos (intento 1/5)...
+2025/03/28 15:09:38 Iniciando servidor en puerto 5000
+2025/03/28 15:18:41 Conectando a la base de datos (intento 1/5)...
+2025/03/28 15:18:41 Iniciando servidor en puerto 5000
+2025/03/28 16:12:31 Conectando a la base de datos (intento 1/5)...
+2025/03/28 16:12:31 Iniciando servidor en puerto 5000
+2025/03/28 16:16:21 Conectando a la base de datos (intento 1/5)...
+2025/03/28 16:16:21 Iniciando servidor en puerto 5000
+2025/03/28 16:17:50 Conectando a la base de datos (intento 1/5)...
+2025/03/28 16:17:50 Iniciando servidor en puerto 5000
+2025/03/28 16:19:24 Error enviando email: dial tcp: lookup smtp.gmail.com on 8.8.8.8:53: read udp 10.101.7.196:41803->8.8.8.8:53: i/o timeout
+2025/03/28 16:19:32 Conectando a la base de datos (intento 1/5)...
+2025/03/28 16:19:32 Iniciando servidor en puerto 5000
+2025/03/28 16:23:51 Conectando a la base de datos (intento 1/5)...
+2025/03/28 16:23:51 Iniciando servidor en puerto 5000
+2025/03/28 16:29:39 Conectando a la base de datos (intento 1/5)...
+2025/03/28 16:29:39 Iniciando servidor en puerto 5000
+2025/03/28 16:33:59 Token inválido: token inválido o expirado
+2025/03/28 16:33:59 Token inválido: token inválido o expirado

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo mensaje de contacto</title>
+</head>
+<body style="background-color: #0a0a0a; color: #ffffff; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0;">
+    <div class="email-container" style="max-width: 600px; margin: 30px auto; background-color: #121212; border-radius: 16px; border: 1px solid #2a2a2a; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+        <!-- Header con efecto neón -->
+        <div class="email-header" style="background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%); padding: 30px; text-align: center; border-bottom: 1px solid #2a2a2a;">
+            <h2 style="font-size: 28px; font-weight: 700; margin: 0; color: transparent; background: linear-gradient(90deg, #00ffcc 0%, #00aacc 100%); -webkit-background-clip: text; background-clip: text; text-transform: uppercase; letter-spacing: 1px;">
+                Nuevo Mensaje de Contacto
+            </h2>
+            <div style="height: 3px; width: 80px; background: linear-gradient(90deg, #00ffcc 0%, #00aacc 100%); margin: 15px auto 0; border-radius: 3px;"></div>
+        </div>
+        
+        <!-- Contenido del email -->
+        <div class="email-content" style="padding: 30px;">
+            <!-- Tarjeta de información -->
+            <div style="background-color: #1a1a1a; border-radius: 12px; padding: 25px; margin-bottom: 25px; border: 1px solid #2a2a2a;">
+                <div class="detail-row" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #2a2a2a;">
+                    <span class="detail-label" style="font-weight: 600; color: #00ffcc; margin-bottom: 8px; display: block; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Nombre</span>
+                    <div class="detail-value" style="color: #e0e0e0; font-size: 16px; font-weight: 500;">{{.Name}}</div>
+                </div>
+                
+                <div class="detail-row" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #2a2a2a;">
+                    <span class="detail-label" style="font-weight: 600; color: #00ffcc; margin-bottom: 8px; display: block; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Email</span>
+                    <div class="detail-value" style="color: #e0e0e0; font-size: 16px; font-weight: 500;">{{.Email}}</div>
+                </div>
+                
+                <div class="detail-row" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #2a2a2a;">
+                    <span class="detail-label" style="font-weight: 600; color: #00ffcc; margin-bottom: 8px; display: block; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Teléfono</span>
+                    <div class="detail-value" style="color: #e0e0e0; font-size: 16px; font-weight: 500;">{{if .Phone}}{{.Phone}}{{else}}No proporcionado{{end}}</div>
+                </div>
+            </div>
+            
+            <!-- Mensaje destacado -->
+            <div style="margin-bottom: 25px;">
+                <span class="detail-label" style="font-weight: 600; color: #00ffcc; margin-bottom: 12px; display: block; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Mensaje</span>
+                <div class="message-content" style="background-color: #1a1a1a; border-radius: 12px; padding: 20px; border: 1px solid #2a2a2a; color: #e0e0e0; font-size: 15px; line-height: 1.7;">
+                    {{.Message}}
+                </div>
+            </div>
+            
+            <!-- Botón de acción -->
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="mailto:{{.Email}}" style="display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #00ffcc 0%, #00aacc 100%); color: #121212; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(0, 255, 204, 0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                    Responder al Cliente
+                </a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="email-footer" style="background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%); padding: 20px; text-align: center; font-size: 13px; color: #666666; border-top: 1px solid #2a2a2a;">
+            <p style="margin: 0 0 5px 0;">Este mensaje fue enviado desde el formulario de contacto</p>
+            <p style="margin: 0; font-size: 12px;">© 2023 Tu Empresa. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
