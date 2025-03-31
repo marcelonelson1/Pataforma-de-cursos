@@ -92,7 +92,7 @@ function Header() {
         <Link to="/cursos" className="nav-link" onClick={closeMenu}>Cursos</Link>
         <Link to="/servicios" className="nav-link" onClick={closeMenu}>Servicios</Link>
         <Link to="/sobre-mi" className="nav-link" onClick={closeMenu}>Sobre Mí</Link>
-        <Link to="/contactopage" className="nav-link" onClick={closeMenu}>Contacto</Link>
+        <Link to="/contacto" className="nav-link" onClick={closeMenu}>Contacto</Link>
         
         <div className="mobile-menu-auth">
           {isLoggedIn ? (
