@@ -14,6 +14,7 @@ import ResetPasswordPage from './pages/ResetPasswordPage';
 import CursoDetalle from './components/CursoDetalle';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+
 import 'animate.css';
 import './App.css';
 import './pages/ContactoPage.css'; // Import the new CSS

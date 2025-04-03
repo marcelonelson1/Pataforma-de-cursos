@@ -6,14 +6,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Estructuras para solicitudes
 type CursoRequest struct {
-	Titulo      string `json:"titulo" binding:"required"`
-	Descripcion string `json:"descripcion" binding:"required"`
-	Contenido   string `json:"contenido" binding:"required"`
+	Titulo      string  `json:"titulo" binding:"required"`
+	Descripcion string  `json:"descripcion" binding:"required"`
+	Contenido   string  `json:"contenido" binding:"required"`
+	Precio      float64 `json:"precio"`
 }
 
-// Obtener todos los cursos
 func getCursos(c *gin.Context) {
 	var cursos []Curso
 	
@@ -26,7 +25,6 @@ func getCursos(c *gin.Context) {
 	c.JSON(http.StatusOK, cursos)
 }
 
-// Obtener curso por ID
 func getCursoById(c *gin.Context) {
 	id := c.Param("id")
 	
@@ -39,7 +37,6 @@ func getCursoById(c *gin.Context) {
 	c.JSON(http.StatusOK, curso)
 }
 
-// Crear nuevo curso
 func createCurso(c *gin.Context) {
 	var req CursoRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -51,6 +48,7 @@ func createCurso(c *gin.Context) {
 		Titulo:      req.Titulo,
 		Descripcion: req.Descripcion,
 		Contenido:   req.Contenido,
+		Precio:      req.Precio,
 	}
 
 	if result := db.Create(&curso); result.Error != nil {
@@ -61,30 +59,26 @@ func createCurso(c *gin.Context) {
 	c.JSON(http.StatusCreated, curso)
 }
 
-// Actualizar curso
 func updateCurso(c *gin.Context) {
 	id := c.Param("id")
 	
-	// Verificar si el curso existe
 	var curso Curso
 	if result := db.First(&curso, id); result.Error != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Curso no encontrado"})
 		return
 	}
 
-	// Validar body request
 	var req CursoRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	// Actualizar campos
 	curso.Titulo = req.Titulo
 	curso.Descripcion = req.Descripcion
 	curso.Contenido = req.Contenido
+	curso.Precio = req.Precio
 
-	// Guardar cambios
 	if result := db.Save(&curso); result.Error != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al actualizar curso"})
 		return
@@ -93,18 +87,15 @@ func updateCurso(c *gin.Context) {
 	c.JSON(http.StatusOK, curso)
 }
 
-// Eliminar curso
 func deleteCurso(c *gin.Context) {
 	id := c.Param("id")
 	
-	// Verificar si el curso existe
 	var curso Curso
 	if result := db.First(&curso, id); result.Error != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Curso no encontrado"})
 		return
 	}
 
-	// Eliminar curso
 	if result := db.Delete(&curso); result.Error != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al eliminar curso"})
 		return

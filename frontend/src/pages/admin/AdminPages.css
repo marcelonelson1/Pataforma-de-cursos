@@ -1,0 +1,584 @@
+/* AdminPages.css - Estilos para las páginas del panel de administración */
+
+/* Común para todas las páginas */
+.admin-page-title {
+    margin-bottom: 2rem;
+  }
+  
+  .admin-page-title h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--admin-primary);
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .admin-page-title p {
+    color: #6c757d;
+    margin: 0;
+  }
+  
+  .admin-dashboard-content {
+    margin-top: 1.5rem;
+  }
+  
+  .admin-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .admin-col-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    position: relative;
+    width: 100%;
+  }
+  
+  .admin-col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    position: relative;
+    width: 100%;
+  }
+  
+  .admin-col-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    position: relative;
+    width: 100%;
+  }
+  
+  .admin-col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    position: relative;
+    width: 100%;
+  }
+  
+  .admin-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+  }
+  
+  .admin-error-container {
+    background-color: #fff3f3;
+    border-left: 4px solid var(--admin-danger);
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .admin-error-container h2 {
+    color: var(--admin-danger);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .admin-table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Estilos específicos para Dashboard */
+  .admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .admin-stat-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: rgba(10, 207, 151, 0.2);
+    color: var(--admin-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  
+  .admin-stat-card:nth-child(2) .stat-icon {
+    background-color: rgba(74, 108, 247, 0.2);
+    color: var(--admin-info);
+  }
+  
+  .admin-stat-card:nth-child(3) .stat-icon {
+    background-color: rgba(255, 188, 0, 0.2);
+    color: var(--admin-warning);
+  }
+  
+  .admin-stat-card:nth-child(4) .stat-icon {
+    background-color: rgba(250, 92, 124, 0.2);
+    color: var(--admin-danger);
+  }
+  
+  .stat-content {
+    flex: 1;
+  }
+  
+  .stat-content h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6c757d;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--admin-primary);
+    margin-bottom: 0.25rem;
+  }
+  
+  .stat-change {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .stat-change.positive {
+    color: var(--admin-success);
+  }
+  
+  .stat-change.negative {
+    color: var(--admin-danger);
+  }
+  
+  .stat-change svg {
+    margin-right: 0.25rem;
+  }
+  
+  .stat-link {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  
+  .stat-link a {
+    color: var(--admin-info);
+    text-decoration: none;
+  }
+  
+  .stat-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilos para la página de cursos */
+  .admin-actions-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .admin-search-bar {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+  }
+  
+  .admin-search-input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px 0 0 4px;
+    font-size: 0.9rem;
+  }
+  
+  .admin-search-button {
+    background-color: var(--admin-primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .admin-filters {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .admin-filter-select {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .admin-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .admin-curso-card {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  
+  .admin-curso-image {
+    width: 150px;
+    height: 120px;
+    object-fit: cover;
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .admin-curso-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .admin-curso-content {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-curso-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .admin-curso-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--admin-primary);
+    margin: 0;
+  }
+  
+  .admin-curso-price {
+    font-weight: 600;
+    color: var(--admin-success);
+  }
+  
+  .admin-curso-description {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    flex: 1;
+  }
+  
+  .admin-curso-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .admin-curso-stats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+  }
+  
+  .admin-curso-stat {
+    display: flex;
+    align-items: center;
+  }
+  
+  .admin-curso-stat svg {
+    margin-right: 0.25rem;
+  }
+  
+  .admin-curso-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  /* Estilos para formularios */
+  .admin-form-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .admin-form-section {
+    margin-bottom: 2rem;
+  }
+  
+  .admin-form-section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--admin-primary);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e3e9ef;
+  }
+  
+  .admin-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+  }
+  
+  .admin-form-group {
+    margin-bottom: 1.5rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+  
+  .admin-form-group.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .admin-form-group.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .admin-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--admin-primary);
+  }
+  
+  .admin-form-control {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .admin-form-control:focus {
+    border-color: var(--admin-secondary);
+    outline: none;
+  }
+  
+  .admin-form-control.is-invalid {
+    border-color: var(--admin-danger);
+  }
+  
+  .admin-form-error {
+    display: block;
+    color: var(--admin-danger);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+  
+  .admin-form-textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .admin-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  /* Dropzone para carga de archivos */
+  .admin-dropzone {
+    border: 2px dashed #ced4da;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s ease-in-out;
+  }
+  
+  .admin-dropzone:hover {
+    border-color: var(--admin-secondary);
+  }
+  
+  .admin-dropzone-active {
+    border-color: var(--admin-secondary);
+    background-color: rgba(10, 207, 151, 0.05);
+  }
+  
+  .admin-dropzone-icon {
+    font-size: 2rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+  }
+  
+  .admin-dropzone-text {
+    margin-bottom: 0.5rem;
+  }
+  
+  .admin-dropzone-help {
+    font-size: 0.8rem;
+    color: #6c757d;
+  }
+  
+  .admin-uploaded-preview {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .admin-preview-item {
+    position: relative;
+    width: 120px;
+  }
+  
+  .admin-preview-image {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .admin-preview-remove {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--admin-danger);
+    border: 1px solid #e3e9ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  
+  /* Ordenamiento drag-and-drop */
+  .admin-sortable-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .admin-sortable-item {
+    background-color: white;
+    border: 1px solid #e3e9ef;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    cursor: grab;
+  }
+  
+  .admin-sortable-item:active {
+    cursor: grabbing;
+  }
+  
+  .admin-sortable-handle {
+    color: #6c757d;
+    margin-right: 1rem;
+    cursor: grab;
+  }
+  
+  .admin-sortable-content {
+    flex: 1;
+  }
+  
+  .admin-sortable-title {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  
+  .admin-sortable-subtitle {
+    font-size: 0.8rem;
+    color: #6c757d;
+  }
+  
+  .admin-sortable-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 992px) {
+    .admin-col-4,
+    .admin-col-6,
+    .admin-col-8 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    
+    .admin-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .admin-form-group.col-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-stats-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .admin-actions-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .admin-search-bar {
+      width: 100%;
+      max-width: none;
+      margin-bottom: 1rem;
+    }
+    
+    .admin-filters {
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .admin-curso-card {
+      flex-direction: column;
+    }
+    
+    .admin-curso-image {
+      width: 100%;
+      height: 160px;
+    }
+    
+    .admin-curso-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }

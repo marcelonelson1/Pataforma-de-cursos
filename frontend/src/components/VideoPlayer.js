@@ -14,10 +14,8 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  // Nuevo estado para almacenar las duraciones de los videos
   const [videoDurations, setVideoDurations] = useState({});
 
-  // Manejar eventos del video
   useEffect(() => {
     const videoElement = videoRef.current;
 
@@ -37,7 +35,6 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
         const videoDuration = videoElement.duration || 0;
         setDuration(videoDuration);
         
-        // Guardar la duración de este video específico
         setVideoDurations(prev => ({
           ...prev,
           [videos[currentVideo].id]: videoDuration
@@ -77,7 +74,6 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
     }
   }, [currentVideo, videos, markAsCompleted, changeVideo]);
 
-  // Funciones de control de reproducción
   const togglePlay = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
@@ -116,7 +112,6 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
     }
   };
 
-  // Formatear tiempo
   const formatTime = (timeInSeconds) => {
     if (isNaN(timeInSeconds) || timeInSeconds < 0) return "0:00";
 
@@ -125,9 +120,7 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
-  // Cargar video oculto para obtener su duración - Convertido a useCallback
   const loadVideoDuration = useCallback((videoUrl, videoId) => {
-    // Si ya tenemos la duración, no hacemos nada
     if (videoDurations[videoId]) return;
 
     const tempVideo = document.createElement('video');
@@ -143,22 +136,23 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
     tempVideo.src = videoUrl;
   }, [videoDurations]);
 
-  // Cargar las duraciones de todos los videos
   useEffect(() => {
-    // Solo cargamos las duraciones para videos que aún no las tienen
     videos.forEach(video => {
       if (!videoDurations[video.id]) {
         loadVideoDuration(video.url, video.id);
       }
     });
-  }, [videos, videoDurations, loadVideoDuration]); // Añadido loadVideoDuration como dependencia
+  }, [videos, videoDurations, loadVideoDuration]);
 
-  // Cargar nuevo video cuando cambia currentVideo
   useEffect(() => {
     if (videoRef.current) {
-      setIsPlaying(false); // Pausar al cambiar de video
+      setIsPlaying(false);
     }
   }, [currentVideo]);
+
+  if (!videos || videos.length === 0) {
+    return <div className="no-videos">No hay videos disponibles para este curso</div>;
+  }
 
   return (
     <div className="video-section">
@@ -173,7 +167,6 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
         ></video>
       </div>
 
-      {/* Controles personalizados */}
       <div className="video-controls">
         <button className="control-button" onClick={handleBackward} title="Retroceder 10 segundos">
           <FontAwesomeIcon icon={faBackward} />
@@ -203,7 +196,6 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
         </div>
       </div>
 
-      {/* Navegación entre videos y botón de completado */}
       <div className="video-navigation">
         <div className="lesson-navigation">
           <button
@@ -235,7 +227,12 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
         </div>
       </div>
 
-      {/* Lista de videos/lecciones con duración calculada */}
+      <div className="video-title">
+        <h3>
+          <span className="video-index">{videos[currentVideo].indice || (currentVideo + 1)}.</span> {videos[currentVideo].titulo}
+        </h3>
+      </div>
+
       <div className="lessons-list">
         <h3>Contenido del curso</h3>
         {videos.map((video, index) => (
@@ -244,6 +241,7 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
             className={`lesson-item ${index === currentVideo ? 'active' : ''} ${completedVideos[video.id] ? 'completed' : ''}`}
             onClick={() => changeVideo(index)}
           >
+            <span className="lesson-index">{video.indice || (index + 1)}.</span>
             <span className="lesson-title">{video.titulo}</span>
             <span className="lesson-duration">
               {videoDurations[video.id] ? formatTime(videoDurations[video.id]) : video.duracion}
