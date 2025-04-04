@@ -14,10 +14,10 @@ import ResetPasswordPage from './pages/ResetPasswordPage';
 import CursoDetalle from './components/CursoDetalle';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
-
+import AdminRoutes from './pages/admin/AdminRoutes';
 import 'animate.css';
 import './App.css';
-import './pages/ContactoPage.css'; // Import the new CSS
+import './pages/ContactoPage.css';
 
 function App() {
   return (
@@ -27,23 +27,8 @@ function App() {
           <Header />
           <main>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/cursos" element={<CursosPage />} />
-              <Route path="/sobre-mi" element={<SobreMiPage />} />
-              <Route path="/contacto" element={<ContactoPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/registro" element={<RegisterPage />} />
-              <Route path="/recuperar-contrasena" element={<ForgotPasswordPage />} />
-              <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
-              <Route 
-                path="/curso/:id" 
-                element={
-                  <ProtectedRoute>
-                    <CursoDetalle />
-                  </ProtectedRoute>
-                } 
-              />
+              <Route path="/*" element={<MainRoutes />} />
+              <Route path="/admin/*" element={<AdminRoutes />} />
             </Routes>
           </main>
           <Footer />
@@ -52,5 +37,29 @@ function App() {
     </AuthProvider>
   );
 }
+
+const MainRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/cursos" element={<CursosPage />} />
+      <Route path="/sobre-mi" element={<SobreMiPage />} />
+      <Route path="/contacto" element={<ContactoPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/registro" element={<RegisterPage />} />
+      <Route path="/recuperar-contrasena" element={<ForgotPasswordPage />} />
+      <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
+      <Route 
+        path="/curso/:id" 
+        element={
+          <ProtectedRoute>
+            <CursoDetalle />
+          </ProtectedRoute>
+        } 
+      />
+    </Routes>
+  );
+};
 
 export default App;

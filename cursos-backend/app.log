@@ -400,3 +400,22 @@
 2025/04/03 14:50:59 Configurando CORS para permitir origen: http://localhost:3000
 2025/04/03 14:50:59 Iniciando servidor en puerto 5000
 2025/04/03 14:51:30 Verificando pago para curso ID: 1, usuario ID: 3
+2025/04/03 15:33:23 Verificando pago para curso ID: 1, usuario ID: 3
+2025/04/03 15:38:17 Verificando pago para curso ID: 1, usuario ID: 3
+2025/04/03 15:43:08 Verificando pago para curso ID: 1, usuario ID: 3
+2025/04/03 15:43:14 Verificando pago para curso ID: 1, usuario ID: 3
+2025/04/03 15:58:26 Verificando pago para curso ID: 1, usuario ID: 3
+2025/04/03 16:42:20 Verificando pago para curso ID: 1, usuario ID: 3
+2025/04/03 17:28:49 Verificando pago para curso ID: 1, usuario ID: 8
+2025/04/03 17:28:54 Solicitud de pago recibida: {CursoID:1 Monto:29.99 Metodo:transferencia DetallesTarjeta:<nil>}
+2025/04/03 17:28:57 Verificando pago para curso ID: 1, usuario ID: 8
+2025/04/03 17:28:58 Pago ID 5 actualizado a estado: aprobado
+2025/04/03 17:28:59 Verificando pago para curso ID: 1, usuario ID: 8
+2025/04/03 17:29:05 Verificando pago para curso ID: 1, usuario ID: 8
+2025/04/03 17:29:18 Verificando pago para curso ID: 1, usuario ID: 8
+2025/04/03 17:29:32 Verificando pago para curso ID: 1, usuario ID: 8
+2025/04/04 08:46:12 Conectando a la base de datos (intento 1/5)...
+2025/04/04 08:46:12 Conexión a la base de datos establecida correctamente
+2025/04/04 08:46:12 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/04 08:46:12 Iniciando servidor en puerto 5000
+2025/04/04 08:47:04 Verificando pago para curso ID: 1, usuario ID: 3
