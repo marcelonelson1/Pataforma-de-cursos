@@ -10,6 +10,7 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+	
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -21,18 +22,40 @@ type Usuario struct {
 	Nombre    string    `gorm:"size:100;not null" json:"nombre"`
 	Email     string    `gorm:"size:100;not null;uniqueIndex" json:"email"`
 	Password  string    `gorm:"size:100;not null" json:"-"`
+	Role      string    `gorm:"size:20;default:'user'" json:"role"`
+	Phone     string    `gorm:"size:20" json:"phone"`
+	ImageURL  string    `gorm:"size:255" json:"image_url"`
+	LastLogin time.Time `json:"last_login"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
 type Curso struct {
+	ID          uint       `gorm:"primaryKey" json:"id"`
+	Titulo      string     `gorm:"size:200;not null" json:"titulo"`
+	Descripcion string     `gorm:"size:500" json:"descripcion"`
+	Contenido   string     `gorm:"type:text" json:"contenido"`
+	Precio      float64    `gorm:"type:decimal(10,2);default:29.99" json:"precio"`
+	Estado      string     `gorm:"size:20;default:'Borrador'" json:"estado"`
+	ImagenURL   string     `gorm:"size:255" json:"imagen_url"`
+	CreatedAt   time.Time  `json:"created_at"`
+	UpdatedAt   time.Time  `json:"updated_at"`
+	Capitulos   []Capitulo `gorm:"foreignKey:CursoID" json:"capitulos,omitempty"`
+}
+
+type Capitulo struct {
 	ID          uint      `gorm:"primaryKey" json:"id"`
+	CursoID     uint      `gorm:"not null;index" json:"curso_id"`
 	Titulo      string    `gorm:"size:200;not null" json:"titulo"`
 	Descripcion string    `gorm:"size:500" json:"descripcion"`
-	Contenido   string    `gorm:"type:text" json:"contenido"`
-	Precio      float64   `gorm:"type:decimal(10,2);default:29.99" json:"precio"`
+	Duracion    string    `gorm:"size:10" json:"duracion"`
+	VideoURL    string    `gorm:"size:255" json:"video_url"`
+	VideoNombre string    `gorm:"size:255" json:"video_nombre"`
+	Orden       int       `gorm:"default:0" json:"orden"`
+	Publicado   bool      `gorm:"default:false" json:"publicado"`
 	CreatedAt   time.Time `json:"created_at"`
 	UpdatedAt   time.Time `json:"updated_at"`
+	Curso       *Curso    `gorm:"foreignKey:CursoID" json:"-"`
 }
 
 type Pago struct {
@@ -47,24 +70,59 @@ type Pago struct {
 	UpdatedAt     time.Time `json:"updated_at"`
 }
 
+type ActivityLog struct {
+	ID        uint      `gorm:"primaryKey" json:"id"`
+	UserID    uint      `gorm:"not null" json:"user_id"`
+	Action    string    `gorm:"size:50;not null" json:"action"`
+	Details   string    `gorm:"size:500" json:"details"`
+	IP        string    `gorm:"size:50" json:"ip"`
+	UserAgent string    `gorm:"size:255" json:"user_agent"`
+	CreatedAt time.Time `json:"created_at"`
+}
+
+// ContactMessage representa un mensaje enviado a través del formulario de contacto
+
 var db *gorm.DB
 
 func main() {
-	// Configuración inicial
 	setupLogging()
 	loadEnv()
 
-	// Configuración de la base de datos
 	if err := setupDatabase(); err != nil {
 		log.Fatalf("Error al configurar la base de datos: %v", err)
 	}
+	
+	// Inicializar directorios necesarios para almacenamiento
+	initStaticDirs()
 
-	// Configuración del router
 	router := setupRouter()
 	registerRoutes(router)
 
-	// Iniciar servidor
 	startServer(router)
+}
+
+// initStaticDirs inicializa todos los directorios necesarios para almacenamiento
+func initStaticDirs() {
+	// Crear directorio principal si no existe
+	createDirIfNotExists("./static")
+	
+	// Inicializar directorios específicos
+	initVideosDir()
+	initProfilesDir()
+	initPortfolioDir()
+}
+
+// initVideosDir inicializa el directorio para videos de cursos
+
+
+// initProfilesDir inicializa el directorio para imágenes de perfil
+func initProfilesDir() {
+	createDirIfNotExists("./static/profiles")
+}
+
+// initPortfolioDir inicializa el directorio para imágenes del portfolio
+func initPortfolioDir() {
+	createDirIfNotExists("./static/portfolio")
 }
 
 func setupLogging() {
@@ -131,15 +189,28 @@ func migrateWithConstraints() error {
 		return fmt.Errorf("error al deshabilitar FOREIGN_KEY_CHECKS: %v", err)
 	}
 
-	constraintNames := []string{"fk_pagos_usuario", "fk_pago_usuario", "fk_pagos_curso", "fk_pago_curso"}
+	// Eliminar restricciones existentes para evitar errores de duplicación
+	constraintNames := []string{
+		"fk_pagos_usuario", "fk_pago_usuario", 
+		"fk_pagos_curso", "fk_pago_curso",
+		"fk_capitulos_curso", "fk_capitulo_curso",
+	}
+	
 	for _, constraint := range constraintNames {
 		if db.Migrator().HasConstraint(&Pago{}, constraint) {
 			if err := db.Migrator().DropConstraint(&Pago{}, constraint); err != nil {
 				log.Printf("Advertencia: No se pudo eliminar constraint %s: %v", constraint, err)
 			}
 		}
+		
+		if db.Migrator().HasConstraint(&Capitulo{}, constraint) {
+			if err := db.Migrator().DropConstraint(&Capitulo{}, constraint); err != nil {
+				log.Printf("Advertencia: No se pudo eliminar constraint %s: %v", constraint, err)
+			}
+		}
 	}
 
+	// Eliminar constraints de tablas específicas para Pagos
 	if err := db.Exec("ALTER TABLE pagos DROP FOREIGN KEY IF EXISTS fk_pagos_usuario").Error; err != nil {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_pagos_usuario: %v", err)
 	}
@@ -153,10 +224,20 @@ func migrateWithConstraints() error {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_pago_curso: %v", err)
 	}
 
-	if err := db.AutoMigrate(&Usuario{}, &Curso{}); err != nil {
+	// Eliminar constraints de tablas específicas para Capítulos
+	if err := db.Exec("ALTER TABLE capitulos DROP FOREIGN KEY IF EXISTS fk_capitulos_curso").Error; err != nil {
+		log.Printf("Advertencia: No se pudo eliminar constraint fk_capitulos_curso: %v", err)
+	}
+	if err := db.Exec("ALTER TABLE capitulos DROP FOREIGN KEY IF EXISTS fk_capitulo_curso").Error; err != nil {
+		log.Printf("Advertencia: No se pudo eliminar constraint fk_capitulo_curso: %v", err)
+	}
+
+	// Migrar las tablas base
+	if err := db.AutoMigrate(&Usuario{}, &Curso{}, &Capitulo{}, &ActivityLog{}, &ContactMessage{}, &ProjectPortfolio{}); err != nil {
 		return fmt.Errorf("error al migrar tablas base: %v", err)
 	}
 
+	// Verificar y crear tabla de pagos si no existe
 	if !db.Migrator().HasTable(&Pago{}) {
 		if err := db.Migrator().CreateTable(&Pago{}); err != nil {
 			return fmt.Errorf("error al crear tabla Pago: %v", err)
@@ -167,6 +248,7 @@ func migrateWithConstraints() error {
 		}
 	}
 
+	// Crear o recrear las relaciones entre tablas
 	if err := db.Exec(
 		"ALTER TABLE pagos ADD CONSTRAINT fk_pagos_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE",
 	).Error; err != nil {
@@ -179,6 +261,12 @@ func migrateWithConstraints() error {
 		log.Printf("Advertencia: No se pudo crear constraint fk_pagos_curso: %v", err)
 	}
 
+	if err := db.Exec(
+		"ALTER TABLE capitulos ADD CONSTRAINT fk_capitulos_curso FOREIGN KEY (curso_id) REFERENCES cursos(id) ON DELETE CASCADE",
+	).Error; err != nil {
+		log.Printf("Advertencia: No se pudo crear constraint fk_capitulos_curso: %v", err)
+	}
+
 	if err := db.Exec("SET FOREIGN_KEY_CHECKS = 1").Error; err != nil {
 		return fmt.Errorf("error al habilitar FOREIGN_KEY_CHECKS: %v", err)
 	}
@@ -189,11 +277,9 @@ func migrateWithConstraints() error {
 func setupRouter() *gin.Engine {
 	router := gin.Default()
 
-	// Obtener la URL del frontend desde variables de entorno
 	frontendURL := getEnv("FRONTEND_URL", "http://localhost:3000")
 	log.Printf("Configurando CORS para permitir origen: %s", frontendURL)
 
-	// Configuración CORS corregida para permitir credenciales
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{frontendURL},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"},
@@ -218,6 +304,41 @@ func registerRoutes(router *gin.Engine) {
 		auth.POST("/forgot-password", forgotPassword)
 		auth.GET("/reset-password/:token/validate", validateResetToken)
 		auth.POST("/reset-password", resetPassword)
+		auth.GET("/check-admin", authMiddleware(), checkAdmin)
+		
+		profile := auth.Group("")
+		profile.Use(authMiddleware())
+		{
+			profile.GET("/profile", getProfile)
+			profile.PUT("/profile", updateProfile)
+			profile.POST("/change-password", changePassword)
+			profile.POST("/profile/image", uploadProfileImage)
+			profile.GET("/notification-settings", getNotificationSettings)
+			profile.PUT("/notification-settings", updateNotificationSettings)
+			profile.POST("/refresh-token", refreshToken)
+		}
+	}
+
+	// Rutas de administrador con middleware de admin
+	admin := router.Group("/api/admin")
+	admin.Use(authMiddleware(), adminMiddleware())
+	{
+		admin.GET("/stats", getAdminStats)
+		admin.GET("/dashboard", getAdminDashboard)
+		admin.GET("/activity-log", getActivityLog)
+		admin.GET("/sales-stats", getSalesStats)
+		admin.GET("/users", listUsers)
+		admin.GET("/users/:id", getUserById)
+		admin.PUT("/users/:id", updateUser)
+		admin.DELETE("/users/:id", deleteUser)
+		admin.PUT("/users/:id/role", changeUserRole)
+		
+		// Rutas para mensajes de contacto
+		admin.GET("/messages", getContactMessages)
+		admin.GET("/messages/:id", getContactMessage)
+		admin.PATCH("/messages/:id/:action", updateMessageStatus)
+		admin.DELETE("/messages/:id", deleteContactMessage)
+		admin.POST("/messages/:id/reply", replyToMessage)
 	}
 
 	cursos := router.Group("/api/cursos")
@@ -229,11 +350,52 @@ func registerRoutes(router *gin.Engine) {
 		cursos.DELETE("/:id", authMiddleware(), deleteCurso)
 	}
 
+	capitulos := router.Group("/api/capitulos")
+	{
+		capitulos.Use(authMiddleware())
+		capitulos.GET("/curso/:cursoId", getCapitulosByCurso)
+		capitulos.POST("", createCapitulo)
+		capitulos.PUT("/:id", updateCapitulo)
+		capitulos.DELETE("/:id", deleteCapitulo)
+	}
+
+	videos := router.Group("/api/videos")
+	{
+		videos.Use(authMiddleware())
+		videos.POST("/upload", uploadVideo)
+		videos.DELETE("/:cursoId/:filename", deleteVideo)
+	}
+
+	// Rutas para el portfolio
+	portfolio := router.Group("/api/portfolio")
+	{
+		portfolio.GET("", getAllProjects)
+		portfolio.GET("/:id", getProjectById)
+		portfolio.GET("/category/:category", getProjectsByCategory)
+		portfolio.POST("", authMiddleware(), adminMiddleware(), createProject)
+		portfolio.PUT("/:id", authMiddleware(), adminMiddleware(), updateProject)
+		portfolio.DELETE("/:id", authMiddleware(), adminMiddleware(), deleteProject)
+		portfolio.POST("/reorder", authMiddleware(), adminMiddleware(), reorderProjects)
+		portfolio.GET("/stats", authMiddleware(), adminMiddleware(), getPortfolioStats)
+	}
+
+	// Rutas para archivos estáticos
+	router.GET("/static/videos/:cursoId/:filename", getVideo)
+	router.GET("/static/profiles/:filename", func(c *gin.Context) {
+		filename := c.Param("filename")
+		c.File("./static/profiles/" + filename)
+	})
+	// Ruta para servir imágenes del portfolio
+	router.GET("/static/portfolio/:filename", func(c *gin.Context) {
+		filename := c.Param("filename")
+		c.File("./static/portfolio/" + filename)
+	})
+
 	pagos := router.Group("/api/pagos")
 	{
 		pagos.Use(authMiddleware())
 		pagos.POST("", crearPago)
-		pagos.GET("/:id", verificarPagoPorCurso) // Cambiado para coincidir con frontend
+		pagos.GET("/:id", verificarPagoPorCurso)
 		pagos.POST("/webhook", webhookPago)
 	}
 
@@ -283,4 +445,12 @@ func getEnv(key, defaultValue string) string {
 	return defaultValue
 }
 
-// Funciones externas (implementadas en otros archivos)
+// Función auxiliar para crear directorios si no existen
+func createDirIfNotExists(dirPath string) {
+	if _, err := os.Stat(dirPath); os.IsNotExist(err) {
+		log.Printf("Creando directorio: %s", dirPath)
+		if err := os.MkdirAll(dirPath, 0755); err != nil {
+			log.Printf("Error al crear directorio %s: %v", dirPath, err)
+		}
+	}
+}

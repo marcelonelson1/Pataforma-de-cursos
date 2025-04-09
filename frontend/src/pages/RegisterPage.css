@@ -1,17 +1,30 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 150px);
+  width: 100%;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+  margin-top: 1rem;
+}
+
 .register-page {
   padding: 2rem;
-  background-color: #000000; /* Fondo negro como en Home.css y LoginPage.css */
+  background-color: #000000;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra con tono blanco como en LoginPage */
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
   max-width: 500px;
-  margin: 2rem auto;
-  font-family: 'Inter', 'Helvetica Neue', sans-serif; /* Fuente consistente con otros archivos */
+  width: 100%;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  position: relative;
 }
 
 .register-page h2 {
   font-size: 2rem;
-  color: #ffffff; /* Texto blanco */
-  margin-bottom: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem; /* Reducido de 1.5rem a 0.75rem */
   text-transform: uppercase;
   text-align: center;
   background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
@@ -26,6 +39,59 @@
   gap: 1.5rem;
 }
 
+/* Contenedor de mensajes específico para el registro - MODIFICADO */
+.register-messages {
+  margin-bottom: 0.5rem;
+  min-height: 0; /* Cambiado de 60px a 0 */
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.register-error-message,
+.register-success-message {
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.register-error-message {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 0, 0, 0.15);
+  border-left: 4px solid rgba(255, 50, 50, 0.8);
+}
+
+.register-success-message {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 200, 0, 0.15);
+  border-left: 4px solid rgba(50, 255, 50, 0.8);
+}
+
+.register-error-message::before,
+.register-success-message::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.register-error-message::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(255,50,50,0.8)'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E");
+}
+
+.register-success-message::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(50,255,50,0.8)'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -33,15 +99,15 @@
 }
 
 .form-group label {
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
 }
 
 .form-input {
   padding: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde blanco con transparencia */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.25rem;
-  background-color: #1a1a1a; /* Fondo gris oscuro como en CursosPage.css */
+  background-color: #1a1a1a;
   color: #ffffff;
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
   transition: all 0.3s ease;
@@ -49,39 +115,15 @@
 
 .form-input:focus {
   outline: none;
-  border-color: rgba(255, 255, 255, 0.7); /* Borde blanco con más opacidad al enfocar */
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Brillo sutil */
-}
-
-.form-input:hover {
-  border-color: rgba(255, 255, 255, 0.5); /* Borde blanco con transparencia en hover */
-}
-
-/* Mantenemos el comportamiento para validación pero con nuevos colores */
-.form-input:focus:invalid {
-  border-color: rgba(255, 255, 255, 0.7); /* Mantener el borde blanco al enfocar, aunque sea inválido */
-}
-
-/* Esta regla aplica el borde sutil SOLO cuando:
-   1. El campo es inválido
-   2. Y no está enfocado actualmente
-   3. Y ha sido interactuado (no está en estado pristine)
-   4. Y ha perdido el foco después de la interacción */
-.form-input:not(:focus):not(:placeholder-shown):invalid {
-  border-color: rgba(255, 0, 0, 0.5); /* Rojo sutil solo después de interacción inválida */
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3); /* Sutil brillo rojo */
-}
-
-/* Añadimos un placeholder invisible para detectar la interacción del usuario */
-.form-input::placeholder {
-  color: transparent;
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 .submit-btn {
   padding: 0.75rem;
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco translúcido como en LoginPage */
+  background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde blanco con transparencia */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.25rem;
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
   font-weight: bold;
@@ -93,71 +135,45 @@
 }
 
 .submit-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco con más transparencia en hover */
+  background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
 
 .submit-btn:disabled {
-  background-color: rgba(255, 255, 255, 0.05); /* Fondo blanco con menos transparencia */
+  background-color: rgba(255, 255, 255, 0.05);
   cursor: not-allowed;
   transform: none;
-}
-
-.error-message {
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
-  background-color: rgba(255, 0, 0, 0.1); /* Fondo rojo sutil */
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  border-left: 4px solid rgba(255, 0, 0, 0.5); /* Borde izquierdo rojo con transparencia */
-  margin-bottom: 1rem;
-}
-
-.success-message {
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
-  background-color: rgba(0, 255, 0, 0.1); /* Fondo verde sutil */
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  border-left: 4px solid rgba(0, 255, 0, 0.5); /* Borde izquierdo verde con transparencia */
-  margin-bottom: 1rem;
 }
 
 .login-link {
   margin-top: 1.5rem;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .login-link a {
-  color: rgba(255, 255, 255, 0.7); /* Enlace blanco con transparencia */
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .login-link a:hover {
-  color: rgba(255, 255, 255, 0.9); /* Blanco con menos transparencia en hover */
-}
-
-.login-link a:focus {
-  outline: none;
-  text-decoration: underline;
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Animaciones */
-@keyframes fadeIn {
+/* Specific animation for register messages */
+@keyframes registerFadeIn {
   from {
     opacity: 0;
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.animate__animated {
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
-
-.animate__fadeIn {
-  animation-name: fadeIn;
+.register-error-message,
+.register-success-message {
+  animation: registerFadeIn 0.3s ease-out;
 }

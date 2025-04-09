@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import VideoPlayer from './VideoPlayer';
 import './CursoDetalle.css';
 import { useAuth } from '../context/AuthContext';
 import PaymentModal from './PaymentModal';
+import CursosService from './services/CursosService';
 
 function CursoDetalle() {
   const { id } = useParams();
-  const { isLoggedIn } = useAuth();
+  const navigate = useNavigate();
+  const { isLoggedIn, user } = useAuth();
   const [curso, setCurso] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -17,13 +19,15 @@ function CursoDetalle() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [error, setError] = useState(null);
 
-  const cursos = useMemo(() => [
+  // Cursos estáticos para fallback
+  const cursosFallback = useMemo(() => [
     {
       id: 1,
       titulo: 'Curso de React',
       descripcion: 'Aprende React desde cero hasta un nivel avanzado con proyectos prácticos.',
       contenido: 'En este curso aprenderás todos los conceptos fundamentales de React, componentes, estados, props, hooks, y mucho más.',
       precio: 29.99,
+      estado: 'Publicado',
       videos: [
         {
           id: 1,
@@ -57,16 +61,72 @@ function CursoDetalle() {
     },
   ], []);
 
+  // Carga inicial del curso desde el backend
   useEffect(() => {
-    const cursoEncontrado = cursos.find((c) => c.id === parseInt(id));
-    if (cursoEncontrado) {
-      setCurso(cursoEncontrado);
-    } else {
-      setError('Curso no encontrado');
-    }
-    setLoading(false);
-  }, [id, cursos]);
+    const fetchCurso = async () => {
+      try {
+        setLoading(true);
+        console.log(`Obteniendo curso con ID: ${id}`);
+        const response = await CursosService.getCursoById(id);
+        console.log('Respuesta del servidor:', response);
+        
+        // Procesar la respuesta
+        let cursoData = response;
+        
+        // Si la respuesta tiene una propiedad data, usar esa
+        if (response && response.data) {
+          cursoData = response.data;
+        }
+        
+        // Verificar si el curso está publicado
+        const esPublicado = cursoData.estado === 'Publicado' || cursoData.estado === 'publicado';
+        const esAdmin = user && user.role === 'admin'; // Suponiendo que tienes un rol de usuario en tu autenticación
+        
+        // Si el curso no está publicado y el usuario no es admin, redirigir o mostrar error
+        if (!esPublicado && !esAdmin) {
+          setError('Este curso no está disponible actualmente.');
+          setCurso(null);
+          setLoading(false);
+          return;
+        }
+        
+        // Si el curso tiene capítulos, adaptarlos al formato esperado por VideoPlayer
+        if (cursoData && cursoData.capitulos) {
+          // Transformar capitulos a formato compatible con videos
+          const videosFormateados = cursoData.capitulos.map(capitulo => ({
+            id: capitulo.id,
+            indice: capitulo.orden?.toString() || "",
+            titulo: capitulo.titulo,
+            url: capitulo.video_url,
+            duracion: capitulo.duracion || "00:00"
+          }));
+          
+          // Mantener ambos formatos para compatibilidad
+          cursoData.videos = videosFormateados;
+        }
+        
+        setCurso(cursoData);
+        setError(null);
+      } catch (err) {
+        console.error('Error al cargar curso:', err);
+        setError('No se pudo cargar el curso. Por favor, intenta de nuevo más tarde.');
+        
+        // Si hay error, usar el curso estático como fallback
+        const cursoEncontrado = cursosFallback.find((c) => c.id === parseInt(id));
+        if (cursoEncontrado) {
+          setCurso(cursoEncontrado);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
 
+    if (id) {
+      fetchCurso();
+    }
+  }, [id, cursosFallback, user]);
+
+  // Verificar estado de pago
   useEffect(() => {
     if (!isLoggedIn || !curso) {
       setPaymentStatus('no_pagado');
@@ -83,63 +143,37 @@ function CursoDetalle() {
 
         console.log(`Verificando estado de pago para curso ID: ${curso.id}`);
         
-        // Realizamos la petición con la URL completa del backend para evitar problemas de CORS
-        const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-        const response = await fetch(`${apiUrl}/api/pagos/${curso.id}`, {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Accept': 'application/json'
-          }
-        });
+        // Usamos el servicio para verificar el pago
+        const response = await CursosService.verificarPago(curso.id);
+        console.log('Respuesta de verificación de pago:', response);
         
-        // Imprimir información de la respuesta para depuración
-        console.log(`Respuesta recibida con estado: ${response.status} ${response.statusText}`);
-        console.log(`Content-Type: ${response.headers.get('content-type')}`);
+        // Extraer el estado del pago
+        let estadoPago = 'no_pagado';
         
-        // Obtener el texto de la respuesta primero para depurar
-        const textResponse = await response.text();
-        console.log('Respuesta como texto:', textResponse);
-        
-        // Intentar parsear manualmente el texto a JSON
-        let data;
-        try {
-          data = JSON.parse(textResponse);
-          console.log('Datos parseados:', data);
-        } catch (jsonError) {
-          console.error('Error al parsear JSON:', jsonError);
-          console.error('Respuesta no procesable como JSON. Contenido:', textResponse);
-          
-          if (textResponse.includes('<!DOCTYPE html>') || textResponse.includes('<html>')) {
-            setError('El servidor devolvió una página HTML en lugar de JSON. Esto puede indicar que el backend no está procesando correctamente la solicitud.');
-          } else {
-            setError('Formato de respuesta del servidor incorrecto');
-          }
-          
-          setPaymentStatus('no_pagado');
-          return;
+        if (response && response.estado) {
+          estadoPago = response.estado;
+        } else if (response && response.data && response.data.estado) {
+          estadoPago = response.data.estado;
         }
         
-        if (!response.ok) {
-          throw new Error(data.error || `Error ${response.status}`);
-        }
-        
-        // Acceder directamente al estado del pago (sin anidamiento)
-        const estadoPago = data.estado || 'no_pagado';
         setPaymentStatus(estadoPago);
         setError(null);
         
       } catch (err) {
         console.error('Error al verificar estado de pago:', err);
         
-        let errorMessage = err.message;
-        if (err.message.includes('Failed to fetch')) {
-          errorMessage = 'Error de conexión con el servidor. Asegúrate de que el backend esté en ejecución.';
-        } else if (err.message.includes('404')) {
-          errorMessage = 'No se encontró registro de pago';
-        } else if (err.message.includes('401')) {
-          errorMessage = 'No autorizado - por favor inicia sesión nuevamente';
-        } else if (err.message.includes('JSON')) {
-          errorMessage = 'Formato de respuesta del servidor incorrecto';
+        let errorMessage = 'Error al verificar el estado del pago.';
+        
+        if (err.message) {
+          if (err.message.includes('Failed to fetch') || err.message.includes('Network Error')) {
+            errorMessage = 'Error de conexión con el servidor. Asegúrate de que el backend esté en ejecución.';
+          } else if (err.message.includes('404')) {
+            errorMessage = 'No se encontró registro de pago';
+          } else if (err.message.includes('401')) {
+            errorMessage = 'No autorizado - por favor inicia sesión nuevamente';
+          } else if (err.message.includes('JSON')) {
+            errorMessage = 'Formato de respuesta del servidor incorrecto';
+          }
         }
         
         setError(errorMessage);
@@ -150,32 +184,53 @@ function CursoDetalle() {
     checkPaymentStatus();
   }, [isLoggedIn, curso]);
 
+  // Calcular progreso del curso
   useEffect(() => {
-    if (curso && Object.keys(completedVideos).length > 0) {
-      const completedCount = Object.values(completedVideos).filter(completed => completed).length;
-      const totalVideos = curso.videos.length;
-      const newOverallProgress = Math.round((completedCount / totalVideos) * 100);
-      setOverallProgress(newOverallProgress);
+    if (curso) {
+      const videos = curso.videos || curso.capitulos || [];
+      if (videos.length > 0 && Object.keys(completedVideos).length > 0) {
+        const completedCount = Object.values(completedVideos).filter(completed => completed).length;
+        const totalVideos = videos.length;
+        const newOverallProgress = Math.round((completedCount / totalVideos) * 100);
+        setOverallProgress(newOverallProgress);
+      }
     }
   }, [completedVideos, curso]);
 
   const changeVideo = (index) => {
-    if (index >= 0 && index < curso?.videos?.length) {
+    const videos = curso?.videos || curso?.capitulos || [];
+    if (index >= 0 && index < videos.length) {
       setCurrentVideo(index);
     }
   };
 
   const markAsCompleted = (videoId) => {
+    // Actualizar estado local
+    const newCompletedState = !completedVideos[videoId];
     setCompletedVideos(prev => ({
       ...prev,
-      [videoId]: !prev[videoId]
+      [videoId]: newCompletedState
     }));
+    
+    // Opcionalmente, podríamos sincronizar con el backend
+    if (curso) {
+      CursosService.marcarCapituloCompletado(curso.id, videoId, newCompletedState)
+        .catch(err => console.error('Error al sincronizar estado completado:', err));
+    }
   };
 
-  const handlePaymentSuccess = () => {
-    setPaymentStatus('aprobado');
-    setShowPaymentModal(false);
-    setError(null);
+  const handlePaymentSuccess = async () => {
+    try {
+      setPaymentStatus('aprobado');
+      setShowPaymentModal(false);
+      setError(null);
+      
+      // Opcionalmente, recargar datos del curso
+      const updatedCurso = await CursosService.getCursoById(id);
+      setCurso(updatedCurso);
+    } catch (err) {
+      console.error('Error al actualizar después del pago:', err);
+    }
   };
 
   if (loading) {
@@ -183,17 +238,53 @@ function CursoDetalle() {
   }
 
   if (error && !curso) {
-    return <div className="error">{error}</div>;
+    return (
+      <div className="error-container">
+        <div className="error">{error}</div>
+        <button className="btn-back" onClick={() => navigate('/cursos')}>
+          Volver a cursos
+        </button>
+      </div>
+    );
   }
 
   if (!curso) {
-    return <div className="error">Curso no encontrado</div>;
+    return (
+      <div className="error-container">
+        <div className="error">Curso no encontrado</div>
+        <button className="btn-back" onClick={() => navigate('/cursos')}>
+          Volver a cursos
+        </button>
+      </div>
+    );
   }
+
+  // Si el curso está en estado borrador y no es un administrador, redirigir
+  if ((curso.estado === 'Borrador' || curso.estado === 'borrador') && 
+      !(user && user.role === 'admin')) {
+    return (
+      <div className="error-container">
+        <div className="error">Este curso no está disponible actualmente.</div>
+        <button className="btn-back" onClick={() => navigate('/cursos')}>
+          Volver a cursos
+        </button>
+      </div>
+    );
+  }
+
+  // Determinar qué videos mostrar (compatibilidad con ambos formatos)
+  const videosToShow = curso.videos || curso.capitulos || [];
 
   return (
     <div className="curso-detalle animate__animated animate__fadeIn">
       <h2>{curso.titulo}</h2>
       <p>{curso.descripcion}</p>
+
+      {curso.estado === 'Borrador' && (
+        <div className="draft-badge">
+          Borrador - Este curso aún no está publicado
+        </div>
+      )}
 
       <div className="course-progress">
         <div className="progress-header">
@@ -245,10 +336,10 @@ function CursoDetalle() {
         </div>
       )}
 
-      {paymentStatus === 'aprobado' && (
+      {paymentStatus === 'aprobado' && videosToShow.length > 0 && (
         <>
           <VideoPlayer
-            videos={curso.videos}
+            videos={videosToShow}
             currentVideo={currentVideo}
             changeVideo={changeVideo}
             completedVideos={completedVideos}

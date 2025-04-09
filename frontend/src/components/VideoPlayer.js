@@ -35,10 +35,12 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
         const videoDuration = videoElement.duration || 0;
         setDuration(videoDuration);
         
-        setVideoDurations(prev => ({
-          ...prev,
-          [videos[currentVideo].id]: videoDuration
-        }));
+        if (videos[currentVideo] && videos[currentVideo].id) {
+          setVideoDurations(prev => ({
+            ...prev,
+            [videos[currentVideo].id]: videoDuration
+          }));
+        }
       };
 
       const handlePlay = () => {
@@ -51,7 +53,9 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
 
       const handleEnded = () => {
         setIsPlaying(false);
-        markAsCompleted(videos[currentVideo].id);
+        if (videos[currentVideo] && videos[currentVideo].id) {
+          markAsCompleted(videos[currentVideo].id);
+        }
 
         if (currentVideo < videos.length - 1) {
           changeVideo(currentVideo + 1);
@@ -121,7 +125,7 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
   };
 
   const loadVideoDuration = useCallback((videoUrl, videoId) => {
-    if (videoDurations[videoId]) return;
+    if (videoDurations[videoId] || !videoUrl) return;
 
     const tempVideo = document.createElement('video');
     tempVideo.preload = 'metadata';
@@ -133,13 +137,24 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
       }));
     };
     
+    // Manejar errores para evitar console spam
+    tempVideo.onerror = function() {
+      console.warn(`No se pudo cargar metadatos para el video: ${videoUrl}`);
+    };
+    
     tempVideo.src = videoUrl;
   }, [videoDurations]);
 
   useEffect(() => {
+    if (!Array.isArray(videos)) return;
+    
     videos.forEach(video => {
-      if (!videoDurations[video.id]) {
-        loadVideoDuration(video.url, video.id);
+      if (!video || !video.id) return;
+      
+      // Intentar obtener la URL del video desde diferentes estructuras de datos
+      const videoUrl = video.url || video.video_url;
+      if (!videoDurations[video.id] && videoUrl) {
+        loadVideoDuration(videoUrl, video.id);
       }
     });
   }, [videos, videoDurations, loadVideoDuration]);
@@ -150,9 +165,18 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
     }
   }, [currentVideo]);
 
-  if (!videos || videos.length === 0) {
+  if (!videos || !Array.isArray(videos) || videos.length === 0) {
     return <div className="no-videos">No hay videos disponibles para este curso</div>;
   }
+
+  // Obtener el video actual
+  const currentVideoObj = videos[currentVideo] || {};
+  
+  // Adaptación para soportar ambas estructuras de datos (la original y la del backend)
+  const videoUrl = currentVideoObj.url || currentVideoObj.video_url || '';
+  const videoTitle = currentVideoObj.titulo || '';
+  const videoIndex = currentVideoObj.indice || currentVideoObj.orden || (currentVideo + 1).toString();
+  const videoDuration = currentVideoObj.duracion || '';
 
   return (
     <div className="video-section">
@@ -160,7 +184,7 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
         <video
           ref={videoRef}
           className="video-player"
-          src={videos[currentVideo]?.url}
+          src={videoUrl}
           poster="/path-to-poster-image.jpg"
           preload="metadata"
           controlsList="nodownload"
@@ -207,11 +231,11 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
           </button>
 
           <button
-            className={`complete-button ${completedVideos[videos[currentVideo].id] ? 'completed' : ''}`}
-            onClick={() => markAsCompleted(videos[currentVideo].id)}
-            title={completedVideos[videos[currentVideo].id] ? "Marcar como no completado" : "Marcar como completado"}
+            className={`complete-button ${currentVideoObj.id && completedVideos[currentVideoObj.id] ? 'completed' : ''}`}
+            onClick={() => currentVideoObj.id && markAsCompleted(currentVideoObj.id)}
+            title={currentVideoObj.id && completedVideos[currentVideoObj.id] ? "Marcar como no completado" : "Marcar como completado"}
           >
-            {completedVideos[videos[currentVideo].id] ?
+            {currentVideoObj.id && completedVideos[currentVideoObj.id] ?
               <><FontAwesomeIcon icon={faCheckCircle} /> Completado</> :
               <><FontAwesomeIcon icon={faCircleRegular} /> Marcar como completado</>
             }
@@ -229,25 +253,34 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
 
       <div className="video-title">
         <h3>
-          <span className="video-index">{videos[currentVideo].indice || (currentVideo + 1)}.</span> {videos[currentVideo].titulo}
+          <span className="video-index">{videoIndex}.</span> {videoTitle}
         </h3>
       </div>
 
       <div className="lessons-list">
         <h3>Contenido del curso</h3>
-        {videos.map((video, index) => (
-          <div
-            key={video.id}
-            className={`lesson-item ${index === currentVideo ? 'active' : ''} ${completedVideos[video.id] ? 'completed' : ''}`}
-            onClick={() => changeVideo(index)}
-          >
-            <span className="lesson-index">{video.indice || (index + 1)}.</span>
-            <span className="lesson-title">{video.titulo}</span>
-            <span className="lesson-duration">
-              {videoDurations[video.id] ? formatTime(videoDurations[video.id]) : video.duracion}
-            </span>
-          </div>
-        ))}
+        {videos.map((video, index) => {
+          if (!video) return null;
+          
+          // Adaptación para soportar ambas estructuras
+          const lessonIndex = video.indice || video.orden || (index + 1).toString();
+          const lessonTitle = video.titulo || '';
+          const lessonDuration = videoDurations[video.id] ? 
+            formatTime(videoDurations[video.id]) : 
+            (video.duracion || '');
+          
+          return (
+            <div
+              key={video.id || index}
+              className={`lesson-item ${index === currentVideo ? 'active' : ''} ${video.id && completedVideos[video.id] ? 'completed' : ''}`}
+              onClick={() => changeVideo(index)}
+            >
+              <span className="lesson-index">{lessonIndex}.</span>
+              <span className="lesson-title">{lessonTitle}</span>
+              <span className="lesson-duration">{lessonDuration}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

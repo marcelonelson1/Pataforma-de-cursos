@@ -3,28 +3,46 @@ CREATE DATABASE IF NOT EXISTS cursos_db DEFAULT CHARACTER SET utf8mb4 COLLATE ut
 
 USE cursos_db;
 
--- Crear tabla de usuarios
+-- Tabla de usuarios (modificada para incluir rol)
 CREATE TABLE IF NOT EXISTS usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL UNIQUE,
   password VARCHAR(100) NOT NULL,
+  role VARCHAR(20) DEFAULT 'user', -- Nueva columna para el rol
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Crear tabla de cursos
+-- Tabla de cursos (modificada)
 CREATE TABLE IF NOT EXISTS cursos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   titulo VARCHAR(200) NOT NULL,
   descripcion VARCHAR(500),
   contenido TEXT,
   precio DECIMAL(10,2) DEFAULT 29.99,
+  estado VARCHAR(20) DEFAULT 'Borrador',
+  imagen_url VARCHAR(255),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Crear tabla de pagos
+-- Nueva tabla para capítulos
+CREATE TABLE IF NOT EXISTS capitulos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  curso_id INT NOT NULL,
+  titulo VARCHAR(200) NOT NULL,
+  descripcion VARCHAR(500),
+  duracion VARCHAR(10),
+  video_url VARCHAR(255),
+  orden INT DEFAULT 0,
+  publicado BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (curso_id) REFERENCES cursos(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Tabla de pagos (ya existente)
 CREATE TABLE IF NOT EXISTS pagos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   usuario_id INT NOT NULL,
@@ -39,8 +57,19 @@ CREATE TABLE IF NOT EXISTS pagos (
   FOREIGN KEY (curso_id) REFERENCES cursos(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Insertar algunos cursos de muestra
-INSERT INTO cursos (titulo, descripcion, contenido, precio) VALUES 
-('Curso de React', 'Aprende React desde cero.', 'En este curso aprenderás los fundamentos de React, incluyendo componentes, estado, props, hooks, y más. Crearás aplicaciones web modernas y reactivas utilizando las mejores prácticas de la industria.', 29.99),
-('Curso de Node.js', 'Domina el backend con Node.js.', 'Aprende a construir APIs RESTful con Node.js y Express. Este curso cubre desde lo básico hasta conceptos avanzados como autenticación, manejo de errores, y despliegue.', 39.99),
-('Curso de Diseño Web', 'Crea diseños modernos y responsivos.', 'Domina HTML, CSS y JavaScript para crear sitios web atractivos y funcionales. Aprenderás sobre diseño responsivo, animaciones, y las últimas tendencias en diseño web.', 24.99);
+-- Tabla de mensajes de contacto
+CREATE TABLE IF NOT EXISTS contact_messages (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  phone VARCHAR(20),
+  message TEXT NOT NULL,
+  read BOOLEAN DEFAULT FALSE,
+  starred BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Insertar usuario administrador de ejemplo
+INSERT INTO usuarios (nombre, email, password, role) VALUES
+('Admin', 'admin@ejemplo.com', '$2a$10$GwJJcS7xJzpT1UBnWFcBXODgXpEEBQr3yfCQn1UPJLngL3vd0.jNG', 'admin'); -- Contraseña: admin123

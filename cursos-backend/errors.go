@@ -17,7 +17,7 @@ var (
 	ErrServerError      = errors.New("error interno del servidor")
 	ErrDatabaseError    = errors.New("error de base de datos")
 	ErrEmailSendError   = errors.New("error al enviar correo")
-	ErrInvalidJSON      = errors.New("JSON inválido")
+	ErrInvalidJSON      = errors.New("json inválido")
 	ErrInvalidRequest   = errors.New("solicitud inválida")
 	ErrResourceNotFound = errors.New("recurso no encontrado")
 	ErrBadRequest       = errors.New("solicitud mal formada")
@@ -49,6 +49,7 @@ func SendValidationErrorResponse(c *gin.Context, err error, details interface{})
 }
 
 // SendSuccessResponse envía una respuesta exitosa estandarizada
+// Solo utilizar para respuestas que NO contienen "message" 
 func SendSuccessResponse(c *gin.Context, data interface{}) {
 	response := gin.H{"success": true}
 	if data != nil {
@@ -90,9 +91,7 @@ func ErrorHandler() gin.HandlerFunc {
 		c.Next()
 
 		if len(c.Errors) > 0 {
-			// Si el cuerpo aún no se ha escrito
 			if c.Writer.Size() == 0 {
-				// Obtener el último error
 				lastError := c.Errors.Last()
 				var status int
 				

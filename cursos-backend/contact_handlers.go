@@ -10,6 +10,7 @@ import (
 	"text/template"
 
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
 type ContactRequest struct {
@@ -19,6 +20,16 @@ type ContactRequest struct {
 	Message string `json:"message" binding:"required"`
 }
 
+type ContactMessage struct {
+	gorm.Model
+	Name    string `gorm:"size:100;not null" json:"name"`
+	Email   string `gorm:"size:100;not null" json:"email"`
+	Phone   string `gorm:"size:20" json:"phone"`
+	Message string `gorm:"type:text;not null" json:"message"`
+	Read    bool   `gorm:"default:false" json:"read"`
+	Starred bool   `gorm:"default:false" json:"starred"`
+}
+
 func contactHandler(c *gin.Context) {
 	var req ContactRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -26,6 +37,21 @@ func contactHandler(c *gin.Context) {
 		return
 	}
 
+	// Guardar en la base de datos
+	message := ContactMessage{
+		Name:    req.Name,
+		Email:   req.Email,
+		Phone:   req.Phone,
+		Message: req.Message,
+	}
+
+	if err := db.Create(&message).Error; err != nil {
+		log.Printf("Error guardando mensaje: %v", err)
+		SendErrorResponse(c, ErrDatabaseError, http.StatusInternalServerError)
+		return
+	}
+
+	// Enviar por email
 	if err := sendContactEmail(req); err != nil {
 		log.Printf("Error enviando email: %v", err)
 		SendErrorResponse(c, ErrEmailSendError, http.StatusInternalServerError)

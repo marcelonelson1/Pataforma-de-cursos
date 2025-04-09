@@ -1,0 +1,739 @@
+/* PortfolioAdmin.css - Estilos mejorados con animaciones avanzadas */
+
+/* Animaciones base */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  
+  @keyframes portfolio-admin-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Nueva animación para el botón de guardar */
+  @keyframes buttonSuccess {
+    0% {
+      transform: scale(1);
+      background: linear-gradient(45deg, #3b82f6, #2563eb);
+    }
+    50% {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #10b981, #3b82f6);
+    }
+    100% {
+      transform: scale(1);
+      background: linear-gradient(45deg, #3b82f6, #2563eb);
+    }
+  }
+  
+  /* Nueva animación para el formulario al guardar */
+  @keyframes formSubmit {
+    0% {
+      transform: translateY(0);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px -10px rgba(16, 185, 129, 0.4);
+    }
+    100% {
+      transform: translateY(0);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  /* Nueva animación para el mensaje de éxito */
+  @keyframes successFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    80% {
+      transform: translateY(0) scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* Contenedor principal */
+  .portfolio-admin {
+    padding: 1.5rem;
+    color: #ffffff;
+    background-color: #121212;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  /* Encabezado */
+  .portfolio-admin__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    animation: slideInDown 0.5s ease;
+  }
+  
+  .portfolio-admin__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    animation: slideInLeft 0.5s ease;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .portfolio-admin__title::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background: linear-gradient(90deg, #3b82f6, transparent);
+    animation: slideInRight 0.8s ease;
+  }
+  
+  /* Alertas */
+  .portfolio-admin__alert {
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideInUp 0.4s ease;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  
+  .portfolio-admin__alert--success {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border-left: 4px solid #10b981;
+    animation: successFadeIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), pulse 2s ease 1s;
+  }
+  
+  .portfolio-admin__alert--danger {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border-left: 4px solid #ef4444;
+    animation: slideInUp 0.4s ease, pulse 2s ease 1s;
+  }
+  
+  /* Botones */
+  .portfolio-admin__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+    animation: slideInRight 0.5s ease;
+  }
+  
+  .portfolio-admin__btn--primary {
+    background: linear-gradient(45deg, #3b82f6, #2563eb);
+    background-size: 200% 200%;
+    color: white;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.25);
+    animation: slideInRight 0.5s ease, gradient 4s ease infinite;
+  }
+  
+  .portfolio-admin__btn--primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(37, 99, 235, 0.3);
+  }
+  
+  .portfolio-admin__btn--primary:active {
+    transform: translateY(1px);
+  }
+  
+  .portfolio-admin__btn--primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s;
+  }
+  
+  .portfolio-admin__btn--primary:hover::before {
+    left: 100%;
+  }
+  
+  /* Estado de éxito en el botón de guardar */
+  .portfolio-admin__btn--success {
+    animation: buttonSuccess 1s ease, gradient 4s ease infinite;
+    background: linear-gradient(45deg, #10b981, #3b82f6);
+  }
+  
+  .portfolio-admin__btn--secondary {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__btn--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+  }
+  
+  .portfolio-admin__btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Contenedor de formulario */
+  .portfolio-admin__form-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    animation: zoomIn 0.5s ease;
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__form-container:hover {
+    box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Estado de éxito en el formulario */
+  .portfolio-admin__form-container--success {
+    animation: formSubmit 1s ease;
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+  
+  .portfolio-admin__form-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    position: relative;
+  }
+  
+  .portfolio-admin__form-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    bottom: -1px;
+    left: 0;
+    background: linear-gradient(90deg, #3b82f6, transparent);
+    animation: slideInRight 0.8s ease;
+  }
+  
+  .portfolio-admin__form {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  /* Campos de formulario */
+  .portfolio-admin__form-group {
+    margin-bottom: 0.5rem;
+    animation: fadeIn 0.5s ease;
+    animation-fill-mode: both;
+  }
+  
+  .portfolio-admin__form-group:nth-child(1) { animation-delay: 0.1s; }
+  .portfolio-admin__form-group:nth-child(2) { animation-delay: 0.2s; }
+  .portfolio-admin__form-group:nth-child(3) { animation-delay: 0.3s; }
+  .portfolio-admin__form-group:nth-child(4) { animation-delay: 0.4s; }
+  
+  .portfolio-admin__form-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__form-control:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+  }
+  
+  .portfolio-admin__form-textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  /* Input de archivo */
+  .portfolio-admin__file-input {
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__file-input:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .portfolio-admin__file-input::-webkit-file-upload-button {
+    background-color: #3b82f6;
+    background-image: linear-gradient(45deg, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__file-input::-webkit-file-upload-button:hover {
+    background-image: linear-gradient(45deg, #2563eb, #1d4ed8);
+    transform: translateY(-1px);
+  }
+  
+  /* Vista previa de imagen */
+  .portfolio-admin__image-preview {
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: inline-block;
+    animation: zoomIn 0.5s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .portfolio-admin__image-preview:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .portfolio-admin__thumbnail {
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+  }
+  
+  /* Botones del formulario */
+  .portfolio-admin__form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    animation: slideInUp 0.5s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+  }
+  
+  /* Estado de carga */
+  .portfolio-admin__loading {
+    text-align: center;
+    padding: 3rem 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .portfolio-admin__spinner {
+    animation: portfolio-admin-spin 1s linear infinite;
+    margin-right: 0.5rem;
+    display: inline-block;
+  }
+  
+  /* Grid de proyectos */
+  .portfolio-admin__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    animation: fadeIn 0.8s ease;
+  }
+  
+  /* Estado vacío */
+  .portfolio-admin__empty {
+    grid-column: 1 / -1;
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    border-left: 4px solid #3b82f6;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    animation: slideInUp 0.5s ease;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__empty:hover {
+    background-color: rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+  }
+  
+  /* Tarjeta de proyecto */
+  .portfolio-admin__card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.6s ease;
+    animation-fill-mode: both;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .portfolio-admin__grid > *:nth-child(1) { animation-delay: 0.1s; }
+  .portfolio-admin__grid > *:nth-child(2) { animation-delay: 0.2s; }
+  .portfolio-admin__grid > *:nth-child(3) { animation-delay: 0.3s; }
+  .portfolio-admin__grid > *:nth-child(4) { animation-delay: 0.4s; }
+  .portfolio-admin__grid > *:nth-child(5) { animation-delay: 0.5s; }
+  .portfolio-admin__grid > *:nth-child(6) { animation-delay: 0.6s; }
+  
+  .portfolio-admin__card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+  }
+  
+  .portfolio-admin__card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background-color: #0a0a0a;
+  }
+  
+  .portfolio-admin__card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+  }
+  
+  .portfolio-admin__card:hover .portfolio-admin__card-img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+  }
+  
+  .portfolio-admin__card-body {
+    padding: 1.25rem;
+    flex: 1;
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__card:hover .portfolio-admin__card-body {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+  
+  .portfolio-admin__card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__card:hover .portfolio-admin__card-title {
+    color: #3b82f6;
+  }
+  
+  .portfolio-admin__card-category {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 50rem;
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__card:hover .portfolio-admin__card-category {
+    background-color: rgba(59, 130, 246, 0.2);
+    transform: scale(1.05);
+  }
+  
+  .portfolio-admin__card-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .portfolio-admin__card:hover .portfolio-admin__card-text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .portfolio-admin__card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+  }
+  
+  .portfolio-admin__card:hover .portfolio-admin__card-footer {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Botones de acción */
+  .portfolio-admin__action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: transparent;
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+  }
+  
+  .portfolio-admin__action-btn:hover {
+    transform: translateY(-3px);
+  }
+  
+  .portfolio-admin__action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .portfolio-admin__action-btn:hover::before {
+    opacity: 0.1;
+  }
+  
+  .portfolio-admin__action-btn--view {
+    color: #3b82f6;
+    border-color: #3b82f6;
+  }
+  
+  .portfolio-admin__action-btn--view:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+  }
+  
+  .portfolio-admin__action-btn--edit {
+    color: #3b82f6;
+    border-color: #3b82f6;
+  }
+  
+  .portfolio-admin__action-btn--edit:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+  }
+  
+  .portfolio-admin__action-btn--delete {
+    color: #ef4444;
+    border-color: #ef4444;
+  }
+  
+  .portfolio-admin__action-btn--delete:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.2);
+  }
+  
+  /* Loading Skeleton para imágenes */
+  .portfolio-admin__card-image.loading {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .portfolio-admin__card-image.loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 1024px) {
+    .portfolio-admin__grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .portfolio-admin {
+      padding: 1rem;
+    }
+    
+    .portfolio-admin__header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .portfolio-admin__header button {
+      width: 100%;
+    }
+    
+    .portfolio-admin__form-container {
+      padding: 1.5rem;
+    }
+    
+    .portfolio-admin__form-buttons {
+      flex-direction: column;
+    }
+    
+    .portfolio-admin__form-buttons button {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    
+    .portfolio-admin__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .portfolio-admin__form-container {
+      padding: 1rem;
+    }
+    
+    .portfolio-admin__card-footer {
+      padding: 0.5rem 1rem;
+    }
+  }

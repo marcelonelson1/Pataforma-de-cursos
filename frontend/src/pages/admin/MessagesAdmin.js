@@ -7,66 +7,19 @@ import {
   FaStar, 
   FaSearch, 
   FaArrowUp, 
-  FaArrowDown 
+  FaArrowDown,
+  FaCheckCircle,
+  FaExclamationTriangle,
+  FaTimes
 } from 'react-icons/fa';
+import axios from 'axios';
 import './MessagesAdmin.css';
 
 const MessagesAdmin = () => {
-  const [messages, setMessages] = useState([
-    { 
-      id: 1, 
-      name: 'Juan Pérez', 
-      email: 'juan@example.com', 
-      message: '¿Tienen cursos sobre TypeScript? Me interesa conocer si ofrecen algún curso especializado en TypeScript para desarrollo web frontend. Ya tengo algo de experiencia con JavaScript pero quiero aprender a usar tipos.',
-      read: false,
-      starred: false,
-      date: '2023-09-15',
-      time: '14:30'
-    },
-    { 
-      id: 2, 
-      name: 'María García', 
-      email: 'maria@example.com', 
-      message: 'Necesito ayuda con mi suscripción. Hace dos días realicé el pago para el plan anual pero aún no tengo acceso a todos los cursos que deberían estar incluidos en mi suscripción.',
-      read: true,
-      starred: true,
-      date: '2023-09-14',
-      time: '10:15'
-    },
-    { 
-      id: 3, 
-      name: 'Carlos Rodríguez', 
-      email: 'carlos@example.com', 
-      message: 'Excelente plataforma, me han encantado los cursos. Quería felicitarles por la calidad del contenido y la metodología de enseñanza. Es muy clara y práctica.',
-      read: true,
-      starred: false,
-      date: '2023-09-12',
-      time: '16:45'
-    },
-    { 
-      id: 4, 
-      name: 'Ana López', 
-      email: 'ana@example.com', 
-      message: 'Me gustaría conocer si tienen algún descuento para estudiantes universitarios. Estoy en el último año de Ingeniería Informática y me interesa complementar mi formación con sus cursos.',
-      read: false,
-      starred: false,
-      date: '2023-09-10',
-      time: '09:22'
-    },
-    { 
-      id: 5, 
-      name: 'Roberto Sánchez', 
-      email: 'roberto@example.com', 
-      message: 'Tengo problemas para ver los videos del curso de Node.js. He intentado desde diferentes navegadores pero siempre se queda cargando indefinidamente.',
-      read: false,
-      starred: true,
-      date: '2023-09-08',
-      time: '13:10'
-    }
-  ]);
-
+  const [messages, setMessages] = useState([]);
   const [filteredMessages, setFilteredMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [filter, setFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMessage, setSelectedMessage] = useState(null);
@@ -75,12 +28,105 @@ const MessagesAdmin = () => {
     direction: 'desc'
   });
   const [replyText, setReplyText] = useState('');
+  const [sendingReply, setSendingReply] = useState(false);
+  const [notification, setNotification] = useState(null);
+  
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
-  // Memoiza la función applyFilters con useCallback
-  const applyFilters = useCallback(() => {
+  const fetchMessages = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      const response = await axios.get(`${API_URL}/api/admin/messages`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      
+      // Manejo robusto de la respuesta
+      let messagesData = [];
+      
+      if (response.data && response.data.success) {
+        // Caso 1: Respuesta con estructura {success, data}
+        messagesData = response.data.data || [];
+      } else if (Array.isArray(response.data)) {
+        // Caso 2: Respuesta es directamente un array
+        messagesData = response.data;
+      }
+      
+      const formattedMessages = messagesData.map(msg => ({
+        id: msg.id || msg.ID,
+        name: msg.name || msg.Name,
+        email: msg.email || msg.Email,
+        phone: msg.phone || msg.Phone || '',
+        message: msg.message || msg.Message,
+        read: msg.read || msg.Read || false,
+        starred: msg.starred || msg.Starred || false,
+        date: (msg.createdAt || msg.CreatedAt || new Date().toISOString()).split('T')[0],
+        time: (msg.createdAt || msg.CreatedAt || new Date().toISOString()).split('T')[1]?.substring(0, 5) || '00:00'
+      }));
+      
+      setMessages(formattedMessages);
+    } catch (err) {
+      console.error('Error al obtener mensajes:', err);
+      setError('Error al obtener mensajes. Por favor, intente nuevamente.');
+      
+      // Datos de ejemplo para desarrollo
+      const exampleMessages = [
+        { 
+          id: 1, 
+          name: 'Juan Pérez', 
+          email: 'juan@example.com', 
+          phone: '+5493511234567',
+          message: '¿Tienen cursos sobre TypeScript? Me interesa conocer si ofrecen algún curso especializado en TypeScript para desarrollo web frontend.',
+          read: false,
+          starred: false,
+          date: '2023-09-15',
+          time: '14:30'
+        },
+        { 
+          id: 2, 
+          name: 'María García', 
+          email: 'maria@example.com', 
+          phone: '+5493517654321',
+          message: 'Necesito ayuda con mi suscripción. Hace dos días realicé el pago pero aún no tengo acceso.',
+          read: true,
+          starred: true,
+          date: '2023-09-14',
+          time: '10:15'
+        }
+      ];
+      
+      setMessages(exampleMessages);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [API_URL]);
+
+  useEffect(() => {
+    fetchMessages();
+  }, [fetchMessages]);
+
+  useEffect(() => {
+    applyFilters();
+  }, [filter, messages, searchTerm, sortConfig]);
+
+  // Función para mostrar una notificación
+  const showNotification = (type, message, duration = 5000) => {
+    setNotification({ type, message });
+    
+    // Auto cerrar después de duration ms
+    if (duration) {
+      setTimeout(() => {
+        setNotification(null);
+      }, duration);
+    }
+  };
+
+  const applyFilters = () => {
     let result = [...messages];
     
-    // Aplicar filtro por estado
     if (filter === 'unread') {
       result = result.filter(message => !message.read);
     } else if (filter === 'read') {
@@ -89,18 +135,17 @@ const MessagesAdmin = () => {
       result = result.filter(message => message.starred);
     }
     
-    // Aplicar búsqueda
     if (searchTerm) {
       const searchLower = searchTerm.toLowerCase();
       result = result.filter(
         message =>
           message.name.toLowerCase().includes(searchLower) ||
           message.email.toLowerCase().includes(searchLower) ||
+          (message.phone && message.phone.toLowerCase().includes(searchLower)) ||
           message.message.toLowerCase().includes(searchLower)
       );
     }
     
-    // Aplicar ordenación
     if (sortConfig.key) {
       result.sort((a, b) => {
         if (a[sortConfig.key] < b[sortConfig.key]) {
@@ -114,22 +159,7 @@ const MessagesAdmin = () => {
     }
     
     setFilteredMessages(result);
-  }, [filter, messages, searchTerm, sortConfig]);
-
-  // Efecto para inicializar los mensajes filtrados
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      applyFilters();
-      setIsLoading(false);
-    }, 800);
-    
-    return () => clearTimeout(timer);
-  }, [applyFilters]);
-
-  // Efecto para aplicar filtros cuando cambian
-  useEffect(() => {
-    applyFilters();
-  }, [applyFilters]);
+  };
 
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);
@@ -149,66 +179,158 @@ const MessagesAdmin = () => {
     });
   };
 
-  // Marcar como leído/no leído
-  const toggleReadStatus = (id) => {
-    setMessages(
-      messages.map(msg =>
-        msg.id === id ? { ...msg, read: !msg.read } : msg
-      )
-    );
+  const toggleReadStatus = async (id) => {
+    try {
+      await axios.patch(`${API_URL}/api/admin/messages/${id}/read`, null, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      
+      setMessages(
+        messages.map(msg =>
+          msg.id === id ? { ...msg, read: !msg.read } : msg
+        )
+      );
+    } catch (err) {
+      console.error('Error al actualizar estado del mensaje:', err);
+      showNotification('error', 'Error al actualizar el estado del mensaje');
+    }
   };
 
-  // Marcar/desmarcar favorito
-  const toggleStarred = (id) => {
-    setMessages(
-      messages.map(msg =>
-        msg.id === id ? { ...msg, starred: !msg.starred } : msg
-      )
-    );
+  const toggleStarred = async (id) => {
+    try {
+      await axios.patch(`${API_URL}/api/admin/messages/${id}/star`, null, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      
+      setMessages(
+        messages.map(msg =>
+          msg.id === id ? { ...msg, starred: !msg.starred } : msg
+        )
+      );
+    } catch (err) {
+      console.error('Error al actualizar estado de estrella:', err);
+      showNotification('error', 'Error al actualizar el mensaje');
+    }
   };
 
-  // Eliminar mensaje
-  const deleteMessage = (id) => {
+  const deleteMessage = async (id) => {
     if (window.confirm('¿Estás seguro de que quieres eliminar este mensaje?')) {
-      setMessages(messages.filter(msg => msg.id !== id));
-      if (selectedMessage && selectedMessage.id === id) {
-        setSelectedMessage(null);
+      try {
+        await axios.delete(`${API_URL}/api/admin/messages/${id}`, {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        });
+        
+        setMessages(messages.filter(msg => msg.id !== id));
+        if (selectedMessage && selectedMessage.id === id) {
+          setSelectedMessage(null);
+        }
+        
+        showNotification('success', 'Mensaje eliminado correctamente');
+      } catch (err) {
+        console.error('Error al eliminar mensaje:', err);
+        showNotification('error', 'Error al eliminar el mensaje');
       }
     }
   };
 
-  // Ver detalle de mensaje
   const viewMessage = (message) => {
-    // Si el mensaje no está leído, marcarlo como leído
     if (!message.read) {
       toggleReadStatus(message.id);
     }
     setSelectedMessage(message);
   };
 
-  // Enviar respuesta
-  const sendReply = (e) => {
+  const sendReply = async (e) => {
     e.preventDefault();
     
     if (!replyText.trim()) {
-      alert('Por favor, escribe un mensaje antes de enviar.');
+      showNotification('error', 'Por favor, escribe un mensaje antes de enviar');
       return;
     }
     
-    // Aquí se implementaría el envío real de la respuesta
-    alert(`Respuesta enviada a ${selectedMessage.email}: ${replyText}`);
-    setReplyText('');
-    setSelectedMessage(null);
+    setSendingReply(true);
+    
+    try {
+      // Incluir todos los headers necesarios
+      const config = {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json'
+        }
+      };
+      
+      // Asegurarse de que el cuerpo de la solicitud sea un objeto válido
+      const requestBody = { message: replyText };
+      
+      // Usar try/catch específico para la petición
+      try {
+        const response = await axios.post(
+          `${API_URL}/api/admin/messages/${selectedMessage.id}/reply`, 
+          requestBody,
+          config
+        );
+        
+        console.log('Respuesta del servidor:', response.data);
+        
+        // Verificar la respuesta
+        if (response.data && response.data.success) {
+          // Mostrar notificación de éxito
+          showNotification('success', `Respuesta enviada a ${selectedMessage.email}`);
+          
+          setReplyText('');
+          
+          // Actualizar mensaje como leído si no lo estaba
+          setMessages(
+            messages.map(msg =>
+              msg.id === selectedMessage.id ? { ...msg, read: true } : msg
+            )
+          );
+          
+          // Cerrar el detalle del mensaje después de un breve retraso
+          setTimeout(() => {
+            setSelectedMessage(null);
+          }, 1500);
+        } else {
+          throw new Error('La respuesta no indica éxito');
+        }
+      } catch (apiError) {
+        console.error('Error en la petición API:', apiError);
+        
+        // Información detallada para depuración
+        if (apiError.response) {
+          console.error('Datos de respuesta de error:', apiError.response.data);
+          console.error('Estado de error:', apiError.response.status);
+          console.error('Headers de error:', apiError.response.headers);
+        }
+        
+        throw apiError; // Re-lanzar para el manejador principal
+      }
+    } catch (err) {
+      console.error('Error completo al enviar respuesta:', err);
+      
+      // Mensaje más detallado para el usuario en una notificación
+      const errorMsg = err.response && err.response.data && err.response.data.error
+        ? `Error: ${err.response.data.error}`
+        : 'Error al enviar el correo electrónico de respuesta. Por favor, verifique la configuración del servidor de correo.';
+      
+      showNotification('error', errorMsg);
+    } finally {
+      setSendingReply(false);
+    }
   };
 
-  // Loading overlay
   const LoadingOverlay = () => (
     <div className="loading-overlay">
       <div className="spinner"></div>
     </div>
   );
 
-  // Formatear fecha
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString('es-ES', {
@@ -221,6 +343,18 @@ const MessagesAdmin = () => {
   return (
     <div className="messages-admin">
       {isLoading && <LoadingOverlay />}
+      
+      {notification && (
+        <div className={`notification notification-${notification.type}`}>
+          <div className="notification-icon">
+            {notification.type === 'success' ? <FaCheckCircle /> : <FaExclamationTriangle />}
+          </div>
+          <div className="notification-message">{notification.message}</div>
+          <button className="notification-close" onClick={() => setNotification(null)}>
+            <FaTimes />
+          </button>
+        </div>
+      )}
       
       <div className="section-header">
         <h2 className="section-title">Mensajes de Contacto</h2>
@@ -275,6 +409,12 @@ const MessagesAdmin = () => {
         </div>
       </div>
       
+      {error && (
+        <div className="error-message">
+          {error}
+        </div>
+      )}
+      
       {selectedMessage ? (
         <div className="message-detail">
           <div className="message-detail-header">
@@ -307,6 +447,9 @@ const MessagesAdmin = () => {
                 <a href={`mailto:${selectedMessage.email}`}>
                   {selectedMessage.email}
                 </a>
+                {selectedMessage.phone && (
+                  <div className="sender-phone">{selectedMessage.phone}</div>
+                )}
                 <div className="message-date">
                   {formatDate(selectedMessage.date)} - {selectedMessage.time}
                 </div>
@@ -324,13 +467,23 @@ const MessagesAdmin = () => {
                 value={replyText}
                 onChange={(e) => setReplyText(e.target.value)}
                 required
+                disabled={sendingReply}
               />
               <div className="form-actions">
-                <button type="button" className="btn-cancel" onClick={() => setSelectedMessage(null)}>
+                <button 
+                  type="button" 
+                  className="btn-cancel" 
+                  onClick={() => setSelectedMessage(null)}
+                  disabled={sendingReply}
+                >
                   Cancelar
                 </button>
-                <button type="submit" className="btn-primary">
-                  Enviar Respuesta
+                <button 
+                  type="submit" 
+                  className="btn-primary"
+                  disabled={sendingReply}
+                >
+                  {sendingReply ? 'Enviando...' : 'Enviar Respuesta'}
                 </button>
               </div>
             </form>

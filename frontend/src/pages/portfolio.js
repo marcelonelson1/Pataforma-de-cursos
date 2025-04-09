@@ -1,20 +1,57 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './portfolio.css';
-
-// Import portfolio images
-import portfolio1 from '../img/home/render1.jpeg';
-import portfolio2 from '../img/home/render2.jpeg';
-import portfolio3 from '../img/home/render3.jpeg';
-import portfolio4 from '../img/home/render4.jpeg';
-import portfolio5 from '../img/home/render5.jpeg';
-import portfolio6 from '../img/portfolio/render6.jpeg';  // Assume you'll add this image
-import portfolio7 from '../img/portfolio/render7.jpeg'; // Assume you'll add this image
-import portfolio8 from '../img/portfolio/render8.jpeg'; // Assume you'll add this image
+import axios from 'axios';
 
 function Portfolio() {
   const contentRefs = useRef([]);
+  const [portfolioImages, setPortfolioImages] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
-  // Scroll animation effectp
+  // Cargar proyectos del portfolio desde la API
+  useEffect(() => {
+    const fetchPortfolioProjects = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(`${apiUrl}/api/portfolio`);
+        
+        if (response.data.success) {
+          const projects = (response.data.data || []).map(project => ({
+            id: project.id,
+            src: project.image_url.startsWith('http') 
+              ? project.image_url 
+              : `${apiUrl}${project.image_url}`,
+            category: project.category,
+            title: project.title,
+            description: project.description || ''
+          }));
+          
+          setPortfolioImages(projects);
+        } else {
+          setError('Error al cargar los proyectos del portfolio');
+        }
+      } catch (err) {
+        console.error('Error al cargar los proyectos:', err);
+        setError('Error de conexión al servidor');
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchPortfolioProjects();
+  }, [apiUrl]);
+
+  // Obtener categoría de la URL si existe
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const categoryParam = params.get('category');
+    if (categoryParam) {
+      setSelectedCategory(categoryParam);
+    }
+  }, []);
+
+  // Scroll animation effect
   useEffect(() => {
     const handleScroll = () => {
       contentRefs.current.forEach(el => {
@@ -36,7 +73,7 @@ function Portfolio() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [portfolioImages]); // Ejecutar cuando se carguen las imágenes
 
   // Portfolio categories
   const categories = [
@@ -47,20 +84,24 @@ function Portfolio() {
   ];
 
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const portfolioImages = [
-    { src: portfolio1, category: 'architecture', title: 'Proyecto Residencial Moderno' },
-    { src: portfolio2, category: 'interiors', title: 'Diseño de Interiores Contemporáneo' },
-    { src: portfolio3, category: 'landscape', title: 'Jardín Urbano Minimalista' },
-    { src: portfolio4, category: 'commercial', title: 'Oficina Corporativa' },
-    { src: portfolio5, category: 'architecture', title: 'Casa Ecológica' },
-    { src: portfolio6, category: 'interiors', title: 'Sala de Estar Elegante' },
-    { src: portfolio7, category: 'landscape', title: 'Terraza Panorámica' },
-    { src: portfolio8, category: 'commercial', title: 'Centro Comercial' }
-  ];
 
   const filteredProjects = selectedCategory === 'all' 
     ? portfolioImages 
     : portfolioImages.filter(img => img.category === selectedCategory);
+
+  // Manejar cambio de categoría y actualizar URL
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    
+    // Actualizar URL sin recargar la página
+    const url = new URL(window.location);
+    if (category === 'all') {
+      url.searchParams.delete('category');
+    } else {
+      url.searchParams.set('category', category);
+    }
+    window.history.pushState({}, '', url);
+  };
 
   return (
     <div className="portfolio-page">
@@ -88,7 +129,7 @@ function Portfolio() {
         >
           <button 
             className={`filter-btn ${selectedCategory === 'all' ? 'active' : ''}`}
-            onClick={() => setSelectedCategory('all')}
+            onClick={() => handleCategoryChange('all')}
           >
             Todos
           </button>
@@ -96,7 +137,7 @@ function Portfolio() {
             <button
               key={category.value}
               className={`filter-btn ${selectedCategory === category.value ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(category.value)}
+              onClick={() => handleCategoryChange(category.value)}
             >
               {category.name}
             </button>
@@ -104,27 +145,56 @@ function Portfolio() {
         </div>
       </div>
 
-      <div 
-        className="portfolio-gallery"
-        data-scroll="fadeInUp"
-      >
-        {filteredProjects.map((project, index) => (
-          <div 
-            key={index} 
-            className="portfolio-gallery-item"
+      {loading ? (
+        <div className="portfolio-loading">
+          <div className="loading-spinner"></div>
+          <p>Cargando proyectos...</p>
+        </div>
+      ) : error ? (
+        <div className="portfolio-error">
+          <p>{error}</p>
+          <button 
+            className="filter-btn"
+            onClick={() => window.location.reload()}
           >
-            <img 
-              src={project.src} 
-              alt={project.title} 
-              className="portfolio-gallery-image" 
-            />
-            <div className="portfolio-gallery-overlay">
-              <h3>{project.title}</h3>
-              <p>{project.category.charAt(0).toUpperCase() + project.category.slice(1)}</p>
+            Reintentar
+          </button>
+        </div>
+      ) : (
+        <div 
+          className="portfolio-gallery"
+          data-scroll="fadeInUp"
+        >
+          {filteredProjects.length === 0 ? (
+            <div className="portfolio-empty">
+              <p>No hay proyectos disponibles en esta categoría.</p>
             </div>
-          </div>
-        ))}
-      </div>
+          ) : (
+            filteredProjects.map((project, index) => (
+              <div 
+                key={project.id || index} 
+                className="portfolio-gallery-item"
+              >
+                <img 
+                  src={project.src} 
+                  alt={project.title} 
+                  className="portfolio-gallery-image" 
+                  onError={(e) => {
+                    // Si la imagen falla al cargar, mostrar una imagen de respaldo
+                    e.target.src = '/placeholder-image.jpg';
+                    console.error(`Error al cargar imagen: ${project.src}`);
+                  }}
+                />
+                <div className="portfolio-gallery-overlay">
+                  <h3>{project.title}</h3>
+                  <p>{categories.find(cat => cat.value === project.category)?.name || project.category}</p>
+                  {project.description && <p className="portfolio-description">{project.description}</p>}
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      )}
 
       <div 
         className="portfolio-cta-section"

@@ -28,7 +28,7 @@ type ResetPasswordRequest struct {
 func forgotPassword(c *gin.Context) {
 	var req ForgotPasswordRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		SendErrorResponse(c, err, http.StatusBadRequest)
 		return
 	}
 
@@ -37,6 +37,7 @@ func forgotPassword(c *gin.Context) {
 	result := db.Where("email = ?", req.Email).First(&user)
 	if result.Error != nil {
 		// No revelamos si el email existe o no por seguridad
+		// Usar directamente c.JSON como en el código original
 		c.JSON(http.StatusOK, gin.H{"message": "Si el email existe en nuestra base de datos, recibirás un enlace para restablecer tu contraseña."})
 		log.Printf("Email no encontrado o error de DB: %v", result.Error)
 		return
@@ -46,7 +47,7 @@ func forgotPassword(c *gin.Context) {
 	reset, err := GenerateResetToken(req.Email)
 	if err != nil {
 		log.Printf("Error al generar token: %v", err)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al generar token de restablecimiento"})
+		SendErrorResponse(c, errors.New("error al generar token de restablecimiento"), http.StatusInternalServerError)
 		return
 	}
 
@@ -83,6 +84,7 @@ func forgotPassword(c *gin.Context) {
 		}
 	}
 
+	// Usar el formato original que funcionaba
 	c.JSON(http.StatusOK, response)
 }
 
@@ -90,7 +92,7 @@ func forgotPassword(c *gin.Context) {
 func validateResetToken(c *gin.Context) {
 	token := c.Param("token")
 	if token == "" {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Token requerido", "valid": false})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "token requerido", "valid": false})
 		return
 	}
 
@@ -98,7 +100,7 @@ func validateResetToken(c *gin.Context) {
 	reset, err := ValidateResetToken(token)
 	if err != nil {
 		log.Printf("Token inválido: %v", err)
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Token inválido o expirado", "valid": false})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "token inválido o expirado", "valid": false})
 		return
 	}
 
@@ -109,7 +111,7 @@ func validateResetToken(c *gin.Context) {
 func resetPassword(c *gin.Context) {
 	var req ResetPasswordRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		SendErrorResponse(c, err, http.StatusBadRequest)
 		return
 	}
 
@@ -117,7 +119,7 @@ func resetPassword(c *gin.Context) {
 	reset, err := ValidateResetToken(req.Token)
 	if err != nil {
 		log.Printf("Error al validar token: %v", err)
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Token inválido o expirado"})
+		SendErrorResponse(c, errors.New("token inválido o expirado"), http.StatusBadRequest)
 		return
 	}
 
@@ -125,7 +127,7 @@ func resetPassword(c *gin.Context) {
 	var user Usuario
 	if result := db.Where("email = ?", reset.Email).First(&user); result.Error != nil {
 		log.Printf("Usuario no encontrado: %v", result.Error)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Usuario no encontrado"})
+		SendErrorResponse(c, ErrUserNotFound, http.StatusInternalServerError)
 		return
 	}
 
@@ -133,25 +135,25 @@ func resetPassword(c *gin.Context) {
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
 	if err != nil {
 		log.Printf("Error al generar hash: %v", err)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al procesar la contraseña"})
+		SendErrorResponse(c, errors.New("error al procesar la contraseña"), http.StatusInternalServerError)
 		return
 	}
 
 	// Actualizar la contraseña del usuario
 	if result := db.Model(&user).Update("password", string(hashedPassword)); result.Error != nil {
 		log.Printf("Error al actualizar contraseña: %v", result.Error)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al actualizar la contraseña"})
+		SendErrorResponse(c, errors.New("error al actualizar la contraseña"), http.StatusInternalServerError)
 		return
 	}
 
 	// Marcar el token como usado
 	if err := MarkTokenAsUsed(req.Token); err != nil {
 		log.Printf("Error al marcar token como usado: %v", err)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al actualizar el estado del token"})
+		SendErrorResponse(c, errors.New("error al actualizar el estado del token"), http.StatusInternalServerError)
 		return
 	}
 
-	// Devolver un JSON válido
+	// Devolver un JSON válido usando exactamente el mismo formato original
 	c.JSON(http.StatusOK, gin.H{"message": "Contraseña actualizada correctamente"})
 }
 

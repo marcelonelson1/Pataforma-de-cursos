@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"strings"
 	"time"
+	"log"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"
@@ -17,6 +18,7 @@ type RegisterRequest struct {
 	Nombre   string `json:"nombre" binding:"required"`
 	Email    string `json:"email" binding:"required,email"`
 	Password string `json:"password" binding:"required,min=6"`
+	Role     string `json:"role"` // Opcional, por defecto será "user"
 }
 
 type LoginRequest struct {
@@ -31,7 +33,8 @@ type AuthResponse struct {
 
 // JWT Claims personalizado
 type Claims struct {
-	UserID uint `json:"user_id"`
+	UserID uint   `json:"user_id"`
+	Role   string `json:"role"` // Añadimos el rol a los claims
 	jwt.RegisteredClaims
 }
 
@@ -42,22 +45,28 @@ var jwtSecret = []byte(getEnv("JWT_SECRET", "mi_clave_secreta_muy_segura"))
 func register(c *gin.Context) {
 	var req RegisterRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		SendErrorResponse(c, err, http.StatusBadRequest)
 		return
 	}
 
 	// Verificar si el email ya existe
 	var existingUser Usuario
 	if result := db.Where("email = ?", req.Email).First(&existingUser); result.Error == nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Este email ya está registrado"})
+		SendErrorResponse(c, ErrEmailExists, http.StatusBadRequest)
 		return
 	}
 
 	// Hash de la contraseña
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al procesar la contraseña"})
+		SendErrorResponse(c, errors.New("error al procesar la contraseña"), http.StatusInternalServerError)
 		return
+	}
+
+	// Establecer rol por defecto si no se proporciona
+	role := req.Role
+	if role == "" {
+		role = "user" // Por defecto, todos los usuarios son "user"
 	}
 
 	// Crear nuevo usuario
@@ -65,13 +74,15 @@ func register(c *gin.Context) {
 		Nombre:   req.Nombre,
 		Email:    req.Email,
 		Password: string(hashedPassword),
+		Role:     role,
 	}
 
 	if result := db.Create(&user); result.Error != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al crear usuario"})
+		SendErrorResponse(c, errors.New("error al crear usuario"), http.StatusInternalServerError)
 		return
 	}
 
+	// Usar directamente c.JSON como en el código original que funcionaba
 	c.JSON(http.StatusCreated, gin.H{"message": "Usuario registrado correctamente"})
 }
 
@@ -79,7 +90,7 @@ func register(c *gin.Context) {
 func login(c *gin.Context) {
 	var req LoginRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		SendErrorResponse(c, err, http.StatusBadRequest)
 		return
 	}
 
@@ -87,29 +98,40 @@ func login(c *gin.Context) {
 	var user Usuario
 	if result := db.Where("email = ?", req.Email).First(&user); result.Error != nil {
 		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Credenciales inválidas"})
+			SendErrorResponse(c, ErrInvalidLogin, http.StatusUnauthorized)
 			return
 		}
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al buscar usuario"})
+		SendErrorResponse(c, errors.New("error al buscar usuario"), http.StatusInternalServerError)
 		return
 	}
 
 	// Verificar contraseña
 	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password)); err != nil {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "Credenciales inválidas"})
+		SendErrorResponse(c, ErrInvalidLogin, http.StatusUnauthorized)
 		return
 	}
 
+	// Actualizar última conexión
+	now := time.Now()
+	if err := db.Model(&user).Update("last_login", now).Error; err != nil {
+		// Solo registramos el error, no detenemos el proceso de login
+		log.Printf("Error al actualizar última conexión: %v", err)
+	}
+
 	// Generar token JWT
-	token, err := generateToken(user.ID)
+	token, err := generateToken(user.ID, user.Role)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al generar token"})
+		SendErrorResponse(c, errors.New("error al generar token"), http.StatusInternalServerError)
 		return
 	}
 
 	// No enviar la contraseña en la respuesta
 	user.Password = ""
 
+	// Actualizar last_login en la instancia local para devolverla en la respuesta
+	user.LastLogin = now
+
+	// Usar el formato original de AuthResponse
 	c.JSON(http.StatusOK, AuthResponse{
 		Token: token,
 		User:  user,
@@ -117,10 +139,12 @@ func login(c *gin.Context) {
 }
 
 // Función para generar token JWT
-func generateToken(userID uint) (string, error) {
+func generateToken(userID uint, role string) (string, error) {
+	// Aumentamos el tiempo de expiración para evitar desconexiones frecuentes
 	expirationTime := time.Now().Add(24 * time.Hour)
 	claims := &Claims{
 		UserID: userID,
+		Role:   role, // Incluir el rol en el token
 		RegisteredClaims: jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(expirationTime),
 			IssuedAt:  jwt.NewNumericDate(time.Now()),
@@ -137,7 +161,7 @@ func authMiddleware() gin.HandlerFunc {
 		// Obtener el token del encabezado de autorización
 		authHeader := c.GetHeader("Authorization")
 		if authHeader == "" {
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Token de autorización requerido"})
+			SendErrorResponse(c, errors.New("token de autorización requerido"), http.StatusUnauthorized)
 			c.Abort()
 			return
 		}
@@ -145,7 +169,7 @@ func authMiddleware() gin.HandlerFunc {
 		// Verificar que el token tenga el formato correcto
 		tokenParts := strings.Split(authHeader, " ")
 		if len(tokenParts) != 2 || tokenParts[0] != "Bearer" {
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Formato de token inválido"})
+			SendErrorResponse(c, errors.New("formato de token inválido"), http.StatusUnauthorized)
 			c.Abort()
 			return
 		}
@@ -159,7 +183,7 @@ func authMiddleware() gin.HandlerFunc {
 		})
 
 		if err != nil || !token.Valid {
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Token inválido o expirado"})
+			SendErrorResponse(c, ErrInvalidToken, http.StatusUnauthorized)
 			c.Abort()
 			return
 		}
@@ -167,9 +191,15 @@ func authMiddleware() gin.HandlerFunc {
 		// Verificar si el usuario existe en la base de datos
 		var user Usuario
 		if result := db.First(&user, claims.UserID); result.Error != nil {
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Usuario no encontrado"})
+			SendErrorResponse(c, ErrUserNotFound, http.StatusUnauthorized)
 			c.Abort()
 			return
+		}
+
+		// Verificar que el rol en el token coincida con el de la base de datos
+		if claims.Role != user.Role {
+			// Si han cambiado los roles, actualizamos la información del usuario
+			log.Printf("Diferencia en roles: Token (%s) vs. DB (%s) para usuario ID: %d", claims.Role, user.Role, user.ID)
 		}
 
 		// Añadir el usuario al contexto para que los controladores puedan acceder a él
@@ -177,4 +207,115 @@ func authMiddleware() gin.HandlerFunc {
 
 		c.Next()
 	}
+}
+
+// adminMiddleware verifica si el usuario autenticado tiene rol de administrador
+func adminMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		// Obtener el usuario del contexto (establecido por authMiddleware)
+		userValue, exists := c.Get("user")
+		if !exists {
+			SendErrorResponse(c, ErrUnauthorized, http.StatusUnauthorized)
+			c.Abort()
+			return
+		}
+
+		user, ok := userValue.(Usuario)
+		if !ok {
+			SendErrorResponse(c, errors.New("error al obtener información del usuario"), http.StatusInternalServerError)
+			c.Abort()
+			return
+		}
+
+		// Verificar si el usuario tiene rol de administrador
+		if user.Role != "admin" {
+			// Registrar intento de acceso no autorizado para auditoría de seguridad
+			log.Printf("Intento de acceso a área administrativa por usuario sin permisos. ID: %d, Email: %s, Rol: %s", 
+				user.ID, user.Email, user.Role)
+				
+			SendErrorResponse(c, errors.New("acceso denegado: se requiere rol de administrador"), http.StatusForbidden)
+			c.Abort()
+			return
+		}
+
+		// Verificar adicionalmente en la base de datos para asegurar que el rol no ha cambiado
+		var dbUser Usuario
+		if result := db.Select("role").First(&dbUser, user.ID); result.Error != nil {
+			log.Printf("Error al verificar rol en DB para usuario ID: %d: %v", user.ID, result.Error)
+			SendErrorResponse(c, errors.New("error al verificar permisos de administrador"), http.StatusInternalServerError)
+			c.Abort()
+			return
+		}
+
+		// Comprobar que el rol en la base de datos sigue siendo admin
+		if dbUser.Role != "admin" {
+			log.Printf("Discrepancia de roles detectada. Token: admin, DB: %s para usuario ID: %d", dbUser.Role, user.ID)
+			SendErrorResponse(c, errors.New("acceso denegado: usuario ya no tiene permisos de administrador"), http.StatusForbidden)
+			c.Abort()
+			return
+		}
+
+		// Registrar acceso administrativo exitoso para auditoría
+		log.Printf("Acceso administrativo exitoso. Usuario ID: %d, Email: %s", user.ID, user.Email)
+
+		c.Next()
+	}
+}
+
+// checkAdmin verifica y responde si el usuario tiene rol admin
+func checkAdmin(c *gin.Context) {
+	// Obtener el usuario del contexto (establecido por authMiddleware)
+	userValue, exists := c.Get("user")
+	if !exists {
+		SendErrorResponse(c, ErrUnauthorized, http.StatusUnauthorized)
+		return
+	}
+
+	user, ok := userValue.(Usuario)
+	if !ok {
+		SendErrorResponse(c, errors.New("error al obtener información del usuario"), http.StatusInternalServerError)
+		return
+	}
+
+	// Verificar si el usuario tiene rol de administrador
+	isAdmin := user.Role == "admin"
+
+	// Si no es admin, registrar el intento para auditoría
+	if !isAdmin {
+		log.Printf("Verificación de admin fallida. Usuario ID: %d, Email: %s, Rol: %s", 
+			user.ID, user.Email, user.Role)
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"isAdmin": isAdmin,
+	})
+}
+
+// refreshToken extiende la sesión del usuario generando un nuevo token
+func refreshToken(c *gin.Context) {
+	// Obtener el usuario del contexto (establecido por authMiddleware)
+	userValue, exists := c.Get("user")
+	if !exists {
+		SendErrorResponse(c, ErrUnauthorized, http.StatusUnauthorized)
+		return
+	}
+
+	user, ok := userValue.(Usuario)
+	if !ok {
+		SendErrorResponse(c, errors.New("error al obtener información del usuario"), http.StatusInternalServerError)
+		return
+	}
+
+	// Generar nuevo token
+	token, err := generateToken(user.ID, user.Role)
+	if err != nil {
+		SendErrorResponse(c, errors.New("error al renovar el token"), http.StatusInternalServerError)
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"success": true,
+		"token": token,
+	})
 }

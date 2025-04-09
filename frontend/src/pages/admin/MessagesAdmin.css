@@ -304,6 +304,225 @@
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
 }
 
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btn-cancel, .btn-primary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-cancel:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+}
+
+.btn-primary:disabled, .btn-cancel:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Estilos para el componente de notificación */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease-out;
+    z-index: 1000;
+    max-width: 400px;
+    min-width: 300px;
+    background-color: rgba(30, 30, 30, 0.95);
+    border-left: 4px solid;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification-success {
+    border-left-color: #4caf50;
+}
+
+.notification-error {
+    border-left-color: #f44336;
+}
+
+.notification-icon {
+    margin-right: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.notification-success .notification-icon {
+    color: #4caf50;
+}
+
+.notification-error .notification-icon {
+    color: #f44336;
+}
+
+.notification-message {
+    flex: 1;
+    color: white;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    transition: color 0.2s;
+}
+
+.notification-close:hover {
+    color: white;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #3b82f6;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-bar {
+    position: relative;
+    width: 300px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.search-bar svg {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sender-phone {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.3rem;
+}
+
+.error-message {
+    padding: 1rem;
+    background-color: rgba(239, 68, 68, 0.1);
+    border-left: 4px solid #ef4444;
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
 @media (max-width: 768px) {
     .messages-table-header,
     .message-row {

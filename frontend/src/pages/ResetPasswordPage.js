@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './LoginPage.css'; // Reutilizamos los estilos
+import './ResetPasswordPage.css';
 
 function ResetPasswordPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
   const [validatingToken, setValidatingToken] = useState(true);
   const [tokenValid, setTokenValid] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const { token } = useParams();
   const navigate = useNavigate();
 
@@ -57,7 +58,7 @@ function ResetPasswordPage() {
     
     setLoading(true);
     setError('');
-    setMessage('');
+    setSuccess('');
     
     try {
       const response = await fetch('http://localhost:5000/api/auth/reset-password', {
@@ -88,12 +89,10 @@ function ResetPasswordPage() {
         throw new Error(data.error || 'Error al restablecer la contraseña');
       }
       
-      setMessage('Tu contraseña ha sido actualizada correctamente.');
+      setSuccess('¡Contraseña actualizada!');
+      setFormSubmitted(true);
       
-      // Redirigir al login después de 3 segundos
-      setTimeout(() => {
-        navigate('/login');
-      }, 3000);
+      // Ya no necesitamos el timeout para redirección, ahora mostramos un botón como en ForgotPasswordPage
     } catch (err) {
       setError(err.message);
     } finally {
@@ -103,19 +102,19 @@ function ResetPasswordPage() {
 
   if (validatingToken) {
     return (
-      <div className="login-page animate__animated animate__fadeIn">
+      <div className="reset-password-page">
         <h2>Validando Enlace</h2>
-        <p>Por favor espera mientras validamos tu enlace de restablecimiento...</p>
+        <p className="form-description">Por favor espera mientras validamos tu enlace de restablecimiento...</p>
       </div>
     );
   }
 
   if (!tokenValid) {
     return (
-      <div className="login-page animate__animated animate__fadeIn">
+      <div className="reset-password-page">
         <h2>Enlace No Válido</h2>
-        <div className="error-message">{error}</div>
-        <div className="register-link">
+        <div className="reset-password-error-message">{error}</div>
+        <div className="login-link">
           <a href="/recuperar-contrasena">Solicitar un nuevo enlace</a>
         </div>
       </div>
@@ -123,44 +122,77 @@ function ResetPasswordPage() {
   }
 
   return (
-    <div className="login-page animate__animated animate__fadeIn">
+    <div className="reset-password-page">
       <h2>Restablecer Contraseña</h2>
       
-      <form className="login-form" onSubmit={handleSubmit}>
-        {error && <div className="error-message">{error}</div>}
-        {message && <div className="success-message">{message}</div>}
-        
-        <div className="form-group">
-          <label htmlFor="password">Nueva Contraseña</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            minLength="6"
-            className="form-input"
-            placeholder=" "
-          />
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="confirmPassword">Confirmar Contraseña</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-            className="form-input"
-            placeholder=" "
-          />
-        </div>
-        
-        <button type="submit" className="submit-btn" disabled={loading}>
-          {loading ? 'Procesando...' : 'Restablecer Contraseña'}
-        </button>
-      </form>
+      {!formSubmitted ? (
+        <form className="reset-password-form" onSubmit={handleSubmit}>
+          {/* Mostrar el contenedor de mensajes sólo cuando hay algún mensaje */}
+          {(error || success) && (
+            <div className="reset-password-messages">
+              {error && <div className="reset-password-error-message">{error}</div>}
+              {success && <div className="reset-password-success-message">{success}</div>}
+            </div>
+          )}
+          
+          <p className="form-description">
+            Introduce tu nueva contraseña para completar el proceso de restablecimiento.
+          </p>
+          
+          <div className="form-group">
+            <label htmlFor="password">Nueva Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              minLength="6"
+              className="form-input"
+              placeholder="Ingresa tu nueva contraseña"
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="confirmPassword">Confirmar Contraseña</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              className="form-input"
+              placeholder="Confirma tu nueva contraseña"
+            />
+          </div>
+          
+          <button type="submit" className="submit-btn" disabled={loading}>
+            {loading ? 'Procesando...' : 'Restablecer Contraseña'}
+          </button>
+          
+          <div className="login-link">
+            <a href="/login">Volver a Iniciar Sesión</a>
+          </div>
+        </form>
+      ) : (
+        <>
+          <div className="reset-password-success-container">
+            <div className="reset-password-success-message">
+              <div className="success-title">¡Contraseña actualizada!</div>
+              <p>Tu contraseña ha sido restablecida correctamente.</p>
+              <p>Ya puedes iniciar sesión con tu nueva contraseña.</p>
+            </div>
+          </div>
+          
+          <button 
+            type="button" 
+            className="submit-btn login-button" 
+            onClick={() => navigate('/login')}
+          >
+            Volver a Iniciar Sesión
+          </button>
+        </>
+      )}
     </div>
   );
 }

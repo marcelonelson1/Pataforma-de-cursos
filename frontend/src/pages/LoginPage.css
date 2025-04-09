@@ -1,16 +1,17 @@
+/* LoginPage.css */
 .login-page {
   padding: 2rem;
-  background-color: #000000; /* Fondo negro como en Home.css y CursosPage.css */
+  background-color: #000000;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra con tono blanco */
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
   max-width: 400px;
   margin: 2rem auto;
-  font-family: 'Inter', 'Helvetica Neue', sans-serif; /* Fuente consistente */
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
 }
 
 .login-page h2 {
   font-size: 2rem;
-  color: #ffffff; /* Texto blanco */
+  color: #ffffff;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   text-align: center;
@@ -28,29 +29,13 @@
   width: 100%;
 }
 
-.form-description {
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
-  text-align: center;
-  margin: 1rem 0 1.5rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  padding: 0 1rem;
-  background-color: rgba(255, 255, 255, 0.05); /* Fondo blanco translúcido */
-  border-radius: 0.25rem;
-  transition: all 0.3s ease;
-}
-
-.form-description:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Efecto hover con más transparencia */
-}
-
 .form-group {
   width: 100%;
   position: relative;
 }
 
 .form-group label {
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   display: block;
   margin-bottom: 0.3rem;
@@ -59,9 +44,9 @@
 .form-input {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde blanco con transparencia */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.25rem;
-  background-color: #1a1a1a; /* Fondo gris oscuro como en CursosPage.css */
+  background-color: #1a1a1a;
   color: #ffffff;
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
   transition: all 0.3s ease;
@@ -70,12 +55,12 @@
 
 .form-input:focus {
   outline: none;
-  border-color: rgba(255, 255, 255, 0.7); /* Borde blanco con más transparencia en focus */
+  border-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 .form-input:hover {
-  border-color: rgba(255, 255, 255, 0.5); /* Borde blanco con transparencia en hover */
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .password-input-container {
@@ -90,7 +75,7 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
+  color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   padding: 0;
   display: flex;
@@ -102,7 +87,7 @@
 }
 
 .password-toggle-btn:hover {
-  color: rgba(255, 255, 255, 0.9); /* Texto blanco con menos transparencia en hover */
+  color: rgba(255, 255, 255, 0.9);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -117,9 +102,9 @@
 .submit-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco translúcido */
+  background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde blanco con transparencia */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.25rem;
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
   font-weight: bold;
@@ -131,39 +116,25 @@
 }
 
 .submit-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco con más transparencia en hover */
+  background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
 
 .submit-btn:disabled {
-  background-color: rgba(255, 255, 255, 0.05); /* Fondo blanco con menos transparencia */
+  background-color: rgba(255, 255, 255, 0.05);
   cursor: not-allowed;
   transform: none;
 }
 
 .error-message {
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
-  background-color: rgba(255, 255, 255, 0.05); /* Fondo blanco translúcido */
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
   padding: 0.75rem;
   border-radius: 0.25rem;
-  border-left: 4px solid rgba(255, 255, 255, 0.7); /* Borde izquierdo blanco con transparencia */
+  border-left: 4px solid #ff6b6b;
   margin-bottom: 1rem;
-}
-
-.register-link {
-  margin-top: 1.5rem;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
-}
-
-.register-link a {
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.register-link a:hover {
-  color: rgba(255, 255, 255, 0.9); /* Texto blanco con menos transparencia en hover */
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .forgot-password {
@@ -172,14 +143,30 @@
 }
 
 .forgot-password a {
-  color: rgba(255, 255, 255, 0.7); /* Texto blanco con transparencia */
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.85rem;
 }
 
 .forgot-password a:hover {
-  color: rgba(255, 255, 255, 0.9); /* Texto blanco con menos transparencia en hover */
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: underline;
+}
+
+.register-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.register-link a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @keyframes fadeIn {
