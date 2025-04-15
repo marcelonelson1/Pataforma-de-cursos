@@ -3,7 +3,6 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import ProfileService from '../../components/services/ProfileService';
 import './Admin.css';
-// Importamos los iconos necesarios
 import { 
   FaChalkboardTeacher, 
   FaChartPie, 
@@ -13,7 +12,8 @@ import {
   FaSignOutAlt, 
   FaSearch,
   FaSpinner,
-  FaImages
+  FaImages,
+  FaHome
 } from 'react-icons/fa';
 
 const AdminPage = () => {
@@ -31,12 +31,9 @@ const AdminPage = () => {
       const response = await ProfileService.getProfile();
       
       if (response.data.success) {
-        // Cargar imagen de perfil si existe
         if (response.data.user.image_url) {
           setProfileImage(`${apiUrl}${response.data.user.image_url}`);
         }
-        
-        // Cargar notificaciones
         fetchNotifications();
       }
     } catch (error) {
@@ -49,79 +46,53 @@ const AdminPage = () => {
   // Obtener notificaciones
   const fetchNotifications = async () => {
     try {
-      // Aquí conectaríamos con el endpoint de notificaciones
-      // Por ahora simulamos una carga
       setTimeout(() => {
-        setNotifications(2); // Simular 2 notificaciones
+        setNotifications(2);
       }, 500);
     } catch (error) {
       console.error('Error al cargar notificaciones:', error);
     }
   };
 
-  // Verificar estado de administrador y cargar datos
+  // Verificar estado de administrador
   useEffect(() => {
     const verifyAdmin = async () => {
       setLoading(true);
-      
-      // Verificar que el usuario tenga permisos de administrador
       const isAdminUser = await checkAdminStatus();
       
       if (!isAdminUser) {
-        // Si no es administrador, redirigir al inicio
         logout();
         navigate('/login', { state: { message: 'Acceso denegado. Se requieren privilegios de administrador.' } });
         return;
       }
       
-      // Intentar refrescar el token si es necesario
       await refreshToken();
-      
-      // Cargar datos adicionales
       await loadProfileData();
     };
     
     verifyAdmin();
   }, [checkAdminStatus, logout, navigate, refreshToken, loadProfileData]);
 
-  // Simulación de búsqueda
+  // Manejar búsqueda
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      // Implementación de búsqueda real
       setLoading(true);
-      
-      // Simular llamada a API
       setTimeout(() => {
         console.log(`Buscando: ${searchQuery}`);
         setLoading(false);
-        
-        // Aquí redirigirías a los resultados
-        // navigate(`/admin/search?q=${encodeURIComponent(searchQuery)}`);
-        
-        // Reinicia el campo después de la búsqueda
         setSearchQuery('');
       }, 500);
     }
   };
 
-  // Manejo de cierre de sesión
+  // Cerrar sesión
   const handleLogout = () => {
     setLoading(true);
-    
-    // Registrar última actividad antes de cerrar sesión
-    try {
-      // Aquí se podría hacer una llamada al backend para registrar el cierre de sesión
-      // Por ahora simplemente esperamos un poco
-      setTimeout(() => {
-        logout();
-        navigate('/login', { state: { message: 'Sesión cerrada correctamente' } });
-      }, 300);
-    } catch (error) {
-      console.error('Error al cerrar sesión:', error);
+    setTimeout(() => {
       logout();
-      navigate('/login');
-    }
+      navigate('/login', { state: { message: 'Sesión cerrada correctamente' } });
+    }, 300);
   };
 
   // Ver todas las notificaciones
@@ -141,7 +112,11 @@ const AdminPage = () => {
         <h2>Panel Admin</h2>
         
         <div className="nav-section">
-          <div className="nav-section-title">Gestión</div>
+          <div className="nav-section-title">Gestión Principal</div>
+          <NavLink to="dashboard" className={({ isActive }) => isActive ? 'active' : ''}>
+            <FaHome />
+            Dashboard
+          </NavLink>
           <NavLink to="courses" className={({ isActive }) => isActive ? 'active' : ''}>
             <FaChalkboardTeacher />
             Cursos
@@ -156,6 +131,14 @@ const AdminPage = () => {
             {notifications > 0 && (
               <span className="notification-badge">{notifications}</span>
             )}
+          </NavLink>
+        </div>
+
+        <div className="nav-section">
+          <div className="nav-section-title">Contenido</div>
+          <NavLink to="home-images" className={({ isActive }) => isActive ? 'active' : ''}>
+            <FaImages />
+            Slider Home
           </NavLink>
           <NavLink to="portfolio" className={({ isActive }) => isActive ? 'active' : ''}>
             <FaImages />
@@ -178,14 +161,14 @@ const AdminPage = () => {
       
       <div className="admin-content">
         <div className="admin-header">
-          <h1>Dashboard</h1>
+          <h1>Panel de Administración</h1>
           
           <div className="user-actions">
             <form className="search-bar" onSubmit={handleSearch}>
               {loading ? <FaSpinner className="spinner" /> : <FaSearch />}
               <input 
                 type="text" 
-                placeholder="Buscar..." 
+                placeholder="Buscar cursos, usuarios..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 disabled={loading}
@@ -194,36 +177,46 @@ const AdminPage = () => {
             
             <div 
               className="notification-bell" 
-              data-tooltip="Notificaciones"
               onClick={handleViewAllNotifications}
+              data-tooltip="Notificaciones no leídas"
             >
               <FaBell />
               {notifications > 0 && (
-                <span className="notification-indicator"></span>
+                <span className="notification-indicator">{notifications}</span>
               )}
             </div>
             
-            <div className="user-profile" onClick={() => navigate('/admin/profile')}>
+            <div 
+              className="user-profile" 
+              onClick={() => navigate('/admin/profile')}
+              data-tooltip="Editar perfil"
+            >
               {profileImage ? (
                 <img 
                   src={profileImage} 
-                  alt="Perfil" 
+                  alt="Avatar del usuario" 
                   className="user-avatar-img"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    setProfileImage(null);
+                  }}
                 />
               ) : (
-                <div className="user-avatar">
-                  {user?.nombre?.charAt(0) || 'A'}
+                <div className="user-avatar-fallback">
+                  {user?.nombre?.charAt(0).toUpperCase() || 'A'}
                 </div>
               )}
               <div className="user-info">
-                <span className="user-name">{user?.nombre || 'Admin'}</span>
-                <span className="user-role">{user?.role === 'admin' ? 'Administrador' : 'Usuario'}</span>
+                <span className="user-name">{user?.nombre || 'Administrador'}</span>
+                <span className="user-email">{user?.email}</span>
               </div>
             </div>
           </div>
         </div>
         
-        <Outlet />
+        <div className="admin-main-content">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

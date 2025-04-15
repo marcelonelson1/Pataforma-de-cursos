@@ -16,6 +16,9 @@ import (
 	"gorm.io/gorm/logger"
 )
 
+// Constantes para manejo de videos y imágenes
+
+
 // Estructuras de modelos
 type Usuario struct {
 	ID        uint      `gorm:"primaryKey" json:"id"`
@@ -28,6 +31,58 @@ type Usuario struct {
 	LastLogin time.Time `json:"last_login"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
+}
+
+func healthCheck(c *gin.Context) {
+	sqlDB, err := db.DB()
+	if err != nil {
+		SendErrorResponse(c, ErrDatabaseError, http.StatusInternalServerError)
+		return
+	}
+
+	if err := sqlDB.Ping(); err != nil {
+		SendErrorResponse(c, ErrDatabaseError, http.StatusServiceUnavailable)
+		return
+	}
+
+	SendSuccessResponse(c, gin.H{
+		"status":  "ok",
+		"version": "1.0.0",
+		"time":    time.Now().Format(time.RFC3339),
+	})
+}
+
+func startServer(router *gin.Engine) {
+	port := getEnv("PORT", "5000")
+	server := &http.Server{
+		Addr:         ":" + port,
+		Handler:      router,
+		ReadTimeout:  15 * time.Second,
+		WriteTimeout: 15 * time.Second,
+		IdleTimeout:  60 * time.Second,
+	}
+
+	log.Printf("Iniciando servidor en puerto %s", port)
+	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+		log.Fatalf("Error al iniciar servidor: %v", err)
+	}
+}
+
+func getEnv(key, defaultValue string) string {
+	if value, exists := os.LookupEnv(key); exists {
+		return value
+	}
+	return defaultValue
+}
+
+// Función auxiliar para crear directorios si no existen
+func createDirIfNotExists(dirPath string) {
+	if _, err := os.Stat(dirPath); os.IsNotExist(err) {
+		log.Printf("Creando directorio: %s", dirPath)
+		if err := os.MkdirAll(dirPath, 0755); err != nil {
+			log.Printf("Error al crear directorio %s: %v", dirPath, err)
+		}
+	}
 }
 
 type Curso struct {
@@ -58,6 +113,9 @@ type Capitulo struct {
 	Curso       *Curso    `gorm:"foreignKey:CursoID" json:"-"`
 }
 
+// Estructura para el progreso del usuario en un curso
+
+
 type Pago struct {
 	ID            uint      `gorm:"primaryKey" json:"id"`
 	UsuarioID     uint      `gorm:"not null" json:"usuario_id"`
@@ -81,6 +139,10 @@ type ActivityLog struct {
 }
 
 // ContactMessage representa un mensaje enviado a través del formulario de contacto
+
+
+// ProjectPortfolio representa un proyecto en el portfolio
+
 
 var db *gorm.DB
 
@@ -110,10 +172,11 @@ func initStaticDirs() {
 	initVideosDir()
 	initProfilesDir()
 	initPortfolioDir()
+	initHomeImagesDirs()
+	
+	// Inicializar directorio para imágenes de cursos
+	createDirIfNotExists("./static/images")
 }
-
-// initVideosDir inicializa el directorio para videos de cursos
-
 
 // initProfilesDir inicializa el directorio para imágenes de perfil
 func initProfilesDir() {
@@ -124,6 +187,9 @@ func initProfilesDir() {
 func initPortfolioDir() {
 	createDirIfNotExists("./static/portfolio")
 }
+
+// initHomeImagesDirs inicializa el directorio para imágenes del home
+
 
 func setupLogging() {
 	logFile, err := os.OpenFile("app.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
@@ -194,6 +260,8 @@ func migrateWithConstraints() error {
 		"fk_pagos_usuario", "fk_pago_usuario", 
 		"fk_pagos_curso", "fk_pago_curso",
 		"fk_capitulos_curso", "fk_capitulo_curso",
+		"fk_progreso_usuario", "fk_progreso_curso", 
+		"fk_progreso_capitulo_usuario", "fk_progreso_capitulo_curso", "fk_progreso_capitulo_capitulo",
 	}
 	
 	for _, constraint := range constraintNames {
@@ -205,6 +273,18 @@ func migrateWithConstraints() error {
 		
 		if db.Migrator().HasConstraint(&Capitulo{}, constraint) {
 			if err := db.Migrator().DropConstraint(&Capitulo{}, constraint); err != nil {
+				log.Printf("Advertencia: No se pudo eliminar constraint %s: %v", constraint, err)
+			}
+		}
+		
+		if db.Migrator().HasConstraint(&ProgresoUsuario{}, constraint) {
+			if err := db.Migrator().DropConstraint(&ProgresoUsuario{}, constraint); err != nil {
+				log.Printf("Advertencia: No se pudo eliminar constraint %s: %v", constraint, err)
+			}
+		}
+		
+		if db.Migrator().HasConstraint(&ProgresoCapitulo{}, constraint) {
+			if err := db.Migrator().DropConstraint(&ProgresoCapitulo{}, constraint); err != nil {
 				log.Printf("Advertencia: No se pudo eliminar constraint %s: %v", constraint, err)
 			}
 		}
@@ -232,8 +312,27 @@ func migrateWithConstraints() error {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_capitulo_curso: %v", err)
 	}
 
+	// Eliminar constraints de tablas específicas para ProgresoUsuario
+	if err := db.Exec("ALTER TABLE progreso_usuarios DROP FOREIGN KEY IF EXISTS fk_progreso_usuario").Error; err != nil {
+		log.Printf("Advertencia: No se pudo eliminar constraint fk_progreso_usuario: %v", err)
+	}
+	if err := db.Exec("ALTER TABLE progreso_usuarios DROP FOREIGN KEY IF EXISTS fk_progreso_curso").Error; err != nil {
+		log.Printf("Advertencia: No se pudo eliminar constraint fk_progreso_curso: %v", err)
+	}
+
+	// Eliminar constraints de tablas específicas para ProgresoCapitulo
+	if err := db.Exec("ALTER TABLE progreso_capitulos DROP FOREIGN KEY IF EXISTS fk_progreso_capitulo_usuario").Error; err != nil {
+		log.Printf("Advertencia: No se pudo eliminar constraint fk_progreso_capitulo_usuario: %v", err)
+	}
+	if err := db.Exec("ALTER TABLE progreso_capitulos DROP FOREIGN KEY IF EXISTS fk_progreso_capitulo_curso").Error; err != nil {
+		log.Printf("Advertencia: No se pudo eliminar constraint fk_progreso_capitulo_curso: %v", err)
+	}
+	if err := db.Exec("ALTER TABLE progreso_capitulos DROP FOREIGN KEY IF EXISTS fk_progreso_capitulo_capitulo").Error; err != nil {
+		log.Printf("Advertencia: No se pudo eliminar constraint fk_progreso_capitulo_capitulo: %v", err)
+	}
+
 	// Migrar las tablas base
-	if err := db.AutoMigrate(&Usuario{}, &Curso{}, &Capitulo{}, &ActivityLog{}, &ContactMessage{}, &ProjectPortfolio{}); err != nil {
+	if err := db.AutoMigrate(&Usuario{}, &Curso{}, &Capitulo{}, &ProgresoUsuario{}, &ProgresoCapitulo{}, &ActivityLog{}, &ContactMessage{}, &ProjectPortfolio{}, &HomeImage{}); err != nil {
 		return fmt.Errorf("error al migrar tablas base: %v", err)
 	}
 
@@ -245,6 +344,19 @@ func migrateWithConstraints() error {
 	} else {
 		if err := db.Exec("ALTER TABLE pagos MODIFY COLUMN estado varchar(20) NOT NULL DEFAULT 'pendiente'").Error; err != nil {
 			log.Printf("Advertencia: No se pudo modificar columna estado: %v", err)
+		}
+	}
+
+	// Verificar y crear tablas de progreso si no existen
+	if !db.Migrator().HasTable(&ProgresoUsuario{}) {
+		if err := db.Migrator().CreateTable(&ProgresoUsuario{}); err != nil {
+			return fmt.Errorf("error al crear tabla ProgresoUsuario: %v", err)
+		}
+	}
+
+	if !db.Migrator().HasTable(&ProgresoCapitulo{}) {
+		if err := db.Migrator().CreateTable(&ProgresoCapitulo{}); err != nil {
+			return fmt.Errorf("error al crear tabla ProgresoCapitulo: %v", err)
 		}
 	}
 
@@ -265,6 +377,46 @@ func migrateWithConstraints() error {
 		"ALTER TABLE capitulos ADD CONSTRAINT fk_capitulos_curso FOREIGN KEY (curso_id) REFERENCES cursos(id) ON DELETE CASCADE",
 	).Error; err != nil {
 		log.Printf("Advertencia: No se pudo crear constraint fk_capitulos_curso: %v", err)
+	}
+
+	// Crear índices y constraints para tablas de progreso
+	if err := db.Exec(
+		"ALTER TABLE progreso_usuarios ADD CONSTRAINT fk_progreso_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE",
+	).Error; err != nil {
+		log.Printf("Advertencia: No se pudo crear constraint fk_progreso_usuario: %v", err)
+	}
+
+	if err := db.Exec(
+		"ALTER TABLE progreso_usuarios ADD CONSTRAINT fk_progreso_curso FOREIGN KEY (curso_id) REFERENCES cursos(id) ON DELETE CASCADE",
+	).Error; err != nil {
+		log.Printf("Advertencia: No se pudo crear constraint fk_progreso_curso: %v", err)
+	}
+
+	if err := db.Exec(
+		"ALTER TABLE progreso_capitulos ADD CONSTRAINT fk_progreso_capitulo_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE",
+	).Error; err != nil {
+		log.Printf("Advertencia: No se pudo crear constraint fk_progreso_capitulo_usuario: %v", err)
+	}
+
+	if err := db.Exec(
+		"ALTER TABLE progreso_capitulos ADD CONSTRAINT fk_progreso_capitulo_curso FOREIGN KEY (curso_id) REFERENCES cursos(id) ON DELETE CASCADE",
+	).Error; err != nil {
+		log.Printf("Advertencia: No se pudo crear constraint fk_progreso_capitulo_curso: %v", err)
+	}
+
+	if err := db.Exec(
+		"ALTER TABLE progreso_capitulos ADD CONSTRAINT fk_progreso_capitulo_capitulo FOREIGN KEY (capitulo_id) REFERENCES capitulos(id) ON DELETE CASCADE",
+	).Error; err != nil {
+		log.Printf("Advertencia: No se pudo crear constraint fk_progreso_capitulo_capitulo: %v", err)
+	}
+
+	// Crear índices compuestos para mejorar el rendimiento
+	if err := db.Exec("CREATE INDEX IF NOT EXISTS idx_usuario_curso ON progreso_usuarios(usuario_id, curso_id)").Error; err != nil {
+		log.Printf("Advertencia: No se pudo crear índice idx_usuario_curso: %v", err)
+	}
+
+	if err := db.Exec("CREATE INDEX IF NOT EXISTS idx_usuario_capitulo ON progreso_capitulos(usuario_id, curso_id, capitulo_id)").Error; err != nil {
+		log.Printf("Advertencia: No se pudo crear índice idx_usuario_capitulo: %v", err)
 	}
 
 	if err := db.Exec("SET FOREIGN_KEY_CHECKS = 1").Error; err != nil {
@@ -366,6 +518,15 @@ func registerRoutes(router *gin.Engine) {
 		videos.DELETE("/:cursoId/:filename", deleteVideo)
 	}
 
+	// Nuevas rutas para el manejo del progreso de cursos
+	progreso := router.Group("/api/progreso")
+	{
+		progreso.Use(authMiddleware()) // Todas las rutas de progreso requieren autenticación
+		progreso.GET("/curso/:cursoId", getProgresoUsuario)
+		progreso.POST("/capitulo/completado", marcarCapituloCompletado)
+		progreso.POST("/ultimo-capitulo", guardarUltimoCapitulo)
+	}
+
 	// Rutas para el portfolio
 	portfolio := router.Group("/api/portfolio")
 	{
@@ -379,16 +540,47 @@ func registerRoutes(router *gin.Engine) {
 		portfolio.GET("/stats", authMiddleware(), adminMiddleware(), getPortfolioStats)
 	}
 
+	// Registrar rutas para imágenes del home
+	registerHomeImageRoutes(router)
+
 	// Rutas para archivos estáticos
+	// Ruta mejorada para servir videos
 	router.GET("/static/videos/:cursoId/:filename", getVideo)
+	
+	// Ruta mejorada para servir imágenes
+	router.GET("/static/images/:filename", func(c *gin.Context) {
+		filename := c.Param("filename")
+		filepath := "./static/images/" + filename
+		
+		// Verificar si el archivo existe
+		if _, err := os.Stat(filepath); os.IsNotExist(err) {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Imagen no encontrada"})
+			return
+		}
+		
+		// Establecer headers para la imagen
+		c.Header("Cache-Control", "public, max-age=31536000")
+		
+		// Entregar el archivo
+		c.File(filepath)
+	})
+	
+	// Ruta para servir imágenes de perfil
 	router.GET("/static/profiles/:filename", func(c *gin.Context) {
 		filename := c.Param("filename")
 		c.File("./static/profiles/" + filename)
 	})
+	
 	// Ruta para servir imágenes del portfolio
 	router.GET("/static/portfolio/:filename", func(c *gin.Context) {
 		filename := c.Param("filename")
 		c.File("./static/portfolio/" + filename)
+	})
+
+	// Ruta para servir imágenes del home
+	router.GET("/static/home/:filename", func(c *gin.Context) {
+		filename := c.Param("filename")
+		c.File("./static/home/" + filename)
 	})
 
 	pagos := router.Group("/api/pagos")
@@ -401,56 +593,4 @@ func registerRoutes(router *gin.Engine) {
 
 	router.POST("/api/contact", contactHandler)
 	router.GET("/api/health", healthCheck)
-}
-
-func healthCheck(c *gin.Context) {
-	sqlDB, err := db.DB()
-	if err != nil {
-		SendErrorResponse(c, ErrDatabaseError, http.StatusInternalServerError)
-		return
-	}
-
-	if err := sqlDB.Ping(); err != nil {
-		SendErrorResponse(c, ErrDatabaseError, http.StatusServiceUnavailable)
-		return
-	}
-
-	SendSuccessResponse(c, gin.H{
-		"status":  "ok",
-		"version": "1.0.0",
-		"time":    time.Now().Format(time.RFC3339),
-	})
-}
-
-func startServer(router *gin.Engine) {
-	port := getEnv("PORT", "5000")
-	server := &http.Server{
-		Addr:         ":" + port,
-		Handler:      router,
-		ReadTimeout:  15 * time.Second,
-		WriteTimeout: 15 * time.Second,
-		IdleTimeout:  60 * time.Second,
-	}
-
-	log.Printf("Iniciando servidor en puerto %s", port)
-	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-		log.Fatalf("Error al iniciar servidor: %v", err)
-	}
-}
-
-func getEnv(key, defaultValue string) string {
-	if value, exists := os.LookupEnv(key); exists {
-		return value
-	}
-	return defaultValue
-}
-
-// Función auxiliar para crear directorios si no existen
-func createDirIfNotExists(dirPath string) {
-	if _, err := os.Stat(dirPath); os.IsNotExist(err) {
-		log.Printf("Creando directorio: %s", dirPath)
-		if err := os.MkdirAll(dirPath, 0755); err != nil {
-			log.Printf("Error al crear directorio %s: %v", dirPath, err)
-		}
-	}
 }

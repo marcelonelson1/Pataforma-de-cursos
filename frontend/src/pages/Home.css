@@ -1,7 +1,7 @@
 /* Estilos base */
 .home {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
   min-height: 100vh;
   display: flex;
@@ -57,13 +57,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.15) 100%);
   z-index: 1;
   transition: all 0.8s ease;
 }
 
 .scroll-down .image-overlay {
-  background: rgba(0,0,0,0.8);
+  background: rgba(255,255,255,0.8);
 }
 
 /* Animaciones al scroll */
@@ -97,7 +97,7 @@
   align-items: center;
   position: relative;
   z-index: 2;
-  background-color: #000;
+  background-color: #fff;
   animation: fadeIn 1s ease-in-out 0.3s both;
 }
 
@@ -112,7 +112,7 @@
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.9) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -125,7 +125,7 @@
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   margin: 0 auto 3rem;
   line-height: 1.6;
   max-width: 700px;
@@ -144,8 +144,8 @@
 }
 
 .hero-cta {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #000000;
+  color: #ffffff;
   padding: 1rem 2rem;
   border-radius: 6px;
   font-weight: 600;
@@ -156,13 +156,13 @@
 
 .hero-cta.secondary {
   background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  color: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  color: #000000;
 }
 
 .hero-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
 }
 
 .features-grid {
@@ -176,17 +176,17 @@
 }
 
 .feature-card {
-  background-color: rgba(255, 255, 255, 0.07);
+  background-color: rgba(0, 0, 0, 0.07);
   border-radius: 12px;
   padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-10px);
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .feature-icon {
@@ -197,7 +197,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.15);
   font-size: 1.5rem;
 }
 
@@ -208,14 +208,14 @@
 }
 
 .feature-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-size: 1rem;
   line-height: 1.6;
 }
 
 /* Sección de Portafolio mejor centrada */
 .portfolio-section {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
@@ -232,7 +232,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.9) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -240,7 +240,7 @@
 }
 
 .portfolio-subtitle {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   max-width: 700px;
   margin: 0 auto 2.5rem;
   font-size: 1.1rem;
@@ -274,8 +274,8 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
-  color: white;
+  background: linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+  color: black;
   padding: 1.5rem;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -296,7 +296,7 @@
 
 .portfolio-overlay p {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(0,0,0,0.7);
 }
 
 .portfolio-cta {
@@ -307,7 +307,7 @@
 
 /* Sección de Testimonios */
 .testimonials-section {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(0, 0, 0, 0.03);
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
@@ -324,7 +324,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2.5rem;
-  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.9) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -339,8 +339,8 @@
 }
 
 .testimonial-card {
-  background-color: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   padding: 2rem;
   text-align: left;
@@ -349,13 +349,13 @@
 
 .testimonial-card:hover {
   transform: translateY(-10px);
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .testimonial-text {
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9);
   margin-bottom: 1.5rem;
   font-style: italic;
 }
@@ -367,13 +367,13 @@
 
 .author-name {
   font-weight: 600;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 0.3rem;
 }
 
 .author-role {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 /* Animaciones consistentes con otros componentes */

@@ -27,6 +27,8 @@ const CoursesAdmin = () => {
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [videoError, setVideoError] = useState('');
+  const [imageFile, setImageFile] = useState(null);
+  const [imageError, setImageError] = useState('');
   const [chapterForm, setChapterForm] = useState({
     titulo: '',
     descripcion: '',
@@ -39,11 +41,46 @@ const CoursesAdmin = () => {
     videoPreview: false
   });
 
+  // Obtener URL base de la API
+  const getApiBaseUrl = () => {
+    if (process.env.REACT_APP_API_URL) {
+      return process.env.REACT_APP_API_URL;
+    }
+    
+    const currentUrl = window.location.origin;
+    
+    if (currentUrl.includes('localhost')) {
+      return 'http://localhost:5000';
+    }
+    
+    return currentUrl;
+  };
+
+  // Función para corregir URLs de imágenes
+  const getImageUrl = (url) => {
+    if (!url) return null;
+    
+    // Si ya es una URL completa o una data URL, devolverla como está
+    if (url.startsWith('http') || url.startsWith('data:')) {
+      return url;
+    }
+    
+    // Si es una ruta relativa que empieza con /static, añadir la URL base
+    if (url.startsWith('/static/')) {
+      const baseUrl = getApiBaseUrl();
+      return `${baseUrl}${url}`;
+    }
+    
+    // Por defecto, devolver la URL sin cambios
+    return url;
+  };
+
   const getAuthHeader = useCallback(() => {
     const token = localStorage.getItem('token');
     return {
       headers: {
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'multipart/form-data'
       }
     };
   }, []);
@@ -51,14 +88,20 @@ const CoursesAdmin = () => {
   const fetchCourses = useCallback(async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get('/api/cursos', getAuthHeader());
+      const response = await axios.get(`${getApiBaseUrl()}/api/cursos`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
       
-      // Para cada curso, aseguramos que tenga un array de capítulos
+      // Procesar los datos para asegurar que las URLs de imágenes son correctas
       const coursesWithChapters = response.data.map(course => ({
         ...course,
+        imagen_url: getImageUrl(course.imagen_url),
         capitulos: Array.isArray(course.capitulos) ? course.capitulos : []
       }));
       
+      console.log('Cursos cargados con éxito:', coursesWithChapters);
       setCourses(coursesWithChapters);
     } catch (error) {
       console.error('Error al obtener cursos:', error);
@@ -66,7 +109,7 @@ const CoursesAdmin = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [getAuthHeader]);
+  }, []);
 
   useEffect(() => {
     fetchCourses();
@@ -86,57 +129,91 @@ const CoursesAdmin = () => {
   const handleCourseSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setImageError('');
 
     try {
-      const formData = new FormData(e.target);
-      const courseData = {
-        titulo: formData.get('title'),
-        descripcion: formData.get('description'),
-        contenido: formData.get('description'),
-        precio: parseFloat(formData.get('price')),
-        estado: formData.get('status'),
-        imagen_url: editingCourse?.imagen_url || ''
-      };
+      const formData = new FormData();
+      
+      // Agregar datos del curso
+      formData.append('titulo', e.target.title.value);
+      formData.append('descripcion', e.target.description.value);
+      formData.append('contenido', e.target.description.value);
+      formData.append('precio', e.target.price.value);
+      formData.append('estado', e.target.status.value);
+      
+      // Agregar archivo de imagen si existe
+      if (imageFile) {
+        formData.append('imagen', imageFile);
+        console.log('Archivo de imagen añadido al FormData:', imageFile.name);
+      } else if (editingCourse?.imagen_url && !editingCourse.imagen_url.startsWith('data:')) {
+        // Si hay una URL de imagen existente (no es una vista previa local)
+        const imagenUrl = editingCourse.imagen_url;
+        // Si la URL comienza con la URL base, extraer solo la parte relativa
+        const baseUrl = getApiBaseUrl();
+        const relativePath = imagenUrl.startsWith(baseUrl) 
+          ? imagenUrl.substring(baseUrl.length) 
+          : imagenUrl;
+        
+        formData.append('imagen_url', relativePath);
+        console.log('URL de imagen existente añadida al FormData:', relativePath);
+      }
+
+      // Imprimir el contenido del FormData para depuración
+      for (let pair of formData.entries()) {
+        console.log(pair[0] + ': ' + pair[1]);
+      }
 
       let response;
+      const token = localStorage.getItem('token');
+      const authHeader = {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'multipart/form-data'
+        }
+      };
+
       if (editingCourse?.id) {
+        console.log(`Actualizando curso ID ${editingCourse.id}`);
         response = await axios.put(
-          `/api/cursos/${editingCourse.id}`,
-          courseData,
-          getAuthHeader()
+          `${getApiBaseUrl()}/api/cursos/${editingCourse.id}`,
+          formData,
+          authHeader
         );
         
-        // Aseguramos que los capítulos se mantengan después de la actualización
         const updatedCourse = {
           ...response.data,
+          imagen_url: getImageUrl(response.data.imagen_url),
           capitulos: editingCourse.capitulos || []
         };
         
+        console.log('Curso actualizado:', updatedCourse);
         setCourses(courses.map(c => c.id === editingCourse.id ? updatedCourse : c));
-        setEditingCourse(updatedCourse); // Actualizamos el curso en edición
+        setEditingCourse(updatedCourse);
       } else {
+        console.log('Creando nuevo curso');
         response = await axios.post(
-          '/api/cursos',
-          courseData,
-          getAuthHeader()
+          `${getApiBaseUrl()}/api/cursos`,
+          formData,
+          authHeader
         );
         
         const newCourse = {
           ...response.data,
+          imagen_url: getImageUrl(response.data.imagen_url),
           capitulos: []
         };
         
+        console.log('Nuevo curso creado:', newCourse);
         setCourses([...courses, newCourse]);
-        setEditingCourse(newCourse); // Actualizamos para poder añadir capítulos inmediatamente
+        setEditingCourse(newCourse);
       }
 
       setIsFormVisible(false);
-      
-      // No resetear el curso en edición para poder seguir trabajando con él
-      // setEditingCourse(null);
+      setImageFile(null);
     } catch (error) {
       console.error('Error al guardar curso:', error);
-      alert('Error al guardar el curso');
+      setImageError('Error al subir la imagen. Por favor, intenta con una imagen más pequeña o en formato JPG/PNG.');
+      alert('Error al guardar el curso: ' + (error.response?.data?.error || error.message));
     } finally {
       setIsLoading(false);
     }
@@ -146,7 +223,11 @@ const CoursesAdmin = () => {
     if (window.confirm('¿Estás seguro de que quieres eliminar este curso?')) {
       try {
         setIsLoading(true);
-        await axios.delete(`/api/cursos/${id}`, getAuthHeader());
+        await axios.delete(`${getApiBaseUrl()}/api/cursos/${id}`, {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        });
         setCourses(courses.filter(course => course.id !== id));
       } catch (error) {
         console.error('Error al eliminar curso:', error);
@@ -159,16 +240,36 @@ const CoursesAdmin = () => {
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        setEditingCourse(prev => ({
-          ...prev,
-          imagen_url: event.target.result
-        }));
-      };
-      reader.readAsDataURL(file);
+    if (!file) return;
+
+    setImageError('');
+    
+    // Validar tipo de archivo
+    const validTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    if (!validTypes.includes(file.type)) {
+      setImageError('Por favor selecciona una imagen válida (JPEG, PNG, GIF o WEBP)');
+      return;
     }
+
+    // Validar tamaño del archivo (máximo 5MB)
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    if (file.size > maxSize) {
+      setImageError('La imagen es demasiado grande. Por favor sube una imagen de menos de 5MB.');
+      return;
+    }
+
+    setImageFile(file);
+    console.log('Archivo de imagen seleccionado:', file.name);
+    
+    // Crear vista previa local
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setEditingCourse(prev => ({
+        ...prev,
+        imagen_url: event.target.result
+      }));
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleNewCourse = () => {
@@ -181,15 +282,18 @@ const CoursesAdmin = () => {
       imagen_url: '',
       capitulos: []
     });
+    setImageFile(null);
+    setImageError('');
     setIsFormVisible(true);
   };
 
   const handleEditCourse = (course) => {
-    // Hacemos una copia profunda para evitar problemas de referencia
     setEditingCourse({
       ...course,
       capitulos: Array.isArray(course.capitulos) ? [...course.capitulos] : []
     });
+    setImageFile(null);
+    setImageError('');
     setIsFormVisible(true);
   };
 
@@ -238,26 +342,23 @@ const CoursesAdmin = () => {
     setUploadProgress(0);
 
     try {
-      // Verificar si hay un nuevo archivo de video para subir
       let videoUrl = chapterForm.video_url;
       
       if (chapterForm.videoFile && chapterForm.videoPreview) {
         setIsUploading(true);
         
-        // Crear FormData para subir el archivo
         const formData = new FormData();
         formData.append('video', chapterForm.videoFile);
         formData.append('curso_id', editingCourse.id);
         formData.append('capitulo_id', editingChapter?.id || 'nuevo');
         
-        // Realizar la subida del archivo
         const uploadResponse = await axios.post(
-          '/api/videos/upload',
+          `${getApiBaseUrl()}/api/videos/upload`,
           formData,
           {
             headers: {
               'Content-Type': 'multipart/form-data',
-              ...getAuthHeader().headers
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
             },
             onUploadProgress: (progressEvent) => {
               const percentCompleted = Math.round(
@@ -268,70 +369,64 @@ const CoursesAdmin = () => {
           }
         );
         
-        // Obtener la URL del video subido
         videoUrl = uploadResponse.data.video_url;
         setIsUploading(false);
       }
       
-      // Datos del capítulo para guardar en la base de datos
       const chapterData = {
         ...chapterForm,
-        video_url: videoUrl, // Usar la URL del servidor si se subió un nuevo video
+        video_url: videoUrl,
         curso_id: parseInt(editingCourse.id, 10)
       };
       
-      // Eliminar propiedades auxiliares
       delete chapterData.videoFile;
       delete chapterData.videoPreview;
-
-      console.log('Enviando datos de capítulo:', chapterData);
 
       let response;
       if (editingChapter?.id) {
         response = await axios.put(
-          `/api/capitulos/${editingChapter.id}`,
+          `${getApiBaseUrl()}/api/capitulos/${editingChapter.id}`,
           chapterData,
-          getAuthHeader()
+          {
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            }
+          }
         );
-        
-        console.log('Respuesta de actualización de capítulo:', response.data);
       } else {
         response = await axios.post(
-          '/api/capitulos',
+          `${getApiBaseUrl()}/api/capitulos`,
           chapterData,
-          getAuthHeader()
+          {
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            }
+          }
         );
-        
-        console.log('Respuesta de creación de capítulo:', response.data);
       }
 
-      // Actualizamos los capítulos del curso en edición
       const updatedChapters = editingChapter?.id
         ? editingCourse.capitulos.map(ch => 
             ch.id === editingChapter.id ? response.data : ch
           )
         : [...(editingCourse.capitulos || []), response.data];
 
-      // Actualizamos el curso en edición con los nuevos capítulos
       const updatedEditingCourse = {
         ...editingCourse,
         capitulos: updatedChapters
       };
       
       setEditingCourse(updatedEditingCourse);
-
-      // Actualizamos la lista de cursos con el curso actualizado
       setCourses(courses.map(c => 
         c.id === editingCourse.id 
           ? updatedEditingCourse
           : c
       ));
 
-      // Aseguramos que los cambios se vean reflejados en la UI
       setIsChapterModalVisible(false);
       setEditingChapter(null);
-      
-      // Recargamos los cursos para asegurar que tenemos los datos actualizados
       fetchCourses();
     } catch (error) {
       console.error('Error al guardar capítulo:', error);
@@ -357,31 +452,27 @@ const CoursesAdmin = () => {
     
     setVideoError('');
 
-    // Validar el tipo de archivo
     const validTypes = ['video/mp4', 'video/webm', 'video/ogg'];
     if (!validTypes.includes(file.type)) {
       setVideoError('Por favor selecciona un archivo de video válido (MP4, WebM, OGG)');
       return;
     }
 
-    // Validar el tamaño del archivo (máximo 100MB)
-    const maxSize = 100 * 1024 * 1024; // 100MB en bytes
+    const maxSize = 100 * 1024 * 1024;
     if (file.size > maxSize) {
       setVideoError('El archivo es demasiado grande. Por favor sube un video de menos de 100MB.');
       return;
     }
 
     try {
-      // Crear una vista previa local temporal
       const videoUrl = URL.createObjectURL(file);
       setChapterForm(prev => ({
         ...prev,
         video_url: videoUrl,
-        videoFile: file, // Guardar el archivo para subirlo cuando se envíe el formulario
-        videoPreview: true // Indicar que es una vista previa
+        videoFile: file,
+        videoPreview: true
       }));
 
-      // Extraer duración del video para autocompletar el campo
       const video = document.createElement('video');
       video.preload = 'metadata';
       video.onloadedmetadata = function() {
@@ -408,7 +499,11 @@ const CoursesAdmin = () => {
     if (window.confirm('¿Estás seguro de que quieres eliminar este capítulo?')) {
       try {
         setIsLoading(true);
-        await axios.delete(`/api/capitulos/${chapterId}`, getAuthHeader());
+        await axios.delete(`${getApiBaseUrl()}/api/capitulos/${chapterId}`, {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        });
         
         const updatedChapters = editingCourse.capitulos.filter(ch => ch.id !== chapterId);
         
@@ -418,14 +513,12 @@ const CoursesAdmin = () => {
         };
         
         setEditingCourse(updatedEditingCourse);
-        
         setCourses(courses.map(c => 
           c.id === editingCourse.id 
             ? updatedEditingCourse
             : c
         ));
         
-        // Recargamos los cursos para asegurar que tenemos los datos actualizados
         fetchCourses();
       } catch (error) {
         console.error('Error al eliminar capítulo:', error);
@@ -440,6 +533,8 @@ const CoursesAdmin = () => {
     if (window.confirm('¿Estás seguro? Los cambios no guardados se perderán.')) {
       setIsFormVisible(false);
       setEditingCourse(null);
+      setImageFile(null);
+      setImageError('');
     }
   };
 
@@ -449,7 +544,6 @@ const CoursesAdmin = () => {
       setEditingChapter(null);
       setVideoError('');
       
-      // Revocar URL de objeto si es una vista previa
       if (chapterForm.videoPreview && chapterForm.video_url) {
         URL.revokeObjectURL(chapterForm.video_url);
       }
@@ -458,6 +552,7 @@ const CoursesAdmin = () => {
 
   const handlePreviewCourse = (course) => {
     console.log('Previsualizando curso:', course.titulo);
+    window.open(`/curso/${course.id}`, '_blank');
   };
 
   const LoadingOverlay = () => (
@@ -672,6 +767,7 @@ const CoursesAdmin = () => {
                     <FaUpload /> Subir Imagen
                   </label>
                 </div>
+                {imageError && <div className="error-message">{imageError}</div>}
                 {editingCourse?.imagen_url && (
                   <div className="image-preview">
                     <img src={editingCourse.imagen_url} alt="Vista previa del curso" />

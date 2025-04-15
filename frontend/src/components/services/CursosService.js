@@ -96,15 +96,45 @@ const CursosService = {
     }
   },
 
-  // Marcar un capítulo como completado (esta funcionalidad requeriría una API adicional)
-  marcarCapituloCompletado: async (cursoId, capituloId, completado) => {
+  // Marcar un capítulo como completado
+  marcarCapituloCompletado: async (cursoId, capituloId, completado, progreso = 100) => {
     try {
-      // Aquí iría la llamada a tu API para persistir el estado de completado
-      // Por ahora, simularemos una respuesta exitosa
-      console.log(`Marcando capítulo ${capituloId} como ${completado ? 'completado' : 'no completado'}`);
-      return { success: true };
+      const data = {
+        curso_id: cursoId,
+        capitulo_id: capituloId,
+        completado: completado,
+        progreso: progreso
+      };
+      const response = await api.post('/api/progreso/capitulo/completado', data);
+      return response.data;
     } catch (error) {
-      console.error('Error al marcar capítulo como completado:', error);
+      console.error(`Error al marcar capítulo ${capituloId} como ${completado ? 'completado' : 'no completado'}:`, error);
+      throw error;
+    }
+  },
+
+  // Obtener el progreso del usuario en un curso
+  getProgresoUsuario: async (cursoId) => {
+    try {
+      const response = await api.get(`/api/progreso/curso/${cursoId}`);
+      return response.data;
+    } catch (error) {
+      console.error(`Error al obtener progreso del curso ID ${cursoId}:`, error);
+      throw error;
+    }
+  },
+
+  // Guardar el último capítulo visto
+  guardarUltimoCapitulo: async (cursoId, capituloId) => {
+    try {
+      const data = {
+        curso_id: cursoId,
+        capitulo_id: capituloId
+      };
+      const response = await api.post('/api/progreso/ultimo-capitulo', data);
+      return response.data;
+    } catch (error) {
+      console.error(`Error al guardar último capítulo visto ${capituloId}:`, error);
       throw error;
     }
   }

@@ -5,7 +5,8 @@ import CoursesAdmin from './CoursesAdmin';
 import StatsDashboard from './StatsDashboard';
 import MessagesAdmin from './MessagesAdmin';
 import ProfileAdmin from './ProfileAdmin';
-import PortfolioAdmin from './PortfolioAdmin'; // Importamos el componente de Portfolio
+import PortfolioAdmin from './PortfolioAdmin';
+import HomeImagesAdmin from './HomeImagesAdmin';
 import ProtectedRoute from '../../components/ProtectedRoute';
 
 const AdminRoutes = () => {
@@ -18,7 +19,8 @@ const AdminRoutes = () => {
           <Route path="stats" element={<StatsDashboard />} />
           <Route path="messages" element={<MessagesAdmin />} />
           <Route path="profile" element={<ProfileAdmin />} />
-          <Route path="portfolio" element={<PortfolioAdmin />} /> {/* Agregamos la ruta para Portfolio */}
+          <Route path="portfolio" element={<PortfolioAdmin />} />
+          <Route path="home-images" element={<HomeImagesAdmin />} />
         </Route>
       </Routes>
     </ProtectedRoute>

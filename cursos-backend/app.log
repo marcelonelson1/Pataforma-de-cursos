@@ -1111,3 +1111,1384 @@
 2025/04/08 22:33:32 Verificando pago para curso ID: 16, usuario ID: 3
 2025/04/08 22:33:32 Verificando pago para curso ID: 16, usuario ID: 3
 2025/04/08 22:34:14 Verificando pago para curso ID: 16, usuario ID: 3
+2025/04/08 22:46:22 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/08 22:46:22 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/08 22:46:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/08 22:46:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/08 22:46:34 Error en el binding JSON para actualización: invalid character '-' in numeric literal
+2025/04/08 22:46:42 Error en el binding JSON para actualización: invalid character '-' in numeric literal
+2025/04/08 22:47:08 Error en el binding JSON para actualización: invalid character '-' in numeric literal
+2025/04/09 09:41:23 Archivo de video del capítulo 22 eliminado: static/videos/16/16-nuevo-a3c5f860-5de4-412e-8a1b-ffbae5b79344.mp4
+2025/04/09 09:41:23 Eliminando capítulos del curso ID: 16
+2025/04/09 09:41:23 Eliminando curso ID: 16
+2025/04/09 09:41:23 Directorio de videos del curso eliminado: static/videos/16
+2025/04/09 09:41:23 Curso ID 16 eliminado exitosamente
+2025/04/09 09:41:53 Error en el binding JSON: invalid character '-' in numeric literal
+2025/04/09 09:42:08 Error en el binding JSON: invalid character '-' in numeric literal
+2025/04/09 09:46:49 Conectando a la base de datos (intento 1/5)...
+2025/04/09 09:46:50 Conexión a la base de datos establecida correctamente
+2025/04/09 09:46:50 Creando directorio para imágenes: ./static/images
+2025/04/09 09:46:50 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/09 09:46:50 Iniciando servidor en puerto 5000
+2025/04/09 09:47:01 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/09 09:47:01 Creando curso: {ID:0 Titulo:hola Descripcion:holaaaaaaaaaaa Contenido:holaaaaaaaaaaa Precio:12 Estado:Borrador ImagenURL:/static/images/cfc6ad47-f1c3-4bf5-9565-07db8d0d216e.jpeg CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/09 09:47:01 Curso creado exitosamente: ID 17
+2025/04/09 09:47:21 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:47:21 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:47:22 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:47:22 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:47:24 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:47:24 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:47:58 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/09 09:48:00 Video subido exitosamente: /static/videos/17/17-nuevo-ea30e9ee-2889-4578-82e7-a445e467becb.mp4
+2025/04/09 09:48:00 Creando capítulo: {ID:0 CursoID:17 Titulo:hola Descripcion:aaaaa Duracion:09:30 VideoURL:/static/videos/17/17-nuevo-ea30e9ee-2889-4578-82e7-a445e467becb.mp4 VideoNombre:17-nuevo-ea30e9ee-2889-4578-82e7-a445e467becb.mp4 Orden:0 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/09 09:48:00 Capítulo creado exitosamente: ID 23
+2025/04/09 09:48:09 Actualizando curso ID 17: {ID:17 Titulo:hola Descripcion:holaaaaaaaaaaa Contenido:holaaaaaaaaaaa Precio:12 Estado:Borrador ImagenURL:/static/images/755f8d60-3e05-4df4-83f2-94f33faa9fd4.png CreatedAt:2025-04-09 09:47:01.594 -0300 -03 UpdatedAt:2025-04-09 09:47:01.594 -0300 -03 Capitulos:[]}
+2025/04/09 09:48:09 Curso actualizado exitosamente: ID 17
+2025/04/09 09:48:15 Actualizando curso ID 17: {ID:17 Titulo:hola Descripcion:holaaaaaaaaaaa Contenido:holaaaaaaaaaaa Precio:12 Estado:Publicado ImagenURL:/static/images/755f8d60-3e05-4df4-83f2-94f33faa9fd4.png CreatedAt:2025-04-09 09:47:01.594 -0300 -03 UpdatedAt:2025-04-09 09:48:09.656 -0300 -03 Capitulos:[]}
+2025/04/09 09:48:15 Curso actualizado exitosamente: ID 17
+2025/04/09 09:48:55 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 09:48:55 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 09:49:00 Solicitud de pago recibida: {CursoID:17 Monto:12 Metodo:transferencia DetallesTarjeta:<nil>}
+2025/04/09 09:49:02 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 09:49:03 Pago ID 7 actualizado a estado: aprobado
+2025/04/09 09:49:04 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 09:49:05 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 09:49:57 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 09:49:57 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 09:50:05 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 09:50:14 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:50:14 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:50:22 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:50:22 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:50:38 Actualizando curso ID 17: {ID:17 Titulo:hola Descripcion:holaaaaaaaaaaa Contenido:holaaaaaaaaaaa Precio:12 Estado:Publicado ImagenURL:/static/images/b1507a75-749b-4fb7-ba45-74c62b482f9b.png CreatedAt:2025-04-09 09:47:01.594 -0300 -03 UpdatedAt:2025-04-09 09:48:15.427 -0300 -03 Capitulos:[]}
+2025/04/09 09:50:38 Curso actualizado exitosamente: ID 17
+2025/04/09 09:50:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:50:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:50:56 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:50:56 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:57:58 Conectando a la base de datos (intento 1/5)...
+2025/04/09 09:57:58 Conexión a la base de datos establecida correctamente
+2025/04/09 09:57:58 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/09 09:57:58 Iniciando servidor en puerto 5000
+2025/04/09 09:58:12 Actualizando curso ID 17: {ID:17 Titulo:hola Descripcion:holaaaaaaaaaaa Contenido:holaaaaaaaaaaa Precio:12 Estado:Publicado ImagenURL:/static/images/e9723e8a-3aad-4129-aa65-902d4d88f4a9.png CreatedAt:2025-04-09 09:47:01.594 -0300 -03 UpdatedAt:2025-04-09 09:50:38.688 -0300 -03 Capitulos:[]}
+2025/04/09 09:58:12 Curso actualizado exitosamente: ID 17
+2025/04/09 09:58:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:58:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:58:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:58:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:58:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:58:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:59:09 Actualizando curso ID 17: {ID:17 Titulo:hola Descripcion:holaaaaaaaaaaa Contenido:holaaaaaaaaaaa Precio:12 Estado:Publicado ImagenURL:/static/images/8332ebdd-b6b0-4c70-96b0-a0b84f1a51af.jpeg CreatedAt:2025-04-09 09:47:01.594 -0300 -03 UpdatedAt:2025-04-09 09:58:12.48 -0300 -03 Capitulos:[]}
+2025/04/09 09:59:09 Curso actualizado exitosamente: ID 17
+2025/04/09 09:59:40 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:59:40 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:59:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:59:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 09:59:56 Actualizando curso ID 17: {ID:17 Titulo:hola Descripcion:holaaaaaaaaaaa Contenido:holaaaaaaaaaaa Precio:12 Estado:Publicado ImagenURL:/static/images/1795b6c3-15a4-4f50-afb7-fb89c1c36ca0.jpeg CreatedAt:2025-04-09 09:47:01.594 -0300 -03 UpdatedAt:2025-04-09 09:59:09.776 -0300 -03 Capitulos:[]}
+2025/04/09 09:59:56 Curso actualizado exitosamente: ID 17
+2025/04/09 10:00:26 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/09 10:00:28 Video subido exitosamente: /static/videos/17/17-nuevo-5eef4f29-470a-44a9-8842-eab494745a9e.mp4
+2025/04/09 10:00:28 Creando capítulo: {ID:0 CursoID:17 Titulo:d5render Descripcion:holaaaaa Duracion:08:15 VideoURL:/static/videos/17/17-nuevo-5eef4f29-470a-44a9-8842-eab494745a9e.mp4 VideoNombre:17-nuevo-5eef4f29-470a-44a9-8842-eab494745a9e.mp4 Orden:1 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/09 10:00:28 Capítulo creado exitosamente: ID 24
+2025/04/09 10:00:30 Actualizando curso ID 17: {ID:17 Titulo:hola Descripcion:holaaaaaaaaaaa Contenido:holaaaaaaaaaaa Precio:12 Estado:Publicado ImagenURL:/static/images/1795b6c3-15a4-4f50-afb7-fb89c1c36ca0.jpeg CreatedAt:2025-04-09 09:47:01.594 -0300 -03 UpdatedAt:2025-04-09 09:59:56.336 -0300 -03 Capitulos:[]}
+2025/04/09 10:00:30 Curso actualizado exitosamente: ID 17
+2025/04/09 10:00:36 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:00:36 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:01:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:01:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:01:30 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:01:30 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:05:48 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:05:48 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:05:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:05:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:05:56 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:05:56 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:06:16 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/09 10:06:16 Creando curso: {ID:0 Titulo:prueba 1212 Descripcion:hola Contenido:hola Precio:12000 Estado:Borrador ImagenURL:/static/images/40acd595-aa8b-4ba1-8cba-45a5f57f0f6b.png CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/09 10:06:16 Curso creado exitosamente: ID 18
+2025/04/09 10:06:38 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/09 10:06:40 Video subido exitosamente: /static/videos/18/18-nuevo-1dd2fb5b-0ec4-4100-bbdb-aa764769bb79.mp4
+2025/04/09 10:06:40 Creando capítulo: {ID:0 CursoID:18 Titulo:holaaa Descripcion:holaaa Duracion:09:30 VideoURL:/static/videos/18/18-nuevo-1dd2fb5b-0ec4-4100-bbdb-aa764769bb79.mp4 VideoNombre:18-nuevo-1dd2fb5b-0ec4-4100-bbdb-aa764769bb79.mp4 Orden:0 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/09 10:06:40 Capítulo creado exitosamente: ID 25
+2025/04/09 10:06:41 Actualizando curso ID 18: {ID:18 Titulo:prueba 1212 Descripcion:hola Contenido:hola Precio:12000 Estado:Borrador ImagenURL:/static/images/40acd595-aa8b-4ba1-8cba-45a5f57f0f6b.png CreatedAt:2025-04-09 10:06:16.475 -0300 -03 UpdatedAt:2025-04-09 10:06:16.475 -0300 -03 Capitulos:[]}
+2025/04/09 10:06:41 Curso actualizado exitosamente: ID 18
+2025/04/09 10:06:44 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:06:44 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:06:58 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:06:58 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:07:00 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:07:01 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:07:12 Actualizando curso ID 18: {ID:18 Titulo:prueba 1212 Descripcion:hola Contenido:hola Precio:12000 Estado:Publicado ImagenURL:/static/images/40acd595-aa8b-4ba1-8cba-45a5f57f0f6b.png CreatedAt:2025-04-09 10:06:16.475 -0300 -03 UpdatedAt:2025-04-09 10:06:41.777 -0300 -03 Capitulos:[]}
+2025/04/09 10:07:12 Curso actualizado exitosamente: ID 18
+2025/04/09 10:07:13 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:07:13 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:07:13 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:13 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:20 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:20 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:23 Solicitud de pago recibida: {CursoID:18 Monto:12000 Metodo:paypal DetallesTarjeta:<nil>}
+2025/04/09 10:07:26 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:26 Pago ID 8 actualizado a estado: aprobado
+2025/04/09 10:07:28 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:28 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:30 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:07:30 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:30 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:07:30 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:34 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:34 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:36 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:07:36 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:36 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:07:36 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:07:42 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:07:42 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:11:26 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:11:26 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:11:26 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:11:26 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:12:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:12:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:12:58 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:12:58 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:13:08 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/09 10:13:08 Creando curso: {ID:0 Titulo:hola Descripcion:hola Contenido:hola Precio:20 Estado:Borrador ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/09 10:13:08 Curso creado exitosamente: ID 19
+2025/04/09 10:13:14 Actualizando curso ID 19: {ID:19 Titulo:hola Descripcion:hola Contenido:hola Precio:20 Estado:Publicado ImagenURL: CreatedAt:2025-04-09 10:13:08.292 -0300 -03 UpdatedAt:2025-04-09 10:13:08.292 -0300 -03 Capitulos:[]}
+2025/04/09 10:13:14 Curso actualizado exitosamente: ID 19
+2025/04/09 10:13:16 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:13:16 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:13:16 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:13:16 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:13:16 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:13:16 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:13:42 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:13:42 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:13:56 Solicitud de pago recibida: {CursoID:19 Monto:20 Metodo:paypal DetallesTarjeta:<nil>}
+2025/04/09 10:13:58 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:13:59 Pago ID 9 actualizado a estado: aprobado
+2025/04/09 10:14:00 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:14:01 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:14:03 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:14:03 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:14:03 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:14:03 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:14:03 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:14:03 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:14:14 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:14:14 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:14:14 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:14:14 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:14:14 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:14:14 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:14:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:14:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:14:31 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:14:31 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:14:49 Actualizando curso ID 19: {ID:19 Titulo:hola Descripcion:hola Contenido:hola Precio:20 Estado:Publicado ImagenURL:/static/images/623cfce9-fa36-49a0-9abb-988b0c2c547d.png CreatedAt:2025-04-09 10:13:08.292 -0300 -03 UpdatedAt:2025-04-09 10:13:14.97 -0300 -03 Capitulos:[]}
+2025/04/09 10:14:49 Curso actualizado exitosamente: ID 19
+2025/04/09 10:14:52 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:14:52 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:14:52 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:14:52 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:14:52 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:14:52 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:15:21 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:15:21 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:15:21 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:15:21 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:15:21 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:15:21 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:17:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:17:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:17:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:17:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 10:17:44 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/09 10:17:44 Creando curso: {ID:0 Titulo:hola Descripcion:holaaaa Contenido:holaaaa Precio:0 Estado:Borrador ImagenURL:/static/images/5c1c8f89-ce5d-4702-af02-5b4564a1744f.png CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/09 10:17:44 Curso creado exitosamente: ID 20
+2025/04/09 10:17:50 Actualizando curso ID 20: {ID:20 Titulo:hola Descripcion:holaaaa Contenido:holaaaa Precio:29.99 Estado:Publicado ImagenURL:/static/images/5c1c8f89-ce5d-4702-af02-5b4564a1744f.png CreatedAt:2025-04-09 10:17:44.073 -0300 -03 UpdatedAt:2025-04-09 10:17:44.073 -0300 -03 Capitulos:[]}
+2025/04/09 10:17:50 Curso actualizado exitosamente: ID 20
+2025/04/09 10:17:52 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:17:52 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:17:52 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:17:52 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:17:52 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:17:52 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:17:52 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 10:17:52 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 10:20:39 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 10:20:39 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 10:20:45 Solicitud de pago recibida: {CursoID:20 Monto:29.99 Metodo:paypal DetallesTarjeta:<nil>}
+2025/04/09 10:20:47 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 10:20:48 Pago ID 10 actualizado a estado: aprobado
+2025/04/09 10:20:49 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 10:20:49 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 10:20:51 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:20:51 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:20:51 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:20:51 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 10:20:51 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 10:20:51 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:20:51 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 10:20:51 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 10:39:25 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:47:49 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 10:47:50 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:52:11 Conectando a la base de datos (intento 1/5)...
+2025/04/09 11:52:12 Advertencia: No se pudo eliminar constraint fk_progreso_usuario: Error 1146 (42S02): Table 'cursos_db.progreso_usuarios' doesn't exist
+2025/04/09 11:52:12 Advertencia: No se pudo eliminar constraint fk_progreso_curso: Error 1146 (42S02): Table 'cursos_db.progreso_usuarios' doesn't exist
+2025/04/09 11:52:12 Advertencia: No se pudo eliminar constraint fk_progreso_capitulo_usuario: Error 1146 (42S02): Table 'cursos_db.progreso_capitulos' doesn't exist
+2025/04/09 11:52:12 Advertencia: No se pudo eliminar constraint fk_progreso_capitulo_curso: Error 1146 (42S02): Table 'cursos_db.progreso_capitulos' doesn't exist
+2025/04/09 11:52:12 Advertencia: No se pudo eliminar constraint fk_progreso_capitulo_capitulo: Error 1146 (42S02): Table 'cursos_db.progreso_capitulos' doesn't exist
+2025/04/09 11:52:12 Conexión a la base de datos establecida correctamente
+2025/04/09 11:52:12 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/09 11:52:12 Iniciando servidor en puerto 5000
+2025/04/09 11:52:31 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:52:31 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:52:36 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:52:36 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:52:36 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:52:36 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:52:36 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:52:36 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:52:36 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:52:36 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:52:38 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:53:27 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:53:27 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:53:27 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:53:27 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:53:27 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:53:27 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:53:27 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:53:27 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:53:31 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:53:31 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:53:47 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:53:47 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:53:47 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:53:47 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:53:47 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:53:47 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:53:47 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:53:47 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:54:55 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/09 11:54:55 Creando curso: {ID:0 Titulo:bebitahemosa Descripcion:flormividateamo Contenido:flormividateamo Precio:9.99999999e+08 Estado:Publicado ImagenURL:/static/images/c093b65e-ef91-4ee9-b6a0-955561f71b4c.jpeg CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/09 11:54:55 Error al crear curso en DB: Error 1264 (22003): Out of range value for column 'precio' at row 1
+2025/04/09 11:55:07 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/09 11:55:07 Creando curso: {ID:0 Titulo:bebitahemosa Descripcion:flormividateamo Contenido:flormividateamo Precio:99999 Estado:Publicado ImagenURL:/static/images/58f671c0-b002-43f8-bffb-22a13e01bdff.jpeg CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/09 11:55:07 Curso creado exitosamente: ID 21
+2025/04/09 11:55:41 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/09 11:55:42 Video subido exitosamente: /static/videos/21/21-nuevo-58fe2578-9575-4513-a3e4-bb88d654c472.mp4
+2025/04/09 11:55:42 Creando capítulo: {ID:0 CursoID:21 Titulo:flor Descripcion:florteamo Duracion:09:30 VideoURL:/static/videos/21/21-nuevo-58fe2578-9575-4513-a3e4-bb88d654c472.mp4 VideoNombre:21-nuevo-58fe2578-9575-4513-a3e4-bb88d654c472.mp4 Orden:0 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/09 11:55:42 Capítulo creado exitosamente: ID 26
+2025/04/09 11:55:57 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/09 11:55:58 Video subido exitosamente: /static/videos/21/21-nuevo-7f1507dd-7b0f-4e52-a722-248632440809.mp4
+2025/04/09 11:55:58 Creando capítulo: {ID:0 CursoID:21 Titulo:holaaaaa Descripcion:florteamo Duracion:06:20 VideoURL:/static/videos/21/21-nuevo-7f1507dd-7b0f-4e52-a722-248632440809.mp4 VideoNombre:21-nuevo-7f1507dd-7b0f-4e52-a722-248632440809.mp4 Orden:1 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/09 11:55:58 Capítulo creado exitosamente: ID 27
+2025/04/09 11:56:00 Actualizando curso ID 21: {ID:21 Titulo:bebitahemosa Descripcion:flormividateamo Contenido:flormividateamo Precio:99999 Estado:Publicado ImagenURL:/static/images/58f671c0-b002-43f8-bffb-22a13e01bdff.jpeg CreatedAt:2025-04-09 11:55:07.315 -0300 -03 UpdatedAt:2025-04-09 11:55:07.315 -0300 -03 Capitulos:[]}
+2025/04/09 11:56:00 Curso actualizado exitosamente: ID 21
+2025/04/09 11:56:02 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:56:02 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:56:02 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:56:02 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:56:02 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:56:02 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:56:02 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:56:02 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:56:02 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:56:02 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:56:07 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:56:07 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:56:12 Solicitud de pago recibida: {CursoID:21 Monto:99999 Metodo:paypal DetallesTarjeta:<nil>}
+2025/04/09 11:56:14 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:56:15 Pago ID 11 actualizado a estado: aprobado
+2025/04/09 11:56:16 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:56:16 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:56:49 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:56:49 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:56:49 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:56:49 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:56:49 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:56:49 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:56:49 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:56:49 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:56:49 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:56:49 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:58:12 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:58:12 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:58:12 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:58:12 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:58:12 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:58:12 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:58:13 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:58:13 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:58:13 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:58:13 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:58:16 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:58:36 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:58:36 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:58:36 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:58:36 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:58:36 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:58:36 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 11:58:36 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 11:58:36 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 11:58:36 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 11:58:36 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 11:58:41 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 11:58:41 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 12:56:56 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 12:56:56 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 12:56:56 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 12:56:56 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 12:56:56 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 12:56:56 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 12:56:56 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 12:56:56 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 12:56:56 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 12:56:56 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 13:27:37 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 13:27:37 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 13:27:37 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 13:27:37 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 13:27:37 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 13:27:37 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 13:27:37 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 13:27:37 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 13:27:37 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 13:27:37 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 13:27:39 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 13:27:39 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 13:27:41 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 13:27:41 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 13:27:41 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 13:27:41 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 13:27:41 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 13:27:41 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 13:27:41 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 13:27:41 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 13:27:41 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 13:27:41 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 13:27:44 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 13:27:44 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 13:56:19 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 13:56:19 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 13:56:19 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 13:56:19 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 13:56:19 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 13:56:19 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 13:56:19 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 13:56:19 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 13:56:19 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 13:56:19 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 13:56:23 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 13:56:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 13:56:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 13:57:29 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 13:57:29 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 13:57:29 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 13:57:29 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 13:57:29 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 13:57:29 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 13:57:29 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 13:57:29 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 13:57:29 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 13:57:30 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 14:59:37 Conectando a la base de datos (intento 1/5)...
+2025/04/09 14:59:37 Conexión a la base de datos establecida correctamente
+2025/04/09 14:59:37 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/09 14:59:37 Iniciando servidor en puerto 5000
+2025/04/09 15:02:34 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 15:02:34 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 15:02:34 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 15:02:34 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 15:02:34 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 15:02:34 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 15:02:34 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 15:02:34 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 15:02:34 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 15:02:34 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 15:02:38 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 15:02:46 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 15:02:46 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 15:02:46 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 15:02:46 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 15:02:46 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 15:02:46 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 15:02:46 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 15:02:46 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 15:02:46 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 15:02:46 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 16:43:21 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 16:43:21 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 16:43:21 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 16:43:21 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 16:43:21 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 16:43:21 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 16:43:21 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 16:43:21 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 16:43:21 Verificando pago para curso ID: 20, usuario ID: 3
+2025/04/09 16:43:21 Verificando pago para curso ID: 21, usuario ID: 3
+2025/04/09 16:43:39 Archivo de video del capítulo 26 eliminado: static/videos/21/21-nuevo-58fe2578-9575-4513-a3e4-bb88d654c472.mp4
+2025/04/09 16:43:39 Archivo de video del capítulo 27 eliminado: static/videos/21/21-nuevo-7f1507dd-7b0f-4e52-a722-248632440809.mp4
+2025/04/09 16:43:39 Eliminando capítulos del curso ID: 21
+2025/04/09 16:43:39 Imagen del curso eliminada: static/images/58f671c0-b002-43f8-bffb-22a13e01bdff.jpeg
+2025/04/09 16:43:39 Eliminando curso ID: 21
+2025/04/09 16:43:39 Directorio de videos del curso eliminado: static/videos/21
+2025/04/09 16:43:39 Curso ID 21 eliminado exitosamente
+2025/04/09 16:43:42 Eliminando capítulos del curso ID: 20
+2025/04/09 16:43:42 Imagen del curso eliminada: static/images/5c1c8f89-ce5d-4702-af02-5b4564a1744f.png
+2025/04/09 16:43:42 Eliminando curso ID: 20
+2025/04/09 16:43:42 Curso ID 20 eliminado exitosamente
+2025/04/09 16:43:51 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 16:43:51 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 16:43:51 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 16:43:51 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 16:43:51 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 16:43:51 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 16:44:10 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 16:44:10 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 16:44:10 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 16:44:10 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 16:44:10 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 16:44:10 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 16:44:19 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 16:44:19 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 16:44:34 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 16:44:34 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 16:44:42 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 16:44:47 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/09 16:44:47 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/09 17:29:10 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 17:29:10 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 17:29:10 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 17:29:10 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 17:29:10 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 17:29:10 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 17:32:16 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 17:32:16 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 17:32:16 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 17:32:16 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 17:32:16 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 17:32:16 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 18:55:10 Conectando a la base de datos (intento 1/5)...
+2025/04/09 18:55:10 Conexión a la base de datos establecida correctamente
+2025/04/09 18:55:10 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/09 18:55:10 Iniciando servidor en puerto 5000
+2025/04/09 18:57:18 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 18:57:18 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 18:57:18 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 18:57:18 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 18:57:18 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 18:57:18 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:01:09 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:01:09 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:01:09 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:01:09 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:01:09 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:01:09 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:01:16 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:01:16 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:01:16 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:01:16 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:01:16 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:01:16 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:04:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 19:04:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 19:04:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 19:05:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/09 19:05:18 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:05:18 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:05:18 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:05:18 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:05:18 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:05:18 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:08:07 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/09 19:08:07 Creando curso: {ID:0 Titulo:renders interior Descripcion:materoramognino Contenido:materoramognino Precio:79.99 Estado:Publicado ImagenURL:/static/images/056fcdab-514a-4858-abd7-95c6dca7dd11.jpeg CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/09 19:08:07 Curso creado exitosamente: ID 22
+2025/04/09 19:09:10 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/09 19:09:10 Video subido exitosamente: /static/videos/22/22-nuevo-92c2f9af-94f5-43a3-9a50-c9a1f81933ba.mp4
+2025/04/09 19:09:10 Creando capítulo: {ID:0 CursoID:22 Titulo:cap1 Descripcion:primer capitulo Duracion:03:50 VideoURL:/static/videos/22/22-nuevo-92c2f9af-94f5-43a3-9a50-c9a1f81933ba.mp4 VideoNombre:22-nuevo-92c2f9af-94f5-43a3-9a50-c9a1f81933ba.mp4 Orden:0 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/09 19:09:10 Capítulo creado exitosamente: ID 28
+2025/04/09 19:09:30 Actualizando curso ID 22: {ID:22 Titulo:renders interior Descripcion:materoramognino Contenido:materoramognino Precio:79.99 Estado:Publicado ImagenURL:/static/images/056fcdab-514a-4858-abd7-95c6dca7dd11.jpeg CreatedAt:2025-04-09 19:08:07.551 -0300 -03 UpdatedAt:2025-04-09 19:08:07.551 -0300 -03 Capitulos:[]}
+2025/04/09 19:09:30 Curso actualizado exitosamente: ID 22
+2025/04/09 19:09:32 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:09:32 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:09:32 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:09:32 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:09:32 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:09:32 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:09:32 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:09:32 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:09:42 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:09:42 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:09:57 Solicitud de pago recibida: {CursoID:22 Monto:79.99 Metodo:paypal DetallesTarjeta:<nil>}
+2025/04/09 19:09:59 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:10:00 Pago ID 12 actualizado a estado: aprobado
+2025/04/09 19:10:01 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:10:01 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:10:33 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:10:33 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:10:33 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:10:33 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:10:33 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:10:33 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:10:33 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:10:33 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:10:36 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:10:40 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:10:40 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:11:41 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/09 19:11:41 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/09 19:12:46 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:12:46 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:12:46 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:12:46 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:12:46 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:12:46 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:12:46 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:12:46 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:27:21 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:27:21 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:27:21 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:27:21 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:27:21 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:27:21 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:27:21 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:27:21 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:28:41 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:28:41 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:28:45 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:28:45 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:28:45 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:28:45 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:28:45 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:28:45 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:28:45 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:28:45 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:28:47 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:41:42 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:41:42 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:41:42 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:41:42 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:41:42 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:41:42 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:41:42 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:41:42 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:41:43 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:41:43 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:41:49 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:41:49 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/09 19:41:49 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:41:49 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:41:49 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/09 19:41:49 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/09 19:41:49 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/09 19:41:49 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 14:33:57 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/10 14:33:57 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/10 14:33:57 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/10 14:33:57 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 14:33:57 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/10 14:33:57 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/10 14:33:57 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 14:33:57 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/10 15:10:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/10 15:10:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/10 15:29:39 Conectando a la base de datos (intento 1/5)...
+2025/04/10 15:29:46 Conexión a la base de datos establecida correctamente
+2025/04/10 15:29:46 Creando directorio: ./static/home
+2025/04/10 15:29:46 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/10 15:29:46 Iniciando servidor en puerto 5000
+2025/04/10 15:34:01 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/10 15:34:01 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/10 15:34:08 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/10 15:34:08 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/10 15:34:08 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 15:34:08 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/10 15:34:08 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/10 15:34:08 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 15:34:08 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/10 15:34:08 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/10 15:52:09 Conectando a la base de datos (intento 1/5)...
+2025/04/10 15:52:10 Conexión a la base de datos establecida correctamente
+2025/04/10 15:52:10 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/10 15:52:10 Iniciando servidor en puerto 5000
+2025/04/10 16:27:31 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/10 16:27:31 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/10 16:27:31 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 16:27:31 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/10 16:27:31 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/10 16:27:31 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/10 16:27:31 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 16:27:31 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/10 16:27:33 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/10 16:27:33 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/10 16:27:33 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 16:27:33 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/10 16:27:33 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/10 16:27:33 Verificando pago para curso ID: 18, usuario ID: 3
+2025/04/10 16:27:33 Verificando pago para curso ID: 22, usuario ID: 3
+2025/04/10 16:27:33 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 17:33:57 Conectando a la base de datos (intento 1/5)...
+2025/04/10 17:33:57 Conexión a la base de datos establecida correctamente
+2025/04/10 17:33:57 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/10 17:33:57 Iniciando servidor en puerto 5000
+2025/04/10 17:35:59 Archivo de video del capítulo 25 eliminado: static/videos/18/18-nuevo-1dd2fb5b-0ec4-4100-bbdb-aa764769bb79.mp4
+2025/04/10 17:35:59 Eliminando capítulos del curso ID: 18
+2025/04/10 17:35:59 Imagen del curso eliminada: static/images/40acd595-aa8b-4ba1-8cba-45a5f57f0f6b.png
+2025/04/10 17:35:59 Eliminando curso ID: 18
+2025/04/10 17:35:59 Directorio de videos del curso eliminado: static/videos/18
+2025/04/10 17:35:59 Curso ID 18 eliminado exitosamente
+2025/04/10 17:36:05 Archivo de video del capítulo 28 eliminado: static/videos/22/22-nuevo-92c2f9af-94f5-43a3-9a50-c9a1f81933ba.mp4
+2025/04/10 17:36:05 Eliminando capítulos del curso ID: 22
+2025/04/10 17:36:05 Imagen del curso eliminada: static/images/056fcdab-514a-4858-abd7-95c6dca7dd11.jpeg
+2025/04/10 17:36:05 Eliminando curso ID: 22
+2025/04/10 17:36:05 Directorio de videos del curso eliminado: static/videos/22
+2025/04/10 17:36:05 Curso ID 22 eliminado exitosamente
+2025/04/10 17:36:06 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/10 17:36:06 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/10 17:36:06 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 17:36:06 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/10 17:38:01 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/10 17:38:05 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/10 17:39:08 Conectando a la base de datos (intento 1/5)...
+2025/04/10 17:39:09 Conexión a la base de datos establecida correctamente
+2025/04/10 17:39:09 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/10 17:39:09 Iniciando servidor en puerto 5000
+2025/04/10 17:39:33 Error al obtener imágenes públicas: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order ASC' at line 1
+2025/04/10 17:39:33 Error al obtener imágenes públicas: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order ASC' at line 1
+2025/04/10 17:41:25 Error al obtener imágenes públicas: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order ASC' at line 1
+2025/04/10 17:43:39 Conectando a la base de datos (intento 1/5)...
+2025/04/10 17:43:40 Conexión a la base de datos establecida correctamente
+2025/04/10 17:43:40 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/10 17:43:40 Iniciando servidor en puerto 5000
+2025/04/11 16:18:00 Conectando a la base de datos (intento 1/5)...
+2025/04/11 16:18:00 Conexión a la base de datos establecida correctamente
+2025/04/11 16:18:00 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/11 16:18:00 Iniciando servidor en puerto 5000
+2025/04/11 16:27:57 Conectando a la base de datos (intento 1/5)...
+2025/04/11 16:27:57 Conexión a la base de datos establecida correctamente
+2025/04/11 16:27:57 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/11 16:27:57 Iniciando servidor en puerto 5000
+2025/04/11 16:34:44 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:35:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:35:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:35:06 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:35:06 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:35:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:38:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:38:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:38:51 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:38:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:38:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:38:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:39:22 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:39:22 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:39:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:39:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:39:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:39:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:44:32 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:44:32 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:44:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:44:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:45:10 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:45:10 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 16:48:09 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/11 16:48:09 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/11 16:51:37 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 16:51:37 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 16:51:37 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/11 16:51:37 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/11 16:51:40 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 16:51:40 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 17:05:24 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/11 17:05:24 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 17:05:24 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 17:05:24 Verificando pago para curso ID: 19, usuario ID: 3
+2025/04/11 17:05:27 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 17:05:27 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 17:46:22 Conectando a la base de datos (intento 1/5)...
+2025/04/11 17:46:23 Conexión a la base de datos establecida correctamente
+2025/04/11 17:46:23 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/11 17:46:23 Iniciando servidor en puerto 5000
+2025/04/11 17:50:27 Eliminando capítulos del curso ID: 19
+2025/04/11 17:50:27 Imagen del curso eliminada: static/images/623cfce9-fa36-49a0-9abb-988b0c2c547d.png
+2025/04/11 17:50:27 Eliminando curso ID: 19
+2025/04/11 17:50:27 Curso ID 19 eliminado exitosamente
+2025/04/11 17:50:31 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 17:50:32 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 17:50:32 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 17:50:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 17:50:39 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 17:50:50 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 17:50:50 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 17:50:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 17:50:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/11 17:50:56 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/11 17:50:56 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/11 18:02:19 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 18:02:19 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 18:04:43 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/11 18:04:43 Creando curso: {ID:0 Titulo:arqsoft masivo bro Descripcion:holaaaaa Contenido:holaaaaa Precio:9999 Estado:Borrador ImagenURL:/static/images/902fd281-7c79-4954-83b6-d29f009ba52f.jpeg CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/11 18:04:43 Curso creado exitosamente: ID 23
+2025/04/11 18:05:10 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/11 18:05:10 Video subido exitosamente: /static/videos/23/23-nuevo-d71db267-13c0-4ba2-b2e2-1a526c4b4bfe.mp4
+2025/04/11 18:05:10 Creando capítulo: {ID:0 CursoID:23 Titulo:lolaso Descripcion:cd
+ Duracion:09:30 VideoURL:/static/videos/23/23-nuevo-d71db267-13c0-4ba2-b2e2-1a526c4b4bfe.mp4 VideoNombre:23-nuevo-d71db267-13c0-4ba2-b2e2-1a526c4b4bfe.mp4 Orden:0 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/11 18:05:10 Capítulo creado exitosamente: ID 29
+2025/04/11 18:05:18 Actualizando curso ID 23: {ID:23 Titulo:arqsoft masivo bro Descripcion:holaaaaa Contenido:holaaaaa Precio:9999 Estado:Publicado ImagenURL:/static/images/902fd281-7c79-4954-83b6-d29f009ba52f.jpeg CreatedAt:2025-04-11 18:04:43.459 -0300 -03 UpdatedAt:2025-04-11 18:04:43.459 -0300 -03 Capitulos:[]}
+2025/04/11 18:05:18 Curso actualizado exitosamente: ID 23
+2025/04/11 18:05:20 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 18:05:20 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/11 18:05:20 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/11 18:05:20 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/11 18:05:23 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/11 18:05:38 Solicitud de pago recibida: {CursoID:23 Monto:9999 Metodo:transferencia DetallesTarjeta:<nil>}
+2025/04/11 18:05:40 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/11 18:05:41 Pago ID 13 actualizado a estado: aprobado
+2025/04/11 18:05:42 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/11 18:05:42 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/11 18:07:27 Conectando a la base de datos (intento 1/5)...
+2025/04/11 18:07:27 Conexión a la base de datos establecida correctamente
+2025/04/11 18:07:27 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/11 18:07:27 Iniciando servidor en puerto 5000
+2025/04/13 17:04:26 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/13 17:04:26 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/13 17:06:32 Conectando a la base de datos (intento 1/5)...
+2025/04/13 17:06:33 Conexión a la base de datos establecida correctamente
+2025/04/13 17:06:33 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/13 17:06:33 Iniciando servidor en puerto 5000
+2025/04/13 17:20:50 Conectando a la base de datos (intento 1/5)...
+2025/04/13 17:20:52 Conexión a la base de datos establecida correctamente
+2025/04/13 17:20:52 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/13 17:20:52 Iniciando servidor en puerto 5000
+2025/04/13 17:21:17 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/13 17:21:17 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/13 17:21:18 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/13 17:21:18 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/13 17:21:18 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/13 17:22:45 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/13 17:22:45 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/13 17:22:45 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/13 17:22:45 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/13 17:22:53 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/13 17:22:53 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/13 17:22:53 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/13 17:22:53 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/13 22:56:06 Conectando a la base de datos (intento 1/5)...
+2025/04/13 22:56:07 Conexión a la base de datos establecida correctamente
+2025/04/13 22:56:07 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/13 22:56:07 Iniciando servidor en puerto 5000
+2025/04/13 23:18:49 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:18:49 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:18:50 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:18:51 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:18:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:18:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:00 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/13 23:19:00 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/13 23:19:00 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/13 23:19:00 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/13 23:19:05 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:05 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:05 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:05 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:05 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:05 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:21 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/13 23:19:21 Creando curso: {ID:0 Titulo:aaaaaaaa Descripcion:aaaaaaaaa Contenido:aaaaaaaaa Precio:9999 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/13 23:19:21 Curso creado exitosamente: ID 24
+2025/04/13 23:19:24 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/13 23:19:24 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/13 23:19:24 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/13 23:19:24 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/13 23:19:24 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/13 23:19:24 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/13 23:19:27 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/13 23:19:27 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/13 23:19:31 Solicitud de pago recibida: {CursoID:24 Monto:9999 Metodo:transferencia DetallesTarjeta:<nil>}
+2025/04/13 23:19:33 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/13 23:19:34 Pago ID 14 actualizado a estado: aprobado
+2025/04/13 23:19:35 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/13 23:19:35 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/13 23:19:42 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:19:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:20:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:20:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:20:49 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:20:49 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:22:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:22:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:22:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:22:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:22:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:22:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:30:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:30:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:30:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:30:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:30:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:30:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:36:58 Conectando a la base de datos (intento 1/5)...
+2025/04/13 23:36:58 Conexión a la base de datos establecida correctamente
+2025/04/13 23:36:58 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/13 23:36:58 Iniciando servidor en puerto 5000
+2025/04/13 23:37:07 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:37:07 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:37:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:37:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:37:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:37:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:37:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:37:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:40:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:40:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:40:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:40:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:40:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:40:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:48:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:48:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:48:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:48:26 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:49:20 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:49:20 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:49:20 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/13 23:49:20 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:24:56 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:24:56 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:27:41 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:27:41 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:15 Conectando a la base de datos (intento 1/5)...
+2025/04/14 00:37:16 Conexión a la base de datos establecida correctamente
+2025/04/14 00:37:16 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/14 00:37:16 Iniciando servidor en puerto 5000
+2025/04/14 00:37:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:37:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:14 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:38:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:39:06 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:39:06 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:39:06 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:39:07 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 00:42:58 Conectando a la base de datos (intento 1/5)...
+2025/04/14 00:42:58 Error de conexión: dial tcp: lookup dpg-cvida5ruibrs73fqvq40-a on 192.168.0.1:53: no such host. Reintentando en 5s...
+2025/04/14 00:43:03 Conectando a la base de datos (intento 2/5)...
+2025/04/14 00:43:03 Error de conexión: dial tcp: lookup dpg-cvida5ruibrs73fqvq40-a on 192.168.0.1:53: no such host. Reintentando en 5s...
+2025/04/14 00:43:08 Conectando a la base de datos (intento 3/5)...
+2025/04/14 00:43:08 Error de conexión: dial tcp: lookup dpg-cvida5ruibrs73fqvq40-a on 192.168.0.1:53: no such host. Reintentando en 5s...
+2025/04/14 00:43:13 Conectando a la base de datos (intento 4/5)...
+2025/04/14 00:43:13 Error de conexión: dial tcp: lookup dpg-cvida5ruibrs73fqvq40-a on 192.168.0.1:53: no such host. Reintentando en 5s...
+2025/04/14 00:43:18 Conectando a la base de datos (intento 5/5)...
+2025/04/14 00:43:18 Error de conexión: dial tcp: lookup dpg-cvida5ruibrs73fqvq40-a on 192.168.0.1:53: no such host. Reintentando en 5s...
+2025/04/14 00:43:23 Error al configurar la base de datos: no se pudo conectar a la base de datos después de 5 intentos: dial tcp: lookup dpg-cvida5ruibrs73fqvq40-a on 192.168.0.1:53: no such host
+2025/04/14 00:44:42 Conectando a la base de datos (intento 1/5)...
+2025/04/14 00:44:42 Error de conexión: dial tcp: lookup dpg-cvida5ruibrs73fqvq40-a on 192.168.0.1:53: no such host. Reintentando en 5s...
+2025/04/14 00:44:47 Conectando a la base de datos (intento 2/5)...
+2025/04/14 00:44:47 Error de conexión: dial tcp: lookup dpg-cvida5ruibrs73fqvq40-a on 192.168.0.1:53: no such host. Reintentando en 5s...
+2025/04/14 00:44:52 Conectando a la base de datos (intento 3/5)...
+2025/04/14 00:44:52 Error de conexión: dial tcp: lookup dpg-cvida5ruibrs73fqvq40-a on 192.168.0.1:53: no such host. Reintentando en 5s...
+2025/04/14 00:44:57 Conectando a la base de datos (intento 1/5)...
+2025/04/14 00:44:58 Conexión a la base de datos establecida correctamente
+2025/04/14 00:44:58 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/14 00:44:58 Iniciando servidor en puerto 5000
+2025/04/14 18:39:18 Conectando a la base de datos (intento 1/5)...
+2025/04/14 18:39:18 Conexión a la base de datos establecida correctamente
+2025/04/14 18:39:18 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/14 18:39:18 Iniciando servidor en puerto 5000
+2025/04/14 18:40:31 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/14 18:40:31 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/14 18:40:31 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/14 18:40:31 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/14 18:40:31 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/14 18:40:31 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/14 18:40:40 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/14 18:40:57 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/14 18:40:57 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/14 18:40:57 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/14 18:40:57 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/14 18:40:57 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/14 18:40:57 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/14 18:41:28 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/14 18:41:28 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/14 18:41:28 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/14 18:41:28 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/14 18:41:28 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/14 18:41:28 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/14 18:42:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:33 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/14 18:42:33 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/14 18:42:33 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/14 18:42:33 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/14 18:42:33 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/14 18:42:33 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/14 18:42:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:42:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:43:08 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:43:08 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 18:43:32 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/14 18:43:32 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/14 23:13:20 Conectando a la base de datos (intento 1/5)...
+2025/04/14 23:13:21 Conexión a la base de datos establecida correctamente
+2025/04/14 23:13:21 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/14 23:13:21 Iniciando servidor en puerto 5000
+2025/04/14 23:13:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:13:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:13:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:13:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:13:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:13:38 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:13:40 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:13:40 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:20:32 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:20:32 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:20:32 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:20:32 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:18 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:18 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:18 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:18 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:28:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:30:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:30:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:30:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:30:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:45:51 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:45:51 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:45:51 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:45:51 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:49:39 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:49:39 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:49:39 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/14 23:49:39 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:02:42 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:02:42 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:02:42 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:02:42 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:03:19 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:03:20 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:03:24 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:03:24 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:03:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:03:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:03:51 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:03:51 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:03:51 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:03:51 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:03:51 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:03:51 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:03:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:03:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:03:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:03:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:04:08 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/15 00:04:08 Creando curso: {ID:0 Titulo:hola Descripcion:aaaaaaaaaa Contenido:aaaaaaaaaa Precio:9999 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/15 00:04:08 Curso creado exitosamente: ID 25
+2025/04/15 00:04:10 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:04:10 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:04:10 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:04:10 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:04:10 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:04:10 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:04:10 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:04:10 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:04:14 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:04:18 Solicitud de pago recibida: {CursoID:25 Monto:9999 Metodo:transferencia DetallesTarjeta:<nil>}
+2025/04/15 00:04:20 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:04:21 Pago ID 15 actualizado a estado: aprobado
+2025/04/15 00:04:22 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:04:22 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:04:24 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:04:24 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:04:24 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:04:24 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:04:24 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:04:24 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:04:24 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:04:24 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:04:30 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:04:30 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:04:30 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:04:30 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:31 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:31 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:33 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:34 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:34 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:15:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:20:51 Conectando a la base de datos (intento 1/5)...
+2025/04/15 00:20:51 Conexión a la base de datos establecida correctamente
+2025/04/15 00:20:51 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/15 00:20:51 Iniciando servidor en puerto 5000
+2025/04/15 00:21:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:21:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:21:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:21:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:21:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:21:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:22:55 Conectando a la base de datos (intento 1/5)...
+2025/04/15 00:22:56 Conexión a la base de datos establecida correctamente
+2025/04/15 00:22:56 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/15 00:22:56 Iniciando servidor en puerto 5000
+2025/04/15 00:23:01 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:09 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:09 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:10 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:10 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:32 Conectando a la base de datos (intento 1/5)...
+2025/04/15 00:23:32 Conexión a la base de datos establecida correctamente
+2025/04/15 00:23:32 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/15 00:23:32 Iniciando servidor en puerto 5000
+2025/04/15 00:23:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:23:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:19 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/15 00:26:19 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/15 00:26:21 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:21 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:22 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:34 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:26:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:28:21 Conectando a la base de datos (intento 1/5)...
+2025/04/15 00:28:22 Conexión a la base de datos establecida correctamente
+2025/04/15 00:28:22 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/15 00:28:22 Iniciando servidor en puerto 5000
+2025/04/15 00:28:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:28:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:28:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:28:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:28:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:28:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:29:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:29:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:29:56 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:29:56 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:29:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:29:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:31:09 Verificando pago para curso ID: 17, usuario ID: 40
+2025/04/15 00:31:09 Verificando pago para curso ID: 23, usuario ID: 40
+2025/04/15 00:31:09 Verificando pago para curso ID: 24, usuario ID: 40
+2025/04/15 00:31:09 Verificando pago para curso ID: 17, usuario ID: 40
+2025/04/15 00:31:09 Verificando pago para curso ID: 23, usuario ID: 40
+2025/04/15 00:31:09 Verificando pago para curso ID: 25, usuario ID: 40
+2025/04/15 00:31:09 Verificando pago para curso ID: 24, usuario ID: 40
+2025/04/15 00:31:09 Verificando pago para curso ID: 25, usuario ID: 40
+2025/04/15 00:31:10 Verificando pago para curso ID: 17, usuario ID: 40
+2025/04/15 00:31:11 Verificando pago para curso ID: 17, usuario ID: 40
+2025/04/15 00:31:15 Solicitud de pago recibida: {CursoID:17 Monto:12 Metodo:transferencia DetallesTarjeta:<nil>}
+2025/04/15 00:31:17 Verificando pago para curso ID: 17, usuario ID: 40
+2025/04/15 00:31:18 Pago ID 16 actualizado a estado: aprobado
+2025/04/15 00:31:19 Verificando pago para curso ID: 17, usuario ID: 40
+2025/04/15 00:31:19 Verificando pago para curso ID: 17, usuario ID: 40
+2025/04/15 00:31:22 Verificando pago para curso ID: 17, usuario ID: 40
+2025/04/15 00:31:22 Verificando pago para curso ID: 24, usuario ID: 40
+2025/04/15 00:31:22 Verificando pago para curso ID: 23, usuario ID: 40
+2025/04/15 00:31:22 Verificando pago para curso ID: 25, usuario ID: 40
+2025/04/15 00:31:22 Verificando pago para curso ID: 17, usuario ID: 40
+2025/04/15 00:31:22 Verificando pago para curso ID: 23, usuario ID: 40
+2025/04/15 00:31:22 Verificando pago para curso ID: 24, usuario ID: 40
+2025/04/15 00:31:22 Verificando pago para curso ID: 25, usuario ID: 40
+2025/04/15 00:31:25 Verificando pago para curso ID: 24, usuario ID: 40
+2025/04/15 00:31:25 Verificando pago para curso ID: 24, usuario ID: 40
+2025/04/15 00:31:29 Solicitud de pago recibida: {CursoID:24 Monto:9999 Metodo:paypal DetallesTarjeta:<nil>}
+2025/04/15 00:31:31 Verificando pago para curso ID: 24, usuario ID: 40
+2025/04/15 00:31:32 Pago ID 17 actualizado a estado: aprobado
+2025/04/15 00:31:33 Verificando pago para curso ID: 24, usuario ID: 40
+2025/04/15 00:31:33 Verificando pago para curso ID: 24, usuario ID: 40
+2025/04/15 00:31:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:31:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:31:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:31:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:31:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:31:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:32:14 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:32:14 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:32:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:32:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:33:03 Verificando pago para curso ID: 17, usuario ID: 41
+2025/04/15 00:33:03 Verificando pago para curso ID: 23, usuario ID: 41
+2025/04/15 00:33:03 Verificando pago para curso ID: 25, usuario ID: 41
+2025/04/15 00:33:03 Verificando pago para curso ID: 24, usuario ID: 41
+2025/04/15 00:33:03 Verificando pago para curso ID: 17, usuario ID: 41
+2025/04/15 00:33:03 Verificando pago para curso ID: 23, usuario ID: 41
+2025/04/15 00:33:03 Verificando pago para curso ID: 24, usuario ID: 41
+2025/04/15 00:33:03 Verificando pago para curso ID: 25, usuario ID: 41
+2025/04/15 00:33:07 Verificando pago para curso ID: 17, usuario ID: 41
+2025/04/15 00:33:17 Solicitud de pago recibida: {CursoID:17 Monto:12 Metodo:tarjeta DetallesTarjeta:0xc000402990}
+2025/04/15 00:33:19 Verificando pago para curso ID: 17, usuario ID: 41
+2025/04/15 00:33:20 Pago ID 18 actualizado a estado: aprobado
+2025/04/15 00:33:21 Verificando pago para curso ID: 17, usuario ID: 41
+2025/04/15 00:33:21 Verificando pago para curso ID: 17, usuario ID: 41
+2025/04/15 00:33:34 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:33:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:33:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:33:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:33:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:33:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:35:05 Verificando pago para curso ID: 23, usuario ID: 41
+2025/04/15 00:35:05 Verificando pago para curso ID: 17, usuario ID: 41
+2025/04/15 00:35:05 Verificando pago para curso ID: 24, usuario ID: 41
+2025/04/15 00:35:05 Verificando pago para curso ID: 25, usuario ID: 41
+2025/04/15 00:35:05 Verificando pago para curso ID: 17, usuario ID: 41
+2025/04/15 00:35:05 Verificando pago para curso ID: 25, usuario ID: 41
+2025/04/15 00:35:05 Verificando pago para curso ID: 24, usuario ID: 41
+2025/04/15 00:35:05 Verificando pago para curso ID: 23, usuario ID: 41
+2025/04/15 00:35:09 Verificando pago para curso ID: 23, usuario ID: 41
+2025/04/15 00:35:09 Verificando pago para curso ID: 23, usuario ID: 41
+2025/04/15 00:35:12 Solicitud de pago recibida: {CursoID:23 Monto:9999 Metodo:paypal DetallesTarjeta:<nil>}
+2025/04/15 00:35:14 Verificando pago para curso ID: 23, usuario ID: 41
+2025/04/15 00:35:15 Pago ID 19 actualizado a estado: aprobado
+2025/04/15 00:35:16 Verificando pago para curso ID: 23, usuario ID: 41
+2025/04/15 00:35:16 Verificando pago para curso ID: 23, usuario ID: 41
+2025/04/15 00:35:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:35:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:35:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:35:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:35:44 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:35:44 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:36:51 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:36:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:36:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:36:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:36:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:36:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:37:51 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:37:51 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:37:51 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:37:51 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:37:51 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:37:51 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:37:51 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:37:51 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:37:58 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:38:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:38:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:38:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:38:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:38:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:38:14 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:38:34 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:38:34 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:38:40 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:38:40 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:46:12 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/15 00:46:12 Creando curso: {ID:0 Titulo:masivo Descripcion:masiiivo Contenido:masiiivo Precio:233 Estado:Borrador ImagenURL:/static/images/1806b929-c268-41b3-b2d6-8000e389f284.png CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/15 00:46:12 Curso creado exitosamente: ID 26
+2025/04/15 00:46:26 Actualizando curso ID 26: {ID:26 Titulo:masivo Descripcion:masiiivo Contenido:masiiivo Precio:233 Estado:Publicado ImagenURL:/static/images/1806b929-c268-41b3-b2d6-8000e389f284.png CreatedAt:2025-04-15 00:46:12.14 -0300 -03 UpdatedAt:2025-04-15 00:46:12.14 -0300 -03 Capitulos:[]}
+2025/04/15 00:46:26 Curso actualizado exitosamente: ID 26
+2025/04/15 00:46:28 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:46:28 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:46:28 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:46:28 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:46:28 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:46:28 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:46:28 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:46:28 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:46:28 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:46:28 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:46:32 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:46:32 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:46:35 Solicitud de pago recibida: {CursoID:26 Monto:233 Metodo:transferencia DetallesTarjeta:<nil>}
+2025/04/15 00:46:37 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:46:38 Pago ID 20 actualizado a estado: aprobado
+2025/04/15 00:46:39 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:46:40 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:46:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:46:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:46:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:46:53 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:46:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:46:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:47:33 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/15 00:47:33 Video subido exitosamente: /static/videos/26/26-nuevo-99a73e41-7671-4dde-b36e-8daa82da55b8.mp4
+2025/04/15 00:47:33 Creando capítulo: {ID:0 CursoID:26 Titulo:a Descripcion:a Duracion:09:30 VideoURL:/static/videos/26/26-nuevo-99a73e41-7671-4dde-b36e-8daa82da55b8.mp4 VideoNombre:26-nuevo-99a73e41-7671-4dde-b36e-8daa82da55b8.mp4 Orden:0 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/15 00:47:33 Capítulo creado exitosamente: ID 30
+2025/04/15 00:47:35 Actualizando curso ID 26: {ID:26 Titulo:masivo Descripcion:masiiivo Contenido:masiiivo Precio:233 Estado:Publicado ImagenURL:/static/images/1806b929-c268-41b3-b2d6-8000e389f284.png CreatedAt:2025-04-15 00:46:12.14 -0300 -03 UpdatedAt:2025-04-15 00:46:26.587 -0300 -03 Capitulos:[]}
+2025/04/15 00:47:35 Curso actualizado exitosamente: ID 26
+2025/04/15 00:47:36 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:47:36 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:47:36 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:47:36 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:47:36 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:47:36 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:47:36 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:47:36 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:47:36 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:47:36 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:47:39 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:47:39 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:47:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:47:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:47:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:47:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:47:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:47:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:03 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:48:03 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:48:03 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:48:03 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:48:03 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:48:03 Verificando pago para curso ID: 17, usuario ID: 3
+2025/04/15 00:48:03 Verificando pago para curso ID: 23, usuario ID: 3
+2025/04/15 00:48:03 Verificando pago para curso ID: 26, usuario ID: 3
+2025/04/15 00:48:03 Verificando pago para curso ID: 24, usuario ID: 3
+2025/04/15 00:48:03 Verificando pago para curso ID: 25, usuario ID: 3
+2025/04/15 00:48:08 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:08 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:08 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:08 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:08 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:08 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:13 Eliminando capítulos del curso ID: 24
+2025/04/15 00:48:13 Eliminando curso ID: 24
+2025/04/15 00:48:13 Curso ID 24 eliminado exitosamente
+2025/04/15 00:48:14 Archivo de video del capítulo 29 eliminado: static/videos/23/23-nuevo-d71db267-13c0-4ba2-b2e2-1a526c4b4bfe.mp4
+2025/04/15 00:48:14 Eliminando capítulos del curso ID: 23
+2025/04/15 00:48:14 Imagen del curso eliminada: static/images/902fd281-7c79-4954-83b6-d29f009ba52f.jpeg
+2025/04/15 00:48:14 Eliminando curso ID: 23
+2025/04/15 00:48:14 Directorio de videos del curso eliminado: static/videos/23
+2025/04/15 00:48:14 Curso ID 23 eliminado exitosamente
+2025/04/15 00:48:16 Archivo de video del capítulo 23 eliminado: static/videos/17/17-nuevo-ea30e9ee-2889-4578-82e7-a445e467becb.mp4
+2025/04/15 00:48:16 Archivo de video del capítulo 24 eliminado: static/videos/17/17-nuevo-5eef4f29-470a-44a9-8842-eab494745a9e.mp4
+2025/04/15 00:48:16 Eliminando capítulos del curso ID: 17
+2025/04/15 00:48:16 Imagen del curso eliminada: static/images/1795b6c3-15a4-4f50-afb7-fb89c1c36ca0.jpeg
+2025/04/15 00:48:16 Eliminando curso ID: 17
+2025/04/15 00:48:16 Directorio de videos del curso eliminado: static/videos/17
+2025/04/15 00:48:16 Curso ID 17 eliminado exitosamente
+2025/04/15 00:48:18 Eliminando capítulos del curso ID: 25
+2025/04/15 00:48:18 Eliminando curso ID: 25
+2025/04/15 00:48:18 Curso ID 25 eliminado exitosamente
+2025/04/15 00:48:20 Archivo de video del capítulo 30 eliminado: static/videos/26/26-nuevo-99a73e41-7671-4dde-b36e-8daa82da55b8.mp4
+2025/04/15 00:48:20 Eliminando capítulos del curso ID: 26
+2025/04/15 00:48:20 Imagen del curso eliminada: static/images/1806b929-c268-41b3-b2d6-8000e389f284.png
+2025/04/15 00:48:20 Eliminando curso ID: 26
+2025/04/15 00:48:20 Directorio de videos del curso eliminado: static/videos/26
+2025/04/15 00:48:20 Curso ID 26 eliminado exitosamente
+2025/04/15 00:48:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 00:48:52 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:19:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:19:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:19:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:19:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:19:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:19:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:19:48 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/15 01:19:48 Creando curso: {ID:0 Titulo:flor Descripcion:flor Contenido:flor Precio:10 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/15 01:19:48 Curso creado exitosamente: ID 27
+2025/04/15 01:19:49 Verificando pago para curso ID: 27, usuario ID: 3
+2025/04/15 01:19:49 Verificando pago para curso ID: 27, usuario ID: 3
+2025/04/15 01:19:51 Verificando pago para curso ID: 27, usuario ID: 3
+2025/04/15 01:19:51 Verificando pago para curso ID: 27, usuario ID: 3
+2025/04/15 01:19:58 Solicitud de pago recibida: {CursoID:27 Monto:10 Metodo:coinbase DetallesTarjeta:<nil>}
+2025/04/15 01:20:07 Solicitud de pago recibida: {CursoID:27 Monto:10 Metodo:mercadopago DetallesTarjeta:<nil>}
+2025/04/15 01:25:28 Solicitud de pago recibida: {CursoID:27 Monto:10 Metodo:transferencia DetallesTarjeta:<nil>}
+2025/04/15 01:25:30 Verificando pago para curso ID: 27, usuario ID: 3
+2025/04/15 01:25:31 Pago ID 21 actualizado a estado: aprobado
+2025/04/15 01:25:32 Verificando pago para curso ID: 27, usuario ID: 3
+2025/04/15 01:25:32 Verificando pago para curso ID: 27, usuario ID: 3
+2025/04/15 01:25:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:25:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:25:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:25:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:25:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:25:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:26:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:26:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:26:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:26:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:26:18 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:26:18 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/15 01:26:19 Verificando pago para curso ID: 27, usuario ID: 3
+2025/04/15 01:26:19 Verificando pago para curso ID: 27, usuario ID: 3
+2025/04/15 01:26:21 Verificando pago para curso ID: 27, usuario ID: 3
+2025/04/15 01:26:21 Verificando pago para curso ID: 27, usuario ID: 3

@@ -15,6 +15,10 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [videoDurations, setVideoDurations] = useState({});
+  const [progressHistory, setProgressHistory] = useState({}); // Almacenar el progreso actual de cada video
+
+  // Umbral para marcar automáticamente como completado (90% del video)
+  const AUTO_COMPLETE_THRESHOLD = 0.9;
 
   useEffect(() => {
     const videoElement = videoRef.current;
@@ -28,6 +32,21 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
           const progressPercent = (current / videoDuration) * 100;
           setProgress(progressPercent);
           setCurrentTime(current);
+          
+          // Actualizar progreso para el video actual
+          if (videos[currentVideo] && videos[currentVideo].id) {
+            const videoId = videos[currentVideo].id;
+            setProgressHistory(prev => ({
+              ...prev,
+              [videoId]: progressPercent
+            }));
+            
+            // Comprobar si el video ha sido visto en un 90% y no está marcado como completado
+            const isNearEnd = progressPercent > (AUTO_COMPLETE_THRESHOLD * 100);
+            if (isNearEnd && videoId && !completedVideos[videoId]) {
+              markAsCompleted(videoId);
+            }
+          }
         }
       };
 
@@ -76,7 +95,7 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
         videoElement.removeEventListener('ended', handleEnded);
       };
     }
-  }, [currentVideo, videos, markAsCompleted, changeVideo]);
+  }, [currentVideo, videos, completedVideos, markAsCompleted, changeVideo]);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -162,8 +181,26 @@ function VideoPlayer({ videos, currentVideo, changeVideo, completedVideos, markA
   useEffect(() => {
     if (videoRef.current) {
       setIsPlaying(false);
+      
+      // Restablece el progreso actual cuando cambia de video
+      setProgress(0);
+      setCurrentTime(0);
+      
+      // Si hay progreso guardado para este video, establece la posición
+      if (videos[currentVideo] && videos[currentVideo].id) {
+        const videoId = videos[currentVideo].id;
+        if (progressHistory[videoId] > 0) {
+          const savedProgressPercent = progressHistory[videoId];
+          const savedTime = (savedProgressPercent / 100) * (videoRef.current.duration || 0);
+          
+          // Solo si el progreso es menor al 95% (para evitar siempre iniciar al final)
+          if (savedProgressPercent < 95) {
+            videoRef.current.currentTime = savedTime;
+          }
+        }
+      }
     }
-  }, [currentVideo]);
+  }, [currentVideo, progressHistory, videos]);
 
   if (!videos || !Array.isArray(videos) || videos.length === 0) {
     return <div className="no-videos">No hay videos disponibles para este curso</div>;

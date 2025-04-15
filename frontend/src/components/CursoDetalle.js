@@ -18,6 +18,7 @@ function CursoDetalle() {
   const [paymentStatus, setPaymentStatus] = useState(null);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [error, setError] = useState(null);
+  const [loadingProgress, setLoadingProgress] = useState(false);
 
   // Cursos estáticos para fallback
   const cursosFallback = useMemo(() => [
@@ -159,6 +160,11 @@ function CursoDetalle() {
         setPaymentStatus(estadoPago);
         setError(null);
         
+        // Si el pago está aprobado, cargar el progreso del usuario
+        if (estadoPago === 'aprobado') {
+          fetchUserProgress();
+        }
+        
       } catch (err) {
         console.error('Error al verificar estado de pago:', err);
         
@@ -184,6 +190,55 @@ function CursoDetalle() {
     checkPaymentStatus();
   }, [isLoggedIn, curso]);
 
+  // Cargar el progreso del usuario
+  const fetchUserProgress = async () => {
+    if (!isLoggedIn || !curso || !curso.id) return;
+    
+    try {
+      setLoadingProgress(true);
+      console.log(`Obteniendo progreso para curso ID: ${curso.id}`);
+      
+      // Llamar al endpoint de progreso
+      const response = await CursosService.getProgresoUsuario(curso.id);
+      console.log('Respuesta de progreso:', response);
+      
+      // Actualizar estado con los datos recibidos
+      if (response) {
+        // Actualizar progreso general
+        if (response.progreso_total !== undefined) {
+          setOverallProgress(Math.round(response.progreso_total));
+        }
+        
+        // Actualizar capítulos completados
+        if (response.capitulos_progreso) {
+          const completados = {};
+          
+          // Convertir el mapa de progreso a formato para el componente
+          Object.values(response.capitulos_progreso).forEach(progreso => {
+            if (progreso && progreso.capitulo_id) {
+              completados[progreso.capitulo_id] = progreso.completado;
+            }
+          });
+          
+          setCompletedVideos(completados);
+        }
+        
+        // Establecer video actual basado en el último visualizado
+        if (response.ultimo_capitulo && curso.videos && curso.videos.length > 0) {
+          // Buscar el índice del último capítulo visto
+          const videoIndex = curso.videos.findIndex(v => v.id === response.ultimo_capitulo);
+          if (videoIndex !== -1) {
+            setCurrentVideo(videoIndex);
+          }
+        }
+      }
+    } catch (err) {
+      console.error('Error al cargar progreso:', err);
+    } finally {
+      setLoadingProgress(false);
+    }
+  };
+
   // Calcular progreso del curso
   useEffect(() => {
     if (curso) {
@@ -197,25 +252,54 @@ function CursoDetalle() {
     }
   }, [completedVideos, curso]);
 
-  const changeVideo = (index) => {
+  const changeVideo = async (index) => {
     const videos = curso?.videos || curso?.capitulos || [];
     if (index >= 0 && index < videos.length) {
       setCurrentVideo(index);
+      
+      // Guardar el último capítulo visto
+      if (isLoggedIn && paymentStatus === 'aprobado' && videos[index] && videos[index].id) {
+        try {
+          await CursosService.guardarUltimoCapitulo(curso.id, videos[index].id);
+        } catch (err) {
+          console.error('Error al guardar último capítulo:', err);
+        }
+      }
     }
   };
 
-  const markAsCompleted = (videoId) => {
-    // Actualizar estado local
+  const markAsCompleted = async (videoId) => {
+    // Actualizar estado local primero para una respuesta UI inmediata
     const newCompletedState = !completedVideos[videoId];
     setCompletedVideos(prev => ({
       ...prev,
       [videoId]: newCompletedState
     }));
     
-    // Opcionalmente, podríamos sincronizar con el backend
-    if (curso) {
-      CursosService.marcarCapituloCompletado(curso.id, videoId, newCompletedState)
-        .catch(err => console.error('Error al sincronizar estado completado:', err));
+    // Sincronizar con el backend
+    if (isLoggedIn && curso) {
+      try {
+        await CursosService.marcarCapituloCompletado(curso.id, videoId, newCompletedState);
+        
+        // Actualizar progreso total después de marcar completado/incompleto
+        if (curso.videos && curso.videos.length > 0) {
+          const completedCount = Object.values({
+            ...completedVideos,
+            [videoId]: newCompletedState
+          }).filter(completed => completed).length;
+          
+          const totalVideos = curso.videos.length;
+          const newOverallProgress = Math.round((completedCount / totalVideos) * 100);
+          setOverallProgress(newOverallProgress);
+        }
+      } catch (err) {
+        console.error('Error al sincronizar estado completado:', err);
+        // Revertir el cambio en caso de error
+        setCompletedVideos(prev => ({
+          ...prev,
+          [videoId]: !newCompletedState
+        }));
+      }
     }
   };
 
@@ -225,15 +309,18 @@ function CursoDetalle() {
       setShowPaymentModal(false);
       setError(null);
       
-      // Opcionalmente, recargar datos del curso
+      // Recargar datos del curso
       const updatedCurso = await CursosService.getCursoById(id);
       setCurso(updatedCurso);
+      
+      // Cargar progreso después de realizar el pago
+      await fetchUserProgress();
     } catch (err) {
       console.error('Error al actualizar después del pago:', err);
     }
   };
 
-  if (loading) {
+  if (loading || loadingProgress) {
     return <div className="loading">Cargando curso...</div>;
   }
 

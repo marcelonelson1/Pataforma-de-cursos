@@ -1,75 +1,74 @@
-.header {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 1.25rem 1.5rem;
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Estilos base para el header */
+.header-container {
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 1000;
+  background-color: #000000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
 }
 
-.header.scrolled {
-  background-color: rgba(0, 0, 0, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  padding: 0.75rem 1.5rem;
+/* Logo centrado en la parte superior */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0 0.5rem;
+  background-color: #000000;
 }
 
 .logo {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: relative;
-  width: fit-content;
-}
-
-.logo a {
-  display: block;
-  width: 180px;
-  height: 50px;
-  position: relative;
-}
-
-.logo-image {
-  max-height: 140px;
-  max-width: 180px;
+  max-height: 55px;
+  max-width: 110px;
   object-fit: contain;
   transition: transform 0.2s ease;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
 }
 
-.logo-image:hover {
-  transform: translateY(-50%) scale(1.05);
+.logo:hover {
+  transform: scale(1.05);
 }
 
+/* Header principal */
+.main-header {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0 1.5rem 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.main-header.header-scrolled {
+  background-color: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor flexible para el contenido del header */
+.header-content {
+  position: center  ;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Navegación principal en el centro */
 .main-nav {
   display: flex;
   justify-content: center;
-  flex: 2;
+  width: 100%;
 }
 
-.nav-links {
+.nav-list {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.auth-nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.75rem;
-  flex: 1;
-}
-
-.nav-link {
+.nav-item {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: all 0.2s ease;
@@ -77,13 +76,14 @@
   font-weight: 500;
   padding: 0.5rem 0;
   position: relative;
+  display: block;
 }
 
-.nav-link:hover {
+.nav-item:hover {
   color: #ffffff;
 }
 
-.nav-link::after {
+.nav-item::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -94,11 +94,24 @@
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+.nav-item:hover::after {
   width: 100%;
 }
 
-.auth-link {
+/* Área de autenticación a la derecha */
+.auth-area {
+  position: absolute;
+  padding-right: 1rem;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 0.75rem;
+  
+  align-items: center;
+  
+}
+
+.auth-button {
   background-color: transparent;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -112,17 +125,17 @@
   transition: all 0.2s ease;
   display: inline-block;
   text-align: center;
-  min-width: fit-content;
   white-space: nowrap;
 }
 
-.auth-link:hover {
+.auth-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
   color: #ffffff;
 }
 
-.menu-toggle {
+/* Botón de menú móvil (oculto por defecto) */
+.mobile-menu-button {
   display: none;
   background: none;
   border: none;
@@ -132,75 +145,80 @@
   transition: color 0.3s ease;
 }
 
-.mobile-menu {
+/* Menú móvil (oculto por defecto) */
+.mobile-nav {
   display: none;
 }
 
-/* Responsive breakpoints */
+/* Estilos responsivos */
 @media screen and (max-width: 768px) {
-  .header {
-    padding: 1rem 1.5rem;
+  .main-header {
+    padding: 0 1.5rem 0.75rem;
   }
   
-  .nav-links {
+  .nav-list {
     gap: 1.25rem;
   }
   
-  .auth-nav {
+  .auth-area {
     gap: 0.5rem;
   }
   
-  .auth-link {
+  .auth-button {
     padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
   }
 
-  .logo a {
-    width: 160px;
-    height: 45px;
-  }
-
-  .logo-image {
-    max-height: 45px;
-    max-width: 160px;
+  .logo {
+    max-height: 50px;
+    max-width: 100px;
   }
 }
 
 @media screen and (max-width: 640px) {
-  .nav-link {
+  .nav-item {
     font-size: 0.85rem;
   }
   
-  .auth-link {
+  .auth-button {
     font-size: 0.85rem;
     padding: 0.4rem 0.6rem;
   }
   
-  .auth-nav {
+  .auth-area {
     gap: 0.35rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .header {
+  .header-container {
+    position: sticky;
+    top: 0;
+  }
+  
+  .logo-container {
+    display: none;
+  }
+  
+  .main-header {
     padding: 0.875rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  .logo {
-    flex: 1;
-  }
-  
-  .logo a {
+  .main-header::before {
+    content: '';
+    background-image: url('../img/header/logohead.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 40px;
     height: 40px;
-  }
-
-  .logo-image {
-    max-height: 40px;
-    max-width: 40px;
+    display: inline-block;
   }
   
-  .menu-toggle {
+  .mobile-menu-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,19 +226,19 @@
     width: 40px;
     height: 40px;
     background-color: transparent;
-    margin-left: 0.5rem;
+    margin-left: auto;
     padding: 0;
   }
   
-  .menu-toggle:hover {
+  .mobile-menu-button:hover {
     color: rgba(255, 255, 255, 0.8);
   }
 
-  .main-nav, .auth-nav {
+  .header-content {
     display: none;
   }
   
-  .mobile-menu {
+  .mobile-nav {
     display: none;
     position: absolute;
     top: 100%;
@@ -239,7 +257,7 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
   
-  .mobile-menu.active {
+  .mobile-nav-active {
     display: flex;
     animation: slideDown 0.3s ease forwards;
   }
@@ -255,7 +273,7 @@
     }
   }
   
-  .mobile-menu .nav-link {
+  .mobile-nav-item {
     width: 100%;
     padding: 1rem 1.5rem;
     text-align: center;
@@ -265,18 +283,16 @@
     justify-content: center;
     transition: all 0.2s ease;
     font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
   }
   
-  .mobile-menu .nav-link:hover {
+  .mobile-nav-item:hover {
     background-color: rgba(255, 255, 255, 0.05);
-    padding-left: 1.5rem;
+    color: #ffffff;
   }
   
-  .mobile-menu .nav-link::after {
-    display: none;
-  }
-  
-  .mobile-menu-auth {
+  .mobile-auth {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -287,7 +303,7 @@
     justify-content: center;
   }
   
-  .mobile-menu .auth-link {
+  .mobile-auth-button {
     width: 100%;
     max-width: 280px;
     text-align: center;
@@ -300,47 +316,47 @@
     align-items: center;
     white-space: nowrap;
     margin: 0;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
   }
   
-  .mobile-menu .auth-link:hover {
+  .mobile-auth-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
   }
 }
 
 /* Extra small devices */
 @media screen and (max-width: 360px) {
-  .header {
+  .main-header {
     padding: 0.75rem 1rem;
   }
   
-  .logo a {
-    width: 36px;
-    height: 36px;
-  }
-
-  .logo-image {
-    max-height: 36px;
-    max-width: 36px;
-  }
-  
-  .menu-toggle {
+  .mobile-menu-button {
     width: 36px;
     height: 36px;
     font-size: 1.3rem;
   }
   
-  .mobile-menu .nav-link {
+  .mobile-nav-item {
     padding: 0.875rem 1.25rem;
     font-size: 0.95rem;
   }
   
-  .mobile-menu-auth {
+  .mobile-auth {
     padding: 1rem 1.25rem;
     gap: 0.5rem;
   }
   
-  .mobile-menu .auth-link {
+  .mobile-auth-button {
     width: 100%;
     max-width: 240px;
     padding: 0.75rem;
