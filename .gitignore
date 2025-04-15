@@ -1,25 +1,51 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
+### Dependencies ###
+node_modules/
+.pnp
 .pnp.js
+*.pack
+*.cache
 
-# testing
+### Testing ###
 /coverage
+.nyc_output
 
-# production
+### Build ###
 /build
+/dist
+/.next
+/out
 
-# misc
-.DS_Store
+### Environment ###
+.env*
+!.env.example
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+### Logs ###
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-node_modules/
-.cache/
+lerna-debug.log*
+.pnpm-debug.log*
+
+### Editor/IDE ###
+.DS_Store
+.idea
+.vscode
+*.swp
+*.swo
+
+### System ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Frontend specific ###
+frontend/.cache
+frontend/.next
+frontend/node_modules
+frontend/.env
