@@ -1,3 +1,4 @@
+// main.go
 package main
 
 import (
@@ -16,9 +17,6 @@ import (
 	"gorm.io/gorm/logger"
 )
 
-// Constantes para manejo de videos y imágenes
-
-
 // Estructuras de modelos
 type Usuario struct {
 	ID        uint      `gorm:"primaryKey" json:"id"`
@@ -31,6 +29,76 @@ type Usuario struct {
 	LastLogin time.Time `json:"last_login"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
+}
+
+type Curso struct {
+	ID          uint       `gorm:"primaryKey" json:"id"`
+	Titulo      string     `gorm:"size:200;not null" json:"titulo"`
+	Descripcion string     `gorm:"size:500" json:"descripcion"`
+	Contenido   string     `gorm:"type:text" json:"contenido"`
+	Precio      float64    `gorm:"type:decimal(10,2);default:29.99" json:"precio"`
+	Estado      string     `gorm:"size:20;default:'Borrador'" json:"estado"`
+	ImagenURL   string     `gorm:"size:255" json:"imagen_url"`
+	CreatedAt   time.Time  `json:"created_at"`
+	UpdatedAt   time.Time  `json:"updated_at"`
+	Capitulos   []Capitulo `gorm:"foreignKey:CursoID" json:"capitulos,omitempty"`
+}
+
+type Capitulo struct {
+	ID          uint      `gorm:"primaryKey" json:"id"`
+	CursoID     uint      `gorm:"not null;index" json:"curso_id"`
+	Titulo      string    `gorm:"size:200;not null" json:"titulo"`
+	Descripcion string    `gorm:"size:500" json:"descripcion"`
+	Duracion    string    `gorm:"size:10" json:"duracion"`
+	VideoURL    string    `gorm:"size:255" json:"video_url"`
+	VideoNombre string    `gorm:"size:255" json:"video_nombre"`
+	Orden       int       `gorm:"default:0" json:"orden"`
+	Publicado   bool      `gorm:"default:false" json:"publicado"`
+	CreatedAt   time.Time `json:"created_at"`
+	UpdatedAt   time.Time `json:"updated_at"`
+	Curso       *Curso    `gorm:"foreignKey:CursoID" json:"-"`
+}
+
+type Pago struct {
+	ID            uint      `gorm:"primaryKey" json:"id"`
+	UsuarioID     uint      `gorm:"not null" json:"usuario_id"`
+	CursoID       uint      `gorm:"not null" json:"curso_id"`
+	Monto         float64   `gorm:"type:decimal(10,2);not null" json:"monto"`
+	Metodo        string    `gorm:"size:50;not null" json:"metodo"`
+	Estado        string    `gorm:"size:20;not null;default:'pendiente'" json:"estado"`
+	TransaccionID string    `gorm:"size:100" json:"transaccion_id"`
+	Moneda        string    `gorm:"size:10" json:"moneda"`
+	CreatedAt     time.Time `json:"created_at"`
+	UpdatedAt     time.Time `json:"updated_at"`
+}
+
+type ActivityLog struct {
+	ID        uint      `gorm:"primaryKey" json:"id"`
+	UserID    uint      `gorm:"not null" json:"user_id"`
+	Action    string    `gorm:"size:50;not null" json:"action"`
+	Details   string    `gorm:"size:500" json:"details"`
+	IP        string    `gorm:"size:50" json:"ip"`
+	UserAgent string    `gorm:"size:255" json:"user_agent"`
+	CreatedAt time.Time `json:"created_at"`
+}
+
+var db *gorm.DB
+
+func main() {
+	setupLogging()
+	loadEnv()
+
+	if err := setupDatabase(); err != nil {
+		log.Fatalf("Error al configurar la base de datos: %v", err)
+	}
+	
+	initStaticDirs()
+	initPaymentProviders()
+
+	router := setupRouter()
+	registerRoutes(router)
+
+	startServer(router)
 }
 
 func healthCheck(c *gin.Context) {
@@ -75,7 +143,6 @@ func getEnv(key, defaultValue string) string {
 	return defaultValue
 }
 
-// Función auxiliar para crear directorios si no existen
 func createDirIfNotExists(dirPath string) {
 	if _, err := os.Stat(dirPath); os.IsNotExist(err) {
 		log.Printf("Creando directorio: %s", dirPath)
@@ -85,111 +152,22 @@ func createDirIfNotExists(dirPath string) {
 	}
 }
 
-type Curso struct {
-	ID          uint       `gorm:"primaryKey" json:"id"`
-	Titulo      string     `gorm:"size:200;not null" json:"titulo"`
-	Descripcion string     `gorm:"size:500" json:"descripcion"`
-	Contenido   string     `gorm:"type:text" json:"contenido"`
-	Precio      float64    `gorm:"type:decimal(10,2);default:29.99" json:"precio"`
-	Estado      string     `gorm:"size:20;default:'Borrador'" json:"estado"`
-	ImagenURL   string     `gorm:"size:255" json:"imagen_url"`
-	CreatedAt   time.Time  `json:"created_at"`
-	UpdatedAt   time.Time  `json:"updated_at"`
-	Capitulos   []Capitulo `gorm:"foreignKey:CursoID" json:"capitulos,omitempty"`
-}
-
-type Capitulo struct {
-	ID          uint      `gorm:"primaryKey" json:"id"`
-	CursoID     uint      `gorm:"not null;index" json:"curso_id"`
-	Titulo      string    `gorm:"size:200;not null" json:"titulo"`
-	Descripcion string    `gorm:"size:500" json:"descripcion"`
-	Duracion    string    `gorm:"size:10" json:"duracion"`
-	VideoURL    string    `gorm:"size:255" json:"video_url"`
-	VideoNombre string    `gorm:"size:255" json:"video_nombre"`
-	Orden       int       `gorm:"default:0" json:"orden"`
-	Publicado   bool      `gorm:"default:false" json:"publicado"`
-	CreatedAt   time.Time `json:"created_at"`
-	UpdatedAt   time.Time `json:"updated_at"`
-	Curso       *Curso    `gorm:"foreignKey:CursoID" json:"-"`
-}
-
-// Estructura para el progreso del usuario en un curso
-
-
-type Pago struct {
-	ID            uint      `gorm:"primaryKey" json:"id"`
-	UsuarioID     uint      `gorm:"not null" json:"usuario_id"`
-	CursoID       uint      `gorm:"not null" json:"curso_id"`
-	Monto         float64   `gorm:"type:decimal(10,2);not null" json:"monto"`
-	Metodo        string    `gorm:"size:50;not null" json:"metodo"`
-	Estado        string    `gorm:"size:20;not null;default:'pendiente'" json:"estado"`
-	TransaccionID string    `gorm:"size:100" json:"transaccion_id"`
-	CreatedAt     time.Time `json:"created_at"`
-	UpdatedAt     time.Time `json:"updated_at"`
-}
-
-type ActivityLog struct {
-	ID        uint      `gorm:"primaryKey" json:"id"`
-	UserID    uint      `gorm:"not null" json:"user_id"`
-	Action    string    `gorm:"size:50;not null" json:"action"`
-	Details   string    `gorm:"size:500" json:"details"`
-	IP        string    `gorm:"size:50" json:"ip"`
-	UserAgent string    `gorm:"size:255" json:"user_agent"`
-	CreatedAt time.Time `json:"created_at"`
-}
-
-// ContactMessage representa un mensaje enviado a través del formulario de contacto
-
-
-// ProjectPortfolio representa un proyecto en el portfolio
-
-
-var db *gorm.DB
-
-func main() {
-	setupLogging()
-	loadEnv()
-
-	if err := setupDatabase(); err != nil {
-		log.Fatalf("Error al configurar la base de datos: %v", err)
-	}
-	
-	// Inicializar directorios necesarios para almacenamiento
-	initStaticDirs()
-
-	router := setupRouter()
-	registerRoutes(router)
-
-	startServer(router)
-}
-
-// initStaticDirs inicializa todos los directorios necesarios para almacenamiento
 func initStaticDirs() {
-	// Crear directorio principal si no existe
 	createDirIfNotExists("./static")
-	
-	// Inicializar directorios específicos
 	initVideosDir()
 	initProfilesDir()
 	initPortfolioDir()
 	initHomeImagesDirs()
-	
-	// Inicializar directorio para imágenes de cursos
 	createDirIfNotExists("./static/images")
 }
 
-// initProfilesDir inicializa el directorio para imágenes de perfil
 func initProfilesDir() {
 	createDirIfNotExists("./static/profiles")
 }
 
-// initPortfolioDir inicializa el directorio para imágenes del portfolio
 func initPortfolioDir() {
 	createDirIfNotExists("./static/portfolio")
 }
-
-// initHomeImagesDirs inicializa el directorio para imágenes del home
-
 
 func setupLogging() {
 	logFile, err := os.OpenFile("app.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
@@ -255,7 +233,6 @@ func migrateWithConstraints() error {
 		return fmt.Errorf("error al deshabilitar FOREIGN_KEY_CHECKS: %v", err)
 	}
 
-	// Eliminar restricciones existentes para evitar errores de duplicación
 	constraintNames := []string{
 		"fk_pagos_usuario", "fk_pago_usuario", 
 		"fk_pagos_curso", "fk_pago_curso",
@@ -290,7 +267,6 @@ func migrateWithConstraints() error {
 		}
 	}
 
-	// Eliminar constraints de tablas específicas para Pagos
 	if err := db.Exec("ALTER TABLE pagos DROP FOREIGN KEY IF EXISTS fk_pagos_usuario").Error; err != nil {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_pagos_usuario: %v", err)
 	}
@@ -304,7 +280,6 @@ func migrateWithConstraints() error {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_pago_curso: %v", err)
 	}
 
-	// Eliminar constraints de tablas específicas para Capítulos
 	if err := db.Exec("ALTER TABLE capitulos DROP FOREIGN KEY IF EXISTS fk_capitulos_curso").Error; err != nil {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_capitulos_curso: %v", err)
 	}
@@ -312,7 +287,6 @@ func migrateWithConstraints() error {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_capitulo_curso: %v", err)
 	}
 
-	// Eliminar constraints de tablas específicas para ProgresoUsuario
 	if err := db.Exec("ALTER TABLE progreso_usuarios DROP FOREIGN KEY IF EXISTS fk_progreso_usuario").Error; err != nil {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_progreso_usuario: %v", err)
 	}
@@ -320,7 +294,6 @@ func migrateWithConstraints() error {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_progreso_curso: %v", err)
 	}
 
-	// Eliminar constraints de tablas específicas para ProgresoCapitulo
 	if err := db.Exec("ALTER TABLE progreso_capitulos DROP FOREIGN KEY IF EXISTS fk_progreso_capitulo_usuario").Error; err != nil {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_progreso_capitulo_usuario: %v", err)
 	}
@@ -331,12 +304,10 @@ func migrateWithConstraints() error {
 		log.Printf("Advertencia: No se pudo eliminar constraint fk_progreso_capitulo_capitulo: %v", err)
 	}
 
-	// Migrar las tablas base
-	if err := db.AutoMigrate(&Usuario{}, &Curso{}, &Capitulo{}, &ProgresoUsuario{}, &ProgresoCapitulo{}, &ActivityLog{}, &ContactMessage{}, &ProjectPortfolio{}, &HomeImage{}); err != nil {
+	if err := db.AutoMigrate(&Usuario{}, &Curso{}, &Capitulo{}, &Pago{}, &ProgresoUsuario{}, &ProgresoCapitulo{}, &ActivityLog{}, &ContactMessage{}, &ProjectPortfolio{}, &HomeImage{}); err != nil {
 		return fmt.Errorf("error al migrar tablas base: %v", err)
 	}
 
-	// Verificar y crear tabla de pagos si no existe
 	if !db.Migrator().HasTable(&Pago{}) {
 		if err := db.Migrator().CreateTable(&Pago{}); err != nil {
 			return fmt.Errorf("error al crear tabla Pago: %v", err)
@@ -347,7 +318,6 @@ func migrateWithConstraints() error {
 		}
 	}
 
-	// Verificar y crear tablas de progreso si no existen
 	if !db.Migrator().HasTable(&ProgresoUsuario{}) {
 		if err := db.Migrator().CreateTable(&ProgresoUsuario{}); err != nil {
 			return fmt.Errorf("error al crear tabla ProgresoUsuario: %v", err)
@@ -360,7 +330,6 @@ func migrateWithConstraints() error {
 		}
 	}
 
-	// Crear o recrear las relaciones entre tablas
 	if err := db.Exec(
 		"ALTER TABLE pagos ADD CONSTRAINT fk_pagos_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE",
 	).Error; err != nil {
@@ -379,7 +348,6 @@ func migrateWithConstraints() error {
 		log.Printf("Advertencia: No se pudo crear constraint fk_capitulos_curso: %v", err)
 	}
 
-	// Crear índices y constraints para tablas de progreso
 	if err := db.Exec(
 		"ALTER TABLE progreso_usuarios ADD CONSTRAINT fk_progreso_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE",
 	).Error; err != nil {
@@ -410,7 +378,6 @@ func migrateWithConstraints() error {
 		log.Printf("Advertencia: No se pudo crear constraint fk_progreso_capitulo_capitulo: %v", err)
 	}
 
-	// Crear índices compuestos para mejorar el rendimiento
 	if err := db.Exec("CREATE INDEX IF NOT EXISTS idx_usuario_curso ON progreso_usuarios(usuario_id, curso_id)").Error; err != nil {
 		log.Printf("Advertencia: No se pudo crear índice idx_usuario_curso: %v", err)
 	}
@@ -471,7 +438,6 @@ func registerRoutes(router *gin.Engine) {
 		}
 	}
 
-	// Rutas de administrador con middleware de admin
 	admin := router.Group("/api/admin")
 	admin.Use(authMiddleware(), adminMiddleware())
 	{
@@ -485,7 +451,6 @@ func registerRoutes(router *gin.Engine) {
 		admin.DELETE("/users/:id", deleteUser)
 		admin.PUT("/users/:id/role", changeUserRole)
 		
-		// Rutas para mensajes de contacto
 		admin.GET("/messages", getContactMessages)
 		admin.GET("/messages/:id", getContactMessage)
 		admin.PATCH("/messages/:id/:action", updateMessageStatus)
@@ -518,16 +483,14 @@ func registerRoutes(router *gin.Engine) {
 		videos.DELETE("/:cursoId/:filename", deleteVideo)
 	}
 
-	// Nuevas rutas para el manejo del progreso de cursos
 	progreso := router.Group("/api/progreso")
 	{
-		progreso.Use(authMiddleware()) // Todas las rutas de progreso requieren autenticación
+		progreso.Use(authMiddleware())
 		progreso.GET("/curso/:cursoId", getProgresoUsuario)
 		progreso.POST("/capitulo/completado", marcarCapituloCompletado)
 		progreso.POST("/ultimo-capitulo", guardarUltimoCapitulo)
 	}
 
-	// Rutas para el portfolio
 	portfolio := router.Group("/api/portfolio")
 	{
 		portfolio.GET("", getAllProjects)
@@ -540,44 +503,33 @@ func registerRoutes(router *gin.Engine) {
 		portfolio.GET("/stats", authMiddleware(), adminMiddleware(), getPortfolioStats)
 	}
 
-	// Registrar rutas para imágenes del home
 	registerHomeImageRoutes(router)
 
-	// Rutas para archivos estáticos
-	// Ruta mejorada para servir videos
 	router.GET("/static/videos/:cursoId/:filename", getVideo)
 	
-	// Ruta mejorada para servir imágenes
 	router.GET("/static/images/:filename", func(c *gin.Context) {
 		filename := c.Param("filename")
 		filepath := "./static/images/" + filename
 		
-		// Verificar si el archivo existe
 		if _, err := os.Stat(filepath); os.IsNotExist(err) {
 			c.JSON(http.StatusNotFound, gin.H{"error": "Imagen no encontrada"})
 			return
 		}
 		
-		// Establecer headers para la imagen
 		c.Header("Cache-Control", "public, max-age=31536000")
-		
-		// Entregar el archivo
 		c.File(filepath)
 	})
 	
-	// Ruta para servir imágenes de perfil
 	router.GET("/static/profiles/:filename", func(c *gin.Context) {
 		filename := c.Param("filename")
 		c.File("./static/profiles/" + filename)
 	})
 	
-	// Ruta para servir imágenes del portfolio
 	router.GET("/static/portfolio/:filename", func(c *gin.Context) {
 		filename := c.Param("filename")
 		c.File("./static/portfolio/" + filename)
 	})
 
-	// Ruta para servir imágenes del home
 	router.GET("/static/home/:filename", func(c *gin.Context) {
 		filename := c.Param("filename")
 		c.File("./static/home/" + filename)
@@ -589,8 +541,15 @@ func registerRoutes(router *gin.Engine) {
 		pagos.POST("", crearPago)
 		pagos.GET("/:id", verificarPagoPorCurso)
 		pagos.POST("/webhook", webhookPago)
+		pagos.POST("/paypal/webhook", webhookPayPal)
+		pagos.POST("/coinbase/webhook", webhookCoinbase)
 	}
+
+	// Esta ruta debe estar fuera del grupo que usa authMiddleware
+	router.GET("/api/pagos/paypal/callback", callbackPayPal)
 
 	router.POST("/api/contact", contactHandler)
 	router.GET("/api/health", healthCheck)
 }
+
+// Middlewares y funciones de ayuda

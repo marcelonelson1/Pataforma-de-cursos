@@ -7,6 +7,7 @@ import Portfolio from './pages/portfolio';
 import CursosPage from './pages/CursosPage';
 import SobreMiPage from './pages/SobreMiPage';
 import ContactoPage from './pages/ContactoPage';
+import ServiciosPage from './pages/ServiciosPage'; // Importación del nuevo componente
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
@@ -18,6 +19,7 @@ import AdminRoutes from './pages/admin/AdminRoutes';
 import 'animate.css';
 import './App.css';
 import './pages/ContactoPage.css';
+import './pages/ServiciosPage.css'; // Importación del CSS de la página de servicios
 
 function App() {
   return (
@@ -44,6 +46,7 @@ const MainRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/cursos" element={<CursosPage />} />
+      <Route path="/servicios" element={<ServiciosPage />} /> {/* Nueva ruta para la página de servicios */}
       <Route path="/sobre-mi" element={<SobreMiPage />} />
       <Route path="/contacto" element={<ContactoPage />} />
       <Route path="/login" element={<LoginPage />} />
