@@ -1370,3 +1370,94 @@
 2025/04/18 20:40:29 Verificando pago para curso ID: 60, usuario ID: 3
 2025/04/18 20:40:46 Verificando pago para curso ID: 60, usuario ID: 3
 2025/04/18 20:40:46 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/19 06:01:18 Conectando a la base de datos (intento 1/5)...
+2025/04/19 06:01:19 Conexión a la base de datos establecida correctamente
+2025/04/19 06:01:19 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/19 06:01:19 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/19 06:01:19 Iniciando servidor en puerto 5000
+2025/04/19 06:01:49 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/19 06:01:49 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:20 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:20 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:26 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/19 06:02:26 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/19 06:02:37 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/19 06:02:37 Creando curso: {ID:0 Titulo:a Descripcion:a Contenido:a Precio:12 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/19 06:02:37 Curso creado exitosamente: ID 61
+2025/04/19 06:02:39 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/19 06:02:39 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/19 06:02:39 Verificando pago para curso ID: 61, usuario ID: 3
+2025/04/19 06:02:39 Verificando pago para curso ID: 61, usuario ID: 3
+2025/04/19 06:02:40 Verificando pago para curso ID: 61, usuario ID: 3
+2025/04/19 06:02:40 Verificando pago para curso ID: 61, usuario ID: 3
+2025/04/19 06:02:45 Solicitud de pago recibida: {CursoID:61 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/19 06:02:45 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=132&curso_id=61, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/19 06:02:48 Orden PayPal creada. ID: 15V817358W7869009, Estado: CREATED
+2025/04/19 06:02:48 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=15V817358W7869009
+2025/04/19 06:02:48 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=15V817358W7869009
+2025/04/19 06:03:07 Recibida callback PayPal con pagoID: 132, cursoID: 61, token: 15V817358W7869009
+2025/04/19 06:03:07 Intentando capturar orden PayPal con token: 15V817358W7869009 para pago ID: 132
+2025/04/19 06:03:09 Orden PayPal capturada. Estado: COMPLETED
+2025/04/19 06:03:09 Pago ID 132 actualizado a estado 'aprobado'
+2025/04/19 06:03:09 Pago aprobado, redirigiendo a la página del curso: http://localhost:3000/curso/61
+2025/04/19 06:03:09 Redirigiendo a: http://localhost:3000/curso/61
+2025/04/19 06:03:10 Verificando pago para curso ID: 61, usuario ID: 3
+2025/05/27 16:13:06 Conectando a la base de datos (intento 1/5)...
+2025/05/27 16:13:07 Conexión a la base de datos establecida correctamente
+2025/05/27 16:13:07 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/05/27 16:13:07 Configurando CORS para permitir origen: http://localhost:3000
+2025/05/27 16:13:07 Iniciando servidor en puerto 5000
+2025/05/27 16:13:07 Error al iniciar servidor: listen tcp :5000: bind: address already in use
+2025/05/27 16:13:14 Conectando a la base de datos (intento 1/5)...
+2025/05/27 16:13:15 Conexión a la base de datos establecida correctamente
+2025/05/27 16:13:15 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/05/27 16:13:15 Configurando CORS para permitir origen: http://localhost:3000
+2025/05/27 16:13:15 Iniciando servidor en puerto 5000
+2025/05/27 16:17:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:18:11 Error enviando email: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials a1e0cc1a2514c-87dee1c2af6sm5589184241.19 - gsmtp
+2025/05/27 16:18:23 Error enviando email: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials a1e0cc1a2514c-87dec516758sm6095692241.32 - gsmtp
+2025/05/27 16:18:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:18:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:18:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:18:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:18:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:19:28 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/05/27 16:19:28 Creando curso: {ID:0 Titulo:ohla Descripcion:hola Contenido:hola Precio:12 Estado:Publicado ImagenURL:/static/images/1a13f9de-ae40-4466-9a96-23d0b67c8f78.jpeg CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/05/27 16:19:28 Curso creado exitosamente: ID 62
+2025/05/27 16:19:30 Verificando pago para curso ID: 61, usuario ID: 3
+2025/05/27 16:19:30 Verificando pago para curso ID: 60, usuario ID: 3
+2025/05/27 16:19:30 Verificando pago para curso ID: 62, usuario ID: 3
+2025/05/27 16:19:30 Verificando pago para curso ID: 61, usuario ID: 3
+2025/05/27 16:19:30 Verificando pago para curso ID: 60, usuario ID: 3
+2025/05/27 16:19:30 Verificando pago para curso ID: 62, usuario ID: 3
+2025/05/27 16:19:36 Verificando pago para curso ID: 62, usuario ID: 3
+2025/05/27 16:19:37 Verificando pago para curso ID: 62, usuario ID: 3
+2025/05/27 16:19:45 Solicitud de pago recibida: {CursoID:62 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/05/27 16:19:45 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=133&curso_id=62, CancelURL: http://localhost:3000/pagos/cancelado
+2025/05/27 16:19:49 Orden PayPal creada. ID: 0JL00579332053725, Estado: CREATED
+2025/05/27 16:19:49 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=0JL00579332053725
+2025/05/27 16:19:49 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=0JL00579332053725
+2025/05/27 16:20:19 Recibida callback PayPal con pagoID: 133, cursoID: 62, token: 0JL00579332053725
+2025/05/27 16:20:19 Intentando capturar orden PayPal con token: 0JL00579332053725 para pago ID: 133
+2025/05/27 16:20:21 Orden PayPal capturada. Estado: COMPLETED
+2025/05/27 16:20:21 Pago ID 133 actualizado a estado 'aprobado'
+2025/05/27 16:20:21 Pago aprobado, redirigiendo a la página del curso: http://localhost:3000/curso/62
+2025/05/27 16:20:21 Redirigiendo a: http://localhost:3000/curso/62
+2025/05/27 16:20:22 Verificando pago para curso ID: 62, usuario ID: 3

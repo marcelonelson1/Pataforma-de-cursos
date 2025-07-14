@@ -18,7 +18,7 @@ function ForgotPasswordPage() {
     setSuccess('');
     
     try {
-      const response = await fetch('http://localhost:5000/api/auth/forgot-password', {
+      const response = await fetch('http://92.246.129.76:5000/api/auth/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
