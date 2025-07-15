@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperación de Contraseña</title>
+</head>
+<body style="background-color: #000000; color: #ffffff; font-family: 'Inter', 'Helvetica Neue', sans-serif; line-height: 1.6; margin: 0; padding: 0;">
+    <div class="email-container" style="max-width: 600px; margin: 0 auto; background-color: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.15); overflow: hidden;">
+        <div class="email-header" style="background-color: rgba(255, 255, 255, 0.07); padding: 2rem; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.15);">
+            <h2 style="font-size: 2rem; font-weight: 700; margin: 0; background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; text-transform: uppercase;">
+                Recuperación de Contraseña
+            </h2>
+        </div>
+        
+        <div class="email-content" style="padding: 2rem;">
+            <div class="detail-row" style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="color: rgba(255, 255, 255, 0.8); margin: 0 0 1.5rem 0;">Hola {{.Name}},</p>
+                <p style="color: rgba(255, 255, 255, 0.8); margin: 0 0 1.5rem 0;">
+                    Hemos recibido una solicitud para restablecer la contraseña de tu cuenta en nuestra plataforma.
+                    Si no realizaste esta solicitud, puedes ignorar este correo electrónico.
+                </p>
+            </div>
+            
+            <div class="detail-row" style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="color: rgba(255, 255, 255, 0.8); margin: 0 0 1.5rem 0;">
+                    Para continuar con el proceso de recuperación de contraseña, haz clic en el siguiente botón:
+                </p>
+                <p style="margin: 0 0 1.5rem 0; text-align: center;">
+                    <a href="{{.ResetLink}}" style="display: inline-block; padding: 12px 24px; background: linear-gradient(90deg, #00cc99 0%, #00aacc 100%); color: #ffffff; text-decoration: none; border-radius: 4px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer;">
+                        Restablecer Contraseña
+                    </a>
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.8); margin: 0;">
+                    Este enlace es válido por <strong style="color: rgba(255, 255, 255, 0.9);">1 hora</strong>. Si no restableces tu contraseña en ese tiempo,
+                    deberás solicitar un nuevo enlace.
+                </p>
+            </div>
+            
+            <div class="message-content" style="background-color: rgba(255, 255, 255, 0.07); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.15); border-left: 4px solid #ff66cc;">
+                <h3 style="color: #ff66cc; font-size: 1.25rem; margin: 0 0 1rem 0; font-weight: 600;">Consejos de Seguridad</h3>
+                <p style="color: rgba(255, 255, 255, 0.8); margin: 0 0 1rem 0;">
+                    Para mantener tu cuenta segura, te recomendamos seguir estas prácticas:
+                </p>
+                <ul style="list-style-type: none; padding-left: 0; margin: 0 0 1rem 0;">
+                    <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; color: rgba(255, 255, 255, 0.8);">
+                        <span style="position: absolute; left: 0; color: #ff66cc;">•</span> Usa una contraseña única y segura
+                    </li>
+                    <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; color: rgba(255, 255, 255, 0.8);">
+                        <span style="position: absolute; left: 0; color: #ff66cc;">•</span> Evita compartir tu contraseña
+                    </li>
+                    <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; color: rgba(255, 255, 255, 0.8);">
+                        <span style="position: absolute; left: 0; color: #ff66cc;">•</span> Habilita autenticación de dos factores
+                    </li>
+                    <li style="padding-left: 1.5rem; position: relative; color: rgba(255, 255, 255, 0.8);">
+                        <span style="position: absolute; left: 0; color: #ff66cc;">•</span> Cambia tu contraseña regularmente
+                    </li>
+                </ul>
+            </div>
+            
+            <div style="color: rgba(255, 255, 255, 0.8);">
+                <p style="margin: 0 0 1rem 0;">
+                    Si tienes alguna pregunta o necesitas ayuda, no dudes en contactar a nuestro equipo de soporte
+                    en <a href="mailto:soporte@cursos.com" style="color: #00cc99; text-decoration: none;">soporte@cursos.com</a>.
+                </p>
+            </div>
+        </div>
+        
+        <div class="email-footer" style="background-color: rgba(255, 255, 255, 0.07); padding: 1.5rem; text-align: center; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); border-top: 1px solid rgba(255, 255, 255, 0.15);">
+            <p style="margin: 0;">Saludos,</p>
+            <p style="margin: 0;">El equipo de Cursos</p>
+        </div>
+    </div>
+</body>
+</html>
