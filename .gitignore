@@ -33,3 +33,37 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Go binaries
+*-service-binary
+*-binary
+
+# Static media files (should be on CDN/external storage)
+static/videos/
+*/static/videos/
+**/static/videos/
+static/images/
+*/static/images/
+**/static/images/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.jpeg
+*.jpg
+*.png
+*.gif
+*.webp
+
+# Large static directories
+static/
+*/static/
+**/static/
+
+# Compressed files
+*.tgz
+*.tar.gz
+
+# Apache configs (should be templated)
+apache-*.conf
+nginx-*.conf
