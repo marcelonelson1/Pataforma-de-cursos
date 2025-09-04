@@ -1,36 +1,36 @@
 # Payment Service
 
-Microservicio de gestión de pagos que integra múltiples proveedores de pago para la plataforma de cursos.
+Microservicio de gestion de pagos que integra multiples proveedores de pago para la plataforma de cursos.
 
 ## Funcionalidades
 
-- =³ Integración con MercadoPago
-- < Soporte para PayPal  
-- ¿ Integración con Coinbase (criptomonedas)
-- = Webhooks para actualizaciones automáticas
-- =Ê Auto-updater para seguimiento de pagos
-- = Autenticación JWT
-- =ç Notificaciones de estado de pago
-- =á Limpieza automática de pagos antiguos
+- **MercadoPago**: Integracion con MercadoPago
+- **PayPal**: Soporte para PayPal  
+- **Coinbase**: Integracion con Coinbase (criptomonedas)
+- **Webhooks**: Webhooks para actualizaciones automaticas
+- **Auto-updater**: Auto-updater para seguimiento de pagos
+- **JWT**: Autenticacion JWT
+- **Email**: Notificaciones de estado de pago
+- **Limpieza**: Limpieza automatica de pagos antiguos
 
 ## Proveedores de Pago
 
-### MercadoPago <æ<÷
--  Integración completa con API v1
--  Retorno automático después del pago
--  Webhook para actualizaciones en tiempo real
--  Auto-updater cada 15 segundos
--  Soporte para USD y ARS
+### MercadoPago
+- Integracion completa con API v1
+- Retorno automatico despues del pago
+- Webhook para actualizaciones en tiempo real
+- Auto-updater cada 15 segundos
+- Soporte para USD y ARS
 
-### PayPal <
--  Pagos internacionales
--  Sandbox y producción
--  Webhooks integrados
+### PayPal
+- Pagos internacionales
+- Sandbox y produccion
+- Webhooks integrados
 
-### Coinbase ¿
--  Pagos con criptomonedas
--  Bitcoin, Ethereum, etc.
--  Conversión automática a USD
+### Coinbase
+- Pagos con criptomonedas
+- Bitcoin, Ethereum, etc.
+- Conversion automatica a USD
 
 ## Endpoints Principales
 
@@ -54,7 +54,7 @@ Microservicio de gestión de pagos que integra múltiples proveedores de pago para
 - `GET /api/pagos/coinbase/status/:id` - Estado pago cripto
 - `POST /api/pagos/coinbase/webhook` - Webhook Coinbase
 
-## Configuración
+## Configuracion
 
 ### Variables de Entorno
 ```bash
@@ -82,14 +82,14 @@ PAYPAL_ENV=sandbox
 COINBASE_API_KEY=your-api-key
 COINBASE_WEBHOOK_SECRET=your-webhook-secret
 
-# Aplicación
+# Aplicacion
 APP_PORT=8084
 APP_ENV=development
 AUTH_SERVICE_URL=http://localhost:8081
 COURSE_SERVICE_URL=http://localhost:8083
 ```
 
-## Instalación
+## Instalacion
 
 ```bash
 # Instalar dependencias
@@ -116,14 +116,14 @@ POST /api/pagos
 }
 ```
 
-### 2. Redirección
+### 2. Redireccion
 - Usuario es redirigido al proveedor de pago
 - Completa el pago en la plataforma externa
 
 ### 3. Retorno/Webhook
-- Webhook actualiza estado automáticamente
+- Webhook actualiza estado automaticamente
 - Auto-updater verifica pagos pendientes cada 15s
-- Usuario es redirigido al curso o página de estado
+- Usuario es redirigido al curso o pagina de estado
 
 ## Base de Datos
 
@@ -154,24 +154,24 @@ docker run -p 8084:8084 payment-service
 
 - **Gin** - Framework web
 - **GORM** - ORM para base de datos
-- **UUID** - IDs únicos para pagos
-- **HTTP Client** - Comunicación con APIs externas
+- **UUID** - IDs unicos para pagos
+- **HTTP Client** - Comunicacion con APIs externas
 - **Godotenv** - Variables de entorno
 
-## Integración
+## Integracion
 
 Se integra con:
-- **Auth Service** (puerto 8081) - Validación de usuarios
-- **Course Service** (puerto 8083) - Información de cursos
+- **Auth Service** (puerto 8081) - Validacion de usuarios
+- **Course Service** (puerto 8083) - Informacion de cursos
 - **Frontend** - Redirecciones y estados de pago
 
 ## Monitoreo
 
-- =Ê Logs detallados de transacciones
-- = Auto-limpieza de pagos antiguos (>30 días)
-- ¡ Auto-updater para pagos recientes
-- =¨ Alertas de fallos de pago
+- **Logs**: Logs detallados de transacciones
+- **Auto-limpieza**: Auto-limpieza de pagos antiguos (>30 dias)
+- **Auto-updater**: Auto-updater para pagos recientes
+- **Alertas**: Alertas de fallos de pago
 
 ## Puerto
 
-Servidor ejecutándose en puerto **8084**
+Servidor ejecutandose en puerto **8084**

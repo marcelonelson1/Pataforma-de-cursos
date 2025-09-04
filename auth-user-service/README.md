@@ -1,24 +1,24 @@
 # Auth User Service
 
-Microservicio de autenticación y gestión de usuarios para la plataforma de cursos.
+Microservicio de autenticacion y gestion de usuarios para la plataforma de cursos.
 
 ## Funcionalidades
 
-- = Autenticación de usuarios (login/logout)
-- =d Registro de nuevos usuarios
-- = Gestión de tokens JWT
-- =ç Recuperación de contraseñas por email
-- =h=¼ Panel de administración
-- =Ê Logs de actividad de usuarios
-- =Á Gestión de archivos de perfil
-- =á Middleware de autorización
+- **Autenticacion**: Login/logout de usuarios
+- **Registro**: Registro de nuevos usuarios
+- **JWT**: Gestion de tokens JWT
+- **Email**: Recuperacion de contraseÃ±as por email
+- **Admin**: Panel de administracion
+- **Logs**: Registro de actividad de usuarios
+- **Archivos**: Gestion de archivos de perfil
+- **Seguridad**: Middleware de autorizacion
 
 ## Endpoints Principales
 
-### Autenticación
-- `POST /api/auth/login` - Iniciar sesión
+### Autenticacion
+- `POST /api/auth/login` - Iniciar sesion
 - `POST /api/auth/register` - Registrar usuario
-- `POST /api/auth/logout` - Cerrar sesión
+- `POST /api/auth/logout` - Cerrar sesion
 - `POST /api/auth/refresh` - Renovar token
 
 ### Usuarios
@@ -26,16 +26,16 @@ Microservicio de autenticación y gestión de usuarios para la plataforma de curso
 - `PUT /api/users/profile` - Actualizar perfil
 - `POST /api/users/upload-avatar` - Subir foto de perfil
 
-### Recuperación de Contraseña
-- `POST /api/password/forgot` - Solicitar recuperación
-- `POST /api/password/reset` - Restablecer contraseña
+### Recuperacion de ContraseÃ±a
+- `POST /api/password/forgot` - Solicitar recuperacion
+- `POST /api/password/reset` - Restablecer contraseÃ±a
 
 ### Admin
 - `GET /api/admin/users` - Listar usuarios (Admin)
 - `PUT /api/admin/users/:id` - Gestionar usuarios (Admin)
 - `GET /api/admin/activity` - Logs de actividad (Admin)
 
-## Configuración
+## Configuracion
 
 ### Variables de Entorno
 ```bash
@@ -51,7 +51,7 @@ EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-password
 ```
 
-## Instalación
+## Instalacion
 
 ```bash
 # Instalar dependencias
@@ -67,10 +67,10 @@ go build -o auth-user-service-binary
 ## Base de Datos
 
 El servicio utiliza MySQL y gestiona las siguientes tablas:
-- `usuarios` - Información de usuarios
-- `password_resets` - Tokens de recuperación
+- `usuarios` - Informacion de usuarios
+- `password_resets` - Tokens de recuperacion
 - `activity_logs` - Logs de actividad
-- `notification_settings` - Configuración de notificaciones
+- `notification_settings` - Configuracion de notificaciones
 
 ## Docker
 
@@ -87,9 +87,9 @@ docker run -p 8081:8081 auth-user-service
 - **Gin** - Framework web
 - **GORM** - ORM para base de datos
 - **JWT-Go** - Manejo de tokens JWT
-- **Gomail** - Envío de emails
-- **MySQL Driver** - Conexión a MySQL
+- **Gomail** - Envio de emails
+- **MySQL Driver** - Conexion a MySQL
 
 ## Puerto
 
-Servidor ejecutándose en puerto **8081**
+Servidor ejecutandose en puerto **8081**
