@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  contact-service:
+    build: .
+    ports:
+      - "8004:8004"
+    environment:
+      - PORT=8004
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=rootpassword
+      - DB_NAME=cursos_db
+      - JWT_SECRET=your-secret-key
+      - APP_ENV=development
+      - EMAIL_FROM=noreply@example.com
+      - EMAIL_PASSWORD=
+      - SMTP_HOST=smtp.gmail.com
+      - SMTP_PORT=587
+      - CONTACT_EMAIL=marcelinho.nelson@gmail.com
+    depends_on:
+      - mysql
+    networks:
+      - microservices-network
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=cursos_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - microservices-network
+
+volumes:
+  mysql_data:
+
+networks:
+  microservices-network:
+    driver: bridge

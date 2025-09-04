@@ -1,0 +1,219 @@
+version: '3.8'
+
+services:
+  # Base de datos MySQL
+  mysql:
+    image: mysql:8.0
+    container_name: microservices_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: microservices_db
+      MYSQL_USER: microuser
+      MYSQL_PASSWORD: micropass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - microservices_network
+
+  # Auth User Service
+  auth-service:
+    build: ./auth-user-service
+    container_name: auth_service
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    environment:
+      - PORT=8001
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=microuser
+      - DB_PASSWORD=micropass
+      - DB_NAME=auth_db
+      - JWT_SECRET=your-super-secret-jwt-key-here
+      - SMTP_HOST=smtp.gmail.com
+      - SMTP_PORT=587
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASS=${SMTP_PASS}
+    depends_on:
+      - mysql
+    networks:
+      - microservices_network
+
+  # Payment Service
+  payment-service:
+    build: ./payment-service
+    container_name: payment_service
+    restart: unless-stopped
+    ports:
+      - "8002:8002"
+    environment:
+      - PORT=8002
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=microuser
+      - DB_PASSWORD=micropass
+      - DB_NAME=payment_db
+      - AUTH_SERVICE_URL=http://auth-service:8001
+      - PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}
+      - PAYPAL_CLIENT_SECRET=${PAYPAL_CLIENT_SECRET}
+      - MERCADOPAGO_ACCESS_TOKEN=${MERCADOPAGO_ACCESS_TOKEN}
+    depends_on:
+      - mysql
+      - auth-service
+    networks:
+      - microservices_network
+
+  # Course Service
+  course-service:
+    build: ./course-service
+    container_name: course_service
+    restart: unless-stopped
+    ports:
+      - "8003:8003"
+    environment:
+      - PORT=8003
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=microuser
+      - DB_PASSWORD=micropass
+      - DB_NAME=course_db
+      - AUTH_SERVICE_URL=http://auth-service:8001
+    depends_on:
+      - mysql
+      - auth-service
+    networks:
+      - microservices_network
+    volumes:
+      - course_uploads:/app/static
+
+  # Contact Service
+  contact-service:
+    build: ./contact-service
+    container_name: contact_service
+    restart: unless-stopped
+    ports:
+      - "8004:8004"
+    environment:
+      - PORT=8004
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=microuser
+      - DB_PASSWORD=micropass
+      - DB_NAME=contact_db
+      - AUTH_SERVICE_URL=http://auth-service:8001
+      - CONTACT_EMAIL=${CONTACT_EMAIL}
+      - SMTP_HOST=smtp.gmail.com
+      - SMTP_PORT=587
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASS=${SMTP_PASS}
+    depends_on:
+      - mysql
+      - auth-service
+    networks:
+      - microservices_network
+
+  # Portfolio Service
+  portfolio-service:
+    build: ./portfolio-service
+    container_name: portfolio_service
+    restart: unless-stopped
+    ports:
+      - "8005:8005"
+    environment:
+      - PORT=8005
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=microuser
+      - DB_PASSWORD=micropass
+      - DB_NAME=portfolio_db
+      - AUTH_SERVICE_URL=http://auth-service:8001
+    depends_on:
+      - mysql
+      - auth-service
+    networks:
+      - microservices_network
+    volumes:
+      - portfolio_uploads:/app/static
+
+  # Home Service
+  home-service:
+    build: ./home-service
+    container_name: home_service
+    restart: unless-stopped
+    ports:
+      - "8006:8006"
+    environment:
+      - PORT=8006
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=microuser
+      - DB_PASSWORD=micropass
+      - DB_NAME=home_db
+      - AUTH_SERVICE_URL=http://auth-service:8001
+    depends_on:
+      - mysql
+      - auth-service
+    networks:
+      - microservices_network
+    volumes:
+      - home_uploads:/app/static
+
+  # Frontend React
+  frontend:
+    build: ./frontend
+    container_name: frontend_app
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_AUTH_API_URL=http://localhost:8001
+      - REACT_APP_PAYMENT_API_URL=http://localhost:8002
+      - REACT_APP_COURSE_API_URL=http://localhost:8003
+      - REACT_APP_CONTACT_API_URL=http://localhost:8004
+      - REACT_APP_PORTFOLIO_API_URL=http://localhost:8005
+      - REACT_APP_HOME_API_URL=http://localhost:8006
+      - REACT_APP_ANALYTICS_API_URL=http://localhost:8007
+      - REACT_APP_PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}
+    depends_on:
+      - auth-service
+      - payment-service
+      - course-service
+      - contact-service
+      - portfolio-service
+      - home-service
+    networks:
+      - microservices_network
+
+  # Nginx Reverse Proxy (opcional)
+  nginx-proxy:
+    image: nginx:alpine
+    container_name: nginx_proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx-proxy.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+      - auth-service
+      - payment-service
+      - course-service
+      - contact-service
+      - portfolio-service
+      - home-service
+    networks:
+      - microservices_network
+
+networks:
+  microservices_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+  course_uploads:
+  portfolio_uploads:
+  home_uploads:

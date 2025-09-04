@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(go mod:*)",
+      "Bash(go build:*)",
+      "Bash(pgrep:*)",
+      "Bash(mysql:*)",
+      "Bash(./ngrok version)",
+      "Bash(chmod:*)",
+      "Bash(./check-status.sh)",
+      "Bash(./debug-webhook.sh:*)",
+      "Bash(sudo find /tmp -name \"go-build*\" -type d -exec rm -rf {} +)",
+      "Bash(true)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "acceptEdits"
+  }
+}

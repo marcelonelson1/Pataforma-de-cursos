@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Subject}}</title>
+    <style>
+        :root {
+            /* Colores base consistentes con los archivos CSS */
+            --color-bg-dark: #000000;
+            --color-bg-darker: #121212;
+            --color-bg-card: rgba(255, 255, 255, 0.05);
+            --color-bg-card-hover: rgba(255, 255, 255, 0.12);
+            --color-text: #ffffff;
+            --color-text-secondary: rgba(255, 255, 255, 0.8);
+            --color-text-muted: rgba(255, 255, 255, 0.7);
+            --color-text-light: rgba(255, 255, 255, 0.5);
+            --color-border: rgba(255, 255, 255, 0.15);
+            --color-primary: #3b82f6;
+            --color-gradient-text: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
+            
+            /* Bordes redondeados como en los archivos */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            
+            /* Sombras consistentes */
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.3);
+            
+            /* Transiciones */
+            --transition-fast: all 0.3s ease;
+            --transition-normal: all 0.5s ease;
+        }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            background-color: var(--color-bg-dark);
+            color: var(--color-text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--color-bg-darker);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .email-header {
+            background-color: var(--color-bg-card);
+            padding: 2.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .email-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            background: var(--color-gradient-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .email-content {
+            padding: 2rem;
+        }
+
+        .greeting {
+            color: var(--color-text);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .message-intro {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .reply-block {
+            background-color: var(--color-bg-card);
+            border-left: 4px solid var(--color-primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: var(--radius-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            white-space: pre-line;
+            transition: var(--transition-fast);
+        }
+
+        .reply-block:hover {
+            background-color: var(--color-bg-card-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .signature {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--color-border);
+        }
+
+        .signature p {
+            margin: 0.5rem 0;
+            color: var(--color-text);
+        }
+
+        .signature strong {
+            font-weight: 600;
+        }
+
+        .email-footer {
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+            background-color: var(--color-bg-card);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .email-footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Animaciones como en Home.css y portfolio.css */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        /* Responsive como en los otros archivos */
+        @media (max-width: 640px) {
+            .email-container {
+                border-radius: 0;
+            }
+            
+            .email-header {
+                padding: 1.5rem;
+            }
+            
+            .email-title {
+                font-size: 1.75rem;
+            }
+            
+            .email-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header animate-in" style="animation-delay: 0.1s;">
+            <h2 class="email-title">{{.Subject}}</h2>
+        </div>
+        <div class="email-content">
+            <p class="greeting animate-in" style="animation-delay: 0.2s;">Hola {{.Name}},</p>
+            
+            <p class="message-intro animate-in" style="animation-delay: 0.3s;">Gracias por contactarte con nosotros. Aquí está nuestra respuesta a tu consulta:</p>
+            
+            <div class="reply-block animate-in" style="animation-delay: 0.4s;">
+                {{.Reply}}
+            </div>
+            
+            <div class="signature animate-in" style="animation-delay: 0.5s;">
+                <p>Atentamente,</p>
+                <p><strong>El equipo de soporte</strong></p>
+                <p>{{.BusinessName}}</p>
+            </div>
+        </div>
+        <div class="email-footer animate-in" style="animation-delay: 0.6s;">
+            <p>Este es un mensaje automático. Por favor no respondas directamente a este correo.</p>
+            <p>© {{.CurrentYear}} {{.BusinessName}}. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
