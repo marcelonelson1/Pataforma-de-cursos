@@ -1,0 +1,1463 @@
+2025/04/18 04:08:12 Conectando a la base de datos (intento 1/5)...
+2025/04/18 04:08:12 Conexión a la base de datos establecida correctamente
+2025/04/18 04:08:12 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 04:08:12 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 04:08:12 Iniciando servidor en puerto 5000
+2025/04/18 04:08:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:08:15 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:08:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:08:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:08:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:08:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:08:27 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/18 04:08:27 Creando curso: {ID:0 Titulo:a Descripcion:a Contenido:a Precio:1 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/18 04:08:27 Curso creado exitosamente: ID 54
+2025/04/18 04:08:29 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:08:29 Verificando pago para curso ID: 51, usuario ID: 3
+2025/04/18 04:08:29 Verificando pago para curso ID: 52, usuario ID: 3
+2025/04/18 04:08:29 Verificando pago para curso ID: 53, usuario ID: 3
+2025/04/18 04:08:29 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:08:29 Verificando pago para curso ID: 51, usuario ID: 3
+2025/04/18 04:08:29 Verificando pago para curso ID: 53, usuario ID: 3
+2025/04/18 04:08:29 Verificando pago para curso ID: 52, usuario ID: 3
+2025/04/18 04:08:29 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:08:29 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:08:32 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:08:32 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:08:37 Solicitud de pago recibida: {CursoID:54 Monto:1 Metodo:stripe DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:08:41 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:08:45 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:08:46 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:08:46 Simulación: Actualizado estado de pago ID 90 a 'aprobado' para Stripe
+2025/04/18 04:08:47 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:12:39 Conectando a la base de datos (intento 1/5)...
+2025/04/18 04:12:39 Conexión a la base de datos establecida correctamente
+2025/04/18 04:12:39 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 04:12:39 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 04:12:39 Iniciando servidor en puerto 5000
+2025/04/18 04:12:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:12:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:12:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:12:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:12:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:12:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:12:59 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/18 04:12:59 Creando curso: {ID:0 Titulo:aa Descripcion:a Contenido:a Precio:12 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/18 04:12:59 Curso creado exitosamente: ID 55
+2025/04/18 04:13:00 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 51, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 52, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 53, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 51, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 52, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 53, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 55, usuario ID: 3
+2025/04/18 04:13:00 Verificando pago para curso ID: 55, usuario ID: 3
+2025/04/18 04:13:03 Verificando pago para curso ID: 55, usuario ID: 3
+2025/04/18 04:13:03 Verificando pago para curso ID: 55, usuario ID: 3
+2025/04/18 04:13:10 Solicitud de pago recibida: {CursoID:55 Monto:12 Metodo:transferencia DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:13:17 Solicitud de pago recibida: {CursoID:55 Monto:12 Metodo:transferencia DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:13:22 Solicitud de pago recibida: {CursoID:55 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:13:22 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=93&curso_id=55, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 04:13:25 Orden PayPal creada. ID: 4H883926YM419045A, Estado: CREATED
+2025/04/18 04:13:25 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=4H883926YM419045A
+2025/04/18 04:13:25 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=4H883926YM419045A
+2025/04/18 04:13:42 Recibida callback PayPal con pagoID: 93, cursoID: 55, token: 4H883926YM419045A
+2025/04/18 04:13:42 Intentando capturar orden PayPal con token: 4H883926YM419045A para pago ID: 93
+2025/04/18 04:13:44 Orden PayPal capturada. Estado: COMPLETED
+2025/04/18 04:13:44 Pago ID 93 actualizado a estado 'aprobado'
+2025/04/18 04:13:44 Pago aprobado, redirigiendo a la página del curso: http://localhost:3000/cursos/55
+2025/04/18 04:13:44 Redirigiendo a: http://localhost:3000/cursos/55
+2025/04/18 04:14:04 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 51, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 52, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 53, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 55, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 51, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 52, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 53, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 54, usuario ID: 3
+2025/04/18 04:14:04 Verificando pago para curso ID: 55, usuario ID: 3
+2025/04/18 04:14:09 Verificando pago para curso ID: 55, usuario ID: 3
+2025/04/18 04:14:09 Verificando pago para curso ID: 55, usuario ID: 3
+2025/04/18 04:14:16 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:14:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:14:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:14:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:14:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:14:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:14:21 Conectando a la base de datos (intento 1/5)...
+2025/04/18 04:14:22 Conexión a la base de datos establecida correctamente
+2025/04/18 04:14:22 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 04:14:22 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 04:14:22 Iniciando servidor en puerto 5000
+2025/04/18 04:14:28 Eliminando capítulos del curso ID: 55
+2025/04/18 04:14:28 Eliminando curso ID: 55
+2025/04/18 04:14:28 Curso ID 55 eliminado exitosamente
+2025/04/18 04:14:29 Eliminando capítulos del curso ID: 53
+2025/04/18 04:14:29 Eliminando curso ID: 53
+2025/04/18 04:14:29 Curso ID 53 eliminado exitosamente
+2025/04/18 04:14:31 Eliminando capítulos del curso ID: 52
+2025/04/18 04:14:31 Eliminando curso ID: 52
+2025/04/18 04:14:31 Curso ID 52 eliminado exitosamente
+2025/04/18 04:14:32 Eliminando capítulos del curso ID: 54
+2025/04/18 04:14:32 Eliminando curso ID: 54
+2025/04/18 04:14:32 Curso ID 54 eliminado exitosamente
+2025/04/18 04:14:34 Eliminando capítulos del curso ID: 51
+2025/04/18 04:14:34 Eliminando curso ID: 51
+2025/04/18 04:14:34 Curso ID 51 eliminado exitosamente
+2025/04/18 04:14:43 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/18 04:14:43 Creando curso: {ID:0 Titulo:a Descripcion:a Contenido:a Precio:12 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/18 04:14:43 Curso creado exitosamente: ID 56
+2025/04/18 04:14:44 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:14:44 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:14:44 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:14:44 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:14:46 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:14:46 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:14:50 Solicitud de pago recibida: {CursoID:56 Monto:12 Metodo:stripe DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:14:54 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:15:00 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:15:02 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:15:02 Simulación: Actualizado estado de pago ID 94 a 'aprobado' para Stripe
+2025/04/18 04:15:02 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:16:50 Conectando a la base de datos (intento 1/5)...
+2025/04/18 04:16:50 Conexión a la base de datos establecida correctamente
+2025/04/18 04:16:50 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 04:16:50 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 04:16:50 Iniciando servidor en puerto 5000
+2025/04/18 04:17:08 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:17:09 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:17:09 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:17:09 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:17:09 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:17:09 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:17:19 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/18 04:17:19 Creando curso: {ID:0 Titulo:aaaa Descripcion:a Contenido:a Precio:23 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/18 04:17:19 Curso creado exitosamente: ID 57
+2025/04/18 04:17:20 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:17:20 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:17:20 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:20 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:17:20 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:17:20 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:21 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:21 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:25 Solicitud de pago recibida: {CursoID:57 Monto:23 Metodo:stripe DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:17:29 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:31 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:31 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:32 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:33 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:33 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:34 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:34 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:36 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:37 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:37 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:38 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:41 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:44 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:44 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:17:49 Solicitud de pago recibida: {CursoID:57 Monto:23 Metodo:transferencia DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:18:05 Solicitud de pago recibida: {CursoID:57 Monto:23 Metodo:tarjeta DetallesTarjeta:0xc000290930 Moneda:USD}
+2025/04/18 04:18:13 Solicitud de pago recibida: {CursoID:57 Monto:23 Metodo:coinbase DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:18:14 Error al crear cargo Coinbase: coinbase API returned status 401
+2025/04/18 04:18:21 Solicitud de pago recibida: {CursoID:57 Monto:23 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:18:21 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=99&curso_id=57, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 04:18:24 Orden PayPal creada. ID: 4H25161699338304C, Estado: CREATED
+2025/04/18 04:18:24 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=4H25161699338304C
+2025/04/18 04:18:24 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=4H25161699338304C
+2025/04/18 04:18:32 Recibida callback PayPal con pagoID: 99, cursoID: 57, token: 4H25161699338304C
+2025/04/18 04:18:32 Intentando capturar orden PayPal con token: 4H25161699338304C para pago ID: 99
+2025/04/18 04:18:33 Orden PayPal capturada. Estado: COMPLETED
+2025/04/18 04:18:33 Pago ID 99 actualizado a estado 'aprobado'
+2025/04/18 04:18:33 Pago aprobado, redirigiendo a la página del curso: http://localhost:3000/curso/57
+2025/04/18 04:18:33 Redirigiendo a: http://localhost:3000/curso/57
+2025/04/18 04:18:34 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:19:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:19:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:19:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:19:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:19:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:19:46 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 04:19:54 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/18 04:19:54 Creando curso: {ID:0 Titulo:aaaaa Descripcion:aaaaa Contenido:aaaaa Precio:12 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/18 04:19:54 Curso creado exitosamente: ID 58
+2025/04/18 04:19:55 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:19:55 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 04:19:55 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:19:55 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 04:19:55 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:19:55 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 04:19:55 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:19:55 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:19:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:19:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:03 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:mercadopago DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:20:08 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:12 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:12 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:16 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:16 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:18 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:18 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:19 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:22 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:22 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:24 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:20:24 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:22 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:25 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:26 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:26 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:32 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:21:32 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=101&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 04:21:34 Orden PayPal creada. ID: 85L40848TS198023M, Estado: CREATED
+2025/04/18 04:21:34 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=85L40848TS198023M
+2025/04/18 04:21:34 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=85L40848TS198023M
+2025/04/18 04:21:38 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:38 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:39 Estado actual de PayPal para orden 85L40848TS198023M: CREATED
+2025/04/18 04:21:39 Estado actual de PayPal para orden 85L40848TS198023M: CREATED
+2025/04/18 04:21:43 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:43 Estado actual de PayPal para orden 85L40848TS198023M: CREATED
+2025/04/18 04:21:46 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:47 Estado actual de PayPal para orden 85L40848TS198023M: CREATED
+2025/04/18 04:21:47 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:48 Estado actual de PayPal para orden 85L40848TS198023M: CREATED
+2025/04/18 04:21:51 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 04:21:51 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=102&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 04:21:52 Orden PayPal creada. ID: 89121771AC7889827, Estado: CREATED
+2025/04/18 04:21:52 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=89121771AC7889827
+2025/04/18 04:21:52 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=89121771AC7889827
+2025/04/18 04:21:57 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:21:58 Estado actual de PayPal para orden 89121771AC7889827: CREATED
+2025/04/18 04:22:01 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:22:01 Estado actual de PayPal para orden 89121771AC7889827: CREATED
+2025/04/18 04:22:03 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:22:03 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:22:03 Estado actual de PayPal para orden 89121771AC7889827: CREATED
+2025/04/18 04:22:04 Estado actual de PayPal para orden 89121771AC7889827: CREATED
+2025/04/18 04:22:04 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:22:04 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:22:05 Estado actual de PayPal para orden 89121771AC7889827: CREATED
+2025/04/18 04:22:05 Estado actual de PayPal para orden 89121771AC7889827: CREATED
+2025/04/18 04:22:07 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:22:07 Estado actual de PayPal para orden 89121771AC7889827: CREATED
+2025/04/18 04:22:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:22:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 04:22:11 Estado actual de PayPal para orden 89121771AC7889827: CREATED
+2025/04/18 04:22:11 Estado actual de PayPal para orden 89121771AC7889827: CREATED
+2025/04/18 15:07:04 Conectando a la base de datos (intento 1/5)...
+2025/04/18 15:07:05 Conexión a la base de datos establecida correctamente
+2025/04/18 15:07:05 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 15:07:05 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 15:07:05 Iniciando servidor en puerto 5000
+2025/04/18 15:07:18 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 15:07:18 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 15:07:18 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 15:07:18 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 15:07:18 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 15:07:18 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:18 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 15:07:18 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:28 Error al verificar estado con PayPal: Post "https://api-m.sandbox.paypal.com/v1/oauth2/token": dial tcp: lookup api-m.sandbox.paypal.com on 181.30.140.135:53: dial udp 181.30.140.135:53: connect: network is unreachable
+2025/04/18 15:07:28 Error al verificar estado con PayPal: Post "https://api-m.sandbox.paypal.com/v1/oauth2/token": dial tcp: lookup api-m.sandbox.paypal.com on [::1]:53: read udp [::1]:47795->[::1]:53: read: connection refused
+2025/04/18 15:07:45 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:47 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:47 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:07:48 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:07:51 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:51 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:07:54 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 15:07:54 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 15:07:54 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:54 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 15:07:54 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 15:07:54 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 15:07:54 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:54 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 15:07:54 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:07:54 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:07:54 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:55 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:07:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:58 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:07:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:07:58 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:07:59 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:08:02 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:02 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:08:05 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:06 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:08:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:09 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/89121771AC7889827: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 15:08:09 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:transferencia DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:08:13 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:16 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:19 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:22 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:25 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:28 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:31 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:34 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:37 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:40 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:43 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:46 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:49 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:56 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:08:59 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:02 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:05 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:08 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:17 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:20 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:23 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:26 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:29 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:32 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:35 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:38 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:41 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:47 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:50 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:09:53 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:17:13 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:17:13 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:21:19 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:21:36 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:tarjeta DetallesTarjeta:0xc00027c6f0 Moneda:USD}
+2025/04/18 15:21:49 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:21:49 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:03 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:22:03 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=105&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:22:05 Orden PayPal creada. ID: 3PS89669UG5209527, Estado: CREATED
+2025/04/18 15:22:05 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=3PS89669UG5209527
+2025/04/18 15:22:05 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=3PS89669UG5209527
+2025/04/18 15:22:21 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:21 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:22 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:22 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:23 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:23 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:26 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:27 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:30 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:30 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:33 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:34 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:37 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:37 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:40 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:41 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:44 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:48 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:48 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:51 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:52 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:55 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:55 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:22:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:22:59 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:02 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:02 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:05 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:06 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:10 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:13 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:13 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:16 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:17 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:20 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:21 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:24 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:24 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:27 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:28 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:29 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:29 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:29 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:29 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:33 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 15:23:33 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 15:23:33 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 15:23:33 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:33 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 15:23:33 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 15:23:33 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 15:23:33 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:34 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:34 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:37 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:37 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:37 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:38 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:47 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 15:23:47 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 15:23:47 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 15:23:47 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 15:23:47 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 15:23:47 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:47 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 15:23:47 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:48 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:48 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:23:52 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:23:53 Estado actual de PayPal para orden 3PS89669UG5209527: CREATED
+2025/04/18 15:24:10 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:24:10 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=106&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:24:12 Orden PayPal creada. ID: 3M8340846R4682422, Estado: CREATED
+2025/04/18 15:24:12 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=3M8340846R4682422
+2025/04/18 15:24:12 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=3M8340846R4682422
+2025/04/18 15:36:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:15 Estado actual de PayPal para orden 3M8340846R4682422: CREATED
+2025/04/18 15:36:16 Estado actual de PayPal para orden 3M8340846R4682422: CREATED
+2025/04/18 15:36:17 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:18 Estado actual de PayPal para orden 3M8340846R4682422: CREATED
+2025/04/18 15:36:23 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:24 Estado actual de PayPal para orden 3M8340846R4682422: CREATED
+2025/04/18 15:36:28 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:28 Estado actual de PayPal para orden 3M8340846R4682422: CREATED
+2025/04/18 15:36:33 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:35 Estado actual de PayPal para orden 3M8340846R4682422: CREATED
+2025/04/18 15:36:35 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:36:36 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=107&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:36:37 Orden PayPal creada. ID: 36202057NU1476749, Estado: CREATED
+2025/04/18 15:36:37 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=36202057NU1476749
+2025/04/18 15:36:37 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=36202057NU1476749
+2025/04/18 15:36:39 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:40 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:36:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:45 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:36:45 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:36:45 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:46 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:36:50 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:53 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:36:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:36:58 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:00 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:01 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:03 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:03 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:04 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:05 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:07 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:29 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:29 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:30 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:30 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:30 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:35 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:36 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:36 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:38 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:43 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:44 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:45 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:52 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:37:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:37:53 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:38:00 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:38:18 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:38:18 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=108&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:38:44 Estado actual de PayPal para orden 36202057NU1476749: CREATED
+2025/04/18 15:38:45 Orden PayPal creada. ID: 6L276012AX395561H, Estado: CREATED
+2025/04/18 15:38:45 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=6L276012AX395561H
+2025/04/18 15:38:45 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=6L276012AX395561H
+2025/04/18 15:38:56 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:38:56 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=109&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:39:01 Orden PayPal creada. ID: 2D819539V2407261S, Estado: CREATED
+2025/04/18 15:39:01 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=2D819539V2407261S
+2025/04/18 15:39:01 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=2D819539V2407261S
+2025/04/18 15:39:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:39:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:39:10 Estado actual de PayPal para orden 2D819539V2407261S: CREATED
+2025/04/18 15:39:10 Estado actual de PayPal para orden 2D819539V2407261S: CREATED
+2025/04/18 15:39:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:40:13 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:40:13 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=110&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:42:20 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:42:20 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=111&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:42:29 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:42:29 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:43:20 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:43:20 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=112&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:43:40 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 15:43:40 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 15:43:40 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 15:43:40 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 15:43:40 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 15:43:40 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 15:43:40 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:43:40 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:43:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:43:48 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:43:48 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=113&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:46:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:46:14 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:46:14 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=114&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:46:40 Conectando a la base de datos (intento 1/5)...
+2025/04/18 15:46:41 Conexión a la base de datos establecida correctamente
+2025/04/18 15:46:41 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 15:46:41 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 15:46:41 Iniciando servidor en puerto 5000
+2025/04/18 15:46:49 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:46:49 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=115&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:46:52 Orden PayPal creada. ID: 272459491L041624G, Estado: CREATED
+2025/04/18 15:46:52 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=272459491L041624G
+2025/04/18 15:46:52 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=272459491L041624G
+2025/04/18 15:47:17 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:47:17 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:47:18 Estado actual de PayPal para orden 272459491L041624G: CREATED
+2025/04/18 15:47:18 Estado actual de PayPal para orden 272459491L041624G: CREATED
+2025/04/18 15:47:19 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:47:19 Estado actual de PayPal para orden 272459491L041624G: CREATED
+2025/04/18 15:47:24 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:47:25 Estado actual de PayPal para orden 272459491L041624G: CREATED
+2025/04/18 15:47:30 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:47:30 Estado actual de PayPal para orden 272459491L041624G: CREATED
+2025/04/18 15:47:36 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:47:37 Estado actual de PayPal para orden 272459491L041624G: CREATED
+2025/04/18 15:47:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:47:44 Estado actual de PayPal para orden 272459491L041624G: CREATED
+2025/04/18 15:47:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:47:53 Estado actual de PayPal para orden 272459491L041624G: CREATED
+2025/04/18 15:48:13 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:48:13 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=116&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:48:15 Orden PayPal creada. ID: 1KY55180MW872442F, Estado: CREATED
+2025/04/18 15:48:15 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=1KY55180MW872442F
+2025/04/18 15:48:15 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=1KY55180MW872442F
+2025/04/18 15:48:50 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:48:51 Estado actual de PayPal para orden 1KY55180MW872442F: CREATED
+2025/04/18 15:48:51 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:48:52 Estado actual de PayPal para orden 1KY55180MW872442F: CREATED
+2025/04/18 15:48:56 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:48:57 Estado actual de PayPal para orden 1KY55180MW872442F: CREATED
+2025/04/18 15:49:02 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:49:02 Estado actual de PayPal para orden 1KY55180MW872442F: CREATED
+2025/04/18 15:49:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:49:09 Estado actual de PayPal para orden 1KY55180MW872442F: CREATED
+2025/04/18 15:49:16 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:49:17 Estado actual de PayPal para orden 1KY55180MW872442F: CREATED
+2025/04/18 15:49:25 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:49:25 Estado actual de PayPal para orden 1KY55180MW872442F: CREATED
+2025/04/18 15:49:50 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:49:50 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=117&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:49:51 Orden PayPal creada. ID: 77W13784M4679503L, Estado: CREATED
+2025/04/18 15:49:51 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=77W13784M4679503L
+2025/04/18 15:49:51 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=77W13784M4679503L
+2025/04/18 15:49:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:49:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:49:59 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:49:59 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:03 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:04 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:04 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:04 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:04 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:05 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:05 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:06 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:06 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:06 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:06 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:07 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:07 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:07 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:07 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:08 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:08 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:08 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:08 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:09 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:09 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:10 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:10 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:10 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:11 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:11 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:12 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:12 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:13 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:13 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:14 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:14 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:15 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:15 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:15 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:15 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:16 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:16 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:16 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:17 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:17 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:17 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:18 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:18 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:18 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:18 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:19 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:22 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:22 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:23 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:23 Estado actual de PayPal para orden 77W13784M4679503L: CREATED
+2025/04/18 15:50:32 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:50:32 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=118&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:50:33 Orden PayPal creada. ID: 8W139828XT8696604, Estado: CREATED
+2025/04/18 15:50:33 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=8W139828XT8696604
+2025/04/18 15:50:33 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=8W139828XT8696604
+2025/04/18 15:50:39 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:39 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:40 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:40 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:42 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:43 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:43 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:44 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:44 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:45 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:45 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:45 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:45 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:46 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:46 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:46 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:47 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:47 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:48 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:48 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:48 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:49 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:49 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:49 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:49 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:50 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:50 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:50 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:50 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:51 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:51 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:51 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:51 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:52 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:52 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:53 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:53 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:54 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:54 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:54 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:54 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:55 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:55 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:55 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:55 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:56 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:56 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:57 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:57 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:57 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:57 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:58 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:50:59 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:50:59 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:00 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:00 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:00 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:00 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:01 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:01 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:01 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:01 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:02 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:02 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:03 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:03 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:03 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:03 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:04 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:04 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:05 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:05 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:05 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:05 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:06 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:06 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:06 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:06 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:07 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:07 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:07 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:07 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:08 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:08 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:08 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:08 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:09 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:10 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:10 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:10 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:10 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:11 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:11 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:12 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:13 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:13 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:14 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:15 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:15 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:16 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:16 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:16 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:16 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:17 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:17 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:18 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:18 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:19 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:19 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:19 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:19 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:20 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:20 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:20 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:20 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:21 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:21 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:21 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:22 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:22 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:23 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:24 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:24 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:24 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:24 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:25 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:25 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:26 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:26 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:27 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:27 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:27 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:27 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:28 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:28 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:28 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:28 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:29 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:29 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:29 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:30 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:30 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:31 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:31 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:31 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:32 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:32 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:33 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:33 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:34 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:34 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:34 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:34 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:35 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:35 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:35 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:35 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:36 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:36 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:36 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:36 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:37 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:37 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:38 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:38 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:38 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:38 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:39 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:39 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:40 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:40 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:40 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:40 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:41 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:41 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:42 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:42 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:42 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:42 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:43 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:43 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:44 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:44 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:44 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:45 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:45 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:46 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:46 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:47 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:47 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:47 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:47 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:48 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:48 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:48 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:48 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:49 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:49 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:50 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:50 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:50 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:50 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:51 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:51 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:51 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:51 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:52 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:53 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:53 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:53 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:53 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:54 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:54 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:55 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:55 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:56 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:56 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:57 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:57 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:57 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:57 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:58 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:58 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:59 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:51:59 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:51:59 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:00 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:00 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:00 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:00 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:01 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:01 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:01 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:02 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:02 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:03 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:03 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:04 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:04 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:05 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:06 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:06 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:07 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:08 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:10 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:11 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:12 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:13 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:14 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:15 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:16 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:21 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:21 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:22 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:22 Estado actual de PayPal para orden 8W139828XT8696604: CREATED
+2025/04/18 15:52:37 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 15:52:37 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=119&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 15:52:38 Orden PayPal creada. ID: 13F67240UB076480P, Estado: CREATED
+2025/04/18 15:52:38 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=13F67240UB076480P
+2025/04/18 15:52:38 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=13F67240UB076480P
+2025/04/18 15:52:47 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:48 Estado actual de PayPal para orden 13F67240UB076480P: CREATED
+2025/04/18 15:52:55 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:52:55 Estado actual de PayPal para orden 13F67240UB076480P: CREATED
+2025/04/18 15:52:59 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:53:00 Estado actual de PayPal para orden 13F67240UB076480P: CREATED
+2025/04/18 15:53:05 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:53:06 Estado actual de PayPal para orden 13F67240UB076480P: CREATED
+2025/04/18 15:53:12 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:53:12 Estado actual de PayPal para orden 13F67240UB076480P: CREATED
+2025/04/18 15:53:20 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:53:20 Estado actual de PayPal para orden 13F67240UB076480P: CREATED
+2025/04/18 15:53:28 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 15:53:29 Estado actual de PayPal para orden 13F67240UB076480P: CREATED
+2025/04/18 16:15:45 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 16:15:45 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=120&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 16:15:47 Orden PayPal creada. ID: 906833681H357615V, Estado: CREATED
+2025/04/18 16:15:47 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=906833681H357615V
+2025/04/18 16:15:47 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=906833681H357615V
+2025/04/18 16:16:08 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:16:09 Estado actual de PayPal para orden 906833681H357615V: CREATED
+2025/04/18 16:16:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:16:09 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:16:09 Estado actual de PayPal para orden 906833681H357615V: CREATED
+2025/04/18 16:16:10 Estado actual de PayPal para orden 906833681H357615V: CREATED
+2025/04/18 16:16:20 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 16:16:20 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=121&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 16:16:22 Orden PayPal creada. ID: 19C18105PR886391A, Estado: CREATED
+2025/04/18 16:16:22 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=19C18105PR886391A
+2025/04/18 16:16:22 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=19C18105PR886391A
+2025/04/18 16:16:45 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:16:46 Estado actual de PayPal para orden 19C18105PR886391A: CREATED
+2025/04/18 16:16:47 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:16:48 Estado actual de PayPal para orden 19C18105PR886391A: CREATED
+2025/04/18 16:17:10 Solicitud de pago recibida: {CursoID:58 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 16:17:10 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=122&curso_id=58, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 16:17:12 Orden PayPal creada. ID: 1M7622166D108920P, Estado: CREATED
+2025/04/18 16:17:12 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=1M7622166D108920P
+2025/04/18 16:17:12 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=1M7622166D108920P
+2025/04/18 16:17:19 Recibida callback PayPal con pagoID: 122, cursoID: 58, token: 1M7622166D108920P
+2025/04/18 16:17:19 Intentando capturar orden PayPal con token: 1M7622166D108920P para pago ID: 122
+2025/04/18 16:17:21 Orden PayPal capturada. Estado: COMPLETED
+2025/04/18 16:17:21 Pago ID 122 actualizado a estado 'aprobado'
+2025/04/18 16:17:21 Pago aprobado, redirigiendo a la página del curso: http://localhost:3000/curso/58
+2025/04/18 16:17:21 Redirigiendo a: http://localhost:3000/curso/58
+2025/04/18 16:17:23 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:17:27 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:17:27 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 16:17:27 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 16:17:27 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 16:17:27 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 16:17:27 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 16:17:27 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 16:17:27 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:17:33 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 16:17:33 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 16:17:33 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 16:17:33 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:17:34 Verificando pago para curso ID: 42, usuario ID: 3
+2025/04/18 16:17:34 Verificando pago para curso ID: 57, usuario ID: 3
+2025/04/18 16:17:34 Verificando pago para curso ID: 56, usuario ID: 3
+2025/04/18 16:17:34 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:52:10 Conectando a la base de datos (intento 1/5)...
+2025/04/18 16:52:11 Conexión a la base de datos establecida correctamente
+2025/04/18 16:52:11 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 16:52:11 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 16:52:11 Iniciando servidor en puerto 5000
+2025/04/18 16:53:01 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:53:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:53:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:53:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:53:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:53:02 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:53:08 Eliminando capítulos del curso ID: 57
+2025/04/18 16:53:08 Eliminando curso ID: 57
+2025/04/18 16:53:08 Curso ID 57 eliminado exitosamente
+2025/04/18 16:53:10 Eliminando capítulos del curso ID: 56
+2025/04/18 16:53:11 Eliminando curso ID: 56
+2025/04/18 16:53:11 Curso ID 56 eliminado exitosamente
+2025/04/18 16:53:13 Eliminando capítulos del curso ID: 42
+2025/04/18 16:53:13 Eliminando curso ID: 42
+2025/04/18 16:53:13 Curso ID 42 eliminado exitosamente
+2025/04/18 16:53:28 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/18 16:53:28 Creando curso: {ID:0 Titulo:holaaaaaa Descripcion:aaaaaaa Contenido:aaaaaaa Precio:22 Estado:Publicado ImagenURL:/static/images/36fb0ae9-ca4f-4556-849a-ae9ff18c779c.png CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/18 16:53:28 Curso creado exitosamente: ID 59
+2025/04/18 16:53:47 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/18 16:53:48 Video subido exitosamente: /static/videos/58/58-nuevo-ee154d65-49d2-430e-9fee-d6566683cf4f.mp4
+2025/04/18 16:53:48 Creando capítulo: {ID:0 CursoID:58 Titulo:hola Descripcion:hola Duracion:09:30 VideoURL:/static/videos/58/58-nuevo-ee154d65-49d2-430e-9fee-d6566683cf4f.mp4 VideoNombre:58-nuevo-ee154d65-49d2-430e-9fee-d6566683cf4f.mp4 Orden:0 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/18 16:53:48 Capítulo creado exitosamente: ID 31
+2025/04/18 16:53:50 Actualizando curso ID 58: {ID:58 Titulo:aaaaa Descripcion:aaaaa Contenido:aaaaa Precio:12 Estado:Publicado ImagenURL: CreatedAt:2025-04-18 04:19:54.274 -0300 -03 UpdatedAt:2025-04-18 04:19:54.274 -0300 -03 Capitulos:[]}
+2025/04/18 16:53:50 Curso actualizado exitosamente: ID 58
+2025/04/18 16:53:52 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:53:52 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:53:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:53:52 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:53:54 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:53:54 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:54:00 Solicitud de pago recibida: {CursoID:59 Monto:22 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 16:54:00 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=123&curso_id=59, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 16:54:03 Orden PayPal creada. ID: 6HU95486HU532752S, Estado: CREATED
+2025/04/18 16:54:03 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=6HU95486HU532752S
+2025/04/18 16:54:03 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=6HU95486HU532752S
+2025/04/18 16:54:39 Recibida callback PayPal con pagoID: 123, cursoID: 59, token: 6HU95486HU532752S
+2025/04/18 16:54:39 Intentando capturar orden PayPal con token: 6HU95486HU532752S para pago ID: 123
+2025/04/18 16:54:40 Orden PayPal capturada. Estado: COMPLETED
+2025/04/18 16:54:40 Pago ID 123 actualizado a estado 'aprobado'
+2025/04/18 16:54:40 Pago aprobado, redirigiendo a la página del curso: http://localhost:3000/curso/59
+2025/04/18 16:54:40 Redirigiendo a: http://localhost:3000/curso/59
+2025/04/18 16:54:42 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:54:42 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:54:48 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:54:48 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:54:48 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:54:48 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:54:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:54:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:54:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:54:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:54:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:54:57 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:55:17 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/18 16:55:18 Video subido exitosamente: /static/videos/59/59-nuevo-ca3bb9e2-05a4-4cff-a749-ff0809f58aa0.mp4
+2025/04/18 16:55:18 Creando capítulo: {ID:0 CursoID:59 Titulo:a Descripcion:aaaaaaaaa Duracion:08:15 VideoURL:/static/videos/59/59-nuevo-ca3bb9e2-05a4-4cff-a749-ff0809f58aa0.mp4 VideoNombre:59-nuevo-ca3bb9e2-05a4-4cff-a749-ff0809f58aa0.mp4 Orden:0 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/18 16:55:18 Capítulo creado exitosamente: ID 32
+2025/04/18 16:55:20 Actualizando curso ID 59: {ID:59 Titulo:holaaaaaa Descripcion:aaaaaaa Contenido:aaaaaaa Precio:22 Estado:Publicado ImagenURL:/static/images/36fb0ae9-ca4f-4556-849a-ae9ff18c779c.png CreatedAt:2025-04-18 16:53:28.513 -0300 -03 UpdatedAt:2025-04-18 16:53:28.513 -0300 -03 Capitulos:[]}
+2025/04/18 16:55:20 Curso actualizado exitosamente: ID 59
+2025/04/18 16:55:22 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:55:22 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:55:22 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 16:55:22 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:55:24 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:55:24 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 16:55:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:55:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:55:37 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:55:38 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:55:38 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:55:38 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:56:34 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:56:34 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:56:38 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:56:42 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 16:56:42 Configuración de correo: FROM=2318524@ucc.edu.ar, HOST=smtp.gmail.com, PORT=587, PASS=***
+2025/04/18 16:56:42 Intentando enviar email a marcelinho.nelson@gmail.com a través de smtp.gmail.com:587
+2025/04/18 16:56:48 Email enviado exitosamente a marcelinho.nelson@gmail.com
+2025/04/18 16:56:48 Respuesta enviada a marcelo nelson (marcelinho.nelson@gmail.com): aaa
+2025/04/18 17:08:57 Conectando a la base de datos (intento 1/5)...
+2025/04/18 17:08:58 Conexión a la base de datos establecida correctamente
+2025/04/18 17:08:58 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 17:08:58 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 17:08:58 Iniciando servidor en puerto 5000
+2025/04/18 17:09:02 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 17:09:02 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 17:09:02 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 17:09:02 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:15:01 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:15:01 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:15:01 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:15:01 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:15:06 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:15:06 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:15:06 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:15:06 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:19:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:19:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:19:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:19:47 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:19:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:19:48 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:20:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:20:17 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:20:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:20:28 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:20:39 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:20:39 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:22:36 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:22:36 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:22:36 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:22:36 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:22:41 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:22:41 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:22:41 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:22:41 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:22:41 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:22:41 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:31:06 Conectando a la base de datos (intento 1/5)...
+2025/04/18 18:31:06 Conexión a la base de datos establecida correctamente
+2025/04/18 18:31:06 Cliente PayPal inicializado correctamente. Modo: live
+2025/04/18 18:31:06 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 18:31:06 Iniciando servidor en puerto 5000
+2025/04/18 18:31:19 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/18 18:31:19 Creando curso: {ID:0 Titulo:aaaaaaa Descripcion:aaaaa Contenido:aaaaa Precio:12 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/18 18:31:19 Curso creado exitosamente: ID 60
+2025/04/18 18:31:20 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:31:20 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:31:20 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:31:20 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:31:20 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:31:20 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:31:23 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:31:27 Solicitud de pago recibida: {CursoID:60 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 18:31:27 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=124&curso_id=60, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 18:31:33 Orden PayPal creada. ID: 08752803R2827174U, Estado: CREATED
+2025/04/18 18:31:33 Enlace de aprobación encontrado: https://www.paypal.com/checkoutnow?token=08752803R2827174U
+2025/04/18 18:31:33 URL de redirección PayPal: https://www.paypal.com/checkoutnow?token=08752803R2827174U
+2025/04/18 18:36:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:36:14 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:36:14 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:36:14 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:36:14 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:36:14 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:36:19 Estado actual de PayPal para orden 08752803R2827174U: CREATED
+2025/04/18 18:36:19 Estado actual de PayPal para orden 08752803R2827174U: CREATED
+2025/04/18 18:36:23 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:36:23 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:36:23 Estado actual de PayPal para orden 08752803R2827174U: CREATED
+2025/04/18 18:36:23 Estado actual de PayPal para orden 08752803R2827174U: CREATED
+2025/04/18 18:36:24 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:36:25 Estado actual de PayPal para orden 08752803R2827174U: CREATED
+2025/04/18 18:36:40 Solicitud de pago recibida: {CursoID:60 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 18:36:40 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=125&curso_id=60, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 18:36:40 Orden PayPal creada. ID: 40M535722F826993S, Estado: CREATED
+2025/04/18 18:36:40 Enlace de aprobación encontrado: https://www.paypal.com/checkoutnow?token=40M535722F826993S
+2025/04/18 18:36:40 URL de redirección PayPal: https://www.paypal.com/checkoutnow?token=40M535722F826993S
+2025/04/18 18:37:05 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:37:05 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:37:05 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:37:05 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:37:05 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:37:05 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:37:06 Estado actual de PayPal para orden 40M535722F826993S: CREATED
+2025/04/18 18:37:06 Estado actual de PayPal para orden 40M535722F826993S: CREATED
+2025/04/18 18:37:07 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:37:08 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:37:12 Estado actual de PayPal para orden 40M535722F826993S: CREATED
+2025/04/18 18:37:12 Estado actual de PayPal para orden 40M535722F826993S: CREATED
+2025/04/18 18:37:14 Solicitud de pago recibida: {CursoID:60 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 18:37:14 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=126&curso_id=60, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 18:37:15 Orden PayPal creada. ID: 8EB96675R54714222, Estado: CREATED
+2025/04/18 18:37:15 Enlace de aprobación encontrado: https://www.paypal.com/checkoutnow?token=8EB96675R54714222
+2025/04/18 18:37:15 URL de redirección PayPal: https://www.paypal.com/checkoutnow?token=8EB96675R54714222
+2025/04/18 18:37:28 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:37:30 Estado actual de PayPal para orden 8EB96675R54714222: CREATED
+2025/04/18 18:38:07 Conectando a la base de datos (intento 1/5)...
+2025/04/18 18:38:07 Conexión a la base de datos establecida correctamente
+2025/04/18 18:38:07 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 18:38:07 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 18:38:07 Iniciando servidor en puerto 5000
+2025/04/18 18:38:10 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:38:12 Error al verificar estado con PayPal: GET https://api-m.sandbox.paypal.com/v2/checkout/orders/8EB96675R54714222: 404 The specified resource does not exist., [{Field: Issue:INVALID_RESOURCE_ID Name: Message: Description:Specified resource ID does not exist. Please check the resource ID and try again. Links:[]}]
+2025/04/18 18:38:16 Solicitud de pago recibida: {CursoID:60 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 18:38:16 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=127&curso_id=60, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 18:38:17 Orden PayPal creada. ID: 9LB11101VV666981P, Estado: CREATED
+2025/04/18 18:38:17 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=9LB11101VV666981P
+2025/04/18 18:38:17 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=9LB11101VV666981P
+2025/04/18 18:38:44 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:38:44 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:38:45 Estado actual de PayPal para orden 9LB11101VV666981P: CREATED
+2025/04/18 18:38:45 Estado actual de PayPal para orden 9LB11101VV666981P: CREATED
+2025/04/18 18:38:45 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:38:46 Estado actual de PayPal para orden 9LB11101VV666981P: CREATED
+2025/04/18 18:38:50 Solicitud de pago recibida: {CursoID:60 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 18:38:50 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=128&curso_id=60, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 18:38:52 Orden PayPal creada. ID: 59S26711Y4970725T, Estado: CREATED
+2025/04/18 18:38:52 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=59S26711Y4970725T
+2025/04/18 18:38:52 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=59S26711Y4970725T
+2025/04/18 18:39:15 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:39:15 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:39:15 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:39:15 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:39:15 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:39:15 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:39:16 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:39:16 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:39:18 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:39:18 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:39:19 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:39:19 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:39:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:39:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:39:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:39:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:39:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:39:25 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:39:46 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/18 18:39:47 Video subido exitosamente: /static/videos/60/60-nuevo-2442d6e8-0c5f-482e-b7b4-7d916936c0e5.mp4
+2025/04/18 18:39:47 Creando capítulo: {ID:0 CursoID:60 Titulo:test2 Descripcion:cap1 Duracion:06:20 VideoURL:/static/videos/60/60-nuevo-2442d6e8-0c5f-482e-b7b4-7d916936c0e5.mp4 VideoNombre:60-nuevo-2442d6e8-0c5f-482e-b7b4-7d916936c0e5.mp4 Orden:0 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/18 18:39:47 Capítulo creado exitosamente: ID 33
+2025/04/18 18:40:01 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/18 18:40:01 Video subido exitosamente: /static/videos/60/60-nuevo-b9cd5155-220c-4f45-babf-8152907b6841.mp4
+2025/04/18 18:40:02 Creando capítulo: {ID:0 CursoID:60 Titulo:aaaa Descripcion:aaaaaaaa Duracion:06:14 VideoURL:/static/videos/60/60-nuevo-b9cd5155-220c-4f45-babf-8152907b6841.mp4 VideoNombre:60-nuevo-b9cd5155-220c-4f45-babf-8152907b6841.mp4 Orden:1 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/18 18:40:02 Capítulo creado exitosamente: ID 34
+2025/04/18 18:40:12 Usuario marcelo nelson (ID: 3) iniciando subida de video
+2025/04/18 18:40:13 Video subido exitosamente: /static/videos/60/60-nuevo-01780c41-190f-4123-a0e9-58e55b517006.mp4
+2025/04/18 18:40:13 Creando capítulo: {ID:0 CursoID:60 Titulo:aerer Descripcion:sefsefs Duracion:06:20 VideoURL:/static/videos/60/60-nuevo-01780c41-190f-4123-a0e9-58e55b517006.mp4 VideoNombre:60-nuevo-01780c41-190f-4123-a0e9-58e55b517006.mp4 Orden:2 Publicado:false CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Curso:<nil>}
+2025/04/18 18:40:13 Capítulo creado exitosamente: ID 35
+2025/04/18 18:40:14 Actualizando curso ID 60: {ID:60 Titulo:aaaaaaa Descripcion:aaaaa Contenido:aaaaa Precio:12 Estado:Publicado ImagenURL: CreatedAt:2025-04-18 18:31:19.269 -0300 -03 UpdatedAt:2025-04-18 18:31:19.269 -0300 -03 Capitulos:[]}
+2025/04/18 18:40:14 Curso actualizado exitosamente: ID 60
+2025/04/18 18:40:21 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:40:21 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:40:21 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:40:21 Verificando pago para curso ID: 58, usuario ID: 3
+2025/04/18 18:40:21 Verificando pago para curso ID: 59, usuario ID: 3
+2025/04/18 18:40:21 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:40:22 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:40:22 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:40:27 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:27 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:27 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:27 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:27 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:27 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:31 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:31 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:31 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:31 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:32 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:32 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:40:55 Actualizando curso ID 60: {ID:60 Titulo:aaaaaaa Descripcion:aaaaa Contenido:aaaaa Precio:12 Estado:Publicado ImagenURL:/static/images/96d09bda-0b58-4040-ab3a-98401149f067.jpeg CreatedAt:2025-04-18 18:31:19.269 -0300 -03 UpdatedAt:2025-04-18 18:40:14.724 -0300 -03 Capitulos:[]}
+2025/04/18 18:40:55 Curso actualizado exitosamente: ID 60
+2025/04/18 18:40:58 Archivo de video del capítulo 32 eliminado: static/videos/59/59-nuevo-ca3bb9e2-05a4-4cff-a749-ff0809f58aa0.mp4
+2025/04/18 18:40:58 Eliminando capítulos del curso ID: 59
+2025/04/18 18:40:58 Imagen del curso eliminada: static/images/36fb0ae9-ca4f-4556-849a-ae9ff18c779c.png
+2025/04/18 18:40:58 Eliminando curso ID: 59
+2025/04/18 18:40:58 Directorio de videos del curso eliminado: static/videos/59
+2025/04/18 18:40:58 Curso ID 59 eliminado exitosamente
+2025/04/18 18:41:00 Archivo de video del capítulo 31 eliminado: static/videos/58/58-nuevo-ee154d65-49d2-430e-9fee-d6566683cf4f.mp4
+2025/04/18 18:41:00 Eliminando capítulos del curso ID: 58
+2025/04/18 18:41:00 Eliminando curso ID: 58
+2025/04/18 18:41:00 Directorio de videos del curso eliminado: static/videos/58
+2025/04/18 18:41:00 Curso ID 58 eliminado exitosamente
+2025/04/18 18:41:01 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:41:01 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:41:04 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:41:04 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:42:19 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:42:19 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:42:19 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:42:19 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:42:19 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:42:19 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:42:24 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:42:43 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:43:07 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:44:06 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:44:06 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:44:07 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:44:07 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:44:11 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:44:11 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:44:12 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:44:12 Estado actual de PayPal para orden 59S26711Y4970725T: CREATED
+2025/04/18 18:44:33 Solicitud de pago recibida: {CursoID:60 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 18:44:33 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=129&curso_id=60, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 18:44:43 Orden PayPal creada. ID: 39M00571H5683584K, Estado: CREATED
+2025/04/18 18:44:43 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=39M00571H5683584K
+2025/04/18 18:44:43 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=39M00571H5683584K
+2025/04/18 18:44:47 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:44:47 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:44:48 Estado actual de PayPal para orden 39M00571H5683584K: CREATED
+2025/04/18 18:44:48 Estado actual de PayPal para orden 39M00571H5683584K: CREATED
+2025/04/18 18:45:30 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:45:30 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:45:31 Estado actual de PayPal para orden 39M00571H5683584K: CREATED
+2025/04/18 18:45:31 Estado actual de PayPal para orden 39M00571H5683584K: CREATED
+2025/04/18 18:45:37 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:45:37 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:45:38 Estado actual de PayPal para orden 39M00571H5683584K: CREATED
+2025/04/18 18:45:38 Estado actual de PayPal para orden 39M00571H5683584K: CREATED
+2025/04/18 18:45:39 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:45:39 Estado actual de PayPal para orden 39M00571H5683584K: CREATED
+2025/04/18 18:45:52 Solicitud de pago recibida: {CursoID:60 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 18:45:52 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=130&curso_id=60, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 18:46:01 Orden PayPal creada. ID: 4SK34861JH636980N, Estado: CREATED
+2025/04/18 18:46:01 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=4SK34861JH636980N
+2025/04/18 18:46:01 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=4SK34861JH636980N
+2025/04/18 18:46:07 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:46:08 Estado actual de PayPal para orden 4SK34861JH636980N: CREATED
+2025/04/18 18:46:11 Conectando a la base de datos (intento 1/5)...
+2025/04/18 18:46:11 Conexión a la base de datos establecida correctamente
+2025/04/18 18:46:11 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 18:46:11 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 18:46:11 Iniciando servidor en puerto 5000
+2025/04/18 18:46:13 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:46:13 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:46:19 Estado actual de PayPal para orden 4SK34861JH636980N: CREATED
+2025/04/18 18:46:20 Estado actual de PayPal para orden 4SK34861JH636980N: CREATED
+2025/04/18 18:46:21 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:46:21 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:46:22 Estado actual de PayPal para orden 4SK34861JH636980N: CREATED
+2025/04/18 18:46:22 Estado actual de PayPal para orden 4SK34861JH636980N: CREATED
+2025/04/18 18:46:27 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:46:27 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:46:28 Estado actual de PayPal para orden 4SK34861JH636980N: CREATED
+2025/04/18 18:46:28 Estado actual de PayPal para orden 4SK34861JH636980N: CREATED
+2025/04/18 18:46:31 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:46:31 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:46:33 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:46:35 Estado actual de PayPal para orden 4SK34861JH636980N: CREATED
+2025/04/18 18:46:35 Estado actual de PayPal para orden 4SK34861JH636980N: CREATED
+2025/04/18 18:46:36 Estado actual de PayPal para orden 4SK34861JH636980N: CREATED
+2025/04/18 18:46:47 Solicitud de pago recibida: {CursoID:60 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/18 18:46:47 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=131&curso_id=60, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/18 18:46:48 Orden PayPal creada. ID: 2LT84893W85695433, Estado: CREATED
+2025/04/18 18:46:48 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=2LT84893W85695433
+2025/04/18 18:46:48 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=2LT84893W85695433
+2025/04/18 18:46:55 Recibida callback PayPal con pagoID: 131, cursoID: 60, token: 2LT84893W85695433
+2025/04/18 18:46:55 Intentando capturar orden PayPal con token: 2LT84893W85695433 para pago ID: 131
+2025/04/18 18:46:57 Orden PayPal capturada. Estado: COMPLETED
+2025/04/18 18:46:57 Pago ID 131 actualizado a estado 'aprobado'
+2025/04/18 18:46:57 Pago aprobado, redirigiendo a la página del curso: http://localhost:3000/curso/60
+2025/04/18 18:46:57 Redirigiendo a: http://localhost:3000/curso/60
+2025/04/18 18:46:57 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 18:47:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:47:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:47:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:47:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:47:54 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:47:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:48:05 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:48:05 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:48:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:48:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:48:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:48:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:48:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:48:12 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:48:25 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/18 18:48:25 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/18 18:48:30 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 18:48:30 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/18 20:24:26 Conectando a la base de datos (intento 1/5)...
+2025/04/18 20:24:27 Conexión a la base de datos establecida correctamente
+2025/04/18 20:24:27 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 20:24:27 Configurando CORS para permitir origen: http://92.246.129.76
+2025/04/18 20:24:27 Iniciando servidor en puerto 5000
+2025/04/18 20:29:52 Conectando a la base de datos (intento 1/5)...
+2025/04/18 20:29:53 Conexión a la base de datos establecida correctamente
+2025/04/18 20:29:53 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 20:29:53 Configurando CORS para permitir origen: http://92.246.129.76
+2025/04/18 20:29:53 Iniciando servidor en puerto 5000
+2025/04/18 20:35:48 Conectando a la base de datos (intento 1/5)...
+2025/04/18 20:35:55 Conexión a la base de datos establecida correctamente
+2025/04/18 20:35:55 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 20:35:55 Configurando CORS para permitir origen: http://92.246.129.76
+2025/04/18 20:35:55 Iniciando servidor en puerto 5000
+2025/04/18 20:36:32 Conectando a la base de datos (intento 1/5)...
+2025/04/18 20:36:33 Conexión a la base de datos establecida correctamente
+2025/04/18 20:36:33 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 20:36:33 Configurando CORS para permitir origen: http://92.246.129.76
+2025/04/18 20:36:33 Iniciando servidor en puerto 5000
+2025/04/18 20:38:54 Conectando a la base de datos (intento 1/5)...
+2025/04/18 20:38:55 Conexión a la base de datos establecida correctamente
+2025/04/18 20:38:55 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/18 20:38:55 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/18 20:38:55 Iniciando servidor en puerto 5000
+2025/04/18 20:39:55 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 20:39:55 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 20:40:29 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 20:40:29 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 20:40:46 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/18 20:40:46 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/19 06:01:18 Conectando a la base de datos (intento 1/5)...
+2025/04/19 06:01:19 Conexión a la base de datos establecida correctamente
+2025/04/19 06:01:19 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/04/19 06:01:19 Configurando CORS para permitir origen: http://localhost:3000
+2025/04/19 06:01:19 Iniciando servidor en puerto 5000
+2025/04/19 06:01:49 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/19 06:01:49 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:13 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:20 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:20 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:23 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/04/19 06:02:26 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/19 06:02:26 Usuario marcelinho.nelson@gmail.com (ID: 3) consultó sus preferencias de notificación
+2025/04/19 06:02:37 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/04/19 06:02:37 Creando curso: {ID:0 Titulo:a Descripcion:a Contenido:a Precio:12 Estado:Publicado ImagenURL: CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/04/19 06:02:37 Curso creado exitosamente: ID 61
+2025/04/19 06:02:39 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/19 06:02:39 Verificando pago para curso ID: 60, usuario ID: 3
+2025/04/19 06:02:39 Verificando pago para curso ID: 61, usuario ID: 3
+2025/04/19 06:02:39 Verificando pago para curso ID: 61, usuario ID: 3
+2025/04/19 06:02:40 Verificando pago para curso ID: 61, usuario ID: 3
+2025/04/19 06:02:40 Verificando pago para curso ID: 61, usuario ID: 3
+2025/04/19 06:02:45 Solicitud de pago recibida: {CursoID:61 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/04/19 06:02:45 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=132&curso_id=61, CancelURL: http://localhost:3000/pagos/cancelado
+2025/04/19 06:02:48 Orden PayPal creada. ID: 15V817358W7869009, Estado: CREATED
+2025/04/19 06:02:48 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=15V817358W7869009
+2025/04/19 06:02:48 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=15V817358W7869009
+2025/04/19 06:03:07 Recibida callback PayPal con pagoID: 132, cursoID: 61, token: 15V817358W7869009
+2025/04/19 06:03:07 Intentando capturar orden PayPal con token: 15V817358W7869009 para pago ID: 132
+2025/04/19 06:03:09 Orden PayPal capturada. Estado: COMPLETED
+2025/04/19 06:03:09 Pago ID 132 actualizado a estado 'aprobado'
+2025/04/19 06:03:09 Pago aprobado, redirigiendo a la página del curso: http://localhost:3000/curso/61
+2025/04/19 06:03:09 Redirigiendo a: http://localhost:3000/curso/61
+2025/04/19 06:03:10 Verificando pago para curso ID: 61, usuario ID: 3
+2025/05/27 16:13:06 Conectando a la base de datos (intento 1/5)...
+2025/05/27 16:13:07 Conexión a la base de datos establecida correctamente
+2025/05/27 16:13:07 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/05/27 16:13:07 Configurando CORS para permitir origen: http://localhost:3000
+2025/05/27 16:13:07 Iniciando servidor en puerto 5000
+2025/05/27 16:13:07 Error al iniciar servidor: listen tcp :5000: bind: address already in use
+2025/05/27 16:13:14 Conectando a la base de datos (intento 1/5)...
+2025/05/27 16:13:15 Conexión a la base de datos establecida correctamente
+2025/05/27 16:13:15 Cliente PayPal inicializado correctamente. Modo: sandbox
+2025/05/27 16:13:15 Configurando CORS para permitir origen: http://localhost:3000
+2025/05/27 16:13:15 Iniciando servidor en puerto 5000
+2025/05/27 16:17:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:36 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:17:55 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:18:11 Error enviando email: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials a1e0cc1a2514c-87dee1c2af6sm5589184241.19 - gsmtp
+2025/05/27 16:18:23 Error enviando email: 535 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials a1e0cc1a2514c-87dec516758sm6095692241.32 - gsmtp
+2025/05/27 16:18:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:18:29 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:18:35 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:18:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:18:45 Acceso administrativo exitoso. Usuario ID: 3, Email: marcelinho.nelson@gmail.com
+2025/05/27 16:19:28 Usuario autenticado ID: 3, Nombre: marcelo nelson
+2025/05/27 16:19:28 Creando curso: {ID:0 Titulo:ohla Descripcion:hola Contenido:hola Precio:12 Estado:Publicado ImagenURL:/static/images/1a13f9de-ae40-4466-9a96-23d0b67c8f78.jpeg CreatedAt:0001-01-01 00:00:00 +0000 UTC UpdatedAt:0001-01-01 00:00:00 +0000 UTC Capitulos:[]}
+2025/05/27 16:19:28 Curso creado exitosamente: ID 62
+2025/05/27 16:19:30 Verificando pago para curso ID: 61, usuario ID: 3
+2025/05/27 16:19:30 Verificando pago para curso ID: 60, usuario ID: 3
+2025/05/27 16:19:30 Verificando pago para curso ID: 62, usuario ID: 3
+2025/05/27 16:19:30 Verificando pago para curso ID: 61, usuario ID: 3
+2025/05/27 16:19:30 Verificando pago para curso ID: 60, usuario ID: 3
+2025/05/27 16:19:30 Verificando pago para curso ID: 62, usuario ID: 3
+2025/05/27 16:19:36 Verificando pago para curso ID: 62, usuario ID: 3
+2025/05/27 16:19:37 Verificando pago para curso ID: 62, usuario ID: 3
+2025/05/27 16:19:45 Solicitud de pago recibida: {CursoID:62 Monto:12 Metodo:paypal DetallesTarjeta:<nil> Moneda:USD}
+2025/05/27 16:19:45 Creando orden PayPal con ReturnURL: http://localhost:5000/api/pagos/paypal/callback?pago_id=133&curso_id=62, CancelURL: http://localhost:3000/pagos/cancelado
+2025/05/27 16:19:49 Orden PayPal creada. ID: 0JL00579332053725, Estado: CREATED
+2025/05/27 16:19:49 Enlace de aprobación encontrado: https://www.sandbox.paypal.com/checkoutnow?token=0JL00579332053725
+2025/05/27 16:19:49 URL de redirección PayPal: https://www.sandbox.paypal.com/checkoutnow?token=0JL00579332053725
+2025/05/27 16:20:19 Recibida callback PayPal con pagoID: 133, cursoID: 62, token: 0JL00579332053725
+2025/05/27 16:20:19 Intentando capturar orden PayPal con token: 0JL00579332053725 para pago ID: 133
+2025/05/27 16:20:21 Orden PayPal capturada. Estado: COMPLETED
+2025/05/27 16:20:21 Pago ID 133 actualizado a estado 'aprobado'
+2025/05/27 16:20:21 Pago aprobado, redirigiendo a la página del curso: http://localhost:3000/curso/62
+2025/05/27 16:20:21 Redirigiendo a: http://localhost:3000/curso/62
+2025/05/27 16:20:22 Verificando pago para curso ID: 62, usuario ID: 3

@@ -1,0 +1,21 @@
+src/
+├── assets/
+│   ├── images/
+│   └── styles/
+├── components/
+│   ├── Auth/
+│   ├── Activities/
+│   ├── Admin/
+│   ├── Common/
+│   └── Layout/
+├── context/
+├── hooks/
+├── pages/
+│   ├── Auth/
+│   ├── Activities/
+│   ├── Admin/
+│   ├── Home/
+│   └── User/
+├── services/
+├── utils/
+└── App.js
