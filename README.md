@@ -207,15 +207,6 @@ POST /api/analytics/track
 - Optimización de queries y conexiones de BD
 
 
-
-## 🤝 Contribuciones
-
-1. Fork el proyecto
-2. Crear rama feature (`git checkout -b feature/AmazingFeature`)
-3. Commit cambios (`git commit -m 'Add AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abrir Pull Request
-
 #
 ## 👥 Equipo
 
